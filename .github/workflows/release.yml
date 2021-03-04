@@ -19,4 +19,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Release
-        run: ./scripts/release.sh ${{ github.event.inputs.release }} ${{ github.event.inputs.jar }} ${{ github.events.inputs.hash }}
+        run: ./scripts/release.sh ${{ github.event.inputs.release }} ${{ github.event.inputs.jar }} ${{ github.event.inputs.hash }}
