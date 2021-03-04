@@ -1,3 +1,6 @@
+![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
+![Docker Stars](https://img.shields.io/docker/stars/operatr/kpow)
+
 # kpow-docker
 
 Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka](http://kafka.apache.org/)
