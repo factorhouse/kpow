@@ -2,8 +2,9 @@
 
 set -Eeuxo pipefail
 
-RELEASE=$1
+VERSION=$1
 DOCKERFILE=$2
-TAG=kpow:$RELEASE
+TAG=kpow:$VERSION
+RELEASE=`date +%s`
 
-docker build -f $DOCKERFILE -t $TAG .
+docker build --build-arg RELEASE=$RELEASE --build-arg VERSION=$VERSION -f $DOCKERFILE -t $TAG .
