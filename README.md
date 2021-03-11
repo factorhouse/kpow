@@ -6,7 +6,7 @@
 
 Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
 
-The image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). 
+The image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml)
 
 Release notes are available [here](https://kpow.io/releases/)
 
