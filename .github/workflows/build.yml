@@ -32,5 +32,5 @@ jobs:
           ./scripts/build.sh ${{github.event.inputs.release}}-alpine dockerfile/alpine/Dockerfile
 
       - name: Build kPow Red Hat UBI
+        run: |
           ./scripts/build.sh ${{github.event.inputs.release}}-rh-ubi dockerfile/rh-ubi/Dockerfile
-
