@@ -9,14 +9,27 @@ on:
       jar:
         description: 'URL of JAR'
         required: true
-      hash:
-        description: 'HASH of JAR'
+      checksum:
+        description: 'SHA256 checksum of JAR'
         required: true
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Release
-        run: ./scripts/release.sh ${{ github.event.inputs.release }} ${{ github.event.inputs.jar }} ${{ github.event.inputs.hash }}
+
+      - name: Download and verify JAR
+        run: ./scripts/jar.sh \
+          ${{ github.event.inputs.jar }} \
+          ${{ github.event.inputs.checksum}}
+
+      - name: Build kPow
+        run: ./scripts/build.sh \
+          ${{ github.event.inputs.release }} \
+          dockerfile/kpow/Dockerfile
+
+      - name: Build kPow Alpine
+        run: ./scripts/build.sh \
+          ${{ github.event.inputs.release }}-alpine \
+          dockerfile/kpow-alpine/Dockerfile
