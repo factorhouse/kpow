@@ -7,4 +7,4 @@ DOCKERFILE=$2
 TAG=kpow:$VERSION
 RELEASE=`date +%s`
 
-docker build --build-arg RELEASE=$RELEASE --build-arg VERSION=$VERSION -f $DOCKERFILE -t $TAG .
+docker build --pull --build-arg RELEASE=$RELEASE --build-arg VERSION=$VERSION -f $DOCKERFILE -t $TAG .
