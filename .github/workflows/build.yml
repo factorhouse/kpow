@@ -23,14 +23,6 @@ jobs:
         run: |
           ./scripts/jar.sh "${{github.event.inputs.manifest}}"
 
-      - name: Build kPow
-        run: | 
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
-          IMAGE_TAG=$VERSION
-          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
-          docker push $IMAGE_ID:$IMAGE_TAG
-
       - name: Build kPow Alpine
         run: |
           VERSION=${{github.event.inputs.version}}
@@ -78,3 +70,14 @@ jobs:
           IMAGE_TAG=$VERSION-aws-mkt-team
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
+
+      - name: Build kPow
+        run: | 
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
+          docker tag $IMAGE_ID:$IMAGE_TAG $IMAGE_ID:latest
+          docker push $IMAGE_ID:latest
+
