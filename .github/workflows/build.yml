@@ -6,7 +6,7 @@ on:
       release:
         description: 'Version of kPow'
         required: true
-      jar:
+      manifest:
         description: 'URL of Manifest'
         required: true
 
