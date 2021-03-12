@@ -18,7 +18,7 @@ jobs:
 
       - name: Download and verify JAR(s)
         run: |
-          ./scripts/jar.sh ${{github.event.inputs.manifest}}
+          ./scripts/jar.sh "${{github.event.inputs.manifest}}"
 
       - name: Build kPow
         run: | 
