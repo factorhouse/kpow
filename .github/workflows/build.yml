@@ -3,7 +3,7 @@ name: Build
 on:
   workflow_dispatch:
     inputs:
-      release:
+      version:
         description: 'Version of kPow'
         required: true
       manifest:
@@ -22,28 +22,56 @@ jobs:
 
       - name: Build kPow
         run: | 
-          ./scripts/build.sh ${{github.event.inputs.release}} dockerfile/kpow/Dockerfile
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
 
       - name: Build kPow Alpine
         run: |
-          ./scripts/build.sh ${{github.event.inputs.release}}-alpine dockerfile/alpine/Dockerfile
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION-alpine
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/alpine/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
 
       - name: Build kPow Red Hat UBI
         run: |
-          ./scripts/build.sh ${{github.event.inputs.release}}-rh-ubi dockerfile/rh-ubi/Dockerfile
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION-rh-ubi
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
 
       - name: Build kPow Red Hat Marketplace 
         run: |
-          ./scripts/build.sh ${{github.event.inputs.release}}-rh-mkt dockerfile/rh-mkt/Dockerfile
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION-rh-mkt
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-mkt/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
 
       - name: Build kPow AWS Marketplace Corp
         run: |
-          ./scripts/build.sh ${{github.event.inputs.release}}-aws-mkt-corp dockerfile/aws-mkt-corp/Dockerfile
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION-aws-mkt-corp
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
 
       - name: Build kPow AWS Marketplace Pro
         run: |
-          ./scripts/build.sh ${{github.event.inputs.release}}-aws-mkt-pro dockerfile/aws-mkt-pro/Dockerfile
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION-aws-mkt-pro
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
 
       - name: Build kPow AWS Marketplace Team
         run: |
-          ./scripts/build.sh ${{github.event.inputs.release}}-aws-mkt-team dockerfile/aws-mkt-team/Dockerfile
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION-aws-mkt-team
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
