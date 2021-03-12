@@ -7,10 +7,7 @@ on:
         description: 'Version of kPow'
         required: true
       jar:
-        description: 'URL of JAR'
-        required: true
-      checksum:
-        description: 'SHA256 checksum of JAR'
+        description: 'URL of Manifest'
         required: true
 
 jobs:
@@ -19,9 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Download and verify JAR
+      - name: Download and verify JAR(s)
         run: |
-          ./scripts/jar.sh ${{github.event.inputs.jar}} ${{github.event.inputs.checksum}}
+          ./scripts/jar.sh ${{github.event.inputs.manifest}}
 
       - name: Build kPow
         run: | 

@@ -1,2 +1,4 @@
 *.jar
 workspace.code-workspace
+target/
+manifest

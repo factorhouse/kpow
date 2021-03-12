@@ -2,8 +2,16 @@
 
 set -Eeuxo pipefail
 
-JAR=$1
-CHECKSUM=$2
+MANIFEST=$1
+mkdir target
+curl -o manifest -L -O $MANIFEST
 
-curl -o kpow.jar -L -O $JAR
-echo "$CHECKSUM kpow.jar" | sha256sum --check --status
+IFS=$'\n'
+for item in $(cat ./manifest) 
+do
+    IFS=$' '
+    itemarray=( $item )
+    FILENAME="${itemarray[0]}"
+    S3_URL="${itemarray[1]}"
+    curl -o $FILENAME -L -O $S3_URL
+done
