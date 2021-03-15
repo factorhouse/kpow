@@ -3,7 +3,7 @@ on: push
 jobs:
   PushContainerReadme:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     name: Push README to Docker Hub
     steps:
       - name: git checkout
