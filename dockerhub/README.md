@@ -3,7 +3,7 @@ Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [A
 # Quick reference
 
 * **Maintained by**: [the Operatr.io team](https://github.com/operatr-io/kpow-docker)
-* **Where to get help**: [GitHub](https://github.com/operatr-io/kpow-docker), 
+* **Where to get help**: [GitHub](https://github.com/operatr-io/kpow-docker), [our engineering Slack]("https://join.slack.com/t/operatr-io/shared_invite/zt-dts4pbtt-flBE4695OrU3YW1fS5mFCw") 
 
 # Supported tags respective `Dockerfile` links
 

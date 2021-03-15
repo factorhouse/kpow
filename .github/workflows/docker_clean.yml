@@ -1,0 +1,19 @@
+name: Clean up GitHub docker packages
+on:
+  workflow_dispatch:
+    inputs:
+      num:
+        description: 'Number of old versions to delete'
+        required: true
+jobs:
+  CleanUpDockerPackages:
+    runs-on: ubuntu-latest
+    uses: actions/delete-package-versions@v1
+    name: Clean up GitHub Docker Packages
+    steps:
+      - name: cleanup
+        uses: actions/delete-package-versions@v1
+        with:
+          package-name: kpow
+          num-old-versions-to-delete: ${{github.event.inputs.num}}
+          token: ${{ secrets.GITHUB_TOKEN }}
