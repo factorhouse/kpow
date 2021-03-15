@@ -1,0 +1,26 @@
+name: Tag and update releases.edn
+on:
+  workflow_dispatch:
+    inputs:
+      num:
+        description: 'Release number'
+        required: true
+jobs:
+  CleanUpDockerPackages:
+    runs-on: ubuntu-latest
+    name: Clean up GitHub Docker Packages
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install babashka
+        run: bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
+      - name: Update releases.edn
+        run: echo ${{github.event.inputs.num}} | ./scripts/release.clj
+      - name: Commit
+        run: git commit -am "Release ${{github.event.inputs.num}}"
+      - name: Tag
+        run: git tag -a ${{github.events.input.num}} -m "Release ${{github.events.inputs.num}}"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
