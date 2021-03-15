@@ -1,4 +1,4 @@
-name: Release
+name: Build and push to GitHub packages
 
 on:
   workflow_dispatch:
