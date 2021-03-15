@@ -39,14 +39,6 @@ jobs:
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
 
-      - name: Build kPow Red Hat Marketplace 
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
-          IMAGE_TAG=$VERSION-rh-mkt
-          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-mkt/Dockerfile
-          docker push $IMAGE_ID:$IMAGE_TAG
-
       - name: Build kPow AWS Marketplace Corp
         run: |
           VERSION=${{github.event.inputs.version}}
@@ -80,4 +72,3 @@ jobs:
           docker push $IMAGE_ID:$IMAGE_TAG
           docker tag $IMAGE_ID:$IMAGE_TAG $IMAGE_ID:latest
           docker push $IMAGE_ID:latest
-
