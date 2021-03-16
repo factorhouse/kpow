@@ -39,7 +39,7 @@ kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.
 
 To evaluate kPow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository.
 
-Instructions on how to start a [14-day free trial](https://kpow.io/#trial) of kPow can be found in the repositories README.
+Instructions on how to start a [30-day free trial](https://kpow.io/#trial) of kPow can be found in the repositories README.
 
 # License
 
