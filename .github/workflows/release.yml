@@ -21,7 +21,7 @@ jobs:
           git config --global user.name "kPow CI"
           git commit -am "Release ${{github.event.inputs.num}}"
       - name: Tag
-        run: git tag -a ${{github.events.input.num}} -m "Release ${{github.events.inputs.num}}"
+        run: git tag -a ${{github.event.inputs.num}} -m "Release ${{github.event.inputs.num}}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
