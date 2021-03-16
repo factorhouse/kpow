@@ -15,6 +15,8 @@ jobs:
         run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
       - name: Update releases.edn
         run: echo ${{github.event.inputs.num}} | ./scripts/release.clj
+      - name: Update dockerhub/README.md
+        run: echo ${{github.event.inputs.num}} | ./scripts/dockerhub_readme.clj
       - name: Update README.md
         run: | 
           NEXT_RELEASE=${{github.event.inputs.num}}
