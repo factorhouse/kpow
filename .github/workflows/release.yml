@@ -16,7 +16,10 @@ jobs:
       - name: Update releases.edn
         run: echo ${{github.event.inputs.num}} | ./scripts/release.clj
       - name: Commit
-        run: git commit -am "Release ${{github.event.inputs.num}}"
+        run: | 
+          git config --global user.email "support@operatr.io"
+          git config --global user.name "kPow CI"
+          git commit -am "Release ${{github.event.inputs.num}}"
       - name: Tag
         run: git tag -a ${{github.events.input.num}} -m "Release ${{github.events.inputs.num}}"
       - name: Push changes
