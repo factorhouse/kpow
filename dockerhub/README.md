@@ -9,8 +9,8 @@ Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [A
 
 <!--- StartReleaseLinks --->
 
-* [67](https://hub.docker.com/layers/140734411/operatr/kpow/67/images/sha256-619972c7e808fbf3237495a1144c366dfa19d4949c3c8087226191c199ff3c53?context=explore), [latest](https://hub.docker.com/layers/126256217/operatr/kpow/latest/images/sha256-619972c7e808fbf3237495a1144c366dfa19d4949c3c8087226191c199ff3c53?context=explore)
-* [67-rh-ubi](https://hub.docker.com/layers/140735081/operatr/kpow/67-rh-ubi/images/sha256-0e40a27a314f3552960b37d58c34fa49df313307a831b7dc5443789d9791b78e?context=explore)
+* [67, latest](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/kpow/Dockerfile)
+* [67-rh-ubi](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/rh-ubi/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
