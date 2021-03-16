@@ -15,7 +15,7 @@ Release notes are available [here](https://kpow.io/releases/)
 To use the kPow images from DockerHub run:
 
 ```
-docker pull operatr/kpow:66
+docker pull operatr/kpow:67
 ```
 
 To evaluate kPow locally with [Docker Compose](https://docs.docker.com/compose/) and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) repository.
