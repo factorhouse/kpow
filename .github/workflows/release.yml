@@ -6,13 +6,13 @@ on:
         description: 'Release number'
         required: true
 jobs:
-  CleanUpDockerPackages:
+  TagAndUpdateReleasesEdn:
     runs-on: ubuntu-latest
-    name: Clean up GitHub Docker Packages
+    name: Tag and update releases.edn
     steps:
       - uses: actions/checkout@v2
       - name: Install babashka
-        run: bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
+        run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
       - name: Update releases.edn
         run: echo ${{github.event.inputs.num}} | ./scripts/release.clj
       - name: Commit
