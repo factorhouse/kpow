@@ -67,7 +67,7 @@ kPow comes from a practical application of Kafka to real-world requirements and 
 
 ### And Much More..
 
-**Live Mode** for real-time monitoring, **Multi-Dimensional Consumer Lag** insights from kPow's custom derived telemetry, **No Requirement for JMX** access, discover all of our features in this guide.
+**Live Mode** for real-time monitoring, **Multi-Dimensional Consumer Lag** insights from kPow's custom derived telemetry, **No Requirement for JMX** access, discover all of our features in this [guide](https://docs.kpow.io).
 
 
 # Compatibility
