@@ -18,4 +18,16 @@ To use the kPow images from DockerHub run:
 docker pull operatr/kpow:66
 ```
 
-To evaluate kPow locally with [Docker Compose](https://docs.docker.com/compose/) and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) repository.
+# Quick start + local evaluation
+
+To evaluate kPow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository.
+
+Instructions on how to start a [30-day free trial](https://kpow.io/#trial) of kPow can be found in the [kpow-local](https://github.com/operatr-io/kpow-local) README.
+
+Visit https://docs.kpow.io/ for more documentation on getting started with kPow
+
+# License
+
+kPow is proprietary software. kPow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow-docker/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+
+The Dockerfile's and [kpow-docker](https://github.com/operatr-io/kpow-docker) repository are licensed under the Eclipse Public License 1.0 (EPL-1.0)
