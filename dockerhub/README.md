@@ -1,3 +1,7 @@
+[![Build](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml)
+![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
+![Docker Stars](https://img.shields.io/docker/stars/operatr/kpow)
+
 Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
 
 # Quick reference
@@ -78,9 +82,9 @@ kPow comes from a practical application of Kafka to real-world requirements and 
 
 kPow is compatible with **Apache Kafka 1.0+.**
 
-kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.org/), [Red Had AMQ Streams](https://www.redhat.com/en/resources/amq-streams-datasheet), [Aiven Managed Kafka](https://aiven.io/kafka), [Instaclustr Managed Kafka](https://www.instaclustr.com/products/managed-apache-kafka/), [Confluent Platform](https://www.confluent.io/product/confluent-platform), [Confluent Cloud](https://www.confluent.io/confluent-cloud)**\*** and [Azure Event Hubs](https://azure.microsoft.com/en-us/services/event-hubs/)**\***.
+kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.org/), [Red Had AMQ Streams](https://www.redhat.com/en/resources/amq-streams-datasheet), [Aiven Managed Kafka](https://aiven.io/kafka), [Instaclustr Managed Kafka](https://www.instaclustr.com/products/managed-apache-kafka/), [Confluent Platform](https://www.confluent.io/product/confluent-platform), [Confluent Cloud](https://www.confluent.io/confluent-cloud)**\***, [Azure Event Hubs](https://azure.microsoft.com/en-us/services/event-hubs/)**\*** and [Vectorized Redpanda](https://vectorized.io/redpanda/)**\***.
 
-\*Some disk related metrics and telemetry are not available when using kPow with Confluent Cloud and Azure Event Hubs.
+\*Some disk related metrics and telemetry are not available when using kPow with Confluent Cloud, Azure Event Hubs and Redpanda.
 
 # Quick start + local evaluation
 
