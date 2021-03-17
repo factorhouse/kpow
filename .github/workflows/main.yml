@@ -7,6 +7,7 @@ jobs:
   dockerhub-readme:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Update DockerHub README
         uses: peter-evans/dockerhub-description@v2
         with:
