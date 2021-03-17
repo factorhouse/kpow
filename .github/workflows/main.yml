@@ -1,0 +1,17 @@
+name: main
+on:
+  push:
+    branches:
+      - main
+jobs:
+  dockerhub-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update DockerHub README
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASS }}
+          repository: operatr/kpow
+          readme-filepath: ./dockerhub/README.md
+          short-description: "The Ultimate Engineering Toolkit for Apache Kafka®"
