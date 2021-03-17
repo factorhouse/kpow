@@ -1,6 +1,4 @@
 [![Build](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml)
-![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
-![Docker Stars](https://img.shields.io/docker/stars/operatr/kpow)
 
 Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
 
