@@ -10,6 +10,8 @@ The image is available directly from [Docker Hub](https://hub.docker.com/r/opera
 
 Release notes are available [here](https://kpow.io/releases/)
 
+Documentation is available [here](https://docs.kpow.io)
+
 # Usage
 
 To use the kPow images from DockerHub run:
