@@ -1,4 +1,4 @@
-[![Build](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml)
+[![Release to DockerHub](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml)
 
 Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
 
