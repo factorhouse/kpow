@@ -21,7 +21,7 @@ jobs:
         run: | 
           NEXT_RELEASE=${{github.event.inputs.num}}
           PREV_RELEASE=$((NEXT_RELEASE-1))
-          sed -i '' "s/kpow\:$PREV_RELEASE/kpow\:$NEXT_RELEASE/g" README.md
+          sed -i "s/kpow\:$PREV_RELEASE/kpow\:$NEXT_RELEASE/g" README.md
       - name: Commit
         run: |
           git config --global user.email "support@operatr.io"
