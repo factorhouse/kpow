@@ -27,7 +27,7 @@ To evaluate kPow locally with Docker Compose and a 3-node Kafka cluster, visit t
 
 Instructions on how to start a [30-day free trial](https://kpow.io/#trial) of kPow can be found in the [kpow-local](https://github.com/operatr-io/kpow-local) README.
 
-Visit https://docs.kpow.io/ for more documentation on getting started with kPow
+Visit [https://docs.kpow.io/](https://docs.kpow.io) for more documentation on getting started with kPow
 
 # License
 
