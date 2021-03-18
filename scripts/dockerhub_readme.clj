@@ -29,7 +29,6 @@
               :in-release-links? true
               :next-lines (into (:next-lines ctx) tags))
 
-
        :else
        (assoc ctx :next-lines (conj (:next-lines ctx) curr-line))))
    {:in-release-links? false :next-lines []}
