@@ -8,4 +8,4 @@ IMAGE_TAG=$3
 DOCKERFILE=$4
 RELEASE=`date +%s`
 
-docker build --pull --build-arg RELEASE=$RELEASE --build-arg VERSION=$VERSION -f $DOCKERFILE -t $IMAGE_ID:$IMAGE_TAG .
+DOCKER_BUILDKIT=1 docker build --pull --build-arg RELEASE=$RELEASE --build-arg VERSION=$VERSION -f $DOCKERFILE -t $IMAGE_ID:$IMAGE_TAG .
