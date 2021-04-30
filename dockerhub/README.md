@@ -11,9 +11,9 @@ Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [A
 
 <!--- StartReleaseLinks --->
 
-* [74, latest](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/kpow/Dockerfile)
-* [74-alpine](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/alpine/Dockerfile)
-* [74-rh-ubi](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/rh-ubi/Dockerfile)
+* [75, latest](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/kpow/Dockerfile)
+* [75-alpine](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/alpine/Dockerfile)
+* [75-rh-ubi](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/rh-ubi/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
