@@ -6,9 +6,9 @@
 
 [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
 
-The image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml)
+The kPow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml)
 
-Release notes are available [here](https://kpow.io/releases/)
+Release notes are available [here](https://kpow.io/releases/) and include links to JAR artefacts for each release.
 
 
 # Usage
@@ -21,11 +21,11 @@ docker pull operatr/kpow:76
 
 kPow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io)
 
-# Quick start + local evaluation
+# Quick Start + Local Evaluation
 
 To evaluate kPow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository.
 
-Instructions on how to start a [30-day free trial](https://kpow.io/#trial) of kPow can be found in the [kpow-local](https://github.com/operatr-io/kpow-local) README.
+Instructions on how to start a [30-day free trial](https://kpow.io/try) of kPow can be found in the [kpow-local](https://github.com/operatr-io/kpow-local) README.
 
 Visit [https://docs.kpow.io/](https://docs.kpow.io) for more documentation on getting started with kPow
 
