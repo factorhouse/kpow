@@ -31,6 +31,8 @@ Visit [https://docs.kpow.io/](https://docs.kpow.io) for more documentation on ge
 
 # License
 
-kPow is proprietary software. kPow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow-docker/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+kPow is proprietary software. 
 
-The [kpow](https://github.com/operatr-io/kpow-docker) repository are licensed under the Eclipse Public License 1.0 (EPL-1.0)
+kPow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow-docker/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+
+This repository is licensed under the Eclipse Public License 1.0 (EPL-1.0)
