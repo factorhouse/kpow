@@ -2,9 +2,9 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/operatr/operatr)
 ![Docker Stars](https://img.shields.io/docker/stars/operatr/kpow)
 
-# kpow-docker
+# kpow
 
-Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
+[kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
 
 The image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml)
 
