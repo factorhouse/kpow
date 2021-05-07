@@ -22,16 +22,16 @@ jobs:
         run: |
           NEXT_RELEASE=${{github.event.inputs.num}}
 
-          docker pull docker.pkg.github.com/operatr-io/kpow-docker/kpow:$NEXT_RELEASE
-          docker pull docker.pkg.github.com/operatr-io/kpow-docker/kpow:$NEXT_RELEASE-alpine
-          docker pull docker.pkg.github.com/operatr-io/kpow-docker/kpow:$NEXT_RELEASE-rh-ubi
+          docker pull docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE
+          docker pull docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE-alpine
+          docker pull docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE-rh-ubi
 
-          docker tag docker.pkg.github.com/operatr-io/kpow-docker/kpow:$NEXT_RELEASE operatr/kpow:$NEXT_RELEASE
-          docker tag docker.pkg.github.com/operatr-io/kpow-docker/kpow:$NEXT_RELEASE operatr/kpow:latest
-          docker tag docker.pkg.github.com/operatr-io/kpow-docker/kpow:$NEXT_RELEASE operatr/operatr:$NEXT_RELEASE
-          docker tag docker.pkg.github.com/operatr-io/kpow-docker/kpow:$NEXT_RELEASE operatr/operatr:latest
-          docker tag docker.pkg.github.com/operatr-io/kpow-docker/kpow:$NEXT_RELEASE-alpine operatr/kpow:$NEXT_RELEASE-alpine
-          docker tag docker.pkg.github.com/operatr-io/kpow-docker/kpow:$NEXT_RELEASE-rh-ubi operatr/kpow:$NEXT_RELEASE-rh-ubi
+          docker tag docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE operatr/kpow:$NEXT_RELEASE
+          docker tag docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE operatr/kpow:latest
+          docker tag docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE operatr/operatr:$NEXT_RELEASE
+          docker tag docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE operatr/operatr:latest
+          docker tag docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE-alpine operatr/kpow:$NEXT_RELEASE-alpine
+          docker tag docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE-rh-ubi operatr/kpow:$NEXT_RELEASE-rh-ubi
 
           docker push operatr/operatr:$NEXT_RELEASE
           docker push operatr/operatr:latest
