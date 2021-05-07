@@ -1,28 +1,28 @@
-[![Release to DockerHub](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml)
+[![Release to DockerHub](https://github.com/operatr-io/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow/actions/workflows/release.yml)
 
 Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
 
 # Quick reference
 
-* **Maintained by**: [the Operatr.io team](https://github.com/operatr-io/kpow-docker)
-* **Where to get help**: [GitHub](https://github.com/operatr-io/kpow-docker), [kPow documentation](http://docs.kpow.io/)
+* **Maintained by**: [the Operatr.io team](https://github.com/operatr-io/kpow)
+* **Where to get help**: [GitHub](https://github.com/operatr-io/kpow), [kPow documentation](http://docs.kpow.io/)
 
 # Supported tags respective `Dockerfile` links
 
 <!--- StartReleaseLinks --->
 
-* [76, latest](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/kpow/Dockerfile)
-* [76-alpine](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/alpine/Dockerfile)
-* [76-rh-ubi](https://github.com/operatr-io/kpow-docker/blob/main/dockerfile/rh-ubi/Dockerfile)
+* [76, latest](https://github.com/operatr-io/kpow/blob/main/dockerfile/kpow/Dockerfile)
+* [76-alpine](https://github.com/operatr-io/kpow/blob/main/dockerfile/alpine/Dockerfile)
+* [76-rh-ubi](https://github.com/operatr-io/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
 # Quick reference (cont.)
 
-* **Where to file issues:** https://github.com/operatr-io/kpow-docker/issues
-* **Published image artifact details:** [GitHub actions CI](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml)
-* **Image updates**: https://github.com/operatr-io/kpow-docker/tags
-* **Source of this description**: [dockerhub/README.md](https://github.com/operatr-io/kpow-docker/blob/main/dockerhub/README.md)
+* **Where to file issues:** https://github.com/operatr-io/kpow/issues
+* **Published image artifact details:** [GitHub actions CI](https://github.com/operatr-io/kpow/actions/workflows/build.yml)
+* **Image updates**: https://github.com/operatr-io/kpow/tags
+* **Source of this description**: [dockerhub/README.md](https://github.com/operatr-io/kpow/blob/main/dockerhub/README.md)
 
 # What is kPow?
 
@@ -95,6 +95,6 @@ Visit https://docs.kpow.io/ for more documentation on getting started with kPow
 
 # License
 
-kPow is proprietary software. kPow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow-docker/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+kPow is proprietary software. kPow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
 
-The Dockerfile's and [kpow-docker](https://github.com/operatr-io/kpow-docker) repository are licensed under the Eclipse Public License 1.0 (EPL-1.0)
+The Dockerfile's and [kpow](https://github.com/operatr-io/kpow) repository are licensed under the Eclipse Public License 1.0 (EPL-1.0)

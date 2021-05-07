@@ -1,4 +1,4 @@
-[![Release to DockerHub](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml)
+[![Release to DockerHub](https://github.com/operatr-io/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow/actions/workflows/release.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/operatr/operatr)
 ![Docker Stars](https://img.shields.io/docker/stars/operatr/kpow)
 
@@ -6,7 +6,7 @@
 
 [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
 
-The kPow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow-docker/actions/workflows/build.yml)
+The kPow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow/actions/workflows/build.yml)
 
 Release notes are available [here](https://kpow.io/releases/) and include links to JAR artefacts for each release.
 
@@ -33,6 +33,6 @@ Visit [https://docs.kpow.io/](https://docs.kpow.io) for more documentation on ge
 
 kPow is proprietary software. 
 
-kPow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow-docker/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+kPow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
 
 This repository is licensed under the Eclipse Public License 1.0 (EPL-1.0)
