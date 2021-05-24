@@ -211,14 +211,30 @@ Resources:
             ### kPow settings
             - Name: PORT
               Value: !Ref Port
+            - Name: ALLOW_TOPIC_CREATE
+              Value: !Ref AllowTopicCreate
             - Name: ALLOW_TOPIC_INSPECT
               Value: !Ref AllowTopicInspect
             - Name: ALLOW_TOPIC_PRODUCE
               Value: !Ref AllowTopicProduce
-            - Name: ALLOW_ACL_EDIT
-              Value: !Ref AllowAclEdit
+            - Name: ALLOW_TOPIC_EDIT
+              Value: !Ref AllowTopicEdit
+            - Name: ALLOW_TOPIC_DELETE
+              Value: !Ref AllowTopicDelete
+            - Name: ALLOW_BROKER_EIT
+              Value: !Ref AllowBrokerEdit
+            - Name: ALLOW_GROUP_EDIT
+              Value: !Ref AllowGroupEdit
+            - Name: ALLOW_SCHEMA_CREATE
+              Value: !Ref AllowSchemaCreate
             - Name: ALLOW_SCHEMA_EDIT
               Value: !Ref AllowSchemaEdit
+            - Name: ALLOW_CONNECT_CREATE
+              Value: !Ref AllowConnectCreate
+            - Name: ALLOW_CONNECT_EDIT
+              Value: !Ref AllowConnectEdit
+            - Name: ALLOW_ACL_EDIT
+              Value: !Ref AllowAclEdit
             - Name: SHOW_SPLASH
               Value: !Ref ShowSplash
             ### Kafka Connection settings
@@ -346,21 +362,25 @@ Metadata:
           - PublicIp
           - UiRange
       - Label:
-          default: "kPow Configuration"
+          default: "kPow UI Configuration"
         Parameters:
           - Port
-          - AllowTopicInspect
-          - AllowTopicProduce
-          - AllowAclEdit
-          - AllowSchemaEdit
           - ShowSplash
       - Label:
           default: "Global Access Controls"
         Parameters:
+          - AllowTopicCreate
           - AllowTopicInspect
           - AllowTopicProduce
-          - AllowAclEdit
+          - AllowTopicEdit
+          - AllowTopicDelete
+          - AllowBrokerEdit
+          - AllowGroupEdit
+          - AllowSchemaCreate
           - AllowSchemaEdit
+          - AllowConnectCreate
+          - AllowConnectEdit
+          - AllowAclEdit
       - Label:
           default: "Kafka Connection Configuration (see: https://kafka.apache.org/documentation/#adminclientconfigs)"
         Parameters:
