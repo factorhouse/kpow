@@ -1,4 +1,4 @@
-### kPow for Apache Kafka with SASL Authentication and IAM Role required for AWS Marketplace Containers.
+### Deploy kPow for Apache Kafka and and IAM Role required for AWS Marketplace Containers.
 ###
 ### This example stack will deploy a kPow container into a ECS-Cluster+VPC/Subnet that you designate.
 ###
@@ -8,10 +8,12 @@
 ###
 ### kPow will attempt to connect to your Kafka Cluster on the port of the bootstrap URL, you may need to configure your Kafka Cluster security group to allow ingress on that port.
 ###
-### This CloudFormation is provided for demonstration purposes only.
+### This CloudFormation is provided for demonstration purposes only and uses only simple configuration options.
+###
+### For a full list of configuration options and installation details see https://docs.kpow.io
 
 AWSTemplateFormatVersion: 2010-09-09
-Description: "Deploy kPow to ECS Cluster (with SASL Auth)."
+Description: "Deploy kPow for Apache Kafka to ECS (AWS Marketplace Version)"
 Parameters:
   ContainerUrl:
     Description: "The AWS Marketplace container image URL (Marketplace Subscription > Launch > View Container Image Details)"
