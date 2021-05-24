@@ -2,3 +2,5 @@
 workspace.code-workspace
 target/
 manifest
+*.iml
+.idea
