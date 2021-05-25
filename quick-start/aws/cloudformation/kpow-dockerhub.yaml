@@ -308,6 +308,16 @@ Resources:
             - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_AUTH, Value: !Ref SchemaRegistryAuth }, !Ref "AWS::NoValue" ]
             - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_USER, Value: !Ref SchemaRegistryUser }, !Ref "AWS::NoValue" ]
             - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_PASSWORD, Value: !Ref SchemaRegistryPassword }, !Ref "AWS::NoValue" ]
+            - Name: LICENSE_ID
+              Value: !Ref LicenseId
+            - Name: LICENSE_CODE
+              Value: !Ref LicenseCode
+            - Name: LICENSEE
+              Value: !Ref Licensee
+            - Name: LICENSE_EXPIRY
+              Value: !Ref LicenseExpiry
+            - Name: LICENSE_SIGNATURE
+              Value: !Ref LicenseSignature
           Essential: true
           Image: !Ref ContainerUrl
           LogConfiguration:
