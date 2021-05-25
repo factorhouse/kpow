@@ -14,7 +14,7 @@ kPow is a great fit for ECS or EKS because it a **single docker container** with
 
 kPow has a suggested allocation of **2GB heap** making it ideal for provisioning as a FARGATE task.
 
-kPow connects to your Kafka cluster with exactly the same configuration as a Kafka Producer or Consumer. If you can connect to you cluster, you know how to configure the basics of kPow.
+kPow connects to your Kafka cluster with exactly the same configuration as a Kafka Producer or Consumer.
 
 This quick start provides CloudFormation scripts to run a kPow in ECS, for EKS installation support see our Kubernetes / Helm Quick Start.
 

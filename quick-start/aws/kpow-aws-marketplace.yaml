@@ -1,4 +1,5 @@
-### Deploy kPow for Apache Kafka and and IAM Role required for AWS Marketplace Containers.
+### CloudFormation to deploy kPow for Apache Kafka from the AWS Marketplace.
+###
 ### Marketplace Subscriptions -> https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0&ref=dtl_B084BTWJHD
 ###
 ### This example stack will deploy a kPow container into a ECS-Cluster+VPC/Subnet that you designate.

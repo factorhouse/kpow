@@ -1,4 +1,5 @@
-### Deploy kPow for Apache Kafka with our Dockerhub container
+### CloudFormation to deploy kPow for Apache Kafka from Dockerhub.
+###
 ### Dockerhub Profile -> https://hub.docker.com/r/operatr/kpow
 ###
 ### This example stack will deploy a kPow container into a ECS-Cluster+VPC/Subnet that you designate.
