@@ -2,3 +2,6 @@
 workspace.code-workspace
 target/
 manifest
+*.iml
+.idea
+.DS_Store

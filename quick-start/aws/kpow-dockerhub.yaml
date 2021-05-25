@@ -1,0 +1,481 @@
+### Deploy kPow for Apache Kafka with our Dockerhub container
+### Dockerhub Profile -> https://hub.docker.com/r/operatr/kpow
+###
+### This example stack will deploy a kPow container into a ECS-Cluster+VPC/Subnet that you designate.
+###
+### A new IAM role is created for the task that allows ECS / Logs actions.
+###
+### A new security group is created for the task with permissive outbound (kafka and ECR) and UI port inbound.
+###
+### kPow will attempt to connect to your Kafka Cluster on the port of the bootstrap URL, you may need to configure your Kafka Cluster security group to allow ingress on that port.
+###
+### This CloudFormation is provided for demonstration purposes only and uses only simple configuration options.
+###
+### For a full list of configuration options and installation details see https://docs.kpow.io
+
+AWSTemplateFormatVersion: 2010-09-09
+Description: "Deploy kPow for Apache Kafka to ECS (Dockerhub Container Version)"
+Parameters:
+  ContainerUrl:
+    Description: "The container image URL"
+    Type: String
+    Default: "operatr/kpow:latest"
+  ClusterName:
+    Description: "The target ECS cluster name"
+    Type: String
+  LaunchType:
+    Description: "EC2 or FARGATE"
+    Type: String
+    Default: FARGATE
+    AllowedValues:
+      - FARGATE
+      - EC2
+  VpcId:
+    Description: "The target VPC ID"
+    Type: AWS::EC2::VPC::Id
+  KpowSubnet:
+    Description: "The target Subnet ID"
+    Type: AWS::EC2::Subnet::Id
+  PublicIp:
+    Description: "Auto assign elastic network interface a public IP address (required for private subnet with no NAT)"
+    Type: String
+    Default: ENABLED
+    AllowedValues:
+      - ENABLED
+      - DISABLED
+  UiRange:
+    Description: "Choose the CIDR range given access to the kPow UI, or use permissive 0.0.0.0/0 at your own risk."
+    Type: String
+    Default: "X.X.X.X/X"
+
+  EnvironmentName:
+    Description: "Environment Name"
+    Type: String
+  Port:
+    Description: "kPow UI Port"
+    Type: Number
+    Default: 3000
+  ShowSplash:
+    Description: "Show new browser sessions the kPow UI Splash overlay"
+    Type: String
+    Default: TRUE
+    AllowedValues:
+      - TRUE
+      - FALSE
+
+  AllowTopicCreate:
+    Description: "Enable Topic Create"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowTopicInspect:
+    Description: "Enable Topic Inspect"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowTopicProduce:
+    Description: "Enable Topic Produce"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowTopicEdit:
+    Description: "Enable Topic Edit"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowTopicDelete:
+    Description: "Enable Topic Delete"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowGroupEdit:
+    Description: "Enable Group Edit"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowBrokerEdit:
+    Description: "Enable Broker Edit"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowSchemaCreate:
+    Description: "Enable Schema Create"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowSchemaEdit:
+    Description: "Enable Schema Edit"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowConnectCreate:
+    Description: "Enable Connect Create"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowConnectEdit:
+    Description: "Enable Connect Edit"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+  AllowAclEdit:
+    Description: "Enable ACL Edit UI"
+    Type: String
+    Default: FALSE
+    AllowedValues:
+      - FALSE
+      - TRUE
+
+  Bootstrap:
+    Description: 'A list of host/port pairs to use for establishing the initial connection to the Kafka cluster, e.g. "kafka-1:9092,kafka-2:9092,kafka-3:9092"'
+    Type: String
+  SecurityProtocol:
+    Type: String
+    Description: "The security protocol Kafka connections. For MSK w/ encrypted connections (default) use SSL."
+    Default: PLAINTEXT
+    AllowedValues:
+      - PLAINTEXT
+      - SSL
+      - SASL_SSL
+      - SASL_PLAINTEXT
+  SaslMechanism:
+    Type: String
+    Description: "SASL mechanism used for client connections."
+    Default: GSSAPI
+    AllowedValues:
+      - GSSAPI
+      - PLAIN
+      - SCRAM-SHA-256
+      - SCRAM-SHA-512
+  SaslJaasConfig:
+    Type: String
+    Description: "Java Authentication and Authorization Service configuration. e.g. org.apache.kafka.common.security.plain.PlainLoginModule required username=\"key\" password=\"secret\";"
+    NoEcho: "true"
+
+  SchemaRegistryUrl:
+    Type: String
+    Description: "The URL to your Schema Registry"
+  SchemaRegistryAuth:
+    Type: String
+    Description: "URL, USER_INFO, or SASL_INHERIT"
+    Default: "USER_INFO"
+    AllowedValues:
+      - URL
+      - USER_INFO
+      - SASL_INHERIT
+  SchemaRegistryUser:
+    Type: String
+    Description: "The username when using URL / USER_INFO"
+    NoEcho: "true"
+  SchemaRegistryPassword:
+    Type: String
+    Description: "The password when using URL / USER_INFO"
+    NoEcho: "true"
+
+  ConnectRestUrl:
+    Type: String
+    Description: "The client connection URL for your connect cluster"
+  ConnectAuth:
+    Type: String
+    Description: "BASIC if basic authentication is configured"
+    Default: BASIC
+    AllowedValues:
+      - BASIC
+  ConnectUser:
+    Type: String
+    Description: "Username if basic authentication is configured"
+    NoEcho: "true"
+  ConnectPassword:
+    Type: String
+    Description: "Password if basic authentication is configured"
+    NoEcho: "true"
+  ConnectGroupId:
+    Type: String
+    Description: "(Optional) Unique string identifying worker cluster group"
+  ConnectOffsetStorageTopic:
+    Type: String
+    Description: "(Optional) Topic that holds connect offsets"
+
+  LicenseId:
+    Type: String
+    Description: "kPow License ID (e.g. 960f33fd-9d43-395f-34a2-e35bdb36a13e)"
+  LicenseCode:
+    Type: String
+    Description: "kPow License Code (e.g. TRIAL_30D)"
+  Licensee:
+    Type: String
+    Description: "kPow Licensee (e.g. Your Organisation)"
+  LicenseExpiry:
+    Type: String
+    Description: "kPow License Expiry (e.g. 2021-06-25)"
+  LicenseSignature:
+    Type: String
+    Description: "kPow License Signature (e.g. B2127567ED2CF0CE8F8949CA157216D5D...)"
+
+Conditions:
+  HasSchemaRegistryUrl: !Not [ !Equals [ !Ref SchemaRegistryUrl, "" ] ]
+  HasConnectRestUrl: !Not [ !Equals [ !Ref ConnectRestUrl, "" ] ]
+  HasConnectUser: !Not [ !Equals [ !Ref ConnectUser, "" ] ]
+  HasSaslJaasConfig: !Not [ !Equals [ !Ref SaslJaasConfig, "" ] ]
+
+Resources:
+  taskdefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      TaskRoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/kpow_io_role
+      ExecutionRoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/kpow_io_role
+      RequiresCompatibilities: [ "FARGATE" ]
+      NetworkMode: awsvpc
+      Cpu: "1024"
+      Memory: "2048"
+      ContainerDefinitions:
+        - Name: kpow-io
+          Cpu: 896
+          Memory: 1792
+          MemoryReservation: 1792
+          Environment:
+            ### kPow settings
+            - Name: ENVIRONMENT_NAME
+              Value: !Ref EnvironmentName
+            - Name: PORT
+              Value: !Ref Port
+            - Name: ALLOW_TOPIC_CREATE
+              Value: !Ref AllowTopicCreate
+            - Name: ALLOW_TOPIC_INSPECT
+              Value: !Ref AllowTopicInspect
+            - Name: ALLOW_TOPIC_PRODUCE
+              Value: !Ref AllowTopicProduce
+            - Name: ALLOW_TOPIC_EDIT
+              Value: !Ref AllowTopicEdit
+            - Name: ALLOW_TOPIC_DELETE
+              Value: !Ref AllowTopicDelete
+            - Name: ALLOW_BROKER_EDIT
+              Value: !Ref AllowBrokerEdit
+            - Name: ALLOW_GROUP_EDIT
+              Value: !Ref AllowGroupEdit
+            - Name: ALLOW_SCHEMA_CREATE
+              Value: !Ref AllowSchemaCreate
+            - Name: ALLOW_SCHEMA_EDIT
+              Value: !Ref AllowSchemaEdit
+            - Name: ALLOW_CONNECT_CREATE
+              Value: !Ref AllowConnectCreate
+            - Name: ALLOW_CONNECT_EDIT
+              Value: !Ref AllowConnectEdit
+            - Name: ALLOW_ACL_EDIT
+              Value: !Ref AllowAclEdit
+            - Name: SHOW_SPLASH
+              Value: !Ref ShowSplash
+            ### Kafka Connection settings
+            - Name: BOOTSTRAP
+              Value: !Ref Bootstrap
+            - Name: SECURITY_PROTOCOL
+              Value: !Ref SecurityProtocol
+            ### SASL Auth Settings
+            - Name: SASL_MECHANISM
+              Value: !Ref SaslMechanism
+            - !If [ HasSaslJaasConfig, { Name: SASL_JAAS_CONFIG, Value: !Ref SaslJaasConfig }, !Ref "AWS::NoValue" ]
+            ### Schema Registry
+            - !If [ HasConnectRestUrl, { Name: CONNECT_REST_URL, Value: !Ref ConnectRestUrl }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectUser, { Name: CONNECT_AUTH, Value: !Ref ConnectAuth }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectUser, { Name: CONNECT_USER, Value: !Ref ConnectUser }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectUser, { Name: CONNECT_PASSWORD, Value: !Ref ConnectPassword }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectRestUrl, { Name: CONNECT_GROUP_ID, Value: !Ref ConnectGroupId }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectRestUrl, { Name: CONNECT_OFFSET_STORAGE_TOPIC, Value: !Ref ConnectOffsetStorageTopic }, !Ref "AWS::NoValue" ]
+            ### Connect Cluster
+            - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_URL, Value: !Ref SchemaRegistryUrl }, !Ref "AWS::NoValue" ]
+            - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_AUTH, Value: !Ref SchemaRegistryAuth }, !Ref "AWS::NoValue" ]
+            - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_USER, Value: !Ref SchemaRegistryUser }, !Ref "AWS::NoValue" ]
+            - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_PASSWORD, Value: !Ref SchemaRegistryPassword }, !Ref "AWS::NoValue" ]
+            - Name: LICENSE_ID
+              Value: !Ref LicenseId
+            - Name: LICENSE_CODE
+              Value: !Ref LicenseCode
+            - Name: LICENSEE
+              Value: !Ref Licensee
+            - Name: LICENSE_EXPIRY
+              Value: !Ref LicenseExpiry
+            - Name: LICENSE_SIGNATURE
+              Value: !Ref LicenseSignature
+          Essential: true
+          Image: !Ref ContainerUrl
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-create-group: 'true'
+              awslogs-group: kpow-io
+              awslogs-region: !Ref 'AWS::Region'
+              awslogs-stream-prefix: task
+          PortMappings:
+            - ContainerPort: !Ref Port
+      Family: kpow-io
+
+  containerService:
+    Type: AWS::ECS::Service
+    Properties:
+      ServiceName: kpow-io
+      Cluster: !Ref ClusterName
+      DesiredCount: 1
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          SecurityGroups:
+            - !Ref containersg
+          Subnets:
+            - !Ref KpowSubnet
+          AssignPublicIp: !Ref PublicIp
+      LaunchType: !Ref LaunchType
+      TaskDefinition: !Ref 'taskdefinition'
+
+  containersg:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: kpow-container
+      VpcId: !Ref VpcId
+      GroupDescription: kPow Container Security Group
+      Tags:
+        - Key: Name
+          Value: kpow-container
+
+  containeringress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      Description: Permit access to kPow UI
+      IpProtocol: tcp
+      FromPort: !Ref Port
+      ToPort: !Ref Port
+      GroupId: !Ref containersg
+      CidrIp: !Ref UiRange
+
+  containeregress:
+    Type: AWS::EC2::SecurityGroupEgress
+    Properties:
+      Description: Permit access to Kakfa Clusters / ECR
+      IpProtocol: tcp
+      FromPort: 0
+      ToPort: 65535
+      CidrIp: 0.0.0.0/0
+      GroupId: !Ref containersg
+
+  RoleAppContainer:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: kpow_io_role
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ecs-tasks.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: /
+      Policies:
+        - PolicyName: ecs-service
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action:
+                  - ecs:CreateCluster
+                  - ecs:DeregisterContainerInstance
+                  - ecs:DiscoverPollEndpoint
+                  - ecs:Poll
+                  - ecs:RegisterContainerInstance
+                  - ecs:StartTelemetrySession
+                  - ecs:Submit*
+                  - ecr:GetAuthorizationToken
+                  - ecr:BatchCheckLayerAvailability
+                  - ecr:GetDownloadUrlForLayer
+                  - ecr:BatchGetImage
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:DescribeLogGroups
+                  - logs:DescribeLogStreams
+                  - logs:PutLogEvents
+                Resource: '*'
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: "Deployment Settings"
+        Parameters:
+          - ContainerUrl
+          - ClusterName
+          - LaunchType
+          - VpcId
+          - KpowSubnet
+          - PublicIp
+          - UiRange
+      - Label:
+          default: "kPow UI Configuration"
+        Parameters:
+          - EnvironmentName
+          - Port
+          - ShowSplash
+      - Label:
+          default: "Global Access Controls"
+        Parameters:
+          - AllowTopicCreate
+          - AllowTopicInspect
+          - AllowTopicProduce
+          - AllowTopicEdit
+          - AllowTopicDelete
+          - AllowBrokerEdit
+          - AllowGroupEdit
+          - AllowSchemaCreate
+          - AllowSchemaEdit
+          - AllowConnectCreate
+          - AllowConnectEdit
+          - AllowAclEdit
+      - Label:
+          default: "Kafka Cluster Configuration (see: https://docs.kpow.io/config/kafka-cluster)"
+        Parameters:
+          - Bootstrap
+          - SecurityProtocol
+          - SaslMechanism
+          - SaslJaasConfig
+      - Label:
+          default: "Schema Registry (see: https://docs.kpow.io/config/schema-registry)"
+        Parameters:
+          - SchemaRegistryUrl
+          - SchemaRegistryAuth
+          - SchemaRegistryUser
+          - SchemaRegistryPassword
+      - Label:
+          default: "Kafka Connect (see: https://docs.kpow.io/config/kafka-connect)"
+        Parameters:
+          - ConnectRestUrl
+          - ConnectAuth
+          - ConnectUser
+          - ConnectPassword
+          - ConnectGroupId
+          - ConnectOffsetStorageTopic
+      - Label:
+          default: "License Details (start a free 30-day trial -> https://kpow.io/try)"
+        Parameters:
+          - LicenseId
+          - LicenseCode
+          - Licensee
+          - LicenseExpiry
+          - LicenseSignature
