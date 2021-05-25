@@ -46,10 +46,20 @@ Parameters:
     Type: String
     Default: "X.X.X.X/X"
 
+  EnvironmentName:
+    Description: "Environment Name"
+    Type: String
   Port:
     Description: "kPow UI Port"
     Type: Number
     Default: 3000
+  ShowSplash:
+    Description: "Show new browser sessions the kPow UI Splash overlay"
+    Type: String
+    Default: TRUE
+    AllowedValues:
+      - TRUE
+      - FALSE
 
   AllowTopicCreate:
     Description: "Enable Topic Create"
@@ -135,14 +145,6 @@ Parameters:
     AllowedValues:
       - FALSE
       - TRUE
-
-  ShowSplash:
-    Description: "Show new browser sessions the kPow UI Splash overlay"
-    Type: String
-    Default: TRUE
-    AllowedValues:
-      - TRUE
-      - FALSE
 
   Bootstrap:
     Description: 'A list of host/port pairs to use for establishing the initial connection to the Kafka cluster, e.g. "kafka-1:9092,kafka-2:9092,kafka-3:9092"'
@@ -236,6 +238,8 @@ Resources:
           MemoryReservation: 1792
           Environment:
             ### kPow settings
+            - Name: ENVIRONMENT_NAME
+              Value: !Ref EnvironmentName
             - Name: PORT
               Value: !Ref Port
             - Name: ALLOW_TOPIC_CREATE
@@ -398,6 +402,7 @@ Metadata:
       - Label:
           default: "kPow UI Configuration"
         Parameters:
+          - EnvironmentName
           - Port
           - ShowSplash
       - Label:
