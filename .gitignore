@@ -4,3 +4,4 @@ target/
 manifest
 *.iml
 .idea
+.DS_Store

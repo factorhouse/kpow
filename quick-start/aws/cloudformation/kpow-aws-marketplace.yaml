@@ -214,9 +214,9 @@ Parameters:
     Description: "(Optional) Topic that holds connect offsets"
 
 Conditions:
-  HasSchemaRegistryUrl: !Not [ !Equals [ !Ref SchemaRegistryUrl, "" ]]
-  HasConnectRestUrl: !Not [ !Equals [ !Ref ConnectRestUrl, "" ]]
-  HasSaslJaasConfig: !Not [ !Equals [ !Ref SaslJaasConfig, "" ]]
+  HasSchemaRegistryUrl: !Not [ !Equals [ !Ref SchemaRegistryUrl, "" ] ]
+  HasConnectRestUrl: !Not [ !Equals [ !Ref ConnectRestUrl, "" ] ]
+  HasSaslJaasConfig: !Not [ !Equals [ !Ref SaslJaasConfig, "" ] ]
 
 Resources:
   taskdefinition:
@@ -271,19 +271,19 @@ Resources:
             ### SASL Auth Settings
             - Name: SASL_MECHANISM
               Value: !Ref SaslMechanism
-            - !If [HasSaslJaasConfig, { Name: SASL_JAAS_CONFIG, Value: !Ref SaslJaasConfig}, !Ref "AWS::NoValue" ]
+            - !If [ HasSaslJaasConfig, { Name: SASL_JAAS_CONFIG, Value: !Ref SaslJaasConfig }, !Ref "AWS::NoValue" ]
             ### Schema Registry
-            - !If [HasConnectRestUrl, { Name: CONNECT_REST_URL, Value: !Ref ConnectRestUrl}, !Ref "AWS::NoValue" ]
-            - !If [HasConnectRestUrl, { Name: CONNECT_AUTH, Value: !Ref ConnectAuth}, !Ref "AWS::NoValue" ]
-            - !If [HasConnectRestUrl, { Name: CONNECT_USER, Value: !Ref ConnectUser}, !Ref "AWS::NoValue" ]
-            - !If [HasConnectRestUrl, { Name: CONNECT_PASSWORD, Value: !Ref ConnectPassword}, !Ref "AWS::NoValue" ]
-            - !If [HasConnectRestUrl, { Name: CONNECT_GROUP_ID, Value: !Ref ConnectGroupId}, !Ref "AWS::NoValue" ]
-            - !If [HasConnectRestUrl, { Name: CONNECT_OFFSET_STORAGE_TOPIC, Value: !Ref ConnectOffsetStorageTopic}, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectRestUrl, { Name: CONNECT_REST_URL, Value: !Ref ConnectRestUrl }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectRestUrl, { Name: CONNECT_AUTH, Value: !Ref ConnectAuth }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectRestUrl, { Name: CONNECT_USER, Value: !Ref ConnectUser }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectRestUrl, { Name: CONNECT_PASSWORD, Value: !Ref ConnectPassword }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectRestUrl, { Name: CONNECT_GROUP_ID, Value: !Ref ConnectGroupId }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectRestUrl, { Name: CONNECT_OFFSET_STORAGE_TOPIC, Value: !Ref ConnectOffsetStorageTopic }, !Ref "AWS::NoValue" ]
             ### Connect Cluster
-            - !If [HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_URL, Value: !Ref SchemaRegistryUrl}, !Ref "AWS::NoValue" ]
-            - !If [HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_AUTH, Value: !Ref SchemaRegistryAuth}, !Ref "AWS::NoValue" ]
-            - !If [HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_USER, Value: !Ref SchemaRegistryUser}, !Ref "AWS::NoValue" ]
-            - !If [HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_PASSWORD, Value: !Ref SchemaRegistryPassword}, !Ref "AWS::NoValue" ]
+            - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_URL, Value: !Ref SchemaRegistryUrl }, !Ref "AWS::NoValue" ]
+            - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_AUTH, Value: !Ref SchemaRegistryAuth }, !Ref "AWS::NoValue" ]
+            - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_USER, Value: !Ref SchemaRegistryUser }, !Ref "AWS::NoValue" ]
+            - !If [ HasSchemaRegistryUrl, { Name: SCHEMA_REGISTRY_PASSWORD, Value: !Ref SchemaRegistryPassword }, !Ref "AWS::NoValue" ]
           Essential: true
           Image: !Ref ContainerUrl
           LogConfiguration:
@@ -415,12 +415,25 @@ Metadata:
           - AllowConnectEdit
           - AllowAclEdit
       - Label:
-          default: "Kafka Connection Configuration (see: https://kafka.apache.org/documentation/#adminclientconfigs)"
+          default: "Kafka Cluster Configuration (see: https://docs.kpow.io/config/kafka-cluster)"
         Parameters:
           - Bootstrap
           - SecurityProtocol
-      - Label:
-          default: "SASL Authentication (Optional; see: https://kafka.apache.org/documentation/#adminclientconfigs)"
-        Parameters:
           - SaslMechanism
           - SaslJaasConfig
+      - Label:
+          default: "Schema Registry (see: https://docs.kpow.io/config/schema-registry)"
+        Parameters:
+          - SchemaRegistryUrl
+          - SchemaRegistryAuth
+          - SchemaRegistryUser
+          - SchemaRegistryPassword
+      - Label:
+          default: "Kafka Connect (see: https://docs.kpow.io/config/kafka-connect)"
+        Parameters:
+          - ConnectRestUrl
+          - ConnectAuth
+          - ConnectUser
+          - ConnectPassword
+          - ConnectGroupId
+          - ConnectOffsetStorageTopic
