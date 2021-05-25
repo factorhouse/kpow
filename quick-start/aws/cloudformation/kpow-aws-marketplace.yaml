@@ -153,6 +153,7 @@ Parameters:
     Default: PLAINTEXT
     AllowedValues:
       - PLAINTEXT
+      - SSL
       - SASL_SSL
       - SASL_PLAINTEXT
   SaslMechanism:
@@ -161,10 +162,9 @@ Parameters:
     Default: GSSAPI
     AllowedValues:
       - GSSAPI
-      - AUTHBEARER
-      - SCRAM
       - PLAIN
-      - Delegation Tokens
+      - SCRAM-SHA-256
+      - SCRAM-SHA-512
   SaslJaasConfig:
     Type: String
     Description: "Java Authentication and Authorization Service configuration. e.g. org.apache.kafka.common.security.plain.PlainLoginModule required username=\"key\" password=\"secret\";"
