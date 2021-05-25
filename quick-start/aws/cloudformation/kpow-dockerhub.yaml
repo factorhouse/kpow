@@ -1,9 +1,9 @@
-### Deploy kPow for Apache Kafka and and IAM Role required for AWS Marketplace Containers.
-### Marketplace Subscriptions -> https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0&ref=dtl_B084BTWJHD
+### Deploy kPow for Apache Kafka with our Dockerhub container
+### Dockerhub Profile -> https://hub.docker.com/r/operatr/kpow
 ###
 ### This example stack will deploy a kPow container into a ECS-Cluster+VPC/Subnet that you designate.
 ###
-### A new IAM role is created for the task that allows ECS / Logs / AWS-Marketplace actions.
+### A new IAM role is created for the task that allows ECS / Logs actions.
 ###
 ### A new security group is created for the task with permissive outbound (kafka and ECR) and UI port inbound.
 ###
@@ -14,11 +14,12 @@
 ### For a full list of configuration options and installation details see https://docs.kpow.io
 
 AWSTemplateFormatVersion: 2010-09-09
-Description: "Deploy kPow for Apache Kafka to ECS (AWS Marketplace Version)"
+Description: "Deploy kPow for Apache Kafka to ECS (Dockerhub Container Version)"
 Parameters:
   ContainerUrl:
-    Description: "The AWS Marketplace container image URL (Marketplace Subscription > Launch > View Container Image Details)"
+    Description: "The container image URL"
     Type: String
+    Default: "operatr/kpow:latest"
   ClusterName:
     Description: "The target ECS cluster name"
     Type: String
@@ -217,6 +218,22 @@ Parameters:
     Type: String
     Description: "(Optional) Topic that holds connect offsets"
 
+  LicenseId:
+    Type: String
+    Description: "kPow License ID (e.g. 960f33fd-9d43-395f-34a2-e35bdb36a13e)"
+  LicenseCode:
+    Type: String
+    Description: "kPow License Code (e.g. TRIAL_30D)"
+  Licensee:
+    Type: String
+    Description: "kPow Licensee (e.g. Your Organisation)"
+  LicenseExpiry:
+    Type: String
+    Description: "kPow License Expiry (e.g. 2021-06-25)"
+  LicenseSignature:
+    Type: String
+    Description: "kPow License Signature (e.g. B2127567ED2CF0CE8F8949CA157216D5D...)"
+
 Conditions:
   HasSchemaRegistryUrl: !Not [ !Equals [ !Ref SchemaRegistryUrl, "" ] ]
   HasConnectRestUrl: !Not [ !Equals [ !Ref ConnectRestUrl, "" ] ]
@@ -385,7 +402,6 @@ Resources:
                   - logs:DescribeLogGroups
                   - logs:DescribeLogStreams
                   - logs:PutLogEvents
-                  - aws-marketplace:RegisterUsage
                 Resource: '*'
 
 Metadata:
@@ -445,3 +461,11 @@ Metadata:
           - ConnectPassword
           - ConnectGroupId
           - ConnectOffsetStorageTopic
+      - Label:
+          default: "License Details (start a free 30-day trial -> https://kpow.io/try)"
+        Parameters:
+          - LicenseId
+          - LicenseCode
+          - Licensee
+          - LicenseExpiry
+          - LicenseSignature
