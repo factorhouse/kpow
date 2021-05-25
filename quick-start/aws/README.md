@@ -29,6 +29,9 @@ The kPow container is available in two places for AWS Customers.
 
 This repository contains configuration for a kPow Cloudformation Stack.
 
+* **kpow-dockerhub.yaml** includes license parameters
+* **kpow-aws-marketplace.yaml** includes the AWSMarketplaceMetering/registerUsage IAM policy
+
 This configuration is provided as a quick-start demonstration of simple provisioning and configuration options, and is for example purposes only. You may extend it however you need to fit your own purposes.
 
 This configuration defines the following resources:
