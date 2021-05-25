@@ -196,6 +196,7 @@ Parameters:
   ConnectAuth:
     Type: String
     Description: "BASIC if basic authentication is configured"
+    Default: BASIC
     AllowedValues:
       - BASIC
   ConnectUser:
