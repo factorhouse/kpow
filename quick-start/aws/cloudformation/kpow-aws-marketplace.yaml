@@ -219,6 +219,7 @@ Parameters:
 Conditions:
   HasSchemaRegistryUrl: !Not [ !Equals [ !Ref SchemaRegistryUrl, "" ] ]
   HasConnectRestUrl: !Not [ !Equals [ !Ref ConnectRestUrl, "" ] ]
+  HasConnectUser: !Not [ !Equals [ !Ref ConnectUser, "" ] ]
   HasSaslJaasConfig: !Not [ !Equals [ !Ref SaslJaasConfig, "" ] ]
 
 Resources:
@@ -252,7 +253,7 @@ Resources:
               Value: !Ref AllowTopicEdit
             - Name: ALLOW_TOPIC_DELETE
               Value: !Ref AllowTopicDelete
-            - Name: ALLOW_BROKER_EIT
+            - Name: ALLOW_BROKER_EDIT
               Value: !Ref AllowBrokerEdit
             - Name: ALLOW_GROUP_EDIT
               Value: !Ref AllowGroupEdit
@@ -279,9 +280,9 @@ Resources:
             - !If [ HasSaslJaasConfig, { Name: SASL_JAAS_CONFIG, Value: !Ref SaslJaasConfig }, !Ref "AWS::NoValue" ]
             ### Schema Registry
             - !If [ HasConnectRestUrl, { Name: CONNECT_REST_URL, Value: !Ref ConnectRestUrl }, !Ref "AWS::NoValue" ]
-            - !If [ HasConnectRestUrl, { Name: CONNECT_AUTH, Value: !Ref ConnectAuth }, !Ref "AWS::NoValue" ]
-            - !If [ HasConnectRestUrl, { Name: CONNECT_USER, Value: !Ref ConnectUser }, !Ref "AWS::NoValue" ]
-            - !If [ HasConnectRestUrl, { Name: CONNECT_PASSWORD, Value: !Ref ConnectPassword }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectUser, { Name: CONNECT_AUTH, Value: !Ref ConnectAuth }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectUser, { Name: CONNECT_USER, Value: !Ref ConnectUser }, !Ref "AWS::NoValue" ]
+            - !If [ HasConnectUser, { Name: CONNECT_PASSWORD, Value: !Ref ConnectPassword }, !Ref "AWS::NoValue" ]
             - !If [ HasConnectRestUrl, { Name: CONNECT_GROUP_ID, Value: !Ref ConnectGroupId }, !Ref "AWS::NoValue" ]
             - !If [ HasConnectRestUrl, { Name: CONNECT_OFFSET_STORAGE_TOPIC, Value: !Ref ConnectOffsetStorageTopic }, !Ref "AWS::NoValue" ]
             ### Connect Cluster
