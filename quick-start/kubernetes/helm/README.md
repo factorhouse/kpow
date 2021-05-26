@@ -63,6 +63,8 @@ NOTES:
 
 Follow the instructions in the notes (above) to configure port forwarding. kPow is now available on [http://127.0.0.1:3000](http://127.0.0.1:3000).
 
+![](resources/kpow-ui.png | width=100)
+
 ### Check the kPow Pod
 
 ```bash
