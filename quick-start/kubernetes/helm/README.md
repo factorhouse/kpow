@@ -14,7 +14,7 @@ This Helm chart uses the latest [operatr/kpow](https://hub.docker.com/r/operatr/
 
 ## Get kPow Running
 
-### Configure Kubectl
+### Update Kubernetes Config
 
 ```bash
 aws eks --region <your-aws-region> update-kubeconfig --name <your-eks-cluster-name>
