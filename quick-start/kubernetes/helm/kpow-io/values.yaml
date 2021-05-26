@@ -1,0 +1,54 @@
+replicaCount: 1
+
+image:
+  repository: operatr/kpow
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: kpow-io
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  enabled: true
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts: []
+  tls: []
+
+# We recommend running kPow w/ Guaranteed QOS class and 1 CPU / 2G Memory.
+# Small resource sets (e.g. 1 cluster, 1 schema registry) can likely run with 0.5 CPU / 1G Memory or less.
+resources:
+  limits:
+    cpu: 1
+    memory: 1Gi
+  requests:
+    cpu: 1
+    memory: 1Gi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -1,0 +1,168 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kpow-io-config
+data:
+
+  ### See https://docs.kpow.io for full configuration and installation guides
+
+  ### Note: The simplest kPow configuration requires only LICENSE_* and BOOTSTRAP.
+
+  ### License Configuration
+
+  LICENSE_ID: "00000000-0000-0000-0000-000000000001"
+  LICENSE_CODE: "ENTERPRISE"
+  LICENSEE: "Operatr IO, Inc."
+  LICENSE_EXPIRY: "2022-01-01"
+  LICENSE_SIGNATURE: "059A0B0FF3FB5A359CACCBEBFD600F5AA0B148A8E094452C0C15202F396060CE81BBCC3D587238EAA82AFAC21B4BCC63E09C6E91AA22A9812C6FDA55FCEF897BBD87267A57C3448A6A0B659197A7439A484BA968655707110FBBA09FD875E155527C6B67F361F8E57493FEB7565811A3D976A5BD216BEA08D2DA3119BE761E56"
+
+  ## Or, configure path to your license file:
+
+  # LICENSE_LOCATION: "/opt/kpow/license.txt"
+
+  ### Resource Set Configuration
+
+  ### Operatr manages sets of Kafka resources. Clusters, Schema Registries and Kafka Connect Installations.
+  ### To configure multiple kafka resources prepend environment variables with _2, _3, etc.
+  ### Resources with the same set-id are considered related.
+  ###   E.g. cluster with BOOTSTRAP_2 can decode messages from with registry SCHEMA_REGISTRY_URL_2.
+
+  ## Optional Resource Set Name (this is displayed in the Operatr UI for each set of resources)
+
+  ENVIRONMENT_NAME: "Change Me"
+
+  ## Kafka Cluster Configuration
+  ## Required parameters for configuring a Kafka Cluster
+  ## You must configure at least one Kafka Booktstrap to use Operatr.
+
+#  BOOTSTRAP: "replace-with-your-bootstrap-url"
+
+  ## Optional Kafka Cluster Configuration
+
+  # SECURITY_PROTOCOL: SASL_SSL
+  # SASL_MECHANISM: PLAIN
+  # SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.Plain.."
+  # SASL_LOGIN_CALLBACK_HANDLER_CLASS: "com.corp.kafka.security.sasl.oauth.KafkaBrokerTokenCreator"
+  # SSL_KEYSTORE_LOCATION: "/ssl/kafka.keystore.jks"
+  # SSL_KEYSTORE_PASSWORD: "keystore-pass-123"
+  # SSL_KEY_PASSWORD: "key-pass-123"
+  # SSL_KEYSTORE_TYPE: JKS
+  # SSL_KEYMANAGER_ALGORITHM: SunX509
+  # SSL_TRUSTSTORE_LOCATION: "/ssl/kafka.truststore.jks"
+  # SSL_TRUSTSTORE_PASSWORD: "trust-pass-123"
+  # SSL_TRUSTSTORE_TYPE: JKS
+  # SSL_TRUSTMANAGER_ALGORITHM: PKIX
+  # SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: https
+  # SSL_PROVIDER: default
+  # SSL_CIPHER_SUITES: default
+  # SSL_PROTOCOL: TLS
+  # SSL_ENABLED_PROTOCOLS: "TLSv.12,TLSv1.1,TLSv1"
+  # SSL_SECURE_RANDOM_IMPLEMENTATION: SHA1PRNG
+
+  ## Schema Registry Configuration
+
+  # SCHEMA_REGISTRY_URL: https://registry-host
+  # SCHEMA_REGISTRY_AUTH: USER_INFO
+  # SCHEMA_REGISTRY_USER: registry-user
+  # SCHEMA_REGISTRY_PASSWORD: registry-pass
+  # SCHEMA_REGISTRY_NAME: registry-label (optional)
+
+  ## Kafka Connect Configuration
+
+  # CONNECT_REST_URL: http://localhost:8083
+  # CONNECT_AUTH: BASIC (optional)
+  # CONNECT_BASIC_AUTH_USER: connect-user (optional)
+  # CONNECT_BASIC_AUTH_PASS: connect-pass (optional)
+  # CONNECT_GROUP_ID: connect-group-id (optional)
+  # CONNECT_OFFSET_STORAGE_TOPIC: connect-topic (optional)
+
+  ### System Configuration
+
+  # HTTP_PORT: 3000 - the port to serve content
+  # REPLICATION_FACTOR: 3 - the replication factor of internal Operatr topics (reduce if you have fewer than 3 brokers)
+  # SNAPSHOT_PARALLELISM: 3 - the parallelism of Operatr snapshot execution (increase for very big resource-sets)
+  # SHOW_SPLASH: true - turn on/off the initial splash screen for new user sessions
+
+  ### Live Mode Configuration
+
+  # LIVE_MODE_ENABLED=true
+  # LIVE_MODE_PERIOD_MS=60000
+  # LIVE_MODE_INTERVAL_MS=5000
+  # LIVE_MODE_MAX_CONCURRENT_USERS=2
+
+  ## System HTTPS Configuration
+
+  # ENABLE_HTTPS: "true"
+  # HTTPS_KEYSTORE_LOCATION: "/ssl/https.keystore.jks"
+  # HTTPS_KEYSTORE_TYPE: "JKS"
+  # HTTPS_KEYSTORE_PASSWORD: "ssl-key-pass"
+  # HTTPS_TRUSTSTORE_LOCATION: "/ssl/https.truststore.jks"
+  # HTTPS_TRUSTSTORE_TYPE: "JKS"
+  # HTTPS_TRUSTSTORE_PASSWORD: "ssl-trust-pass"
+
+  ## Data Inspect Configuration
+  ## Provide custom serdes, set the default serdes, and restrict serdes available to users.
+
+  # CUSTOM_SERDES: "io.operatr.SerdeOne,io.operatr.SerdeTwo"
+  # DEFAULT_KEY_SERDES: "JSON"
+  # DEFAULT_VALUE_SERDES: "AVRO"
+  # AVAILABLE_KEY_SERDES: "JSON,String,Transit / JSON"
+  # AVAILABLE_VALUE_SERDES: "JSON,String,io.operatr.SerdeOne"
+
+  ## Prometheus Endpoints
+
+  # PROMETHEUS_EGRESS: "true"
+
+  ### User Authentication and Authorization
+
+  ## RBAC Configuration (requires SSO provider configured, e.g. Okta, Github, Azure AD, AWS SSO, SAML, etc.)
+
+  # RBAC_CONFIGURATION_FILE: /opt/kpow/rbac-config.yaml
+
+  ## Global Access Controls Configuration (default to false, apply to all users, overriden if you configure RBAC)
+
+  ALLOW_TOPIC_CREATE: "true"
+  ALLOW_TOPIC_DELETE: "true"
+  ALLOW_TOPIC_INSPECT: "true"
+  ALLOW_TOPIC_PRODUCE: "true"
+  ALLOW_TOPIC_EDIT: "true"
+  ALLOW_BROKER_EDIT: "true"
+  ALLOW_GROUP_EDIT: "true"
+  ALLOW_SCHEMA_CREATE: "true"
+  ALLOW_SCHEMA_EDIT: "true"
+  ALLOW_CONNECT_CREATE: "true"
+  ALLOW_CONNECT_EDIT: "true"
+
+  ## Data Policy (Masking / Redaction) Configuration
+
+  # DATA_POLICY_CONFIGURATION_FILE: /opt/kpow/data-config.yml
+
+  ## Slack Integration (Send Audit Log records to a Slack channel)
+
+  # SLACK_WEBHOOK_URL: https://hooks.slack.com/services/...
+
+  ## Okta SSO (OpenID)
+
+  # AUTH_PROVIDER_TYPE: "okta"
+  # OKTA_ORGANISATION: "your-organisation"
+  # OPENID_CLIENT_ID: "The 'Client ID' found in the "Client Credentials" section of your Okta integration"
+  # OPENID_CLIENT_SECRET: "The 'Client Secret' found in the "Client Credentials" section of your Okta integration"
+  # OPENID_LANDING_URI: "https://staging.kpow.z-corp.com"
+
+  ## Github SSO (OpenID)
+
+  # AUTH_PROVIDER_TYPE: "github"
+  # OPENID_TOKEN_URI: "https://github.com/login/oauth/access_token" or "[GHE Server URL]/login/oauth/access_token"
+  # OPENID_AUTH_URI: "https://github.com/login/oauth/authorize" or "[GHE Server URL]/login/oauth/authorize"
+  # OPENID_API_URI: "https://api.github.com/user" or, "[GHE Server URL]/api/v3/user"
+  # OPENID_CLIENT_ID: "The 'Client ID' found in your configured Github Oath App"
+  # OPENID_CLIENT_SECRET: "The 'Client Secret' found in your configured Github Oath App"
+  # OPENID_LANDING_URI: "https://staging.kpow.z-corp.com/"
+
+  ## SAML SSO
+
+  # AUTH_PROVIDER_TYPE: "saml"
+  # SAML_RELYING_PARTY_IDENTIFIER: "OPERATR.io"
+  # SAML_ACS_URL: "https://kpow.corp.com/saml"
+  # SAML_METADATA_FILE: "/opt/kpow/aws-metadata.xml"
+  # SAML_CERT: "/var/certs/saml-cert.cer"
