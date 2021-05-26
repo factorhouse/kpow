@@ -3,4 +3,4 @@ name: kpow-io
 description: A Helm chart for OPERATR.io on Kubernetes
 type: application
 version: 1.0.0 
-appVersion: 70
+appVersion: latest
