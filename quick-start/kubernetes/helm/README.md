@@ -2,9 +2,9 @@
 
 Helm configuration to  get you running with kPow for Apache Kafka in a Kubernetes in five minutes or less. 
 
-This Helm chart uses the latest [operatr/kpow](https://hub.docker.com/r/operatr/kpow) container.
-
 Once deployed access the kPow UI on port 3000 with kubectl port-forwarding or change the service/type in [kpow-io/values.yaml](kpow-io/values.yaml).
+
+This Helm chart uses the latest [operatr/kpow](https://hub.docker.com/r/operatr/kpow) container from Dockerhub.
 
 ## Instructions
 
