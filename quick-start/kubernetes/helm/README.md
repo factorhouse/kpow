@@ -1,4 +1,4 @@
-# kPow Helm // Kubernetes
+# Run kPow in Kubernetes with Helm
 
 Helm configuration to  get you running with kPow for Apache Kafka in a Kubernetes in *five minutes or less*. 
 
