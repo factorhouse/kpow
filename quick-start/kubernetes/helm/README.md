@@ -6,12 +6,15 @@ Once deployed access the kPow UI on port 3000 with kubectl port-forwarding or ch
 
 This Helm chart uses the latest [operatr/kpow](https://hub.docker.com/r/operatr/kpow) container from Dockerhub.
 
-## Instructions
+## Get Yourself Ready
 
 * Get a [free 30-day trial license](https://kpow.io/try) of kPow.
-* Check out this repository
-* CD into this directory
-* Confirm Kubernetes availability
+* Check out this repository & CD into this directory.
+* Find out your Kafka Bootstrap URL (bootstrap and license are minimum required configuration)
+
+## Get kPow Running
+
+### Confirm Kubernetes Cluster Availability
 
 ```bash
 $ kubectl get svc
