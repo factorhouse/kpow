@@ -1,4 +1,4 @@
-# Deploy [kPow](https://kpow.io) in AWS.
+# Run kPow(https://kpow.io) in ECS with CloudFormation
 
 This quick start provides help getting kPow up and running in AWS in minutes.
 
