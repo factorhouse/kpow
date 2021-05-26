@@ -1,6 +1,6 @@
 # kPow Helm // Kubernetes
 
-Helm configuration to  get you running with kPow for Apache Kafka in a Kubernetes in five minutes or less. 
+Helm configuration to  get you running with kPow for Apache Kafka in a Kubernetes in *five minutes or less*. 
 
 Once deployed access the kPow UI on port 3000 with kubectl port-forwarding or change the service/type in [kpow-io/values.yaml](kpow-io/values.yaml).
 
