@@ -8,34 +8,30 @@ data:
 
   ### Note: The simplest kPow configuration requires only LICENSE_* and BOOTSTRAP.
 
-  ### License Configuration
+  ### License Configuration (https://kpow.io/try <- 30 day trial licenses available)
 
-  LICENSE_ID: "00000000-0000-0000-0000-000000000001"
-  LICENSE_CODE: "ENTERPRISE"
-  LICENSEE: "Operatr IO, Inc."
-  LICENSE_EXPIRY: "2022-01-01"
-  LICENSE_SIGNATURE: "059A0B0FF3FB5A359CACCBEBFD600F5AA0B148A8E094452C0C15202F396060CE81BBCC3D587238EAA82AFAC21B4BCC63E09C6E91AA22A9812C6FDA55FCEF897BBD87267A57C3448A6A0B659197A7439A484BA968655707110FBBA09FD875E155527C6B67F361F8E57493FEB7565811A3D976A5BD216BEA08D2DA3119BE761E56"
-
-  ## Or, configure path to your license file:
-
-  # LICENSE_LOCATION: "/opt/kpow/license.txt"
+  LICENSE_ID: "replace-me"
+  LICENSE_CODE: "replace-me"
+  LICENSEE: "replace-me"
+  LICENSE_EXPIRY: "replace-me"
+  LICENSE_SIGNATURE: "replace-me"
 
   ### Resource Set Configuration
 
-  ### Operatr manages sets of Kafka resources. Clusters, Schema Registries and Kafka Connect Installations.
+  ### kPow manages sets of Kafka resources. Clusters, Schema Registries and Kafka Connect Installations.
   ### To configure multiple kafka resources prepend environment variables with _2, _3, etc.
   ### Resources with the same set-id are considered related.
   ###   E.g. cluster with BOOTSTRAP_2 can decode messages from with registry SCHEMA_REGISTRY_URL_2.
 
-  ## Optional Resource Set Name (this is displayed in the Operatr UI for each set of resources)
+  ## Optional Resource Set Name (this is displayed in the kPow UI for each set of resources)
 
   ENVIRONMENT_NAME: "Change Me"
 
   ## Kafka Cluster Configuration
   ## Required parameters for configuring a Kafka Cluster
-  ## You must configure at least one Kafka Booktstrap to use Operatr.
+  ## You must configure at least one Kafka Booktstrap to use kPow.
 
-#  BOOTSTRAP: "replace-with-your-bootstrap-url"
+  BOOTSTRAP: "replace-with-your-bootstrap-url"
 
   ## Optional Kafka Cluster Configuration
 
@@ -78,9 +74,9 @@ data:
 
   ### System Configuration
 
-  # HTTP_PORT: 3000 - the port to serve content
-  # REPLICATION_FACTOR: 3 - the replication factor of internal Operatr topics (reduce if you have fewer than 3 brokers)
-  # SNAPSHOT_PARALLELISM: 3 - the parallelism of Operatr snapshot execution (increase for very big resource-sets)
+  # PORT: 3000 - the port to serve content
+  # REPLICATION_FACTOR: 3 - the replication factor of internal kpow topics (reduce if you have fewer than 3 brokers)
+  # SNAPSHOT_PARALLELISM: 3 - the parallelism of kpow snapshot execution (increase for very big resource-sets)
   # SHOW_SPLASH: true - turn on/off the initial splash screen for new user sessions
 
   ### Live Mode Configuration
@@ -103,11 +99,11 @@ data:
   ## Data Inspect Configuration
   ## Provide custom serdes, set the default serdes, and restrict serdes available to users.
 
-  # CUSTOM_SERDES: "io.operatr.SerdeOne,io.operatr.SerdeTwo"
+  # CUSTOM_SERDES: "io.kpow.SerdeOne,io.kpow.SerdeTwo"
   # DEFAULT_KEY_SERDES: "JSON"
   # DEFAULT_VALUE_SERDES: "AVRO"
   # AVAILABLE_KEY_SERDES: "JSON,String,Transit / JSON"
-  # AVAILABLE_VALUE_SERDES: "JSON,String,io.operatr.SerdeOne"
+  # AVAILABLE_VALUE_SERDES: "JSON,String,io.kpow.SerdeOne"
 
   ## Prometheus Endpoints
 
@@ -121,17 +117,18 @@ data:
 
   ## Global Access Controls Configuration (default to false, apply to all users, overriden if you configure RBAC)
 
-  ALLOW_TOPIC_CREATE: "true"
-  ALLOW_TOPIC_DELETE: "true"
-  ALLOW_TOPIC_INSPECT: "true"
-  ALLOW_TOPIC_PRODUCE: "true"
-  ALLOW_TOPIC_EDIT: "true"
-  ALLOW_BROKER_EDIT: "true"
-  ALLOW_GROUP_EDIT: "true"
-  ALLOW_SCHEMA_CREATE: "true"
-  ALLOW_SCHEMA_EDIT: "true"
-  ALLOW_CONNECT_CREATE: "true"
-  ALLOW_CONNECT_EDIT: "true"
+  # ALLOW_TOPIC_CREATE: "true"
+  # ALLOW_TOPIC_DELETE: "true"
+  # ALLOW_TOPIC_INSPECT: "true"
+  # ALLOW_TOPIC_PRODUCE: "true"
+  # ALLOW_TOPIC_EDIT: "true"
+  # ALLOW_BROKER_EDIT: "true"
+  # ALLOW_GROUP_EDIT: "true"
+  # ALLOW_SCHEMA_CREATE: "true"
+  # ALLOW_SCHEMA_EDIT: "true"
+  # ALLOW_CONNECT_CREATE: "true"
+  # ALLOW_CONNECT_EDIT: "true"
+  # ALLOW_ACL_EDIT: "true"
 
   ## Data Policy (Masking / Redaction) Configuration
 
@@ -162,7 +159,7 @@ data:
   ## SAML SSO
 
   # AUTH_PROVIDER_TYPE: "saml"
-  # SAML_RELYING_PARTY_IDENTIFIER: "OPERATR.io"
+  # SAML_RELYING_PARTY_IDENTIFIER: "kpow.io"
   # SAML_ACS_URL: "https://kpow.corp.com/saml"
   # SAML_METADATA_FILE: "/opt/kpow/aws-metadata.xml"
   # SAML_CERT: "/var/certs/saml-cert.cer"
