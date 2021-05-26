@@ -4,9 +4,7 @@ This repository contains Helm configuration to install an instance of kPow for A
 
 This Helm chart uses the latest [operatr/kpow](https://hub.docker.com/r/operatr/kpow) container.
 
-You will need to supply some configuration specific to your environment and license in [operatr-io/operatr-io-config.yaml](operatr-io/templates/operatr-io-config.yaml).
-
-Once deployed, access the kPow UI on port 3000 with kubectl port-forwarding or change the service/type in [operatr-io/values.yaml](operatr-io/values.yaml).
+Once deployed, access the kPow UI on port 3000 with kubectl port-forwarding or change the service/type in [kpow-io/values.yaml](kpow-io/values.yaml).
 
 ## Instructions
 
