@@ -23,7 +23,7 @@ kPow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io
 
 # Quick Start
 
-Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm](quick-start/kubernetes/helm) and [Cloudformation](quick-start/aws) quicks start guides.
+Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm](quick-start/kubernetes/helm) and [CloudFormation](quick-start/aws) quicks start guides.
 
 # Quick Start + Local Evaluation
 
