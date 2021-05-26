@@ -21,6 +21,10 @@ docker pull operatr/kpow:77
 
 kPow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io)
 
+# Quick Start
+
+Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm](quick-start/kubernetes/helm) and [Cloudformation](quick-start/aws) quicks start guides.
+
 # Quick Start + Local Evaluation
 
 To evaluate kPow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository.
