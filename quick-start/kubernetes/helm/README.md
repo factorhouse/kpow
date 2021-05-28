@@ -14,6 +14,8 @@ This Helm chart uses the latest [operatr/kpow](https://hub.docker.com/r/operatr/
 
 ## Get kPow Running
 
+These example commands relate to Amazon EKS, our helm chart works with any variety of Kubernetes.
+
 ### Update Kubernetes Config
 
 ```bash
