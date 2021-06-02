@@ -9,12 +9,20 @@ on:
       manifest:
         description: 'URL of Manifest'
         required: true
+      release_number_bump:
+        description: 'I have updated system.clj release number!'
+        required: true
+        default: 'false'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Check that we have bumped release number
+        run: |
+          ./scripts/release_number_check.sh {{github.event.inputs.release_number_bump}}
 
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
