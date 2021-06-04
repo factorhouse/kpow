@@ -22,7 +22,7 @@ jobs:
 
       - name: Check that we have bumped release number
         run: |
-          ./scripts/release_number_check.sh {{github.event.inputs.release_number_bump}}
+          ./scripts/release_number_check.sh ${{github.event.inputs.release_number_bump}}
 
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
