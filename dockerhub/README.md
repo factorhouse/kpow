@@ -38,7 +38,7 @@ Gain instant visibility of your brokers, topics, groups, partitions, offsets, an
 
 kPow offers full support for controlling and monitoring Kafka Connect clusters and Schema Registries.
 
-![kPow provides x-ray vision of Kafka resources](https://i.imgur.com/diYoIuw.png)
+![kPow provides x-ray vision of Kafka resources](https://i.imgur.com/kgM7B3o.png)
 
 ### Deep Data Inspect with kJQ
 
@@ -46,7 +46,7 @@ Search **tens of thousands of messages a second** with kPow’s unique, custom i
 
 **kJQ** works with JSON or JSON-like data including Apache Avro®, Transit, EDN, and even Protobuf messages where you have configured custom serdes to output JSON formatted text.
 
-![Search tens of thousands of messages a second with kJQ](https://i.imgur.com/fxkgFyl.png)
+![Search tens of thousands of messages a second with kJQ](https://i.imgur.com/EELfooc.png)
 
 ### Compute Console to Control and Monitor Streams
 
@@ -54,7 +54,7 @@ Brokers, topics, and the data on them tell only one part of the Kafka story.
 
 kPow Compute provides access to your consumer \(and soon, _Kafka Streams_\) topologies allowing **visualization of message throughput and lag** at point of consumption and the ability to **reset consumption** at a group, host, member, topic, or assignment level.
 
-![kPow Compute provides visualization and control of consumption](https://i.imgur.com/5eT9w60.png)
+![kPow Compute provides visualization and control of consumption](https://i.imgur.com/6SSmBsM.png)
 
 ### Built for the Enterprise
 
