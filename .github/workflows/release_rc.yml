@@ -24,10 +24,3 @@ jobs:
           docker pull docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE
           docker tag docker.pkg.github.com/operatr-io/kpow/kpow:$NEXT_RELEASE operatr/kpow:$NEXT_RELEASE
           docker push operatr/kpow:$NEXT_RELEASE
-      - name: Tag
-        run: git tag -a ${{github.event.inputs.num}} -m "Release candidate ${{github.event.inputs.num}}"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
