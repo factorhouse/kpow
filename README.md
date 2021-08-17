@@ -17,7 +17,7 @@ Release notes are available [here](https://kpow.io/releases/) and include links 
 To use the kPow images from DockerHub run:
 
 ```
-docker pull operatr/kpow:81
+docker pull operatr/kpow:82
 ```
 
 kPow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io)
