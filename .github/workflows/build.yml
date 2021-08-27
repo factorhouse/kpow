@@ -25,7 +25,7 @@ jobs:
           ./scripts/release_number_check.sh ${{github.event.inputs.release_number_bump}}
 
       - name: Log into registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Download and verify JAR(s)
         run: |
@@ -34,7 +34,7 @@ jobs:
       - name: Build kPow Alpine
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-alpine
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/alpine/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
@@ -42,7 +42,7 @@ jobs:
       - name: Build kPow Red Hat UBI
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-rh-ubi
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
@@ -50,7 +50,7 @@ jobs:
       - name: Build kPow AWS Marketplace Corp
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-aws-mkt-corp
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
@@ -58,7 +58,7 @@ jobs:
       - name: Build kPow AWS Marketplace Pro
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-aws-mkt-pro
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
@@ -66,7 +66,7 @@ jobs:
       - name: Build kPow AWS Marketplace Team
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-aws-mkt-team
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
@@ -74,7 +74,7 @@ jobs:
       - name: Build kPow
         run: | 
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/kpow
+          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
