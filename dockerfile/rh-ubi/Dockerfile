@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/openjdk-11:1.10-1
+FROM registry.access.redhat.com/ubi8/openjdk-11:1.10-1.1634738701
 
 ARG VERSION 
 ARG RELEASE
