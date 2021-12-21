@@ -89,6 +89,8 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 ## [44] 2020-07-16
 
+See: [Kpow v44 Full Release Notes & Artifacts](https://kpow.io/releases/44/)
+
 * Feature: Group Explore: add group state heatmaps
 * Feature: Topic Explore: support topic deletion
 * Feature: Schema Registry: change subject compatibility
