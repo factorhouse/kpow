@@ -80,6 +80,8 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 ## [45] 2020-07-16
 
+See: [Kpow v45 Full Release Notes & Artifacts](https://kpow.io/releases/45/)
+
 * Feature: Kafka Connect Integration
 * Feature: Create, control, and manage Kafka Connectors
 * Feature: Monitor Kafka Connector task state and stacktraces
