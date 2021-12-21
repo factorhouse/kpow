@@ -18,6 +18,14 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io) or simply [start a fre
 
 # Kpow Releases
 
+## [85] 2021-10-11
+
+See: [Kpow v85 Full Release Notes & Artifacts](https://kpow.io/releases/85/)
+
+* Data Policies now support an [optional Header, Key, or Value resource](https://docs.kpow.io/features/data-policies#resource).
+* Data Inspect now includes a ConsumerOffsets serdes.
+* Improved Audit Log performance.
+
 ## [84] 2021-09-30
 
 See: [Kpow v84 Full Release Notes & Artifacts](https://kpow.io/releases/84/)
