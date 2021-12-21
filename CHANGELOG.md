@@ -48,9 +48,13 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 ## [51] 2020-09-23
 
+See: [Kpow v51 Full Release Notes & Artifacts](https://kpow.io/releases/51/)
+
 * Feature: Streaming Data Inspect with JQ
 
 ## [50] 2020-09-09
+
+See: [Kpow v50 Full Release Notes & Artifacts](https://kpow.io/releases/50/)
 
 * Feature: Data Masking Policies
 * Feature: Audit Log Slack Integration
