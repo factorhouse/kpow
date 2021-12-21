@@ -12,6 +12,30 @@ Docker containers for each release can be found on:
 
 JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/)
 
+## [70] 2020-03-22
+
+See: [Kpow v70 Full Release Notes & Artifacts](https://kpow.io/releases/70/)
+
+* Fix Jetty Memory Leak (Websockets)
+
+## [67] 2020-03-12
+
+See: [Kpow v67 Full Release Notes & Artifacts](https://kpow.io/releases/67/)
+
+* Fix Jetty Memory Leak (Websockets)
+
+## [66] 2020-03-03
+
+See: [Kpow v66 Full Release Notes & Artifacts](https://kpow.io/releases/66/)
+
+* Resolve UI issue with consumer groups topology viewer
+
+## [65] 2020-03-01
+
+See: [Kpow v65 Full Release Notes & Artifacts](https://kpow.io/releases/65/)
+
+* Klang in the kREPL
+
 ## [64] 2020-02-26
 
 See: [Kpow v64 Full Release Notes & Artifacts](https://kpow.io/releases/64/)
