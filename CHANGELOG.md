@@ -12,6 +12,12 @@ Docker containers for each release can be found on:
 
 JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/)
 
+## [73] 2020-04-23
+
+See: [Kpow v73 Full Release Notes & Artifacts](https://kpow.io/releases/73/)
+
+* Support for PEM format SSL certificates introduced in Kafka 2.7.0 and described in [KIP-651](https://cwiki.apache.org/confluence/display/KAFKA/KIP-651+-+Support+PEM+format+for+SSL+certificates+and+private+key)
+
 ## [72] 2020-04-16
 
 See: [Kpow v72 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
@@ -19,13 +25,13 @@ See: [Kpow v72 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
 * HA Resource Management
   * Manage multiple Connect Clusters connected to a single Kafka Cluster
   * Manage multiple Schema Registries connected to a single Kafka Cluster
-* A new liveness endpoint to complement the existing readiness endpoint.
+* A new liveness endpoint to complement the existing readiness endpoint
 
 ## [71] 2020-04-15
 
 See: [Kpow v71 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
 
-* Improved reverse-proxy notes and support for proxying kPow at a specific custom path.
+* Improved reverse-proxy notes and support for proxying kPow at a specific custom path
 
 ## [70] 2020-03-22
 
