@@ -100,9 +100,13 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 ## [43] 2020-06-18
 
+See: [Kpow v43 Full Release Notes & Artifacts](https://kpow.io/releases/43/)
+
 * Feature: Multi-cluster UI performance improvements
 
 ## [42] 2020-06-18
+
+See: [Kpow v42 Full Release Notes & Artifacts](https://kpow.io/releases/42/)
 
 * Feature: Multi-cluster support
 * Feature: Prometheus integration for metrics and offsets egress
@@ -111,6 +115,8 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 * Feature: Overview / Insights
 
 ## [41] 2020-05-06
+
+See: [Kpow v41 Full Release Notes & Artifacts](https://kpow.io/releases/41/)
 
 * Feature: Create topics
 * Feature: Edit topic configuration
@@ -122,7 +128,7 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 ## [40] 2020-04-22
 
-See: [Kpow v40 Full Release Notes](https://kpow.io/releases/40/)
+See: [Kpow v40 Full Release Notes & Artifacts](https://kpow.io/releases/40/)
 
 * Feature: New user interface. Fix up, look sharp!
 * Feature: Identify orphaned schema subjects
@@ -133,13 +139,13 @@ See: [Kpow v40 Full Release Notes](https://kpow.io/releases/40/)
 
 ## [39] 2020-04-10
 
-See: [Kpow v39 Full Release Notes](https://kpow.io/releases/39/)
+See: [Kpow v39 Full Release Notes & Artifacts](https://kpow.io/releases/39/)
 * Feature: Support Github SSO for user authorization
 * Bug: Fix 'nil key' data inspection error
 
 ## [38] 2020-04-09
 
-See: [Kpow v38 Full Release Notes](https://kpow.io/releases/38/)
+See: [Kpow v38 Full Release Notes & Artifacts](https://kpow.io/releases/38/)
 * Feature: Provide new Schema Registry explorer UI
 * Feature: Schema subject version diff UI
 
