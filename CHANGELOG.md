@@ -24,8 +24,8 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io) or simply [start a fre
 
 See: [Kpow v88 Full Release Notes & Artifacts](https://kpow.io/releases/88/)
 
-* Protobuf referenced schema support (e.g. google.protobuf.Timestamp)
-* Support message header production
+* Protobuf supports referenced schema (e.g. google.protobuf.Timestamp)
+* Message production with optional message headers
 * Improved AWS Glue resource consumption
 * Improved Github Enterprise SSO integration
 * Support empty string literal ("") in Klang 
