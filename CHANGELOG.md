@@ -14,25 +14,37 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 ## [59] 2020-10-19
 
+See: [Kpow v59 Full Release Notes & Artifacts](https://kpow.io/releases/59/)
+
 * Improvement: Configurable SAML session duration with SAML_SESSION_S
 
 ## [58] 2020-10-15
+
+See: [Kpow v58 Full Release Notes & Artifacts](https://kpow.io/releases/58/)
 
 * Bug: Respect Reverse Proxy Scheme w/ SAML
 
 ## [57] 2020-10-12
 
+See: [Kpow v57 Full Release Notes & Artifacts](https://kpow.io/releases/57/)
+
 * Feature: Improved Kafka Connect Resilience
 
 ## [56] 2020-10-04
+
+See: [Kpow v56 Full Release Notes & Artifacts](https://kpow.io/releases/56/)
 
 * Feature: Improved Data Inspect JQ Filter Performance
 
 ## [55] 2020-09-30
 
+See: [Kpow v55 Full Release Notes & Artifacts](https://kpow.io/releases/55/)
+
 * Feature: Improved RBAC Configuration Options
 
 ## [54] 2020-09-29
+
+See: [Kpow v54 Full Release Notes & Artifacts](https://kpow.io/releases/54/)
 
 * Feature: Improved Kafka Connect Task Metrics
 * Feature: Custom Serdes Support for JQ Filters
@@ -40,9 +52,13 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 ## [53] 2020-09-28
 
+See: [Kpow v53 Full Release Notes & Artifacts](https://kpow.io/releases/53/)
+
 * Feature: Improved Websocket Concurrency
 
 ## [52] 2020-09-25
+
+See: [Kpow v52 Full Release Notes & Artifacts](https://kpow.io/releases/52/)
 
 * Feature: Improved Error Reporting in Data Inspect
 
@@ -50,7 +66,7 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 See: [Kpow v51 Full Release Notes & Artifacts](https://kpow.io/releases/51/)
 
-* Feature: Streaming Data Inspect with JQ
+* Feature: Data Inspect with kJQ
 
 ## [50] 2020-09-09
 
