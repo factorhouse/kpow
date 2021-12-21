@@ -44,14 +44,6 @@ See: [Kpow v87 Full Release Notes & Artifacts](https://kpow.io/releases/87/)
 * Red Hat OpenShift Streams for Apache Kafka (RHOSAK) Support
 * Data Import CSV UX Improvements
 
-## [87] 2021-11-04
-
-See: [Kpow v87 Full Release Notes & Artifacts](https://kpow.io/releases/87/)
-
-* AVRO Decimal Logical Type Support
-* Red Hat OpenShift Streams for Apache Kafka (RHOSAK) Support
-* Data Import CSV UX Improvements
-
 ## [86] 2021-10-16
 
 See: [Kpow v86 Full Release Notes & Artifacts](https://kpow.io/releases/86/)
