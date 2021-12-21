@@ -21,6 +21,8 @@ Docker containers for each release can be found on:
 
 JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/)
 
+Learn more about [Kpow for Apache Kafka](https://kpow.io) or simply [start a free 30-day trial](https://kpow.io/try) today.
+
 # Kpow Releases
 
 ## [77] 2020-05-06
