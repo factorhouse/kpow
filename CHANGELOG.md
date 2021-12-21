@@ -1,5 +1,7 @@
 # Kpow for Apache Kafka Changelog 
 
+Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that ships as a single docker-container or JAR file and stores all information locally within your cluster(s).
+
 Development on Kpow began in 2018, with public release [1] on 2019-10-16.
 
 See [https://kpow.io/category/releases/](https://kpow.io/category/releases/) for full notes on each release.
@@ -13,6 +15,12 @@ Docker containers for each release can be found on:
 JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/)
 
 # Kpow Releases
+
+## [77] 2020-05-06
+
+See: [Kpow v77 Full Release Notes & Artifacts](https://kpow.io/releases/77/)
+
+* Improved reverse-proxy support with configurable X-Forwarded-For headers
 
 ## [76] 2020-05-04
 
