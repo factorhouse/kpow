@@ -12,12 +12,37 @@ Docker containers for each release can be found on:
 
 JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/)
 
+## [64] 2020-02-26
+
+See: [Kpow v64 Full Release Notes & Artifacts](https://kpow.io/releases/64/)
+
+* Dependency improvements and automated CVE scanning with NVD
+
+## [63] 2020-11-27
+
+See: [Kpow v63 Full Release Notes & Artifacts](https://kpow.io/releases/63/)
+
+* Data Inspect support for message header decoding and kJQ filtering
+* UI resposivity improvements
+
+## [62] 2020-11-20
+
+See: [Kpow v62 Full Release Notes & Artifacts](https://kpow.io/releases/62/)
+
+* Compute Label Correction
+
+## [61] 2020-11-19
+
+See: [Kpow v61 Full Release Notes & Artifacts](https://kpow.io/releases/61/)
+
+* Configurable Kafka Connect permissive SSL
+
 ## [60] 2020-11-17
 
 See: [Kpow v60 Full Release Notes & Artifacts](https://kpow.io/releases/60/)
 
 * Consumption Topology Visualizer
-* Consumer Group Offsets Resetting
+* Consumer group offsets resetting
 * LDAP, File, and JDBC Authentication via Jetty JAAS
 * UI state maintained throughout a SAML session refresh
 * UI access restricted to Authorized Roles when RBAC is configured
