@@ -26,6 +26,7 @@ See: [Kpow v88 Full Release Notes & Artifacts](https://kpow.io/releases/88/)
 
 * Protobuf supports referenced schema (e.g. google.protobuf.Timestamp)
 * Message production with optional message headers
+* Increase Topic Partitions function
 * Improved AWS Glue resource consumption
 * Improved Github Enterprise SSO integration
 * Support empty string literal ("") in Klang 
