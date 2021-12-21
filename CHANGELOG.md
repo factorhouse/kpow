@@ -12,73 +12,73 @@ Docker containers for each release can be found on:
 
 JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/)
 
-## [Kpow Release 59] 2020-10-19
+## [59] 2020-10-19
 
 * Improvement: Configurable SAML session duration with SAML_SESSION_S
 
-## [Kpow Release 58] 2020-10-15
+## [58] 2020-10-15
 
 * Bug: Respect Reverse Proxy Scheme w/ SAML
 
-## [Kpow Release 57] 2020-10-12
+## [57] 2020-10-12
 
 * Feature: Improved Kafka Connect Resilience
 
-## [Kpow Release 56] 2020-10-04
+## [56] 2020-10-04
 
 * Feature: Improved Data Inspect JQ Filter Performance
 
-## [Kpow Release 55] 2020-09-30
+## [55] 2020-09-30
 
 * Feature: Improved RBAC Configuration Options
 
-## [Kpow Release 54] 2020-09-29
+## [54] 2020-09-29
 
 * Feature: Improved Kafka Connect Task Metrics
 * Feature: Custom Serdes Support for JQ Filters
 * Feature: Improved SAML + Reverse Proxy Support
 
-## [Kpow Release 53] 2020-09-28
+## [53] 2020-09-28
 
 * Feature: Improved Websocket Concurrency
 
-## [Kpow Release 52] 2020-09-25
+## [52] 2020-09-25
 
 * Feature: Improved Error Reporting in Data Inspect
 
-## [Kpow Release 51] 2020-09-23
+## [51] 2020-09-23
 
 * Feature: Streaming Data Inspect with JQ
 
-## [Kpow Release 50] 2020-09-09
+## [50] 2020-09-09
 
 * Feature: Data Masking Policies
 * Feature: Audit Log Slack Integration
 
-## [Kpow Release 49] 2020-08-31
+## [49] 2020-08-31
 
 * Bug: Date picker JS Optimization bugfix
 
-## [Kpow Release 48] 2020-08-27
+## [48] 2020-08-27
 
 * Feature: Live Mode (Real Time Kafka Cluster monitoring)
 * Improvement: Overall UI and Visualisation improvements
 * Improvement: Improved Consumer Group Lag visualisations
 
-## [Kpow Release 47] 2020-08-12
+## [47] 2020-08-12
 
 * Feature: Role Based Access Control (RBAC)
 * Feature: SAML SSO, including Azure AD and AWS SSO
 * Feature: HTTPS termination out-of-the-box
 * Improvement: Bulk export Data Inspect results in JSON
 
-## [Kpow Release 46] 2020-07-21
+## [46] 2020-07-21
 
 * Bug: Fix column width issues in Kafka Connect UI
 * Bug: Fixes issues with snapshotting with consumer expiration edge cases
 * Improvement: Improve snapshotting latency, CPU, and memory performance
 
-## [Kpow Release 45] 2020-07-16
+## [45] 2020-07-16
 
 * Feature: Kafka Connect Integration
 * Feature: Create, control, and manage Kafka Connectors
@@ -87,7 +87,7 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 * Feature: Gain insights into connect topic production
 * Feature: Embedded Kafka Connect documentation and export options (Curl, JSON)
 
-## [Kpow Release 44] 2020-07-16
+## [44] 2020-07-16
 
 * Feature: Group Explore: add group state heatmaps
 * Feature: Topic Explore: support topic deletion
@@ -98,11 +98,11 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 * Bug: UI: cross-browser fixes to number formatting
 * Bug: Data Inspect: Copy-to-Clipboard and Search-by-Key bugfixes
 
-## [Kpow Release 43] 2020-06-18
+## [43] 2020-06-18
 
 * Feature: Multi-cluster UI performance improvements
 
-## [Kpow Release 42] 2020-06-18
+## [42] 2020-06-18
 
 * Feature: Multi-cluster support
 * Feature: Prometheus integration for metrics and offsets egress
@@ -110,7 +110,7 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 * Feature: Produce to new topic
 * Feature: Overview / Insights
 
-## [Kpow Release 41] 2020-05-06
+## [41] 2020-05-06
 
 * Feature: Create topics
 * Feature: Edit topic configuration
@@ -120,7 +120,9 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 * Feature: Bulk delete Schema Registry subjejcts
 * Improvement: Metrics UI/UX improvements
 
-## [Kpow Release 40] 2020-04-22
+## [40] 2020-04-22
+
+See: [Kpow v40 Full Release Notes](https://kpow.io/releases/40/)
 
 * Feature: New user interface. Fix up, look sharp!
 * Feature: Identify orphaned schema subjects
@@ -129,46 +131,48 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 * Improvement: Set default serdes for data inspection
 * Improvement: Restrict serdes available for data inspection
 
-## [Kpow Release 39] 2020-04-10
+## [39] 2020-04-10
 
+See: [Kpow v39 Full Release Notes](https://kpow.io/releases/39/)
 * Feature: Support Github SSO for user authorization
 * Bug: Fix 'nil key' data inspection error
 
-## [Kpow Release 38](https://kpow.io/releases/38/) 2020-04-09
+## [38] 2020-04-09
 
+See: [Kpow v38 Full Release Notes](https://kpow.io/releases/38/)
 * Feature: Provide new Schema Registry explorer UI
 * Feature: Schema subject version diff UI
 
-## [Kpow Release 37] 2020-04-08
+## [37] 2020-04-08
 
 * Improvement: Link 'Produce to Topic' output to 'Search by Key'
 
-## [Kpow Release 36] 2020-03-31
+## [36] 2020-03-31
 
 * Improvement: Improve UI/UX concerns
 * Improvement: Integrate Sentry.io for error reporting
 
-## [Kpow Release 35] 2020-03-24
+## [35] 2020-03-24
 
 * Improvement: Log OKTA token expiration
 
-## [Kpow Release 34] 2020-03-23
+## [34] 2020-03-23
 
 * Feature: Support OKTA Authentication for Single Sign-On
 
-## [Kpow Release 33] 2020-03-20
+## [33] 2020-03-20
 
 * Feature: Provide easy linking from tabular data
 
-## [Kpow Release 32] 2020-03-19
+## [32] 2020-03-19
 
 * Bug: Fix member client/consumer truncation issue
 
-## [Kpow Release 31] 2020-03-16
+## [31] 2020-03-16
 
 * Feature: Configurable custom SERDES
 
-## [Kpow Release 30] 2020-03-11
+## [30] 2020-03-11
 
 * Feature: Data UI: Search-By-Key message inspection
 * Feature: Data UI: Support (optional) message production
@@ -176,123 +180,123 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 * Bug: UI network failure detection
 * Bug: Fixed menu double-click + chart display error
 
-## [Kpow Release 29] 2020-02-15
+## [29] 2020-02-15
 
 * Feature: Support provisioning of Professional and Team licenses
 
-## [Kpow Release 28] 2020-02-05
+## [28] 2020-02-05
 
 * Bug: Fix memory issue related to
 
-## [Kpow Release 27] 2020-02-04
+## [27] 2020-02-04
 
 * Improvement: Support in-memory metrics (env/IN_MEMORY_METRICS=true)
 * Bug: Close all resources used in periodic telemetry snapshots
 
-## [Kpow Release 26] 2020-02-03
+## [26] 2020-02-03
 
 * Feature: Support 30-Day trial licenses.
 
-## [Kpow Release 25] 2020-02-03
+## [25] 2020-02-03
 
 * Improvement: Limit off-heap memory consumption.
 
-## [Kpow Release 24] 2020-01-31
+## [24] 2020-01-31
 
 * Improvement: Reduced disk consumption through deprecating compute.snapshots changelog.
 * Bug: Resolved memory leak that could cause Operatr to cycle after several days.
 
-## [Kpow Release 23] 2020-01-31
+## [23] 2020-01-31
 
 * Improvement: Reduced compute memory consumption.
 
-## [Kpow Release 22] 2020-01-28
+## [22] 2020-01-28
 
 * Feature: License provisioning and application.
 
-## [Kpow Release 21] 2020-01-22
+## [21] 2020-01-22
 
 * Improvement: Performance improvements through configurable snapshot parallelism.
 
-## [Kpow Release 20] 2019-12-13
+## [20] 2019-12-13
 
 * Improvement: UI Framework dependency bump.
 
-## [Kpow Release 19] 2019-12-03
+## [19] 2019-12-03
 
 * Improvement: Update base Dockerfile to Corretto 11.0.5
 
-## [Kpow Release 18] 2019-11-27
+## [18] 2019-11-27
 
 * Feature: Include support for Long, Integer, Short, Float, and Double when inspecting topics.
 
-## [Kpow Release 17] 2019-11-12
+## [17] 2019-11-12
 
 * Improvement: Improved experience for Confluent Cloud users.
 
-## [Kpow Release 16] 2019-11-11
+## [16] 2019-11-11
 
 * Feature: Data inspection supports copy-to-clipboard on results
 
-## [Kpow Release 15] 2019-11-11
+## [15] 2019-11-11
 
 * Feature: Data inspection supports EDN format results
 
-## [Kpow Release 14] 2019-11-09
+## [14] 2019-11-09
 
 * Improvement: Snappier UI through reduced browser memory consumption.
 
-## [Kpow Release 13] 2019-11-06
+## [13] 2019-11-06
 
 * Improvement: Use ZSTD compression on Operatr topics where possible (30% disk reduction).
 * Improvement: Leaderless topic identification.
 
-## [Kpow Release 12] 2019-11-04
+## [12] 2019-11-04
 
 * Improvement: Internal data-format modifications.
 
-## [Kpow Release 11] 2019-11-04
+## [11] 2019-11-04
 
 * Improvement: Visualise self-telemtry on Admin->About.
 
-## [Kpow Release 10] 2019-11-04
+## [10] 2019-11-04
 
 * Improvement: Improved startup experience on configuration errors.
 * Feature: ASCII flair in the console.
 
-## [Kpow Release 9] 2019-11-01
+## [9] 2019-11-01
 
 * Improvement: Configurable replication factor on internal topics.
 
-## [Kpow Release 8] 2019-10-30
+## [8] 2019-10-30
 
 * Improvement: Improved system logging and diagnostics.
 
-## [Kpow Release 7] 2019-10-30
+## [7] 2019-10-30
 
 * Improvement: System logging and diagnostics on startup.
 
-## [Kpow Release 6] 2019-10-30
+## [6] 2019-10-30
 
 * Improvement: Support all Kafka client connection options.
 
-## [Kpow Release 5] 2019-10-30
+## [5] 2019-10-30
 
 * Improvement: Support for unauthenticated clusters.
 
-## [Kpow Release 4] 2019-10-28
+## [4] 2019-10-28
 
 * Feature: Integrate with Schema Registry for AVRO topic inspection.
 * Feature: Support single topic partition inspection.
 
-## [Kpow Release 3] 2019-10-22
+## [3] 2019-10-22
 
 * Feature: Support Riemann integration for analytics egress.
 
-## [Kpow Release 2] 2019-10-18
+## [2] 2019-10-18
 
 * Feature: Simplified environment variable configuration.
 
-## [Kpow Release 1] 2019-10-16
+## [1] 2019-10-16
 
 * Feature: MVP suitable for general consumption.
