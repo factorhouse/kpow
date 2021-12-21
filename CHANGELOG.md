@@ -14,13 +14,25 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 # Kpow Releases
 
+## [76] 2020-05-04
+
+See: [Kpow v76 Full Release Notes & Artifacts](https://kpow.io/releases/76/)
+
+* New Kafka ACL Management features
+* Minor bugfixes to the kPow UI initialisation process
+
+## [75] 2020-04-30
+
+See: [Kpow v75 Full Release Notes & Artifacts](https://kpow.io/releases/75/)
+
+* Data Inspect: added JSON Schema Serde.
+* Schema Registry: added support for Protobuf and JSON Schema.
+
 ## [74] 2020-04-29
 
 See: [Kpow v74 Full Release Notes & Artifacts](https://kpow.io/releases/74/)
 
 * Full Kafka ACL Management UI
-* Schema Registry: added support for Protobuf and JSON Schema.
-* Data Inspect: added JSON Schema Serde.
 * Client UI / Server performance improvements. 
 * General UI improvements.
 * Bumped Kafka clients to 2.8.0 for improved streams/operational resiliency.
