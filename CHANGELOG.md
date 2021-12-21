@@ -3,6 +3,7 @@
 Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that:
 
 * Ships as a single docker-container or JAR file
+* You deploy and secure like any other Enterprise web-application
 * Runs air-gapped with all information stored within your Kafka cluster(s)
 * Is trusted by the world's largest companies, from publishing to payments networks
 * Has a simple, transparent pricing structure
