@@ -18,6 +18,58 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io) or simply [start a fre
 
 # Kpow Releases
 
+## [81] 2020-08-13
+
+See: [Kpow v81 Full Release Notes & Artifacts](https://kpow.io/releases/81/)
+
+* Configurable Multi-Tenancy Function
+* Streaming Search Function
+* 5x Search Throughput Improvement
+* Confluent Cloud Metrics
+* Reverted the / -> /ui new session redirect
+* Streams Agent – support streams with group.instance.id config
+* Kafka Connect – support ConfigProvider, dynamic fields and creating/editing debezium connectors
+* OpenID/Okta – support OKTA_DOMAIN configuration
+
+## [80] 2020-07-12
+
+See: [Kpow v80 Full Release Notes & Artifacts](https://kpow.io/releases/80/)
+
+* New Kafka Streams Live Topology Visualisation UI
+* GA open-source kPow Streams Agent
+* Multi-topic search by topic regex
+* Multi-topic search by group
+* Topic and consumer group freshness metrics
+* Exposed topic and consumer inactivity via Prometheus
+* Configurable columns for tabular data
+* Topic read/s metric
+* Under-replicated partitions count in summary data
+* Fixed ‘in-sync?’ and controller broker UI regressions
+* Open client websocket session count metrics
+* Reduced kPow internal topic disk usage
+
+## [79] 2020-06-25
+
+See: [Kpow v79 Full Release Notes & Artifacts](https://kpow.io/releases/79/)
+
+* Staged Mutations: actions (e.g. Topic Create) can now be staged for approval by an Admin user.
+* Temporary Policies: Admin Users can assign temporary access permissions to a role.
+* RBAC: Added KPOW_ADMIN action to policies
+* RBAC: Added “Stage” effect to RBAC policies
+* RBAC: Ability for admins to temporarily create policies
+* RBAC: allow ENVIRONMENT_NAME as an identifier for cluster in the resource of a policy
+* Bump to Jetty10, more performant websocket sessions
+* Default cluster names now align with config, e.g bootstrap_1, bootstrap_2
+* Fixed bug where topic/broker configuration would intermittently disappear from UI in some cases.
+* Fixed j_session null pointer exception that could occur when using simple authentication
+
+## [78] 2020-06-07
+
+See: [Kpow v78 Full Release Notes & Artifacts](https://kpow.io/releases/78/)
+
+* Data Inspect: Multi-Topic Search
+* A brand new User Interface
+
 ## [77] 2020-05-06
 
 See: [Kpow v77 Full Release Notes & Artifacts](https://kpow.io/releases/77/)
