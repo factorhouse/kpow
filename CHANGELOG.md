@@ -12,11 +12,38 @@ Docker containers for each release can be found on:
 
 JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/)
 
+## [72] 2020-04-16
+
+See: [Kpow v72 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
+
+* HA Resource Management
+  * Manage multiple Connect Clusters connected to a single Kafka Cluster
+  * Manage multiple Schema Registries connected to a single Kafka Cluster
+* A new liveness endpoint to complement the existing readiness endpoint.
+
+## [71] 2020-04-15
+
+See: [Kpow v71 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
+
+* Improved reverse-proxy notes and support for proxying kPow at a specific custom path.
+
 ## [70] 2020-03-22
 
 See: [Kpow v70 Full Release Notes & Artifacts](https://kpow.io/releases/70/)
 
-* Fix Jetty Memory Leak (Websockets)
+* Klang/within function
+
+## [69] 2020-03-19
+
+See: [Kpow v69 Full Release Notes & Artifacts](https://kpow.io/releases/70/)
+
+* Transparent OSS CI/CD automation for Kpow build (this repo) 
+
+## [68] 2020-03-18
+
+See: [Kpow v68 Full Release Notes & Artifacts](https://kpow.io/releases/70/)
+
+* Improved Confluent Cloud support
 
 ## [67] 2020-03-12
 
