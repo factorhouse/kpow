@@ -12,11 +12,37 @@ Docker containers for each release can be found on:
  * The [AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0)
  * The [Red Hat Marketplace](https://marketplace.redhat.com/en-us/products/kpow-for-apache-kafka)
 
-JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/)
+Deploy Kpow to Kubernetes with our [Helm Charts](https://github.com/operatr-io/kpow-helm-charts), also available at [artifacthub.io](https://artifacthub.io/packages/helm/kpow/kpow).
+
+JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/).
 
 Learn more about [Kpow for Apache Kafka](https://kpow.io) or simply [start a free 30-day trial](https://kpow.io/try) today.
 
 # Kpow Releases
+
+## [88] 2021-12-21
+
+See: [Kpow v88 Full Release Notes & Artifacts](https://kpow.io/releases/88/)
+
+* Protobuf referenced schema support (e.g. google.protobuf.Timestamp)
+* Support message header production
+* Improved AWS Glue resource consumption
+* Improved Github Enterprise SSO integration
+* Support empty string literal ("") in Klang 
+* Fix Prometheus offsets-by-topic lookup
+* Improve Prometheus scraper endpoint error handling
+* Introduce standard 404/405/406/500 pages
+* Monospace fonts in Consumer and Streams Topology Viewer
+* Fix form z-index issue in data produce with schema registry
+* Fix minor LH navigation menu issue with small viewbox
+
+## [87] 2021-11-04
+
+See: [Kpow v87 Full Release Notes & Artifacts](https://kpow.io/releases/87/)
+
+* AVRO Decimal Logical Type Support
+* Red Hat OpenShift Streams for Apache Kafka (RHOSAK) Support
+* Data Import CSV UX Improvements
 
 ## [87] 2021-11-04
 
