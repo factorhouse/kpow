@@ -57,9 +57,13 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 ## [49] 2020-08-31
 
+See: [Kpow v49 Full Release Notes & Artifacts](https://kpow.io/releases/49/)
+
 * Bug: Date picker JS Optimization bugfix
 
 ## [48] 2020-08-27
+
+See: [Kpow v48 Full Release Notes & Artifacts](https://kpow.io/releases/48/)
 
 * Feature: Live Mode (Real Time Kafka Cluster monitoring)
 * Improvement: Overall UI and Visualisation improvements
@@ -67,12 +71,16 @@ JAR artefacts are available to download via [https://kpow.io/category/releases/]
 
 ## [47] 2020-08-12
 
+See: [Kpow v47 Full Release Notes & Artifacts](https://kpow.io/releases/47/)
+
 * Feature: Role Based Access Control (RBAC)
 * Feature: SAML SSO, including Azure AD and AWS SSO
 * Feature: HTTPS termination out-of-the-box
 * Improvement: Bulk export Data Inspect results in JSON
 
 ## [46] 2020-07-21
+
+See: [Kpow v46 Full Release Notes & Artifacts](https://kpow.io/releases/46/)
 
 * Bug: Fix column width issues in Kafka Connect UI
 * Bug: Fixes issues with snapshotting with consumer expiration edge cases
