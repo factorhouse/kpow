@@ -12,6 +12,8 @@ Docker containers for each release can be found on:
 
 JAR artefacts are available to download via [https://kpow.io/category/releases/](https://kpow.io/category/releases/)
 
+# Kpow Releases
+
 ## [73] 2020-04-23
 
 See: [Kpow v73 Full Release Notes & Artifacts](https://kpow.io/releases/73/)
