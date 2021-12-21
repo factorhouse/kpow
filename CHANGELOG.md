@@ -18,6 +18,22 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io) or simply [start a fre
 
 # Kpow Releases
 
+## [87] 2021-11-04
+
+See: [Kpow v87 Full Release Notes & Artifacts](https://kpow.io/releases/87/)
+
+* AVRO Decimal Logical Type Support
+* Red Hat OpenShift Streams for Apache Kafka (RHOSAK) Support
+* Data Import CSV UX Improvements
+
+## [86] 2021-10-16
+
+See: [Kpow v86 Full Release Notes & Artifacts](https://kpow.io/releases/86/)
+
+* Improved kPow snapshot compute performance
+* Introduction of AWS Glue schema status
+* Improved support for message version in ConsumerOffsets serde
+
 ## [85] 2021-10-11
 
 See: [Kpow v85 Full Release Notes & Artifacts](https://kpow.io/releases/85/)
