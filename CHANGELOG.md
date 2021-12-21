@@ -75,7 +75,7 @@ See: [Kpow v82 Full Release Notes & Artifacts](https://kpow.io/releases/82/)
 See: [Kpow v81 Full Release Notes & Artifacts](https://kpow.io/releases/81/)
 
 * Configurable Multi-Tenancy Function
-* Streaming Search Function
+* Data Inspect: Streaming Search Function
 * 5x Search Throughput Improvement
 * Confluent Cloud Metrics API integration
 * Reverted the / -> /ui new session redirect
