@@ -18,24 +18,16 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io) or simply [start a fre
 
 # Kpow Releases
 
-Support for AWS Glue Schema Registry: https://docs.kpow.io/config/schema-registry#aws-glue-schema-registry.
-Support for AWS IAM MSK authentication: https://docs.kpow.io/config/kafka-cluster#aws-iam-integration.
-Improve Data Produce UX – clear produced items.
-Improve Data Inspect UX – highlight queued queries.
-Improve Data Inspect UX – remember previously selected header serdes.
-Bugfix Data Inspect – resolve potential query engine deadlock.
-Bugfix Data Inspect – show correct tab names when searching by regex or group.
-
 ## [84] 2021-09-30
 
 See: [Kpow v84 Full Release Notes & Artifacts](https://kpow.io/releases/84/)
 
-* Multi-Produce: Import and produce multiple messages at once.
-* Data Inspect: Simplified UI and more powerful kJQ search implementation.
-* Github Teams: Github Oath SSO now supports Github Teams as RBAC roles.
-* Audit Log: Data Inspect queries are recorded in the Audit Log.
-* AWS IAM: Support IAM Kafka cluster authentication.
-* SAML Authentication: Option to extract roles from LDAP-encoded attributes.
+* Support for AWS Glue Schema Registry: https://docs.kpow.io/config/schema-registry#aws-glue-schema-registry.
+* Improve Data Produce UX – clear produced items.
+* Improve Data Inspect UX – highlight queued queries.
+* Improve Data Inspect UX – remember previously selected header serdes.
+* Bugfix Data Inspect – resolve potential query engine deadlock.
+* Bugfix Data Inspect – show correct tab names when searching by regex or group.
 
 ## [83] 2021-09-13
 
@@ -45,7 +37,7 @@ See: [Kpow v83 Full Release Notes & Artifacts](https://kpow.io/releases/83/)
 * Data Inspect: Simplified UI and more powerful kJQ search implementation.
 * Github Teams: Github Oath SSO now supports Github Teams as RBAC roles.
 * Audit Log: Data Inspect queries are recorded in the Audit Log.
-* AWS IAM: Support IAM Kafka cluster authentication.
+* AWS IAM: Support for [AWS IAM MSK authentication](https://docs.kpow.io/config/kafka-cluster#aws-iam-integration)
 * SAML Authentication: Option to extract roles from LDAP-encoded attributes.
 
 ## [82] 2021-08-17
