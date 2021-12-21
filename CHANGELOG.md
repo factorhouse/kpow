@@ -7,7 +7,7 @@ Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that
 * Runs air-gapped with all information stored within your Kafka cluster(s)
 * Is trusted by the world's largest companies, from publishing to payments networks
 * Has a simple, transparent pricing structure
-* Is built and supported by a dedicated engineering-lead team
+* Is built and supported by an engineering-lead team deeply experienced in Kafka delivery
 
 Development on Kpow began in 2018, with public release [1] on 2019-10-16.
 
