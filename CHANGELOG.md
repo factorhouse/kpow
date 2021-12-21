@@ -18,6 +18,23 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io) or simply [start a fre
 
 # Kpow Releases
 
+## [83] 2020-09-13
+
+See: [Kpow v82 Full Release Notes & Artifacts](https://kpow.io/releases/83/)
+
+* Multi-Produce: Import and produce multiple messages at once.
+* Data Inspect: Simplified UI and more powerful kJQ search implementation.
+* Github Teams: Github Oath SSO now supports Github Teams as RBAC roles.
+* Audit Log: Data Inspect queries are recorded in the Audit Log.
+* AWS IAM: Support IAM Kafka cluster authentication.
+* SAML Authentication: Option to extract roles from LDAP-encoded attributes.
+
+## [82] 2020-08-17
+
+See: [Kpow v82 Full Release Notes & Artifacts](https://kpow.io/releases/82/)
+
+* Default user to previously selected tenant
+
 ## [81] 2020-08-13
 
 See: [Kpow v81 Full Release Notes & Artifacts](https://kpow.io/releases/81/)
@@ -25,7 +42,7 @@ See: [Kpow v81 Full Release Notes & Artifacts](https://kpow.io/releases/81/)
 * Configurable Multi-Tenancy Function
 * Streaming Search Function
 * 5x Search Throughput Improvement
-* Confluent Cloud Metrics
+* Confluent Cloud Metrics API integration
 * Reverted the / -> /ui new session redirect
 * Streams Agent – support streams with group.instance.id config
 * Kafka Connect – support ConfigProvider, dynamic fields and creating/editing debezium connectors
