@@ -9,8 +9,7 @@
 
 The kPow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow/actions/workflows/build.yml)
 
-Release notes are available [here](https://kpow.io/releases/) and include links to JAR artefacts for each release.
-
+See the [Changelog](CHANGELOG.md) for release information or [our blog](https://kpow.io/category/releases/) for full notes on each release and JAR artefacts.
 
 # Usage
 

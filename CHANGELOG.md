@@ -2,7 +2,7 @@
 
 Development on Kpow began in 2018, with public release [1] on 2019-10-16.
 
-Visit [https://kpow.io/releases](https://kpow.io/releases) for full notes on each release.
+See [https://kpow.io/category/releases/](https://kpow.io/category/releases/) for full notes on each release.
 
 Docker containers for each release can be found on:
 
