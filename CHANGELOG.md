@@ -1,6 +1,12 @@
 # Kpow for Apache Kafka Changelog 
 
-Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that ships as a single docker-container or JAR file and stores all information locally within your cluster(s).
+Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that:
+
+* Ships as a single docker-container or JAR file
+* Runs air-gapped with all information stored within your Kafka cluster(s)
+* Is trusted by the world's largest companies, from publishing to payments networks
+* Has a simple, transparent pricing structure
+* Is built and supported by a dedicated engineering-lead team
 
 Development on Kpow began in 2018, with public release [1] on 2019-10-16.
 
