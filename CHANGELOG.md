@@ -18,9 +18,17 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io) or simply [start a fre
 
 # Kpow Releases
 
-## [83] 2020-09-13
+Support for AWS Glue Schema Registry: https://docs.kpow.io/config/schema-registry#aws-glue-schema-registry.
+Support for AWS IAM MSK authentication: https://docs.kpow.io/config/kafka-cluster#aws-iam-integration.
+Improve Data Produce UX – clear produced items.
+Improve Data Inspect UX – highlight queued queries.
+Improve Data Inspect UX – remember previously selected header serdes.
+Bugfix Data Inspect – resolve potential query engine deadlock.
+Bugfix Data Inspect – show correct tab names when searching by regex or group.
 
-See: [Kpow v82 Full Release Notes & Artifacts](https://kpow.io/releases/83/)
+## [84] 2021-09-30
+
+See: [Kpow v84 Full Release Notes & Artifacts](https://kpow.io/releases/84/)
 
 * Multi-Produce: Import and produce multiple messages at once.
 * Data Inspect: Simplified UI and more powerful kJQ search implementation.
@@ -29,13 +37,24 @@ See: [Kpow v82 Full Release Notes & Artifacts](https://kpow.io/releases/83/)
 * AWS IAM: Support IAM Kafka cluster authentication.
 * SAML Authentication: Option to extract roles from LDAP-encoded attributes.
 
-## [82] 2020-08-17
+## [83] 2021-09-13
+
+See: [Kpow v83 Full Release Notes & Artifacts](https://kpow.io/releases/83/)
+
+* Multi-Produce: Import and produce multiple messages at once.
+* Data Inspect: Simplified UI and more powerful kJQ search implementation.
+* Github Teams: Github Oath SSO now supports Github Teams as RBAC roles.
+* Audit Log: Data Inspect queries are recorded in the Audit Log.
+* AWS IAM: Support IAM Kafka cluster authentication.
+* SAML Authentication: Option to extract roles from LDAP-encoded attributes.
+
+## [82] 2021-08-17
 
 See: [Kpow v82 Full Release Notes & Artifacts](https://kpow.io/releases/82/)
 
 * Default user to previously selected tenant
 
-## [81] 2020-08-13
+## [81] 2021-08-13
 
 See: [Kpow v81 Full Release Notes & Artifacts](https://kpow.io/releases/81/)
 
@@ -48,7 +67,7 @@ See: [Kpow v81 Full Release Notes & Artifacts](https://kpow.io/releases/81/)
 * Kafka Connect – support ConfigProvider, dynamic fields and creating/editing debezium connectors
 * OpenID/Okta – support OKTA_DOMAIN configuration
 
-## [80] 2020-07-12
+## [80] 2021-07-12
 
 See: [Kpow v80 Full Release Notes & Artifacts](https://kpow.io/releases/80/)
 
@@ -65,7 +84,7 @@ See: [Kpow v80 Full Release Notes & Artifacts](https://kpow.io/releases/80/)
 * Open client websocket session count metrics
 * Reduced kPow internal topic disk usage
 
-## [79] 2020-06-25
+## [79] 2021-06-25
 
 See: [Kpow v79 Full Release Notes & Artifacts](https://kpow.io/releases/79/)
 
@@ -80,34 +99,34 @@ See: [Kpow v79 Full Release Notes & Artifacts](https://kpow.io/releases/79/)
 * Fixed bug where topic/broker configuration would intermittently disappear from UI in some cases.
 * Fixed j_session null pointer exception that could occur when using simple authentication
 
-## [78] 2020-06-07
+## [78] 2021-06-07
 
 See: [Kpow v78 Full Release Notes & Artifacts](https://kpow.io/releases/78/)
 
 * Data Inspect: Multi-Topic Search
 * A brand new User Interface
 
-## [77] 2020-05-06
+## [77] 2021-05-06
 
 See: [Kpow v77 Full Release Notes & Artifacts](https://kpow.io/releases/77/)
 
 * Improved reverse-proxy support with configurable X-Forwarded-For headers
 
-## [76] 2020-05-04
+## [76] 2021-05-04
 
 See: [Kpow v76 Full Release Notes & Artifacts](https://kpow.io/releases/76/)
 
 * New Kafka ACL Management features
 * Minor bugfixes to the kPow UI initialisation process
 
-## [75] 2020-04-30
+## [75] 2021-04-30
 
 See: [Kpow v75 Full Release Notes & Artifacts](https://kpow.io/releases/75/)
 
 * Data Inspect: added JSON Schema Serde.
 * Schema Registry: added support for Protobuf and JSON Schema.
 
-## [74] 2020-04-29
+## [74] 2021-04-29
 
 See: [Kpow v74 Full Release Notes & Artifacts](https://kpow.io/releases/74/)
 
@@ -124,13 +143,13 @@ See: [Kpow v74 Full Release Notes & Artifacts](https://kpow.io/releases/74/)
   * connect_connector_task_state
   * registry_subject_version
 
-## [73] 2020-04-23
+## [73] 2021-04-23
 
 See: [Kpow v73 Full Release Notes & Artifacts](https://kpow.io/releases/73/)
 
 * Support for PEM format SSL certificates introduced in Kafka 2.7.0 and described in [KIP-651](https://cwiki.apache.org/confluence/display/KAFKA/KIP-651+-+Support+PEM+format+for+SSL+certificates+and+private+key)
 
-## [72] 2020-04-16
+## [72] 2021-04-16
 
 See: [Kpow v72 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
 
@@ -139,49 +158,49 @@ See: [Kpow v72 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
   * Manage multiple Schema Registries connected to a single Kafka Cluster
 * A new liveness endpoint to complement the existing readiness endpoint
 
-## [71] 2020-04-15
+## [71] 2021-04-15
 
 See: [Kpow v71 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
 
 * Improved reverse-proxy notes and support for proxying kPow at a specific custom path
 
-## [70] 2020-03-22
+## [70] 2021-03-22
 
 See: [Kpow v70 Full Release Notes & Artifacts](https://kpow.io/releases/70/)
 
 * Klang/within function
 
-## [69] 2020-03-19
+## [69] 2021-03-19
 
 See: [Kpow v69 Full Release Notes & Artifacts](https://kpow.io/releases/70/)
 
 * Transparent OSS CI/CD automation for Kpow build (this repo) 
 
-## [68] 2020-03-18
+## [68] 2021-03-18
 
 See: [Kpow v68 Full Release Notes & Artifacts](https://kpow.io/releases/70/)
 
 * Improved Confluent Cloud support
 
-## [67] 2020-03-12
+## [67] 2021-03-12
 
 See: [Kpow v67 Full Release Notes & Artifacts](https://kpow.io/releases/67/)
 
 * Fix Jetty Memory Leak (Websockets)
 
-## [66] 2020-03-03
+## [66] 2021-03-03
 
 See: [Kpow v66 Full Release Notes & Artifacts](https://kpow.io/releases/66/)
 
 * Resolve UI issue with consumer groups topology viewer
 
-## [65] 2020-03-01
+## [65] 2021-03-01
 
 See: [Kpow v65 Full Release Notes & Artifacts](https://kpow.io/releases/65/)
 
 * Klang in the kREPL
 
-## [64] 2020-02-26
+## [64] 2021-02-26
 
 See: [Kpow v64 Full Release Notes & Artifacts](https://kpow.io/releases/64/)
 
