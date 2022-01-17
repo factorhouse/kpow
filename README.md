@@ -25,7 +25,7 @@ See the [Changelog](CHANGELOG.md) for release information or [our blog](https://
 To use the kPow images from DockerHub run:
 
 ```
-docker pull operatr/kpow:88.188
+docker pull operatr/kpow:88.1
 ```
 
 kPow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io)
