@@ -6,14 +6,14 @@
 (def melb-time (.withZoneSameInstant now timezone))
 (def pattern (java.time.format.DateTimeFormatter/ofPattern "yyyy-MM-dd-HH-mm"))
 (def release-time (.format melb-time pattern))
-(def release-number *input*)
+(def release-tag *input*)
 
 (println release-time)
-(println release-number)
+(println release-tag)
 
-(def releases (edn/read-string (slurp "docs/releases.edn")))
+(def releases (edn/read-string (slurp "docs/releases-v2.edn")))
 (require '[clojure.pprint :as pprint])
 (spit 
- "docs/releases.edn"
+ "docs/releases-v2.edn"
  (with-out-str
-   (pprint/pprint (conj releases {:number release-number :release-time release-time}))))
+   (pprint/pprint (conj releases {:tag (str release-tag) :release-time release-time}))))
