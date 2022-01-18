@@ -20,6 +20,16 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https
 
 # Kpow Releases
 
+## [88.1] 2021-01-17
+
+See: [Kpow v88.1 Full Release Notes & Artifacts](https://kpow.io/releases/88-1/)
+
+* Move to Major.Minor release format
+* Bump core dependencies to latest where possible
+* Fix protobuf deserialization issue with Connect-produced messages and dependent schema
+* Fix Confluent Cloud startup error related to minimum segment.bytes configuration
+* Improve UI reportage of installed vs. available Kpow version
+
 ## [88] 2021-12-21
 
 See: [Kpow v88 Full Release Notes & Artifacts](https://kpow.io/releases/88/)
