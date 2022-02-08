@@ -24,11 +24,11 @@ Full documentation for all configuration can be found at [docs.kpow.io](https://
 * [Data/PII Masking Configuration](https://docs.kpow.io/features/data-policies)
 * [LDAP/Jaas Authentication Configuration](https://docs.kpow.io/authentication/ldap#jaas-configuration)
 
-## Environment Variable Example
+## Quick Start
 
 Kpow accepts all environment variables in either AES or OBF format, encoding details follow in this guide.
 
-#### Example Script with AES Environment Variables:  
+#### Shell Script with AES Variables  
 
 This script configures Kpow with a `KPOW_SECURE_KEY` and a mixture of encrypted and plain variables.
 
@@ -43,6 +43,31 @@ SASL_JAAS_CONFIG="AES:ARBxaOuPOPvyJqyq791yGAAi1eUGVjMgXGoBSRmrw7OTb3EzVjURa15Zus
 AUTH_PROVIDER_TYPE="jetty" \
 RBAC_CONFIGURATION_FILE="./dev-resources/rbac/jetty.yml" \
 java -Djava.security.auth.login.config=dev-resources/jaas/ldap.conf -jar -Xmx2G ./latest-kpow.jar
+```
+
+#### LDAP Jaas Configuration with AES bindPassword
+
+```bash
+kpow {
+  io.kpow.jaas.spi.LdapLoginModule required
+  useLdaps="true"
+  debug="true"
+  contextFactory="com.sun.jndi.ldap.LdapCtxFactory"
+  hostname="test-ldap-server.com"
+  port="636"
+  bindDn="test@ad.test-ldap-server.com"
+  bindPassword="AES:ARDZjxJjLyFJBekswaPK1AGYzO9tUmkqVFxI/wEVvMMVzg=="
+  authenticationMethod="simple"
+  forceBindingLogin="true"
+  userBaseDn="DC=ad,DC=test-ldap-server,DC=com"
+  userRdnAttribute="sAMAccountName"
+  userIdAttribute="sAMAccountName"
+  userObjectClass="user"
+  roleBaseDn="OU=Distribution Groups,OU=Exchange Objects,OU=Melbourne,DC=ad,DC=test-ldap-user,DC=com"
+  roleNameAttribute="cn"
+  roleMemberAttribute="member"
+  roleObjectClass="group";
+};
 ```
 
 ## Sensitive Configuration
