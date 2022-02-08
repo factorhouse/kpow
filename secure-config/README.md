@@ -27,7 +27,7 @@ Full documentation for all configuration can be found at [docs.kpow.io](https://
 
 ## Quick Start
 
-Kpow accepts all environment variables in either AES or OBF format, encoding details follow in this guide.
+Kpow accepts all environment variables in either AES or OBF format.
 
 #### Shell Script with AES Variables  
 
@@ -47,6 +47,8 @@ java -Djava.security.auth.login.config=dev-resources/jaas/ldap.conf -jar -Xmx2G 
 ```
 
 #### LDAP Jaas Configuration with AES bindPassword
+
+Kpow accepts the bindPassword variable in LDAP configuration in AES or OBF format.
 
 ```bash
 kpow {
