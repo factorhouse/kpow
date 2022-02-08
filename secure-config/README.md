@@ -27,7 +27,15 @@ Full documentation for all configuration can be found at [docs.kpow.io](https://
 
 Kpow accepts all environment variables and certain sensitive file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
 
-#### Shell Script with AES Variables  
+### AES Encryption
+
+Provided by our open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library for simple, secure configuration with standard Java AES encryption and PBKDF2 master key generation.
+
+### OBF Encoding
+
+Provided by the [Jetty Password Utility](https://www.eclipse.org/jetty/javadoc/jetty-10/org/eclipse/jetty/util/security/Password.html)
+
+#### Example Shell Script with AES Environment Variables  
 
 This script configures Kpow with a `KPOW_SECURE_KEY` and a mixture of encrypted and plain variables.
 
@@ -44,7 +52,7 @@ RBAC_CONFIGURATION_FILE="./dev-resources/rbac/jetty.yml" \
 java -Djava.security.auth.login.config=dev-resources/jaas/ldap.conf -jar -Xmx2G ./latest-kpow.jar
 ```
 
-#### LDAP Jaas Configuration with AES bindPassword
+#### Example LDAP Jaas Configuration with AES bindPassword
 
 Kpow accepts the bindPassword variable in LDAP configuration in AES or OBF format.
 
