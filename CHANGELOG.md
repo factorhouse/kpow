@@ -4,7 +4,7 @@
 
 ## Latest Release Artifacts [88.1]
 
-* [Docker container](https://hub.docker.com/repository/docker/operatr/kpow)
+* [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
 * [Java Jar](https://releases.operatr.io/operatr-2022-01-18-15-28.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1658032482&Signature=fTp4FUTDCCTO43BlEiAZEoekra0%3D)
 * [Java 8 JAR](https://releases.operatr.io/operatr-2022-01-18-15-50.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1658033980&Signature=Ed5pUOjPYXg7HdyDd8rKK1KrSFU%3D)
 * [Release Blog Post](https://kpow.io/category/releases/88-1)
@@ -15,7 +15,7 @@ See [https://kpow.io/category/releases/](https://kpow.io/category/releases/) for
 
 Docker containers for each release can be found here:
 
- * Dockerhub as [operatr/kpow](https://hub.docker.com/repository/docker/operatr/kpow)
+ * Dockerhub as [operatr/kpow](https://hub.docker.com/r/operatr/kpow)
  * The [AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0)
  * The [Red Hat Marketplace](https://marketplace.redhat.com/en-us/products/kpow-for-apache-kafka)
 
