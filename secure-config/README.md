@@ -35,7 +35,7 @@ This script configures Kpow with a `KPOW_SECURE_KEY` and a mixture of encrypted 
 ```bash
 # license variables removed
 KPOW_SECURE_KEY="XT65RFOuw34GgP+ohBE4J8SwXX0OwoVzQf4KcA4zzaY=" \
-ENVIRONMENT_NAME="AES:ARAfAebNw2s7rmvhFDoxYjtuQRKkz1tEcmN3c0IS8QXrPd+URfTBGDNww5xQBDQ1eUI=" \
+ENVIRONMENT_NAME="UAT2 - Trading Book" \
 BOOTSTRAP="AES:ARDGXF5y5sG0sPZdACdCyQUO6nVKhpCrkCP//NbrOJEuzO2D22RrocfNJG0J5zegfC4BKznqlQQEI0jU45sKqyRV" \
 SECURITY_PROTOCOL="AES:ARDZjxJjLyFJBekswaPK1AGYzO9tUmkqVFxI/wEVvMMVzg==" \
 SASL_MECHANISM="AES:ARAM9+ZmMGKfhK8pFufBMnIV3rPMU+MYrITh+3Yauct2wQ==" \
