@@ -72,7 +72,7 @@ kpow {
 
 ## Sensitive Configuration
 
-Any configuration that should not be observed in plaintext is considered sensitive, often this means but is not limited to passwords or passphrases.
+Any configuration that should not be observed in plaintext is considered sensitive.
 
 ### Kafka Configuration
 
