@@ -1,6 +1,16 @@
 # Kpow Secure Configuration
 
-This guide demonstrates how to encrypt or obfuscate Kpow configuration to avoid plain-text visibility of sensitive variables.
+This guide demonstrates how to [encrypt]() or [obfuscate]() Kpow configuration to avoid sensitive variables in plaintext.
+
+## Secure Deployment
+
+Kpow is deployed as a single Docker container and is built from standard Enterprise Java frameworks like [Jetty](https://www.eclipse.org/jetty/).
+
+Designed to run air-gapped and in use by payment networks to punchy startups, Kpow is deployed in every cloud and on-premise.
+
+Kpow is conveniently secured the same way as any other Enterprise web-application in your organisation, often that means sensitive variables provided by a [secret manager or vault](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html).
+
+Kpow also accept all environment variables and certain sensitive file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
 
 ## Kpow Configuration
 
