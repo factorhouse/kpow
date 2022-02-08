@@ -23,6 +23,7 @@ Full documentation for all configuration can be found at [docs.kpow.io](https://
 * [Multi-Tenancy Configuration](https://docs.kpow.io/authorization/tenants)
 * [Data/PII Masking Configuration](https://docs.kpow.io/features/data-policies)
 * [LDAP/Jaas Authentication Configuration](https://docs.kpow.io/authentication/ldap#jaas-configuration)
+* [File Based Authentication Configuration](https://docs.kpow.io/authentication/file)
 
 ## Quick Start
 
