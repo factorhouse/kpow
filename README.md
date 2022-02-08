@@ -7,6 +7,8 @@
 
 [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
 
+See the [Changelog](CHANGELOG.md) for release information or [our blog](https://kpow.io/category/releases/) for full notes on each release and JAR artefacts.
+
 Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that:
 
 * Ships as a single docker-container or JAR file
@@ -17,8 +19,6 @@ Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that
 * Is built and supported by an engineering-lead team deeply experienced in Kafka delivery
 
 The kPow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow/actions/workflows/build.yml)
-
-See the [Changelog](CHANGELOG.md) for release information or [our blog](https://kpow.io/category/releases/) for full notes on each release and JAR artefacts.
 
 # Usage
 
