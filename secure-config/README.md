@@ -10,14 +10,30 @@ Designed to run air-gapped and in use by payment networks to punchy startups, Kp
 
 Kpow is conveniently secured the same way as any other Enterprise web-application in your organisation, often that means sensitive variables provided by a [secret manager or vault](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html).
 
-Kpow also accept all environment variables and certain sensitive file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
-
 ## Kpow Configuration
 
 Kpow is mostly configured via environment variables, with some further configuration being file-based.
+
+Kpow accepts all environment variables and certain sensitive file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
 
 * [Kpow Environment Variable Guide](https://docs.kpow.io/config/environment-variables)
 * [Role Based Access Control Configuration](https://docs.kpow.io/authorization/role-based-access-control)
 * [Multi-Tenancy Configuration](https://docs.kpow.io/authorization/tenants)
 * [Data/PII Masking Configuration](https://docs.kpow.io/features/data-policies)
 * [LDAP/Jaas Authentication Configuration](https://docs.kpow.io/authentication/ldap#jaas-configuration)
+
+## Sensitive Configuration
+
+Any configuration that should not be observed in plaintext is considered sensitive, often this means but is not limited to passwords or passphrases.
+
+### Kafka Configuration
+
+Kpow connects to your Kafka resources using standard Java Kafka clients, these clients may require plaintext authentication variables.
+
+#### Kafka Cluster Configuration
+
+Environment variables that you might encrypt or obfuscate for Kafka cluster configuration include:
+
+```bash
+
+```
