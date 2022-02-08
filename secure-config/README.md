@@ -14,8 +14,6 @@ Kpow is conveniently secured the same way as any other Enterprise web-applicatio
 
 Kpow is mostly configured via environment variables, with some further configuration being file-based.
 
-Kpow accepts all environment variables and certain sensitive file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
-
 Full documentation for all configuration can be found at [docs.kpow.io](https://docs.kpow.io):
 
 * [Kpow Environment Variable Guide](https://docs.kpow.io/config/environment-variables)
@@ -27,7 +25,7 @@ Full documentation for all configuration can be found at [docs.kpow.io](https://
 
 ## Quick Start
 
-Kpow accepts all environment variables in either AES or OBF format.
+Kpow accepts all environment variables and certain sensitive file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
 
 #### Shell Script with AES Variables  
 
