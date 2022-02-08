@@ -8,7 +8,7 @@ Kpow is deployed as a single Docker container and is built from standard Enterpr
 
 Designed to run air-gapped and in use by payment networks to punchy startups, Kpow is deployed in every cloud and on-premise.
 
-Kpow is conveniently secured the same way as any other Enterprise web-application in your organisation, often that means sensitive variables provided by a [secret manager or vault](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html). You may not require further support with sensitive variables.
+Kpow is conveniently secured the same way as any other Enterprise web-application in your organisation, often that means sensitive variables provided by a [secret manager or vault](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html). You may not need to employ the sensitive variable techniques provided in this guide.
 
 ## Kpow Configuration
 
