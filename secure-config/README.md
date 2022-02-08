@@ -51,10 +51,9 @@ java -Djava.security.auth.login.config=dev-resources/jaas/ldap.conf -jar -Xmx2G 
 kpow {
   io.kpow.jaas.spi.LdapLoginModule required
   useLdaps="true"
-  debug="true"
   contextFactory="com.sun.jndi.ldap.LdapCtxFactory"
   hostname="test-ldap-server.com"
-  port="636"
+  port="616"
   bindDn="test@ad.test-ldap-server.com"
   bindPassword="AES:ARDZjxJjLyFJBekswaPK1AGYzO9tUmkqVFxI/wEVvMMVzg=="
   authenticationMethod="simple"
