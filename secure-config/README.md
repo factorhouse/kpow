@@ -9,6 +9,14 @@ This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate
 * [Secure Variables Quick Start](#secure-variables-quick-start)
   * [AES Encrypted Environment Variables Example](#example-shell-script-with-aes-encrypted-environment-variables)
   * [AES Encrypted LDAP JAAS 'bindPassword' Example](#example-ldap-jaas-configuration-with-aes-encrypted-bindpassword)
+* [AES Encrypted Variables](#aes-encrypted-variables)
+  * [AES Encryption Steps](#aes-encryption-steps)
+    * [Download](#download-the-latest-kpow-jar-file) the latest Kpow JAR file
+    * [Generate](#generate-a-master-encryption-key) a master encryption key
+    * [Encrypt](#encrypt-sensitive-variables) sensitive variables
+    * [Configure](#configure-encrypted-variables) encrypted variables
+    * [Provide](#provide-the-master-key-to-kpow) the master key to Kpow
+
 
 ## Kpow Deployment Notes
 
