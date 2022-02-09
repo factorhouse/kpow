@@ -100,7 +100,7 @@ vi passhphrase.txt
 
 The passphrase is read from file to avoid observation in your shell history.
 
-Then generate a master encryption key using the Kpow jar and the following command:
+Then generate a master encryption key using the Kpow JAR and the following command:
 
 ```bash
 java -cp ./kpow-2022-02-17.jar kpow.secure.key --pass-file passhphrase.txt --out-file passphrase.key
@@ -129,7 +129,7 @@ Keystore and key passwords are a common variable that you may want to secure.
 SSL_KEYSTORE_PASSWORD=mykeystorepassword
 ```
 
-Encrypt the text 'mykeystorepassword' with your master key
+Encrypt the text 'mykeystorepassword' with Kpow and your master key
 
  ```bash
 java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --encrypt mykeystorepassword
@@ -160,7 +160,7 @@ Configure the `KPOW_SECURE_KEY` environment variable with your master key.
 KPOW_SECURE_KEY=wjDYJgpvFWOGq1G9CkT1szG6yHxQDN1iu8OBgzTyrM0=
 ```
 
-When Kpow starts it will decrypt any encrypted variables with your master key.
+Kpow will now decrypt any AES encrypted variables with your master encryption key.
 
 ## OBF Encoded Variables
 
@@ -168,9 +168,42 @@ Kpow provides support for weak obfuscatation of variables by integrating the ope
 
 ### OBF Obfuscation Steps
 
-Obfuscating Kpow variables with the Jetty Password utility is simple:
+Follow these simple steps to obfuscate Kpow variables with the Jetty Password utility.
 
-* First we generate a master encryption key
-* Then we encrypt our variables with that key
-* Where we configure encrypted variables we prefix them with `AES`
-* Finally, we provide the master key to Kpow via the `KPOW_SECURE_KEY`
+* [Download](https://github.com/operatr-io/kpow/tree/main/secure-config#download-the-latest-kpow-jar) the latest Kpow JAR file
+* [Obfuscate](https://github.com/operatr-io/kpow/tree/main/secure-config#obfuscate-sensitive-variables) sensitive variables
+* [Configure](https://github.com/operatr-io/kpow/tree/main/secure-config#configure-obfuscated-variables) obfuscated variables
+
+#### Download the latest Kpow JAR
+
+The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://github.com/operatr-io/kpow/blob/main/CHANGELOG.md#latest-release-artifacts) file.
+
+#### Obfuscate sensitive variables
+
+Keystore and key passwords are a common variable that you may want to obfuscate.
+
+```
+SSL_KEYSTORE_PASSWORD=mykeystorepassword
+```
+
+Obfuscate the text 'mykeystorepassword' with Kpow and the Jetty Password utility
+
+```bash
+java -cp ./kpow-2022-02-17.jar org.eclipse.jetty.util.security.Password mykeystorepassword
+```
+
+```bash
+mykeystorepassword
+OBF:1uh41zly1w8r1wml1zt11ym71v9u1x8e1vnw1vn61x8g1v8s1ym71zsp1wnl1w8z1zlk1ugm
+MD5:14a6a8ceae8529e0ec1a1f5ecc09e8de
+```
+
+#### Configure obfuscated variables
+
+Replace any sensitive plaintext variables with `OBF:obfuscated-text`.
+
+```
+SSL_KEYSTORE_PASSWORD=OBF:1uh41zly1w8r1wml1zt11ym71v9u1x8e1vnw1vn61x8g1v8s1ym71zsp1wnl1w8z1zlk1ugm
+```
+
+Kpow will now deobfuscate any OBF encoded variables with the Jetty Password utility.
