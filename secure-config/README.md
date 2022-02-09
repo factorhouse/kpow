@@ -6,8 +6,9 @@ This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate
 
 * [Kpow Deployment Notes](#kpow-deployment-notes)
 * [Kpow Configuration](#kpow-configuration)
-* [Quick Start](#quick-start)
-  * [AES Encryption Example](#example-shell-script-with-aes-encrypted-environment-variables)
+* [Secure Variables Quick Start](#secure-variables-quick-start)
+  * [AES Encrypted Environment Variables Example](#example-shell-script-with-aes-encrypted-environment-variables)
+  * [AES Encrypted LDAP JAAS 'bindPassword' Example](#example-ldap-jaas-configuration-with-aes-encrypted-bindpassword)
 
 ## Kpow Deployment Notes
 
@@ -30,7 +31,7 @@ Full documentation for all configuration can be found at [docs.kpow.io](https://
 * [LDAP/Jaas Authentication Configuration](https://docs.kpow.io/authentication/ldap#jaas-configuration)
 * [File Based Authentication Configuration](https://docs.kpow.io/authentication/file)
 
-## Quick Start
+## Secure Variables Quick Start
 
 Kpow accepts all environment variables and some file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
 
