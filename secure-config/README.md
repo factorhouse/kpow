@@ -57,7 +57,7 @@ Kpow accepts all environment variables and some file-based variables as AES encr
 
 This script defines a `KPOW_SECURE_KEY` and a mixture of encrypted and plain variables.
 
-**Note** AES ciphertext is prefixed with `AES:`.
+**Note:** AES ciphertext is prefixed with `AES:`
 
 ```bash
 # license variables removed
@@ -77,6 +77,8 @@ java -Djava.security.auth.login.config=dev-resources/jaas/ldap.conf -jar -Xmx2G 
 Kpow accepts the bindPassword variable in LDAP JAAS configuration in AES or OBF format.
 
 **Note:** This feature requires configuring the new `io.kpow.jaas.spi.LdapLoginModule` LDAP module rather than Jetty default.
+
+**Note:** AES ciphertext is prefixed with `AES:`
 
 When encrypting with AES Kpow expects the `KPOW_SECURE_KEY` environment variable to be set.
 
