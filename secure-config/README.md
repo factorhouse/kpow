@@ -78,20 +78,21 @@ See the [library documentation](https://github.com/operatr-io/kpow-secure) for f
 
 ### AES Encryption Steps
 
-Securing Kpow variables with AES encryption is simple:
+Follow these simple steps to secure Kpow variables with AES encryption
 
-* First we generate a master encryption key
-* Then we encrypt our variables with that key
-* Where we configure encrypted variables we prefix them with `AES`
-* Finally, we provide the master key to Kpow via the `KPOW_SECURE_KEY`
+* Download the latest Kpow JAR file
+* Generate a master encryption key
+* Encrypt sensitive variables
+* Configure encrypted variables
+* Provide the master key to Kpow
 
 #### Download the latest Kpow JAR file
 
 The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://github.com/operatr-io/kpow/blob/main/CHANGELOG.md#latest-release-artifacts) file.
 
-#### Create a file containing your passphrase
+#### Generate a master encryption key
 
-Normal passphrase rules apply, longer passphrases with more unique characters are more secure.
+Create a passphrase file, longer passphrases with more unique characters are more secure.
 
 ```
 vi passhphrase.txt
@@ -99,9 +100,7 @@ vi passhphrase.txt
 
 The passphrase is read from file to avoid observation in your shell history.
 
-#### Generate a new master encryption key
-
-When generating a key, specify a `--salt` if you require the ability to regenerate the key.
+Then generate a master encryption key using the Kpow jar and the following command:
 
 ```bash
 java -cp ./kpow-2022-02-17.jar kpow.secure.key --pass-file passhphrase.txt --out-file passphrase.key
@@ -120,7 +119,9 @@ Key file written to: passphrase.key
 Random salt used, this key cannot be regenerated.
 ```
 
-#### Encrypt a variable with your master key
+When generating a key, specify a `--salt` if you require the ability to regenerate the key.
+
+#### Encrypt sensitive variables
 
 Keystore and key passwords are a common variable that you may want to secure. 
 
@@ -143,15 +144,33 @@ Kpow Encrypted:
 ARBtyl4hxANqbKPMFg4wEFCf3BJy+nKBkPYMIwK7SMS+jt1WxockS2HJSA50t+IjJU4=
 ```
 
-#### Configure your application
+#### Configure encrypted variables
 
-Configure your master key and replace any sensitive plaintext variables with `AES:cipher-text`.
+Replace any sensitive plaintext variables with `AES:cipher-text`.
 
 ```
-KPOW_SECURE_KEY=wjDYJgpvFWOGq1G9CkT1szG6yHxQDN1iu8OBgzTyrM0=
 SSL_KEYSTORE_PASSWORD=AES:ARBtyl4hxANqbKPMFg4wEFCf3BJy+nKBkPYMIwK7SMS+jt1WxockS2HJSA50t+IjJU4=
 ```
 
+#### Provide the master key to Kpow
+
+Configure the `KPOW_SECURE_KEY` environment variable with your master key.
+
+```
+KPOW_SECURE_KEY=wjDYJgpvFWOGq1G9CkT1szG6yHxQDN1iu8OBgzTyrM0=
+```
+
+When Kpow starts it will decrypt any encrypted variables with your master key.
+
 ## OBF Encoded Variables
 
-Kpow provides support for obfuscated variables by integrating the open-source [Jetty Password](https://www.eclipse.org/jetty/javadoc/jetty-10/org/eclipse/jetty/util/security/Password.html) utility.
+Kpow provides support for weak obfuscatation of variables by integrating the open-source [Jetty Password](https://www.eclipse.org/jetty/javadoc/jetty-10/org/eclipse/jetty/util/security/Password.html) utility.
+
+### OBF Obfuscation Steps
+
+Obfuscating Kpow variables with the Jetty Password utility is simple:
+
+* First we generate a master encryption key
+* Then we encrypt our variables with that key
+* Where we configure encrypted variables we prefix them with `AES`
+* Finally, we provide the master key to Kpow via the `KPOW_SECURE_KEY`
