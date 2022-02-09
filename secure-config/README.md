@@ -120,6 +120,29 @@ Key file written to: passphrase.key
 Random salt used, this key cannot be regenerated.
 ```
 
+#### Encrypt a variable with your master key
+
+Keystore and key passwords are a common variable that you may want to secure. 
+
+```
+SSL_KEYSTORE_PASSWORD=mykeystorepassword
+```
+
+Encrypt the text 'mykeystorepassword' with your master key
+
+ ```bash
+java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --encrypt mykeystorepassword
+```
+
+```bash
+13:49:01.998 INFO  [main] kpow.secure –
+
+Kpow Encrypted:
+---------------
+
+ARBtyl4hxANqbKPMFg4wEFCf3BJy+nKBkPYMIwK7SMS+jt1WxockS2HJSA50t+IjJU4=
+```
+
 ## OBF Encoded Variables
 
 Kpow provides support for obfuscated variables by integrating the open-source [Jetty Password](https://www.eclipse.org/jetty/javadoc/jetty-10/org/eclipse/jetty/util/security/Password.html) utility.
