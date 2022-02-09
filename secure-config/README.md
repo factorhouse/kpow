@@ -21,6 +21,10 @@ This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate
     * [Download](#download-the-latest-kpow-jar) the latest Kpow JAR file
     * [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
     * [Configure](#configure-obfuscated-variables) obfuscated variables
+* [Using Kpow Secure Configuration in your Kafka Client Application](#using-kpow-secure-configuration-in-your-kafka-client-application)
+  * [AES Encrypted Client Configuration](#aes-encrypted-client-configuration)
+  * [Kpow Secure Java API for Decryption](#kpow-secure-java-api-for-decryption)
+
 
 ## Kpow Deployment Notes
 
@@ -229,3 +233,10 @@ SSL_KEYSTORE_PASSWORD=OBF:1uh41zly1w8r1wml1zt11ym71v9u1x8e1vnw1vn61x8g1v8s1ym71z
 ```
 
 Kpow will now deobfuscate any OBF encoded variables with the Jetty Password utility.
+
+## Using Kpow Secure Configuration in your Kafka Client Application
+
+### AES Encrypted Client Configuration
+
+### Kpow Secure Java API for Decryption
+
