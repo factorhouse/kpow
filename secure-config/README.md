@@ -1,6 +1,6 @@
 # Kpow Secure Configuration
 
-This guide demonstrates how to [encrypt](https://github.com/operatr-io/kpow/tree/main/secure-config#aes-encryption) or [obfuscate](https://github.com/operatr-io/kpow/tree/main/secure-config#obf-encoding) Kpow configuration to avoid sensitive variables in plaintext.
+This guide demonstrates how to [encrypt](https://github.com/operatr-io/kpow/tree/main/secure-config#aes-encrypted-variables) or [obfuscate](https://github.com/operatr-io/kpow/tree/main/secure-config#obf-encoded-variables) Kpow configuration to avoid sensitive variables in plaintext.
 
 ## Secure Deployment
 
@@ -25,7 +25,7 @@ Full documentation for all configuration can be found at [docs.kpow.io](https://
 
 ## Quick Start
 
-Kpow accepts all environment variables and certain sensitive file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
+Kpow accepts all environment variables and some file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
 
 #### Example Shell Script with AES Encrypted Environment Variables  
 
@@ -70,10 +70,10 @@ kpow {
 };
 ```
 
-## AES Encryption
+## AES Encrypted Variables
 
-The open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library provides simple, secure configuration with standard Java AES encryption and PBKDF2 master key generation.
+Kpow provides support for encrypted variables with a master key by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
 
-## OBF Encoding
+## OBF Encoded Variables
 
-Provided by the [Jetty Password Utility](https://www.eclipse.org/jetty/javadoc/jetty-10/org/eclipse/jetty/util/security/Password.html)
+Kpow provides support for obfuscated variables by integrating the open-source [Jetty Password](https://www.eclipse.org/jetty/javadoc/jetty-10/org/eclipse/jetty/util/security/Password.html) utility.
