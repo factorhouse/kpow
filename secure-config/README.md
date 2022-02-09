@@ -2,7 +2,9 @@
 
 [**Note**: this guide relates to the pending 88.2 release of kPow.]
 
-This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate](#obf-encoded-variables) [Kpow](https://kpow.io) for Apache Kafka configuration to avoid sensitive variables in plaintext.
+This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate](#obf-encoded-variables) Kpow configuration to avoid sensitive variables in plaintext.
+
+AES and PBKDF2 support is provided by [kpow-secure](https://github.com/operatr-io/kpow-secure), an open-source library that you can utilize to secure any Apache Kafka client configuration.
 
 ## Contents
 
