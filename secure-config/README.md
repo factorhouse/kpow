@@ -157,7 +157,7 @@ When generating a key, specify a `--salt` if you require the ability to regenera
 
 #### Encrypt sensitive variables
 
-Keystore and key passwords are a common variable that you may want to secure. 
+Keystore and key passwords are common variables that you may want to secure. 
 
 ```
 SSL_KEYSTORE_PASSWORD=mykeystorepassword
@@ -214,7 +214,7 @@ The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://gith
 
 #### Obfuscate sensitive variables
 
-Keystore and key passwords are a common variable that you may want to obfuscate.
+Keystore and key passwords are common variables that you may want to obfuscate.
 
 ```
 SSL_KEYSTORE_PASSWORD=mykeystorepassword
