@@ -7,7 +7,7 @@ This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate
 * [Kpow Deployment Notes](#kpow-deployment-notes)
 * [Kpow Configuration](#kpow-configuration)
 * [Quick Start](#quick-start)
-* * [AES Encryption Example](#example-shell-script-with-aes-encrypted-environment-variables)
+  * [AES Encryption Example](#example-shell-script-with-aes-encrypted-environment-variables)
 
 ## Kpow Deployment Notes
 
