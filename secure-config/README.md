@@ -72,7 +72,7 @@ kpow {
 
 ## AES Encrypted Variables
 
-Kpow provides support for encrypted variables by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
+Kpow provides support for strong encryption of variables by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
 
 See the [library documentation](https://github.com/operatr-io/kpow-secure) for full details on secure config with standard Java AES encryption and PBKDF2 key generation.
 
@@ -141,6 +141,15 @@ Kpow Encrypted:
 ---------------
 
 ARBtyl4hxANqbKPMFg4wEFCf3BJy+nKBkPYMIwK7SMS+jt1WxockS2HJSA50t+IjJU4=
+```
+
+#### Configure your application
+
+Configure your master key and replace any sensitive plaintext variables with `AES:cipher-text`.
+
+```
+KPOW_SECURE_KEY=wjDYJgpvFWOGq1G9CkT1szG6yHxQDN1iu8OBgzTyrM0=
+SSL_KEYSTORE_PASSWORD=AES:ARBtyl4hxANqbKPMFg4wEFCf3BJy+nKBkPYMIwK7SMS+jt1WxockS2HJSA50t+IjJU4=
 ```
 
 ## OBF Encoded Variables
