@@ -1,8 +1,12 @@
 # Kpow Secure Configuration
 
-This guide demonstrates how to [encrypt](https://github.com/operatr-io/kpow/tree/main/secure-config#aes-encrypted-variables) or [obfuscate](https://github.com/operatr-io/kpow/tree/main/secure-config#obf-encoded-variables) Kpow configuration to avoid sensitive variables in plaintext.
+This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate](#obf-encoded-variables) Kpow configuration to avoid sensitive variables in plaintext.
 
-## Secure Deployment
+## Contents
+
+* [Kpow Deployment Notes](#kpow-deployment-notes)
+
+## Kpow Deployment Notes
 
 Kpow is deployed as a single Docker container and is built from standard Enterprise Java frameworks like [Jetty](https://www.eclipse.org/jetty/).
 
@@ -80,7 +84,7 @@ See the [library documentation](https://github.com/operatr-io/kpow-secure) for f
 
 Follow these simple steps to secure Kpow variables with AES encryption
 
-* [Download](https://github.com/operatr-io/kpow/tree/main/secure-config#download-the-latest-kpow-jar-file) the latest Kpow JAR file
+* [Download](#download-the-latest-kpow-jar-file) the latest Kpow JAR file
 * [Generate](https://github.com/operatr-io/kpow/tree/main/secure-config#generate-a-master-encryption-key) a master encryption key
 * [Encrypt](https://github.com/operatr-io/kpow/tree/main/secure-config#encrypt-sensitive-variables) sensitive variables
 * [Configure](https://github.com/operatr-io/kpow/tree/main/secure-config#configure-encrypted-variables) encrypted variables
