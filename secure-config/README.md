@@ -74,6 +74,8 @@ java -Djava.security.auth.login.config=dev-resources/jaas/ldap.conf -jar -Xmx2G 
 
 Kpow accepts the bindPassword variable in LDAP JAAS configuration in AES or OBF format.
 
+**Note:** This feature requires configuring the new `io.kpow.jaas.spi.LdapLoginModule` LDAP module rather than Jetty default.
+
 When encrypting with AES Kpow expects the `KPOW_SECURE_KEY` environment variable to be set.
 
 ```bash
