@@ -18,7 +18,7 @@ Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that
 * Has a simple, transparent pricing structure
 * Is built and supported by an engineering-lead team deeply experienced in Kafka delivery
 
-The kPow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow/actions/workflows/build.yml)
+The kPow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow/actions/workflows/build.yml).
 
 # Usage
 
