@@ -80,11 +80,11 @@ See the [library documentation](https://github.com/operatr-io/kpow-secure) for f
 
 Follow these simple steps to secure Kpow variables with AES encryption
 
-* Download the latest Kpow JAR file
-* Generate a master encryption key
-* Encrypt sensitive variables
-* Configure encrypted variables
-* Provide the master key to Kpow
+* [Download](https://github.com/operatr-io/kpow/tree/main/secure-config#download-the-latest-kpow-jar-file) the latest Kpow JAR file
+* [Generate](https://github.com/operatr-io/kpow/tree/main/secure-config#generate-a-master-encryption-key) a master encryption key
+* [Encrypt](https://github.com/operatr-io/kpow/tree/main/secure-config#encrypt-sensitive-variables) sensitive variables
+* [Configure](https://github.com/operatr-io/kpow/tree/main/secure-config#configure-encrypted-variables) encrypted variables
+* [Provide](https://github.com/operatr-io/kpow/tree/main/secure-config#provide-the-master-key-to-kpow) the master key to Kpow
 
 #### Download the latest Kpow JAR file
 
