@@ -78,7 +78,12 @@ Kpow-Secure(https://github.com/operatr-io/kpow-secure) is a library for simple, 
 
 ### AES Encryption Steps
 
-First we generate a master encryption key, then encrypt our variables with that key, finally we provide the master key to Kpow via the `KPOW_SECURE_KEY` environment variable and prefix any encrypted variables with `AES`.
+Securing Kpow variables with AES encryption is simple:
+
+* First we generate a master encryption key
+* Then we encrypt our variables with that key
+* Where we configure encrypted variables we prefix them with `AES`
+* Finally, we provide the master key to Kpow via the `KPOW_SECURE_KEY`
 
 #### Download the latest Kpow JAR file
 
