@@ -1,6 +1,6 @@
 # Kpow Secure Configuration
 
-This guide demonstrates how to [encrypt]() or [obfuscate]() Kpow configuration to avoid sensitive variables in plaintext.
+This guide demonstrates how to [encrypt](https://github.com/operatr-io/kpow/tree/main/secure-config#aes-encryption) or [obfuscate](https://github.com/operatr-io/kpow/tree/main/secure-config#obf-encoding) Kpow configuration to avoid sensitive variables in plaintext.
 
 ## Secure Deployment
 
