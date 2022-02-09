@@ -88,6 +88,8 @@ vi passhphrase.txt
 
 * Generate a new master encryption key:
 
+The passphrase is read from file to avoid observation in your shell history.
+
 ```bash
 java -cp ./kpow-2022-02-17.jar kpow.secure.key --pass-file passhphrase.txt --out-file passphrase.key
 ```
