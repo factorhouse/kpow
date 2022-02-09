@@ -240,7 +240,7 @@ Kpow provides support for strong encryption of variables by integrating the open
 
 You can use the Kpow-Secure library to encrypt sensitive Kafka client configuration for your own client applications, then use the convenience of the Decoder API to convert encrypted payloads into `java.util.Properties` files.
 
-You can then `.putAll` decoded secure properties into your normal plaintext properties before starting any Kafka client.
+Then `.putAll` decoded secure properties into any normal plaintext properties before starting any Kafka client.
 
 ### AES Encrypted Client Configuration
 
@@ -254,5 +254,33 @@ ssl.truststore.location: /ssl/truststore.jks
 ssl.truststore.password: 1234
 ```
 
+Encrypt that payload with the following command, and a previously generated master key.
+
+```bash
+java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --encrypt-file config.props
+```
+
+```bash
+16:05:20.769 INFO  [main] kpow.secure –
+
+Kpow Encrypted:
+---------------
+
+ARDayIDNu0cOn4b5JkdkpwOj8OGJQ6c1nUirUvfpI6e0/zWvq85FOlR3Mpja4ubIT5QmfEO2oKTp8VTQlteH7iYtmps9rlm37Vz6SSUdSR8JZV274kRyf8DaTgGP5PzcLtjp65/vOCDw7Et9HyLMx2KcDf7T2Uhg4rdnny+1ZTa/QIxdaiOU+JcsjJvOV5giiaUFgya4fd6GyQZmY4Q4pIFo8bLuSU3DbWLS54MMnlGFxTSYgKLDT0LuFtTe0gKRVGT5aGX3tprO13x7DGimAOM+a7DHE2ynSKtg95fbhOzIKU92QG1XE3HVJSiwCqJnOghjL8TPIr0iA133h/Q08F058RdEZ/ln771wkAsNC9LKew==
+```
+
 ### Kpow Secure Java API for Decryption
+
+Use the `io.kpow.secure.Decoder` to decode an encrypted payload with a master key and convert it automatically to `java.util.Properties`
+
+```Java
+Properties mySecureProps = Decoder.properties("//iQh9KYe7pM+mevjifZPrm7YE2+rRloG1E15zzjR88=", "ARAOGa3BAZ2TMxbU1aj+tFYfNHNwnRh3r/w2sG7FA4L7fVRzArpzrxAd2dUovyDfel++FHgW1IFrinZddTo+KiYFYm2rsn+ul65eQ1L5t9MsBq3LpuGjoFDSxkYFZweo/w0=");
+```
+
+Then merge those secure properties with your plaintext Kafka client properties.
+
+```Java
+Properties clientProps = <...>
+clientProps.putAll(mySecureProps)
+```
 
