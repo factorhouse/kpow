@@ -29,7 +29,7 @@ Kpow accepts all environment variables and some file-based variables as AES encr
 
 #### Example Shell Script with AES Encrypted Environment Variables  
 
-This script configures Kpow with a `KPOW_SECURE_KEY` and a mixture of encrypted and plain variables.
+This script defines a `KPOW_SECURE_KEY` and a mixture of encrypted and plain variables.
 
 ```bash
 # license variables removed
@@ -44,9 +44,9 @@ RBAC_CONFIGURATION_FILE="./dev-resources/rbac/jetty.yml" \
 java -Djava.security.auth.login.config=dev-resources/jaas/ldap.conf -jar -Xmx2G ./latest-kpow.jar
 ```
 
-#### Example LDAP Jaas Configuration with AES Encrypted 'bindPassword'
+#### Example LDAP JAAS Configuration with AES Encrypted 'bindPassword'
 
-Kpow accepts the bindPassword variable in LDAP configuration in AES or OBF format.
+Kpow accepts the bindPassword variable in LDAP JAAS configuration in AES or OBF format.
 
 ```bash
 kpow {
@@ -72,7 +72,10 @@ kpow {
 
 ## AES Encrypted Variables
 
-Kpow provides support for encrypted variables with a master key by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
+Kpow provides support for encrypted variables by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
+
+[Kpow-Secure](https://github.com/operatr-io/kpow-secure) is a library for simple, secure configuration with standard Java AES encryption and PBKDF2 master key generation.
+
 
 ## OBF Encoded Variables
 
