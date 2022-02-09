@@ -244,14 +244,14 @@ You can then `.putAll` decoded secure properties into your normal plaintext prop
 
 ### AES Encrypted Client Configuration
 
-Kafka client configuration in `java.util.Properties` format may look similar to:
+Kafka client configuration written to file in `java.util.Properties` format may look similar to:
 
-```properties
-security.protocol:SASL_PLAINTEXT
- sasl.mechanism: PLAIN
-sasl.jaas.config : org.apache.kafka.common.security.plain.PlainLoginModule required username="kpow" password="kpow-secret";
-  ssl.truststore.location :/ssl/truststore.jks
-ssl.truststore.password= 1234
+```text
+security.protocol: SASL_PLAINTEXT
+sasl.mechanism: PLAIN
+sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="kpow" password="kpow-secret";
+ssl.truststore.location: /ssl/truststore.jks
+ssl.truststore.password: 1234
 ```
 
 ### Kpow Secure Java API for Decryption
