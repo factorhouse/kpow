@@ -85,10 +85,10 @@ See the [library documentation](https://github.com/operatr-io/kpow-secure) for f
 Follow these simple steps to secure Kpow variables with AES encryption
 
 * [Download](#download-the-latest-kpow-jar-file) the latest Kpow JAR file
-* [Generate](https://github.com/operatr-io/kpow/tree/main/secure-config#generate-a-master-encryption-key) a master encryption key
-* [Encrypt](https://github.com/operatr-io/kpow/tree/main/secure-config#encrypt-sensitive-variables) sensitive variables
-* [Configure](https://github.com/operatr-io/kpow/tree/main/secure-config#configure-encrypted-variables) encrypted variables
-* [Provide](https://github.com/operatr-io/kpow/tree/main/secure-config#provide-the-master-key-to-kpow) the master key to Kpow
+* [Generate](#generate-a-master-encryption-key) a master encryption key
+* [Encrypt](#encrypt-sensitive-variables) sensitive variables
+* [Configure](#configure-encrypted-variables) encrypted variables
+* [Provide](#provide-the-master-key-to-kpow) the master key to Kpow
 
 #### Download the latest Kpow JAR file
 
@@ -174,9 +174,9 @@ Kpow provides support for weak obfuscatation of variables by integrating the ope
 
 Follow these simple steps to obfuscate Kpow variables with the Jetty Password utility.
 
-* [Download](https://github.com/operatr-io/kpow/tree/main/secure-config#download-the-latest-kpow-jar) the latest Kpow JAR file
-* [Obfuscate](https://github.com/operatr-io/kpow/tree/main/secure-config#obfuscate-sensitive-variables) sensitive variables
-* [Configure](https://github.com/operatr-io/kpow/tree/main/secure-config#configure-obfuscated-variables) obfuscated variables
+* [Download](#download-the-latest-kpow-jar) the latest Kpow JAR file
+* [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
+* [Configure](#configure-obfuscated-variables) obfuscated variables
 
 #### Download the latest Kpow JAR
 
