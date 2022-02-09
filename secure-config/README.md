@@ -97,9 +97,11 @@ Normal passphrase rules apply, longer passphrases with more unique characters ar
 vi passhphrase.txt
 ```
 
+The passphrase is read from file to avoid observation in your shell history.
+
 #### Generate a new master encryption key
 
-The passphrase is read from file to avoid observation in your shell history.
+When generating a key, specify a `--salt` if you require the ability to regenerate the key.
 
 ```bash
 java -cp ./kpow-2022-02-17.jar kpow.secure.key --pass-file passhphrase.txt --out-file passphrase.key
