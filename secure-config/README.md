@@ -271,7 +271,7 @@ ARDayIDNu0cOn4b5JkdkpwOj8OGJQ6c1nUirUvfpI6e0/zWvq85FOlR3Mpja4ubIT5QmfEO2oKTp8VTQ
 
 ### Kpow Secure Java API for Decryption
 
-Use the `io.kpow.secure.Decoder` to decode an encrypted payload with a master key and convert it automatically to `java.util.Properties`
+Use the `io.kpow.secure.Decoder` to decode an encrypted payload with a master key and convert it to `java.util.Properties`.
 
 ```Java
 Properties mySecureProps = Decoder.properties("//iQh9KYe7pM+mevjifZPrm7YE2+rRloG1E15zzjR88=", "ARAOGa3BAZ2TMxbU1aj+tFYfNHNwnRh3r/w2sG7FA4L7fVRzArpzrxAd2dUovyDfel++FHgW1IFrinZddTo+KiYFYm2rsn+ul65eQ1L5t9MsBq3LpuGjoFDSxkYFZweo/w0=");
