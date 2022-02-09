@@ -74,8 +74,11 @@ kpow {
 
 Kpow provides support for encrypted variables by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
 
-[Kpow-Secure](https://github.com/operatr-io/kpow-secure) is a library for simple, secure configuration with standard Java AES encryption and PBKDF2 master key generation.
+Kpow-Secure(https://github.com/operatr-io/kpow-secure) is a library for simple, secure configuration with standard Java AES encryption and PBKDF2 master key generation.
 
+Follow these steps to generate a master key and encrypt sensitive variables:
+
+* Download the latest Kpow Java JAR
 
 ## OBF Encoded Variables
 
