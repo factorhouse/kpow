@@ -74,11 +74,33 @@ kpow {
 
 Kpow provides support for encrypted variables by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
 
-Kpow-Secure(https://github.com/operatr-io/kpow-secure) is a library for simple, secure configuration with standard Java AES encryption and PBKDF2 master key generation.
+Kpow-Secure(https://github.com/operatr-io/kpow-secure) is a library for simple, secure configuration with standard Java AES encryption and PBKDF2 master key generation, see the [library documentation](https://github.com/operatr-io/kpow-secure) for full details of key generation and encryption.
 
-Follow these steps to generate a master key and encrypt sensitive variables:
+Follow these steps to encrypt plaintext variables:
 
-* Download the latest Kpow Java JAR
+* Download the latest [Kpow Java JAR](https://github.com/operatr-io/kpow/blob/main/CHANGELOG.md#latest-release-artifacts)
+
+* Create a file containing your passphrase:
+
+```
+vi passhphrase.txt
+```
+
+* Generate a new master encryption key:
+
+```console
+java -cp ./kpow-2022-02-17.jar kpow.secure.key --pass-file passhphrase.txt --out-file passphrase.key
+13:25:58.951 INFO  [main] kpow.secure.key –
+
+Kpow Secure Key:
+----------------
+
+wjDYJgpvFWOGq1G9CkT1szG6yHxQDN1iu8OBgzTyrM0=
+
+Key file written to: passphrase.key
+
+Random salt used, this key cannot be regenerated.
+```
 
 ## OBF Encoded Variables
 
