@@ -1,5 +1,7 @@
 # Kpow Secure Configuration
 
+[**Note**: this guide relates to the pending 88.2 release of kPow.]
+
 This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate](#obf-encoded-variables) Kpow configuration to avoid sensitive variables in plaintext.
 
 ## Contents
