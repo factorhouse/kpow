@@ -2,7 +2,9 @@
 
 [Kpow](https://kpow.io) is an Enterprise-grade toolkit for engineers working with Apache Kafka.
 
-## Latest Release Artifacts [88.1]
+## Latest Release Artifacts
+
+The latest release of Kpow is v88.1.
 
 * [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
 * [Java Jar](https://releases.operatr.io/operatr-2022-01-18-15-28.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1658032482&Signature=fTp4FUTDCCTO43BlEiAZEoekra0%3D)
