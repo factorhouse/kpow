@@ -78,15 +78,19 @@ Kpow-Secure(https://github.com/operatr-io/kpow-secure) is a library for simple, 
 
 ### AES Encryption Steps
 
-* Download the latest [Kpow Java JAR](https://github.com/operatr-io/kpow/blob/main/CHANGELOG.md#latest-release-artifacts)
+#### Download the latest Kpow JAR file
 
-* Create a file containing your passphrase:
+The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://github.com/operatr-io/kpow/blob/main/CHANGELOG.md#latest-release-artifacts) file.
+
+#### Create a file containing your passphrase:
+
+Normal passphrase rules apply, longer passphrases with more unique characters are more secure.
 
 ```
 vi passhphrase.txt
 ```
 
-* Generate a new master encryption key:
+#### Generate a new master encryption key:
 
 The passphrase is read from file to avoid observation in your shell history.
 
