@@ -236,7 +236,23 @@ Kpow will now deobfuscate any OBF encoded variables with the Jetty Password util
 
 ## Using Kpow Secure Configuration in your Kafka Client Application
 
+Kpow provides support for strong encryption of variables by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
+
+You can use the Kpow-Secure library to encrypt sensitive Kafka client configuration for your own client applications, then use the convenience of the Decoder API to convert encrypted payloads into `java.util.Properties` files.
+
+You can then `.putAll` decoded secure properties into your normal plaintext properties before starting any Kafka client.
+
 ### AES Encrypted Client Configuration
+
+Kafka client configuration in `java.util.Properties` format may look similar to:
+
+```properties
+security.protocol:SASL_PLAINTEXT
+ sasl.mechanism: PLAIN
+sasl.jaas.config : org.apache.kafka.common.security.plain.PlainLoginModule required username="kpow" password="kpow-secret";
+  ssl.truststore.location :/ssl/truststore.jks
+ssl.truststore.password= 1234
+```
 
 ### Kpow Secure Java API for Decryption
 
