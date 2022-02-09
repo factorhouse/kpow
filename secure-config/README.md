@@ -16,7 +16,11 @@ This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate
     * [Encrypt](#encrypt-sensitive-variables) sensitive variables
     * [Configure](#configure-encrypted-variables) encrypted variables
     * [Provide](#provide-the-master-key-to-kpow) the master key to Kpow
-
+* [OBF Obfuscated Variables](#obf-obfuscated-variables)
+  * [OBF Obfuscation Steps](#obf-obfuscation-steps)
+    * [Download](#download-the-latest-kpow-jar) the latest Kpow JAR file
+    * [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
+    * [Configure](#configure-obfuscated-variables) obfuscated variables
 
 ## Kpow Deployment Notes
 
