@@ -88,7 +88,7 @@ vi passhphrase.txt
 
 * Generate a new master encryption key:
 
-```console
+```bash
 java -cp ./kpow-2022-02-17.jar kpow.secure.key --pass-file passhphrase.txt --out-file passphrase.key
 13:25:58.951 INFO  [main] kpow.secure.key –
 
