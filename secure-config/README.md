@@ -57,6 +57,8 @@ Kpow accepts all environment variables and some file-based variables as AES encr
 
 This script defines a `KPOW_SECURE_KEY` and a mixture of encrypted and plain variables.
 
+**Note** AES ciphertext is prefixed with `AES:`.
+
 ```bash
 # license variables removed
 KPOW_SECURE_KEY="XT65RFOuw34GgP+ohBE4J8SwXX0OwoVzQf4KcA4zzaY=" \
