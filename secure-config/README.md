@@ -2,7 +2,7 @@
 
 This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate](#obf-encoded-variables) Kpow configuration to avoid sensitive variables in plaintext. 
 
-Encrypting or obfuscating configuration is not a replacement for secret managers or vaults, but may assist you securing Kpow in environments with limited secret management options.
+Encrypted configuration is *not a replacement for secret managers*, but may help in environments with limited secret management options.
 
 AES and PBKDF2 support is provided by [kpow-secure](https://github.com/operatr-io/kpow-secure), an open-source library that can be utilized to secure any Apache Kafka client config.
 
