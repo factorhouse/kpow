@@ -59,6 +59,8 @@ Kpow accepts all environment variables and some file-based variables as AES encr
 
 This script defines a `KPOW_SECURE_KEY` and a mixture of encrypted and plain variables.
 
+If you prefer you can define `KPOW_SECURE_KEY_LOCATION` to read the key from disk.
+
 **Note:** AES ciphertext is prefixed with `AES:`
 
 ```bash
@@ -82,7 +84,7 @@ Kpow accepts the bindPassword variable in LDAP JAAS configuration in AES or OBF 
 
 **Note:** AES ciphertext is prefixed with `AES:`
 
-When encrypting with AES Kpow expects the `KPOW_SECURE_KEY` environment variable to be set.
+To decrypt with AES Kpow expects `KPOW_SECURE_KEY` or `KPOW_SECURE_KEY_LOCATION` to be set.
 
 ```bash
 kpow {
@@ -194,6 +196,12 @@ Configure the `KPOW_SECURE_KEY` environment variable with your master key.
 
 ```
 KPOW_SECURE_KEY=wjDYJgpvFWOGq1G9CkT1szG6yHxQDN1iu8OBgzTyrM0=
+```
+
+Or load the key from disk by configuring the `KPOW_SECURE_KEY_LOCATION` environment variable.
+
+```
+KPOW_SECURE_KEY=/path/to/key.file
 ```
 
 Kpow will now decrypt any AES encrypted variables with your master encryption key.
