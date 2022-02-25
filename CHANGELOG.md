@@ -7,9 +7,9 @@
 The latest release of Kpow is v88.1.
 
 * [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
-* [Java Jar](https://releases.operatr.io/operatr-2022-01-18-15-28.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1658032482&Signature=fTp4FUTDCCTO43BlEiAZEoekra0%3D)
-* [Java 8 JAR](https://releases.operatr.io/operatr-2022-01-18-15-50.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1658033980&Signature=Ed5pUOjPYXg7HdyDd8rKK1KrSFU%3D)
-* [Release Blog Post](https://kpow.io/category/releases/88-1)
+* [Java Jar](https://releases.operatr.io/operatr-2022-02-25-14-44.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1661312744&Signature=brjTMprVFV%2B3VmtSSRwVBelmMyo%3D)
+* [Java 8 JAR](https://releases.operatr.io/operatr-2022-02-25-16-13.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1661324196&Signature=me9xbZkZzFc%2BLevxXZuKXRel8Ss%3D)
+* [Release Blog Post](https://kpow.io/category/releases/88-2)
 
 ## Project Information
 
@@ -29,7 +29,17 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https
 
 ## Kpow Releases
 
-### [88.1] 2021-01-17
+### [88.2] 2022-02-25
+
+See: [Kpow v88.2 Full Release Notes & Artifacts](https://kpow.io/releases/88-2/)
+
+* Improved support for Flink / Simple consumers
+* Support for encrypted kPow configuration
+* Support for Confluent Schema Registry w/ Mutual TLS
+* Export to CSV from the kREPL
+* Data Import improvements and bugfixes
+
+### [88.1] 2022-01-17
 
 See: [Kpow v88.1 Full Release Notes & Artifacts](https://kpow.io/releases/88-1/)
 
