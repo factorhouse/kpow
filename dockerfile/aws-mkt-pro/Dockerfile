@@ -1,4 +1,4 @@
-FROM amazoncorretto:11.0.13
+FROM amazoncorretto:11.0.14
 
 ARG VERSION 
 ARG RELEASE
