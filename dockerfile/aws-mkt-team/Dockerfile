@@ -7,7 +7,7 @@ LABEL name="kPow for Apache Kafka" \
       maintainer="support@operatr.io" \
       vendor="Operatr IO, Inc." \
       version=$VERSION \
-      release=$RELEAE \
+      release=$RELEASE \
       summary="kPow is a toolkit for engineers who build, manage, and maintain systems powered by Apache Kafka." \
       description="kPow features a rich data-oriented UI, specialized dashboards that deliver instant visibility into Kafka Clusters, Schema Registries, and Connect Installations, and developer tools that allow engineers to get to the heart of their systems quickly."
 

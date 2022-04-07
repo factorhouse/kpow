@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/openjdk-11:1.11-2
+FROM registry.access.redhat.com/ubi8/openjdk-11:1.11-2.1648459569
 
 ARG VERSION 
 ARG RELEASE
@@ -14,7 +14,7 @@ LABEL name="kPow for Apache Kafka" \
 USER 0
 
 ADD --chmod=044 resources/eula.txt /licenses/eula.txt
-ADD --chmod=044 target/kpow-standalone.jar /opt/operatr/lib/kpow.jar
+ADD --chmod=044 target/kpow-java11-standalone.jar /opt/operatr/lib/kpow.jar
 
 EXPOSE 3000
 USER 1001
