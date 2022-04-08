@@ -51,7 +51,7 @@ jobs:
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
-          IMAGE_TAG=$VERSION-aws-mkt-corp-lm
+          IMAGE_TAG=$VERSION-aws-mkt-lm
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
 
