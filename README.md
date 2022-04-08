@@ -25,7 +25,7 @@ The kPow image is available directly from [Docker Hub](https://hub.docker.com/r/
 To use the kPow images from DockerHub run:
 
 ```
-docker pull operatr/kpow:88.388.2
+docker pull operatr/kpow:88.3
 ```
 
 kPow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io)
