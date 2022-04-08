@@ -47,6 +47,14 @@ jobs:
           ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
           docker push $IMAGE_ID:$IMAGE_TAG
 
+      - name: Build kPow AWS Marketplace LM
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION-aws-mkt-corp-lm
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
+
       - name: Build kPow AWS Marketplace Corp
         run: |
           VERSION=${{github.event.inputs.version}}
