@@ -4,12 +4,12 @@
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is v88.1.
+The latest release of Kpow is v88.4.
 
 * [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
-* [Java Jar](https://releases.operatr.io/operatr-2022-02-25-14-44.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1661312744&Signature=brjTMprVFV%2B3VmtSSRwVBelmMyo%3D)
-* [Java 8 JAR](https://releases.operatr.io/operatr-2022-02-25-16-13.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1661324196&Signature=me9xbZkZzFc%2BLevxXZuKXRel8Ss%3D)
-* [Release Blog Post](https://kpow.io/category/releases/88-2)
+* [Java Jar](https://releases.operatr.io/operatr-2022-04-14-16-59.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1665471622&Signature=NLGF0DGQmo0eZ42fge%2BUZx7u0m8%3D)
+* [Java 8 JAR](https://releases.operatr.io/operatr-2022-04-14-17-01.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1665471802&Signature=unYkDPLGtOM1RL5ZWlSB9yev23I%3D)
+* [Release Blog Post](https://kpow.io/category/releases/88-4)
 
 ## Project Information
 
@@ -28,6 +28,30 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [start a free 30-day trial](https://kpow.io/try) today.
 
 ## Kpow Releases
+
+### [88.4] 2022-04-14
+
+See: [Kpow v88.4 Full Release Notes & Artifacts](https://kpow.io/releases/88-4/)
+
+* Security improvement, reduce visibility of application functionality per RBAC rules.
+* Fix connect task actions bug
+* Fix schema subject actions bug
+* Improved connect UI labels 
+
+### [88.3] 2022-04-08
+
+See: [Kpow v88.3 Full Release Notes & Artifacts](https://kpow.io/releases/88-4/)
+
+* Schema and connect table to react-virtualized
+* Kpow application logs are JSON formatted
+* UI improvement to allow table export to JSON
+* UI improvement to support dynamic column resizing
+* Security improvement, optional disallow concurrent login
+* Security improvement, improved CSRF and Same Origin implementation
+* Reduce Kpow topic disk usage by 75%
+* Reduce Kpow CPU usage by 50%
+* Reduce Kpow Confluent Cloud topic disk usage by 95%
+* Support UUID literal in EDN data format
 
 ### [88.2] 2022-02-25
 
