@@ -36,7 +36,8 @@ See: [Kpow v88.4 Full Release Notes & Artifacts](https://kpow.io/releases/88-4/)
 * Security improvement, reduce visibility of application functionality per RBAC rules.
 * Fix connect task actions bug
 * Fix schema subject actions bug
-* Improved connect UI labels 
+* Fix Java 8 KpowLdapLoginModule bug
+* Improve connect UI labels
 
 ### [88.3] 2022-04-08
 
@@ -44,10 +45,11 @@ See: [Kpow v88.3 Full Release Notes & Artifacts](https://kpow.io/releases/88-4/)
 
 * Schema and connect table to react-virtualized
 * Kpow application logs are JSON formatted
-* UI improvement to allow table export to JSON
-* UI improvement to support dynamic column resizing
+* Improve UI to allow table export to JSON
+* Improve UI support dynamic table column resizing
 * Security improvement, optional disallow concurrent login
-* Security improvement, improved CSRF and Same Origin implementation
+* Security improvement, improved websocket CSRF and same-origin impl
+* Security improvement, LDAP session max age configuration
 * Reduce Kpow topic disk usage by 75%
 * Reduce Kpow CPU usage by 50%
 * Reduce Kpow Confluent Cloud topic disk usage by 95%
@@ -57,7 +59,7 @@ See: [Kpow v88.3 Full Release Notes & Artifacts](https://kpow.io/releases/88-4/)
 
 See: [Kpow v88.2 Full Release Notes & Artifacts](https://kpow.io/releases/88-2/)
 
-* Improved support for Flink / Simple consumers
+* Improve support for Flink / Simple consumers
 * Support for encrypted kPow configuration
 * Support for Confluent Schema Registry w/ Mutual TLS
 * Export to CSV from the kREPL
