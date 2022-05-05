@@ -1,4 +1,4 @@
-FROM amazoncorretto:11.0.13-alpine
+FROM amazoncorretto:11.0.15-alpine
 
 ARG VERSION 
 ARG RELEASE
