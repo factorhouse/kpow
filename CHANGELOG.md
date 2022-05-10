@@ -4,12 +4,12 @@
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is v88.4.
+The latest release of Kpow is v88.5.
 
 * [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
-* [Java Jar](https://releases.operatr.io/operatr-2022-04-14-16-59.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1665471622&Signature=NLGF0DGQmo0eZ42fge%2BUZx7u0m8%3D)
-* [Java 8 JAR](https://releases.operatr.io/operatr-2022-04-14-17-01.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1665471802&Signature=unYkDPLGtOM1RL5ZWlSB9yev23I%3D)
-* [Release Blog Post](https://kpow.io/category/releases/88-4)
+* [Java Jar](https://releases.operatr.io/operatr-2022-05-09-15-17.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1667625577&Signature=2%2BbwF%2FcC0vsTNDNNbDLYzExi1wA%3D)
+* [Java 8 JAR](https://releases.operatr.io/operatr-2022-05-09-15-22.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1667625850&Signature=Gu3QaAHSrlnG7lIUapRLo7TC7oY%3D)
+* [Release Blog Post](https://kpow.io/category/releases/88-5)
 
 ## Project Information
 
@@ -28,6 +28,17 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [start a free 30-day trial](https://kpow.io/try) today.
 
 ## Kpow Releases
+
+### [88.5] 2022-05-06
+
+See: [Kpow v88.5 Full Release Notes & Artifacts](https://kpow.io/releases/88-5/)
+
+* Improve Confluent Cloud Metrics API integration
+* Improve Kafka Connect error messages
+* Improve broker graphs sorting function
+* Improve data produce UI/UX 
+* Fix regression with Confluent Avro logical types
+* Fix default serdes configuration regression
 
 ### [88.4] 2022-04-14
 
