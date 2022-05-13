@@ -368,14 +368,18 @@ If your input contains single quote characters you will need to use the followin
 We can read input text from file, rather than providing it on the command line. This allows us to encrypt any file content, including text with single quotes among other special characters.
 
 ```bash
-cat input.txt     
+cat input.txt
+```
 
+```bash
 Abc !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
 ```bash
 java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --encrypt-file input.txt
+```
 
+```bash
 19:18:47.811 INFO  [main] kpow.secure –
 
 Kpow Encrypted:
@@ -388,6 +392,9 @@ We can confirm that cipher text:
 
 ```bash
 java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --decrypt ARAFs1tSWti39JfChTIbrHSqHm3qXcSON34zk00ULn4A3Itxk6MEh71U0mNreq4Iiz59incH3PEtLHQkOoqpSjJK
+```
+
+```bash
 19:19:38.012 INFO  [main] kpow.secure –
 
 Kpow Decrypted:
