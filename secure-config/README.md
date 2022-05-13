@@ -313,7 +313,7 @@ ARDayIDNu0cOn4b5JkdkpwOj8OGJQ6c1nUirUvfpI6e0/zWvq85FOlR3Mpja4ubIT5QmfEO2oKTp8VTQ
 
 When encrypting text containing special characters you must either:
 
-1. Quote input on the command line correctly, or
+1. Quote input on the command line, or
 2. Read the encrypted text input from a file
 
 In the examples below we will encrypt text consisting of 'Abc' followed by [every special character defined by OWASP](https://owasp.org/www-community/password-special-characters).
@@ -321,6 +321,42 @@ In the examples below we will encrypt text consisting of 'Abc' followed by [ever
 E.g.
 ```
 Abc !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
+
+#### Qoute input on the command line
+
+From the [Bash reference manual](http://www.gnu.org/software/bash/manual/bashref.html#Single-Quotes)
+
+> Enclosing characters in single quotes (‘'’) preserves the literal value of each character within the quotes. A single quote may not occur between single quotes, even when preceded by a backslash.
+
+That means we can encrypt any text as long as it doesn't contain a single quote character like so:
+
+```bash
+java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --encrypt 'Abc !"#$%&()*+,-./:;<=>?@[\]^_`{|}~'
+```
+
+```bash
+17:55:52.641 INFO  [main] kpow.secure –
+
+Kpow Encrypted:
+---------------
+
+ARAkkFNT2v9NdR6VHI/vUPjBsm83UAQkIZliwo3ZMFQehhFTeuRALee13vlpIvrZkhV6rAWCag+utW6JVSBWS3iA
+```
+
+And we can confirm that cipher text:
+
+```
+java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --decrypt ARAkkFNT2v9NdR6VHI/vUPjBsm83UAQkIZliwo3ZMFQehhFTeuRALee13vlpIvrZkhV6rAWCag+utW6JVSBWS3iA
+```
+
+```bash
+17:58:40.185 INFO  [main] kpow.secure –
+
+Kpow Decrypted:
+---------------
+
+Abc !"#$%&()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
 ### Kpow Secure Java API for Decryption
