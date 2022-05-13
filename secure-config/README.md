@@ -361,7 +361,7 @@ Kpow Decrypted:
 Abc !"#$%&()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
-If your input contains special characters you will need to use the following method.
+If your input contains single quote characters you will need to use the following method.
 
 #### Read input from file
 
