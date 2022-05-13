@@ -314,8 +314,8 @@ ARDayIDNu0cOn4b5JkdkpwOj8OGJQ6c1nUirUvfpI6e0/zWvq85FOlR3Mpja4ubIT5QmfEO2oKTp8VTQ
 
 When encrypting text containing special characters you must either:
 
-1. Quote input on the command line, or
-2. Read the encrypted text input from a file
+1. [Quote](#quote-input-on-the-command-line) input on the command line, or
+2. [Read](#read-the-input-text-from-file) the input text from file
 
 In the examples below we will encrypt text consisting of 'Abc' followed by [every special character defined by OWASP](https://owasp.org/www-community/password-special-characters).
 
@@ -359,6 +359,12 @@ Kpow Decrypted:
 
 Abc !"#$%&()*+,-./:;<=>?@[\]^_`{|}~
 ```
+
+If your input contains special characters you will need to use the following method.
+
+#### Read the input text from file
+
+We can read any input text from file, rather than providing it on the command line.
 
 ### Kpow Secure Java API for Decryption
 
