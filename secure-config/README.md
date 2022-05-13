@@ -30,6 +30,7 @@ AES and PBKDF2 support is provided by [kpow-secure](https://github.com/operatr-i
     * [Configure](#configure-obfuscated-variables) obfuscated variables
 * [Encrypting Text Containing Special Characters](#encrypting-text-containing-special-characters)
   * [Quote](#qoute-input-on-the-command-line) input on the command line 
+  * [Read](#read-input-from-file) input from file
 * [Using Kpow Secure Configuration in your Kafka Client Application](#using-kpow-secure-configuration-in-your-kafka-client-application)
   * [AES Encrypted Client Configuration](#aes-encrypted-client-configuration)
   * [Kpow Secure Java API for Decryption](#kpow-secure-java-api-for-decryption)
@@ -314,8 +315,8 @@ ARDayIDNu0cOn4b5JkdkpwOj8OGJQ6c1nUirUvfpI6e0/zWvq85FOlR3Mpja4ubIT5QmfEO2oKTp8VTQ
 
 When encrypting text containing special characters you must either:
 
-1. [Quote](#quote-input-on-the-command-line) input on the command line, or
-2. [Read](#read-the-input-text-from-file) the input text from file
+1. Quote input on the command line, or
+2. Read input from file
 
 In the examples below we will encrypt text consisting of 'Abc' followed by [every special character defined by OWASP](https://owasp.org/www-community/password-special-characters).
 
@@ -362,7 +363,7 @@ Abc !"#$%&()*+,-./:;<=>?@[\]^_`{|}~
 
 If your input contains special characters you will need to use the following method.
 
-#### Read the input text from file
+#### Read input text from file
 
 We can read any input text from file, rather than providing it on the command line.
 
