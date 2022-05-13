@@ -28,6 +28,7 @@ AES and PBKDF2 support is provided by [kpow-secure](https://github.com/operatr-i
     * [Download](#download-the-latest-kpow-jar) the latest Kpow JAR file
     * [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
     * [Configure](#configure-obfuscated-variables) obfuscated variables
+* [Encrypting Text Containing Special Characters](#encrypting-text-containing-special-characters)
 * [Using Kpow Secure Configuration in your Kafka Client Application](#using-kpow-secure-configuration-in-your-kafka-client-application)
   * [AES Encrypted Client Configuration](#aes-encrypted-client-configuration)
   * [Kpow Secure Java API for Decryption](#kpow-secure-java-api-for-decryption)
@@ -307,6 +308,15 @@ Kpow Encrypted:
 
 ARDayIDNu0cOn4b5JkdkpwOj8OGJQ6c1nUirUvfpI6e0/zWvq85FOlR3Mpja4ubIT5QmfEO2oKTp8VTQlteH7iYtmps9rlm37Vz6SSUdSR8JZV274kRyf8DaTgGP5PzcLtjp65/vOCDw7Et9HyLMx2KcDf7T2Uhg4rdnny+1ZTa/QIxdaiOU+JcsjJvOV5giiaUFgya4fd6GyQZmY4Q4pIFo8bLuSU3DbWLS54MMnlGFxTSYgKLDT0LuFtTe0gKRVGT5aGX3tprO13x7DGimAOM+a7DHE2ynSKtg95fbhOzIKU92QG1XE3HVJSiwCqJnOghjL8TPIr0iA133h/Q08F058RdEZ/ln771wkAsNC9LKew==
 ```
+
+### Encrypting Text Containing Special Characters
+
+When encrypting text containing special characters you must either:
+
+1. Quote input on the command line correctly, or
+2. Read the encrypted text input from a file
+
+In the examples below we will encrypt text consisting of 'Abc' followed by [every special character defined by OWASP](https://owasp.org/www-community/password-special-characters).
 
 ### Kpow Secure Java API for Decryption
 
