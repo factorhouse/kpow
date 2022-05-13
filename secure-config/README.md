@@ -20,6 +20,7 @@ AES and PBKDF2 support is provided by [kpow-secure](https://github.com/operatr-i
     * [Download](#download-the-latest-kpow-jar-file) the latest Kpow JAR file
     * [Generate](#generate-a-master-encryption-key) a master encryption key
     * [Encrypt](#encrypt-sensitive-variables) sensitive variables
+    * [Check](#check-encrypted-cipher-text) encrypted cipher text
     * [Configure](#configure-encrypted-variables) encrypted variables
     * [Provide](#provide-the-master-key-to-kpow) the master key to Kpow
 * [OBF Obfuscated Variables](#obf-obfuscated-variables)
@@ -123,6 +124,7 @@ Follow these simple steps to secure Kpow variables with AES encryption
 * [Download](#download-the-latest-kpow-jar-file) the latest Kpow JAR file
 * [Generate](#generate-a-master-encryption-key) a master encryption key
 * [Encrypt](#encrypt-sensitive-variables) sensitive variables
+* [Check](#check-encrypted-cipher-text) encrypted cipher text
 * [Configure](#configure-encrypted-variables) encrypted variables
 * [Provide](#provide-the-master-key-to-kpow) the master key to Kpow
 
@@ -184,7 +186,7 @@ Kpow Encrypted:
 ARBtyl4hxANqbKPMFg4wEFCf3BJy+nKBkPYMIwK7SMS+jt1WxockS2HJSA50t+IjJU4=
 ```
 
-#### Check encrypted variables (optional)
+#### Check encrypted cipher text (optional)
 
 Decrypt the cipher text with Kpow and your master key
 
