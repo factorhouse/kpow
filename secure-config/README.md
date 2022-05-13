@@ -29,6 +29,7 @@ AES and PBKDF2 support is provided by [kpow-secure](https://github.com/operatr-i
     * [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
     * [Configure](#configure-obfuscated-variables) obfuscated variables
 * [Encrypting Text Containing Special Characters](#encrypting-text-containing-special-characters)
+  * [Quote](#qoute-input-on-the-command-line) input on the command line 
 * [Using Kpow Secure Configuration in your Kafka Client Application](#using-kpow-secure-configuration-in-your-kafka-client-application)
   * [AES Encrypted Client Configuration](#aes-encrypted-client-configuration)
   * [Kpow Secure Java API for Decryption](#kpow-secure-java-api-for-decryption)
