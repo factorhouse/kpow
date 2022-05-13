@@ -184,6 +184,23 @@ Kpow Encrypted:
 ARBtyl4hxANqbKPMFg4wEFCf3BJy+nKBkPYMIwK7SMS+jt1WxockS2HJSA50t+IjJU4=
 ```
 
+#### Check encrypted variables (optional)
+
+Decrypt the cipher text with Kpow and your master key
+
+```bash
+java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --decrypt ARAvkZkZhmqy1Ow3Tac9MeNNZo2iGavRzN3m88W++IHDYvrPR5dtrsy8H+7KdXgCmS8=
+```
+
+```bash
+13:50:01.998 INFO   [main] kpow.secure –
+
+Kpow Decrypted:
+---------------
+
+mykeystorepassword
+```
+
 #### Configure encrypted variables
 
 Replace any sensitive plaintext variables with `AES:cipher-text`.
