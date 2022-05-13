@@ -135,7 +135,7 @@ The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://gith
 Create a passphrase file, longer passphrases with more unique characters are more secure.
 
 ```
-vi passhphrase.txt
+vi passphrase.txt
 ```
 
 The passphrase is read from file to avoid observation in your shell history.
@@ -143,7 +143,7 @@ The passphrase is read from file to avoid observation in your shell history.
 Then generate a master encryption key using the Kpow JAR and the following command:
 
 ```bash
-java -cp ./kpow-2022-02-17.jar kpow.secure.key --pass-file passhphrase.txt --out-file passphrase.key
+java -cp ./kpow-2022-02-17.jar kpow.secure.key --pass-file passphrase.txt --out-file passphrase.key
 ```
 
 ```bash
