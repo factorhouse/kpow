@@ -186,7 +186,7 @@ Kpow Encrypted:
 ARBtyl4hxANqbKPMFg4wEFCf3BJy+nKBkPYMIwK7SMS+jt1WxockS2HJSA50t+IjJU4=
 ```
 
-#### Check encrypted cipher text (optional)
+#### Check cipher text (optional)
 
 Decrypt the cipher text with Kpow and your master key
 
