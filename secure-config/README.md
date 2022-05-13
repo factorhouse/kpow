@@ -29,7 +29,7 @@ AES and PBKDF2 support is provided by [kpow-secure](https://github.com/operatr-i
     * [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
     * [Configure](#configure-obfuscated-variables) obfuscated variables
 * [Encrypting Text Containing Special Characters](#encrypting-text-containing-special-characters)
-  * [Quote](#qoute-input-on-the-command-line) input on the command line 
+  * [Quote](#quote-input-on-the-command-line) input on the command line 
   * [Read](#read-input-from-file) input from file
 * [Using Kpow Secure Configuration in your Kafka Client Application](#using-kpow-secure-configuration-in-your-kafka-client-application)
   * [AES Encrypted Client Configuration](#aes-encrypted-client-configuration)
@@ -325,7 +325,7 @@ E.g.
 Abc !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
-#### Qoute input on the command line
+#### Quote input on the command line
 
 From the [Bash reference manual](http://www.gnu.org/software/bash/manual/bashref.html#Single-Quotes)
 
@@ -346,7 +346,7 @@ Kpow Encrypted:
 ARAkkFNT2v9NdR6VHI/vUPjBsm83UAQkIZliwo3ZMFQehhFTeuRALee13vlpIvrZkhV6rAWCag+utW6JVSBWS3iA
 ```
 
-And we can confirm that cipher text:
+We can confirm that cipher text:
 
 ```
 java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --decrypt ARAkkFNT2v9NdR6VHI/vUPjBsm83UAQkIZliwo3ZMFQehhFTeuRALee13vlpIvrZkhV6rAWCag+utW6JVSBWS3iA
@@ -363,9 +363,38 @@ Abc !"#$%&()*+,-./:;<=>?@[\]^_`{|}~
 
 If your input contains special characters you will need to use the following method.
 
-#### Read input text from file
+#### Read input from file
 
-We can read any input text from file, rather than providing it on the command line.
+We can read input text from file, rather than providing it on the command line. This allows us to encrypt any file content, including text with single quotes among other special characters.
+
+```bash
+cat input.txt     
+
+Abc !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
+
+```bash
+java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --encrypt-file input.txt
+
+19:18:47.811 INFO  [main] kpow.secure –
+
+Kpow Encrypted:
+---------------
+
+ARAFs1tSWti39JfChTIbrHSqHm3qXcSON34zk00ULn4A3Itxk6MEh71U0mNreq4Iiz59incH3PEtLHQkOoqpSjJK
+```
+
+We can confirm that cipher text:
+
+```bash
+java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --decrypt ARAFs1tSWti39JfChTIbrHSqHm3qXcSON34zk00ULn4A3Itxk6MEh71U0mNreq4Iiz59incH3PEtLHQkOoqpSjJK
+19:19:38.012 INFO  [main] kpow.secure –
+
+Kpow Decrypted:
+---------------
+
+Abc !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
 
 ### Kpow Secure Java API for Decryption
 
