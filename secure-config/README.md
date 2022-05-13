@@ -318,7 +318,10 @@ When encrypting text containing special characters you must either:
 
 In the examples below we will encrypt text consisting of 'Abc' followed by [every special character defined by OWASP](https://owasp.org/www-community/password-special-characters).
 
-e.g. `Abc !"#$%&'()*+,-./:;<=>?@[\]^_\`{|}~`
+E.g.
+```
+Abc !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
 
 ### Kpow Secure Java API for Decryption
 
