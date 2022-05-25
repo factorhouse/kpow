@@ -16,7 +16,6 @@ ADD --chmod=044 target/kpow-java11-standalone.jar /opt/operatr/lib/kpow.jar
 ENV CORE_ASYNC_POOL_SIZE=8
 ENV JVM_OPTS="-server -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=80 -XX:MaxRAMPercentage=80 --add-opens=java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED --add-opens=java.xml/com.sun.org.apache.xerces.internal.jaxp=ALL-UNNAMED --add-opens=java.xml/com.sun.org.apache.xerces.internal.util=ALL-UNNAMED"
 
-
 EXPOSE 3000
 
 CMD java $JVM_OPTS -jar /opt/operatr/lib/kpow.jar
