@@ -24,6 +24,7 @@ jobs:
 
           docker pull ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE
           docker pull ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE-alpine
+          docker pull ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE-jdk17
           docker pull ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE-rh-ubi
 
           docker tag ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE operatr/kpow:$NEXT_RELEASE
@@ -36,6 +37,7 @@ jobs:
           docker push operatr/operatr:$NEXT_RELEASE
           docker push operatr/operatr:latest
           docker push operatr/kpow:$NEXT_RELEASE-alpine
+          docker push operatr/kpow:$NEXT_RELEASE-jdk17
           docker push operatr/kpow:$NEXT_RELEASE-rh-ubi
           docker push operatr/kpow:$NEXT_RELEASE
           docker push operatr/kpow:latest

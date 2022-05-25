@@ -88,3 +88,13 @@ jobs:
           docker push $IMAGE_ID:$IMAGE_TAG
           docker tag $IMAGE_ID:$IMAGE_TAG $IMAGE_ID:latest
           docker push $IMAGE_ID:latest
+
+      - name: Build kPow (JDK17)
+        run: | 
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_TAG=$VERSION-jdk17
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/jdk17/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
+          docker tag $IMAGE_ID:$IMAGE_TAG $IMAGE_ID:latest
+          docker push $IMAGE_ID:latest
