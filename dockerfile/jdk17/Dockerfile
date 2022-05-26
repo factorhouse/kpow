@@ -10,6 +10,15 @@ LABEL "release"=$RELEASE
 LABEL "summary"="kPow.IO is a toolkit for engineers who build, manage, and maintain systems powered by Apache Kafka."
 LABEL "description"="kPow.IO features a rich data-oriented UI, specialized dashboards that deliver instant visibility into Kafka Clusters, Schema Registries, and Connect Installations, and developer tools that allow engineers to get to the heart of their systems quickly."
 
+RUN yum install shadow-utils.x86_64 -y
+
+RUN groupadd -g 999 kpow && \
+    useradd -r -u 999 -g kpow kpow
+
+RUN yum remove shadow-utils.x86_64 -y
+
+USER kpow
+
 ADD --chmod=044 resources/eula.txt /licenses/eula.txt
 ADD --chmod=044 target/kpow-java11-standalone.jar /opt/operatr/lib/kpow.jar
 
