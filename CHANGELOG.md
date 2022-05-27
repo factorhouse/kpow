@@ -4,12 +4,12 @@
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is v88.5.
+The latest release of Kpow is v88.6.
 
 * [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
-* [Java Jar](https://releases.operatr.io/operatr-2022-05-09-15-17.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1667625577&Signature=2%2BbwF%2FcC0vsTNDNNbDLYzExi1wA%3D)
-* [Java 8 JAR](https://releases.operatr.io/operatr-2022-05-09-15-22.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1667625850&Signature=Gu3QaAHSrlnG7lIUapRLo7TC7oY%3D)
-* [Release Blog Post](https://kpow.io/category/releases/88-5)
+* [Java Jar](https://releases.operatr.io/operatr-2022-05-27-16-45.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1669186021&Signature=MXRcK26YIuhxsBh5fnaphmh3evY%3D)
+* [Java 8 JAR](https://releases.operatr.io/operatr-2022-05-27-16-48.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1669186344&Signature=DxnwIB56BMDG50fIgMZlI3TwgY0%3D)
+* [Release Blog Post](https://kpow.io/category/releases/88-6)
 
 ## Project Information
 
@@ -28,6 +28,18 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [start a free 30-day trial](https://kpow.io/try) today.
 
 ## Kpow Releases
+
+### [88.6] 2022-05-27
+
+See: [Kpow v88.6 Full Release Notes & Artifacts](https://kpow.io/releases/88-6/)
+
+* Support Protobuf format with AWS Glue Schema Registry
+* Support configurable JSON logging with LOG_FORMAT env variable
+* Support previous 24hr search windown in Data Inspect
+* Support JDK17 with new -jdk17 Docker tag
+* Improve orphan schema detection and deletion
+* Improve Confluent Cloud Metrics API integration
+* Mute redundant INFO logging by Confluent Schema Registry
 
 ### [88.5] 2022-05-06
 
