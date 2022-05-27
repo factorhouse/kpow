@@ -32,6 +32,7 @@ jobs:
           docker tag ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE operatr/operatr:$NEXT_RELEASE
           docker tag ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE operatr/operatr:latest
           docker tag ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE-alpine operatr/kpow:$NEXT_RELEASE-alpine
+          docker tag ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE-jdk17 operatr/kpow:$NEXT_RELEASE-jdk17
           docker tag ghcr.io/operatr-io/kpow/kpow:$NEXT_RELEASE-rh-ubi operatr/kpow:$NEXT_RELEASE-rh-ubi
 
           docker push operatr/operatr:$NEXT_RELEASE
