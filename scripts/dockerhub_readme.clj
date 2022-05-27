@@ -9,7 +9,9 @@
    ""
    (format "* [%s, latest](%s)" release-number "https://github.com/operatr-io/kpow/blob/main/dockerfile/kpow/Dockerfile")
    (format "* [%s-alpine](%s)" release-number "https://github.com/operatr-io/kpow/blob/main/dockerfile/alpine/Dockerfile")
+   (format "* [%s-jdk17](%s)" release-number "https://github.com/operatr-io/kpow/blob/main/dockerfile/jdk17/Dockerfile")
    (format "* [%s-rh-ubi](%s)" release-number "https://github.com/operatr-io/kpow/blob/main/dockerfile/rh-ubi/Dockerfile")
+
    ""])
 
 (def next-readme-lines
