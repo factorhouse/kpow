@@ -4,12 +4,12 @@
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is v88.6.
+The latest release of Kpow is v88.7.
 
 * [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
-* [Java Jar](https://releases.operatr.io/operatr-2022-05-27-16-45.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1669186021&Signature=MXRcK26YIuhxsBh5fnaphmh3evY%3D)
-* [Java 8 JAR](https://releases.operatr.io/operatr-2022-05-27-16-48.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1669186344&Signature=DxnwIB56BMDG50fIgMZlI3TwgY0%3D)
-* [Release Blog Post](https://kpow.io/category/releases/88-6)
+* [Java Jar](https://releases.operatr.io/operatr-2022-06-01-16-29.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1669617165&Signature=881vadw%2BUIikCzAwQhNSab6OQzA%3D)
+* [Java 8 JAR](https://releases.operatr.io/operatr-2022-06-01-16-34.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1669617502&Signature=coJNkIIeE0VdJ7CQ67DzD%2BODN8Y%3D)
+* [Release Blog Post](https://kpow.io/category/releases/88-7)
 
 ## Project Information
 
@@ -28,6 +28,12 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [start a free 30-day trial](https://kpow.io/try) today.
 
 ## Kpow Releases
+
+### [88.7] 2022-06-01
+
+See: [Kpow v88.7 Full Release Notes & Artifacts](https://kpow.io/releases/88-7/)
+
+* Revert Kafka Client libraries due to producer idempotency breaking change
 
 ### [88.6] 2022-05-27
 
