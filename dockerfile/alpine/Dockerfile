@@ -15,7 +15,7 @@ ADD --chmod=044 resources/eula.txt /licenses/eula.txt
 ADD --chmod=044 target/kpow-java11-standalone.jar /opt/operatr/lib/kpow.jar
 
 ENV CORE_ASYNC_POOL_SIZE=8
-ENV JVM_OPTS="-server -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=80 -XX:MaxRAMPercentage=80"
+ENV JVM_OPTS="-server -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
 
 EXPOSE 3000
 
