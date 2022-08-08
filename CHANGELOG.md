@@ -28,7 +28,7 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https
 
 ## Kpow Releases
 
-### [89.1] 2022-08-02
+### [89.2] 2022-08-08
 
 See: [Kpow v89.2 Full Release Notes & Artifacts](https://kpow.io/releases/89-2/)
 
