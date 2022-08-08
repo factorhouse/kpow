@@ -11,10 +11,10 @@ Dockerfile for [kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [A
 
 <!--- StartReleaseLinks --->
 
-* [89.1, latest](https://github.com/operatr-io/kpow/blob/main/dockerfile/kpow/Dockerfile)
-* [89.1-alpine](https://github.com/operatr-io/kpow/blob/main/dockerfile/alpine/Dockerfile)
-* [89.1-jdk17](https://github.com/operatr-io/kpow/blob/main/dockerfile/jdk17/Dockerfile)
-* [89.1-rh-ubi](https://github.com/operatr-io/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
+* [89.2, latest](https://github.com/operatr-io/kpow/blob/main/dockerfile/kpow/Dockerfile)
+* [89.2-alpine](https://github.com/operatr-io/kpow/blob/main/dockerfile/alpine/Dockerfile)
+* [89.2-jdk17](https://github.com/operatr-io/kpow/blob/main/dockerfile/jdk17/Dockerfile)
+* [89.2-rh-ubi](https://github.com/operatr-io/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
