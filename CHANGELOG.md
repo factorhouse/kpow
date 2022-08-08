@@ -4,12 +4,12 @@
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is v89.1.
+The latest release of Kpow is [v89.2](https://kpow.io/category/releases/89-2).
 
 * [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
-* [Java Jar](https://releases.operatr.io/operatr-2022-08-02-21-36.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1674992243&Signature=oKLp5kog4qf%2B4%2BrkQXsBXTK9VGE%3D)
-* [Java 8 JAR](https://releases.operatr.io/operatr-2022-08-02-21-38.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1674992355&Signature=ov9OAotGYbyss1zoExTEGBtsDws%3D)
-* [Release Blog Post](https://kpow.io/category/releases/89-1)
+* [Java Jar](https://releases.operatr.io/operatr-2022-08-08-17-14.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1675494945&Signature=m7owQ29R%2BUOJhkP1s0UTUSPXr9g%3D)
+* [Java 8 JAR](https://releases.operatr.io/operatr-2022-08-08-17-16.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1675495079&Signature=eVumpeokwB3LrCvMm4Dzjd5wPJo%3D)
+* [Release Blog Post](https://kpow.io/category/releases/89-2)
 
 ## Project Information
 
@@ -19,7 +19,6 @@ Docker containers for each release can be found here:
 
  * Dockerhub as [operatr/kpow](https://hub.docker.com/r/operatr/kpow)
  * The [AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0)
- * The [Red Hat Marketplace](https://marketplace.redhat.com/en-us/products/kpow-for-apache-kafka)
 
 Deploy Kpow to Kubernetes with our [Helm Charts](https://github.com/operatr-io/kpow-helm-charts), also available at [artifacthub.io](https://artifacthub.io/packages/helm/kpow/kpow).
 
@@ -28,6 +27,13 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [start a free 30-day trial](https://kpow.io/try) today.
 
 ## Kpow Releases
+
+### [89.1] 2022-08-02
+
+See: [Kpow v89.2 Full Release Notes & Artifacts](https://kpow.io/releases/89-2/)
+
+* Fix Data Inspect XML message display bug
+* Fix SAML re-auth relay-state bug
 
 ### [89.1] 2022-08-02
 
