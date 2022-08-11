@@ -4,12 +4,12 @@
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v89.2](https://kpow.io/category/releases/89-2).
+The latest release of Kpow is [v89.3](https://kpow.io/category/releases/89-3).
 
 * [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
-* [Java Jar](https://releases.operatr.io/operatr-2022-08-08-17-14.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1675494945&Signature=m7owQ29R%2BUOJhkP1s0UTUSPXr9g%3D)
-* [Java 8 JAR](https://releases.operatr.io/operatr-2022-08-08-17-16.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1675495079&Signature=eVumpeokwB3LrCvMm4Dzjd5wPJo%3D)
-* [Release Blog Post](https://kpow.io/category/releases/89-2)
+* [Java Jar](https://releases.operatr.io/operatr-2022-08-11-17-58.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=%2FmjZNFHGKn4wrnq%2BTujgvKb%2FZ70%3D&Expires=1675756765)
+* [Java 8 JAR](https://releases.operatr.io/operatr-2022-08-11-18-00.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=6ku61%2B%2BD00xl9rxD8KNrSrEvvRI%3D&Expires=1675757028)
+* [Release Blog Post](https://kpow.io/category/releases/89-3)
 
 ## Project Information
 
@@ -27,6 +27,12 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [start a free 30-day trial](https://kpow.io/try) today.
 
 ## Kpow Releases
+
+### [89.3] 2022-08-11
+
+See: [Kpow v89.3 Full Release Notes & Artifacts](https://kpow.io/releases/89-3/)
+
+* Provide DISABLE_LOG_CLEANER_CHECK configuration option
 
 ### [89.2] 2022-08-08
 
