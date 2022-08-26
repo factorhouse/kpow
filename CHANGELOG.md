@@ -4,12 +4,12 @@
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v89.3](https://kpow.io/category/releases/89-3).
+The latest release of Kpow is [v89.4](https://kpow.io/category/releases/89-4).
 
 * [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
-* [Java Jar](https://releases.operatr.io/operatr-2022-08-11-17-58.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=%2FmjZNFHGKn4wrnq%2BTujgvKb%2FZ70%3D&Expires=1675756765)
-* [Java 8 JAR](https://releases.operatr.io/operatr-2022-08-11-18-00.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=6ku61%2B%2BD00xl9rxD8KNrSrEvvRI%3D&Expires=1675757028)
-* [Release Blog Post](https://kpow.io/category/releases/89-3)
+* [Java Jar](https://releases.operatr.io/operatr-2022-08-26-17-35.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=u56ey35K9LbZTcJU05iUPfYD8Ks%3D&Expires=1677051412)
+* [Java 8 JAR](https://releases.operatr.io/operatr-2022-08-26-17-37.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=HJmHvWKgZYuIkevRm9fTwkDxIBU%3D&Expires=1677051673)
+* [Release Blog Post](https://kpow.io/category/releases/89-4)
 
 ## Project Information
 
@@ -27,6 +27,15 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [start a free 30-day trial](https://kpow.io/try) today.
 
 ## Kpow Releases
+
+### [89.4] 2022-08-26
+
+See: [Kpow v89.4 Full Release Notes & Artifacts](https://kpow.io/releases/89-4/)
+
+* Improve connect RBAC with CONNECT_INSPECT permission
+* Improve connect error messaging
+* Fix schema subject delete bug
+* Fix staged mutations table bug
 
 ### [89.3] 2022-08-11
 
