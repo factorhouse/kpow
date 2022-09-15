@@ -1,6 +1,6 @@
 # Kpow Secure Configuration
 
-Available from [kPow v88.2](https://kpow.io/releases/88-2/).
+Available from [Kpow v88.2](https://kpow.io/releases/88-2/).
 
 This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate](#obf-encoded-variables) Kpow configuration to avoid sensitive variables in plaintext. 
 

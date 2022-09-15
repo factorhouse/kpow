@@ -3,9 +3,9 @@
 ![Docker Stars](https://img.shields.io/docker/stars/operatr/kpow)
 [![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/kpow)](https://artifacthub.io/packages/search?repo=kpow)
 
-# kPow for Apache Kafka
+# Kpow for Apache Kafka
 
-[kPow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
+[Kpow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
 
 See the [Changelog](CHANGELOG.md) for release information or [our blog](https://kpow.io/category/releases/) for full notes on each release and JAR artefacts.
 
@@ -18,17 +18,17 @@ Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that
 * Has a simple, transparent pricing structure
 * Is built and supported by an engineering-lead team deeply experienced in Kafka delivery
 
-The kPow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow/actions/workflows/build.yml).
+The Kpow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow/actions/workflows/build.yml).
 
 # Usage
 
-To use the kPow images from DockerHub run:
+To use the Kpow images from DockerHub run:
 
 ```
 docker pull operatr/kpow:89.4
 ```
 
-kPow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io)
+Kpow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io)
 
 # Quick Starts
 
@@ -36,16 +36,16 @@ Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm](https://github
 
 # Local Evaluation
 
-To evaluate kPow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository.
+To evaluate Kpow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository.
 
-Instructions on how to start a [30-day free trial](https://kpow.io/try) of kPow can be found in the [kpow-local](https://github.com/operatr-io/kpow-local) README.
+Instructions on how to start a [30-day free trial](https://kpow.io/try) of Kpow can be found in the [kpow-local](https://github.com/operatr-io/kpow-local) README.
 
-Visit [https://docs.kpow.io/](https://docs.kpow.io) for more documentation on getting started with kPow
+Visit [https://docs.kpow.io/](https://docs.kpow.io) for more documentation on getting started with Kpow
 
 # License
 
-kPow is proprietary software. 
+Kpow is proprietary software. 
 
-kPow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+Kpow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
 
 This repository is licensed under the Eclipse Public License 1.0 (EPL-1.0)

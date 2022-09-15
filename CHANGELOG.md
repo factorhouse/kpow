@@ -124,7 +124,7 @@ See: [Kpow v88.3 Full Release Notes & Artifacts](https://kpow.io/releases/88-4/)
 See: [Kpow v88.2 Full Release Notes & Artifacts](https://kpow.io/releases/88-2/)
 
 * Improve support for Flink / Simple consumers
-* Support for encrypted kPow configuration
+* Support for encrypted Kpow configuration
 * Support for Confluent Schema Registry w/ Mutual TLS
 * Export to CSV from the kREPL
 * Data Import improvements and bugfixes
@@ -168,7 +168,7 @@ See: [Kpow v87 Full Release Notes & Artifacts](https://kpow.io/releases/87/)
 
 See: [Kpow v86 Full Release Notes & Artifacts](https://kpow.io/releases/86/)
 
-* Improved kPow snapshot compute performance
+* Improved Kpow snapshot compute performance
 * Introduction of AWS Glue schema status
 * Improved support for message version in ConsumerOffsets serde
 
@@ -226,7 +226,7 @@ See: [Kpow v81 Full Release Notes & Artifacts](https://kpow.io/releases/81/)
 See: [Kpow v80 Full Release Notes & Artifacts](https://kpow.io/releases/80/)
 
 * New Kafka Streams Live Topology Visualisation UI
-* GA open-source kPow Streams Agent
+* GA open-source Kpow Streams Agent
 * Multi-topic search by topic regex
 * Multi-topic search by group
 * Topic and consumer group freshness metrics
@@ -236,7 +236,7 @@ See: [Kpow v80 Full Release Notes & Artifacts](https://kpow.io/releases/80/)
 * Under-replicated partitions count in summary data
 * Fixed ‘in-sync?’ and controller broker UI regressions
 * Open client websocket session count metrics
-* Reduced kPow internal topic disk usage
+* Reduced Kpow internal topic disk usage
 
 ### [79] 2021-06-25
 
@@ -271,7 +271,7 @@ See: [Kpow v77 Full Release Notes & Artifacts](https://kpow.io/releases/77/)
 See: [Kpow v76 Full Release Notes & Artifacts](https://kpow.io/releases/76/)
 
 * New Kafka ACL Management features
-* Minor bugfixes to the kPow UI initialisation process
+* Minor bugfixes to the Kpow UI initialisation process
 
 ### [75] 2021-04-30
 
@@ -316,7 +316,7 @@ See: [Kpow v72 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
 
 See: [Kpow v71 Full Release Notes & Artifacts](https://kpow.io/releases/72/)
 
-* Improved reverse-proxy notes and support for proxying kPow at a specific custom path
+* Improved reverse-proxy notes and support for proxying Kpow at a specific custom path
 
 ### [70] 2021-03-22
 
