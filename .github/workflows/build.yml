@@ -98,3 +98,13 @@ jobs:
           docker push $IMAGE_ID:$IMAGE_TAG
           docker tag $IMAGE_ID:$IMAGE_TAG $IMAGE_ID:latest
           docker push $IMAGE_ID:latest
+
+      - name: Build kPow (CE)
+        run: | 
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow-ce
+          IMAGE_TAG=$VERSION
+          ./scripts/build.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow-ce/Dockerfile
+          docker push $IMAGE_ID:$IMAGE_TAG
+          docker tag $IMAGE_ID:$IMAGE_TAG $IMAGE_ID:latest
+          docker push $IMAGE_ID:latest
