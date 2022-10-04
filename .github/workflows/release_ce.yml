@@ -22,9 +22,9 @@ jobs:
         run: |
           NEXT_RELEASE=${{github.event.inputs.num}}
 
-          docker pull ghcr.io/operatr-io/kpow/kpow-ce:$NEXT_RELEASE
-          docker tag ghcr.io/operatr-io/kpow/kpow-ce:$NEXT_RELEASE factorhouse/kpow-ce:$NEXT_RELEASE
-          docker tag ghcr.io/operatr-io/kpow/kpow-ce:$NEXT_RELEASE factorhouse/kpow-ce:latest
+          docker pull ghcr.io/factorhouse/kpow/kpow-ce:$NEXT_RELEASE
+          docker tag ghcr.io/factorhouse/kpow/kpow-ce:$NEXT_RELEASE factorhouse/kpow-ce:$NEXT_RELEASE
+          docker tag ghcr.io/factorhouse/kpow/kpow-ce:$NEXT_RELEASE factorhouse/kpow-ce:latest
 
           docker push factorhouse/kpow-ce:$NEXT_RELEASE
           docker push factorhouse/kpow-ce:latest
