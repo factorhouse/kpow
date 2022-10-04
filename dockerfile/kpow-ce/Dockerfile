@@ -1,4 +1,4 @@
-FROM amazoncorretto:17.0.4
+FROM bellsoft/liberica-openjdk-alpine:17.0.4.1-1
 
 ARG VERSION 
 ARG RELEASE
