@@ -1,4 +1,4 @@
-FROM bellsoft/liberica-openjdk-alpine:17.0.4.1-1
+FROM --platform=$BUILDPLATFORM amazoncorretto:17.0.4
 
 ARG VERSION 
 ARG RELEASE

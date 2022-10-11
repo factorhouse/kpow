@@ -2,29 +2,43 @@ name: Release CE to DockerHub
 on:
   workflow_dispatch:
     inputs:
-      num:
-        description: 'Release number'
+      version:
+        description: 'Version of kPow'
         required: true
+      manifest:
+        description: 'URL of Manifest'
+        required: true
+      release_number_bump:
+        description: 'I have updated system.clj release number!'
+        required: true
+        default: 'false'
+
 jobs:
   TagAndUpdateReleasesEdn:
     runs-on: ubuntu-latest
     name: Tag and update releases.edn
     steps:
       - uses: actions/checkout@v2
+
+      - name: Check that we have bumped release number
+        run: |
+          ./scripts/release_number_check.sh ${{github.event.inputs.release_number_bump}}
+
+      - name: Download and verify JAR(s)
+        run: |
+          ./scripts/jar.sh "${{github.event.inputs.manifest}}"
+
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
+
       - name: Log into GitHub packages
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-      - name: Push to DockerHub
+
+      - name: Build and Push to DockerHub
         run: |
-          NEXT_RELEASE=${{github.event.inputs.num}}
-
-          docker pull ghcr.io/factorhouse/kpow/kpow-ce:$NEXT_RELEASE
-          docker tag ghcr.io/factorhouse/kpow/kpow-ce:$NEXT_RELEASE factorhouse/kpow-ce:$NEXT_RELEASE
-          docker tag ghcr.io/factorhouse/kpow/kpow-ce:$NEXT_RELEASE factorhouse/kpow-ce:latest
-
-          docker push factorhouse/kpow-ce:$NEXT_RELEASE
-          docker push factorhouse/kpow-ce:latest
+          NEXT_RELEASE=${{github.event.inputs.version}}
+          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform linux/amd64,linux/arm64 -t factorhouse/kpow-ce:latest --push .
+          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform linux/amd64,linux/arm64 -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
