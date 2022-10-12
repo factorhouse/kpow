@@ -46,5 +46,5 @@ jobs:
       - name: Build and Push to DockerHub
         run: |
           NEXT_RELEASE=${{github.event.inputs.version}}
-          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform linux/amd64,linux/arm64/v8 -t factorhouse/kpow-ce:latest --push .
-          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform linux/amd64,linux/arm64/v8 -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
+          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform linux/amd64,linux/arm64 -t factorhouse/kpow-ce:latest --push .
+          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform linux/amd64,linux/arm64 -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
