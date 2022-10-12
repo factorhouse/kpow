@@ -34,9 +34,17 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
+      -
+        # Add support for more platforms with QEMU (optional)
+        # https://github.com/docker/setup-qemu-action
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
       - name: Build and Push to DockerHub
         run: |
           NEXT_RELEASE=${{github.event.inputs.version}}
-          docker buildx create --use
           docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform linux/amd64,linux/arm64/v8 -t factorhouse/kpow-ce:latest --push .
           docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform linux/amd64,linux/arm64/v8 -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
