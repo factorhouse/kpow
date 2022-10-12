@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM amazoncorretto:17.0.4
+FROM amazoncorretto:17.0.4
 
 ARG VERSION 
 ARG RELEASE
