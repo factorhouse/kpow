@@ -22,25 +22,37 @@ The Kpow image is available directly from [Docker Hub](https://hub.docker.com/r/
 
 # Usage
 
-To use the Kpow images from DockerHub run:
+Visit our [Get Started](https://kpow.io/get-started) page to learn more about Kpow.
+
+## Community Edition
+
+The free version of Kpow can be found here:
+
+```
+docker pull factorhouse/kpow-ce:90.1
+```
+
+## Standard and Enterprise Edition
+
+Paying customers using the Standard or Enterprise Edition can use the following Docker image:
 
 ```
 docker pull operatr/kpow:89.4
 ```
 
+Instructions on how to start a 30-day free trial of Kpow Standard Edition can be found [here](https://kpow.io/get-started/#standard).
+
+# Documentation
+
 Kpow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io)
+
+# Local Development
+
+To use Kpow Community Edition locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository to get started.
 
 # Quick Starts
 
 Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm](https://github.com/operatr-io/kpow-helm-charts) and [CloudFormation](https://github.com/operatr-io/kpow-cloudformation) quicks start guides.
-
-# Local Evaluation
-
-To evaluate Kpow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository.
-
-Instructions on how to start a [30-day free trial](https://kpow.io/try) of Kpow can be found in the [kpow-local](https://github.com/operatr-io/kpow-local) README.
-
-Visit [https://docs.kpow.io/](https://docs.kpow.io) for more documentation on getting started with Kpow
 
 # License
 
