@@ -48,3 +48,19 @@ jobs:
           NEXT_RELEASE=${{github.event.inputs.version}}
           docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 -t factorhouse/kpow-ce:latest --push .
           docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
+      - name: Install babashka
+        run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
+      - name: Update releases-cee.edn
+        run: ./scripts/release.clj ${{github.event.inputs.num}} releases-ce.edn
+      - name: Commit
+        run: |
+          git config --global user.email "support@operatr.io"
+          git config --global user.name "kPow CI"
+          git commit -am "Release Community ${{github.event.inputs.num}}"
+      - name: Tag
+        run: git tag -a ce/${{github.event.inputs.num}} -m "Release Community ${{github.event.inputs.num}}"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
