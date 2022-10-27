@@ -51,7 +51,7 @@ jobs:
       - name: Install babashka
         run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
       - name: Update releases-cee.edn
-        run: ./scripts/release.clj ${{github.event.inputs.num}} releases-ce.edn
+        run: ./scripts/release.clj ${{github.event.inputs.version}} releases-ce.edn
       - name: Commit
         run: |
           git config --global user.email "support@operatr.io"
