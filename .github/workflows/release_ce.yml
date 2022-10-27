@@ -56,9 +56,9 @@ jobs:
         run: |
           git config --global user.email "support@operatr.io"
           git config --global user.name "kPow CI"
-          git commit -am "Release Community ${{github.event.inputs.num}}"
+          git commit -am "Release Community ${{github.event.inputs.version}}"
       - name: Tag
-        run: git tag -a ce/${{github.event.inputs.num}} -m "Release Community ${{github.event.inputs.num}}"
+        run: git tag -a ce/${{github.event.inputs.version}} -m "Release Community ${{github.event.inputs.version}}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
