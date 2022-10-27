@@ -13,7 +13,7 @@
 (println release-tag)
 (println release-file)
 
-(def releases (edn/read-string release-file))
+(def releases (edn/read-string (slurp release-file)))
 (require '[clojure.pprint :as pprint])
 (spit
  release-file
