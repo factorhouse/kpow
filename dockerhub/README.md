@@ -1,29 +1,36 @@
-[![Release to DockerHub](https://github.com/operatr-io/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow/actions/workflows/release.yml)
+[![Release to DockerHub](https://github.com/factorhouse/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/factorhouse/kpow/actions/workflows/release.yml)
 
-Dockerfile for [Kpow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
+Dockerfile for the enterprise edition of [Kpow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
+
+**Note**: This repository is for the [Enterprise Edition](https://kpow.io/pricing) of Kpow. 
+
+*  The Community Edition DockerHub repository can be found at [factorhouse/kpow-ce](https://hub.docker.com/r/kpow-ce) 
+*  The Standard Edition DockerHub repository can be found at [factorhouse/kpow-se](https://hub.docker.com/r/kpow-se) 
+
+View [Features](https://kpow.io/features) to view the differences between editions.
 
 # Quick reference
 
-* **Maintained by**: [the Operatr.io team](https://github.com/operatr-io/kpow)
-* **Where to get help**: [GitHub](https://github.com/operatr-io/kpow), [Kpow documentation](http://docs.kpow.io/)
+* **Maintained by**: [the Factor House team](https://github.com/factorhouse/kpow)
+* **Where to get help**: [GitHub](https://github.com/factorhouse/kpow), [Kpow documentation](http://docs.kpow.io/), [Support Hub](https://kpow.io/support)
 
 # Supported tags respective `Dockerfile` links
 
 <!--- StartReleaseLinks --->
 
-* [90.1, latest](https://github.com/operatr-io/kpow/blob/main/dockerfile/kpow/Dockerfile)
-* [90.1-alpine](https://github.com/operatr-io/kpow/blob/main/dockerfile/alpine/Dockerfile)
-* [90.1-jdk17](https://github.com/operatr-io/kpow/blob/main/dockerfile/jdk17/Dockerfile)
-* [90.1-rh-ubi](https://github.com/operatr-io/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
+* [90.1, latest](https://github.com/factorhouse/kpow-ee/blob/main/dockerfile/kpow/Dockerfile)
+* [90.1-alpine](https://github.com/factorhouse/kpow-ee/blob/main/dockerfile/alpine/Dockerfile)
+* [90.1-jdk17](https://github.com/factorhouse/kpow-ee/blob/main/dockerfile/jdk17/Dockerfile)
+* [90.1-rh-ubi](https://github.com/factorhouse/kpow-ee/blob/main/dockerfile/rh-ubi/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
 # Quick reference (cont.)
 
-* **Where to file issues:** https://github.com/operatr-io/kpow/issues
-* **Published image artifact details:** [GitHub actions CI](https://github.com/operatr-io/kpow/actions/workflows/build.yml)
-* **Image updates**: https://github.com/operatr-io/kpow/tags
-* **Source of this description**: [dockerhub/README.md](https://github.com/operatr-io/kpow/blob/main/dockerhub/README.md)
+* **Where to file issues:** https://github.com/factorhouse/kpow/issues
+* **Published image artifact details:** [GitHub actions CI](https://github.com/factorhouse/kpow/actions/workflows/build.yml)
+* **Image updates**: https://github.com/factorhouse/kpow/tags
+* **Source of this description**: [dockerhub/README.md](https://github.com/factorhouse/kpow/blob/main/dockerhub/README.md)
 
 # What is Kpow?
 
@@ -88,14 +95,14 @@ Kpow has been tested and is compatible with [Apache Kafka](https://kafka.apache.
 
 # Quick start + local evaluation
 
-To evaluate Kpow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository.
+To evaluate Kpow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/factorhouse/kpow-local) GitHub repository.
 
-Instructions on how to start a [30-day free trial](https://kpow.io/#trial) of Kpow can be found in the [kpow-local](https://github.com/operatr-io/kpow-local) README.
+Instructions on how to start a [30-day free trial](https://kpow.io/#trial) of Kpow can be found in the [kpow-local](https://github.com/factorhouse/kpow-local) README.
 
 Visit https://docs.kpow.io/ for more documentation on getting started with Kpow
 
 # License
 
-Kpow is proprietary software. Kpow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+Kpow is proprietary software. Kpow's EULA can be found in the [GitHub repository](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
 
-The Dockerfile's and [kpow](https://github.com/operatr-io/kpow) repository are licensed under the Eclipse Public License 1.0 (EPL-1.0)
+The Dockerfile's and [kpow](https://github.com/factorhouse/kpow) repository are licensed under the Eclipse Public License 1.0 (EPL-1.0)
