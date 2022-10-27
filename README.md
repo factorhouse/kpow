@@ -29,7 +29,7 @@ Visit our [Get Started](https://kpow.io/get-started) page to learn more about Kp
 The free version of Kpow can be found here:
 
 ```
-docker pull factorhouse/kpow-ce:90.1.20221027
+docker pull factorhouse/kpow-ce:90.1.3
 ```
 
 ## Standard and Enterprise Edition
