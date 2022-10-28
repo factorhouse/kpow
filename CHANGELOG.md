@@ -2,7 +2,7 @@
 
 [Kpow](https://kpow.io) is the market-leading Enterprise-grade toolkit for engineers who work with Apache Kafka.
 
-Get started with our [Community Edition](https://hub.docker.com/r/factorhouse/kpow-ce) today, no license or sign-up required.
+Get started with our [Community Edition](https://kpow.io/get-started) today, no license or sign-up required.
 
 ## Latest Release Artifacts
 
