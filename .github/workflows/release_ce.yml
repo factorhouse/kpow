@@ -50,8 +50,10 @@ jobs:
           docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
       - name: Install babashka
         run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
-      - name: Update releases-cee.edn
+      - name: Update releases-ce.edn
         run: ./scripts/release.clj ${{github.event.inputs.version}} releases-ce.edn
+      - name: Update dockerhub/kpow-ce/README.md
+        run: echo ${{github.event.inputs.num}} | ./scripts/dockerhub_readme_ce.clj
       - name: Commit
         run: |
           git config --global user.email "support@operatr.io"
