@@ -1,6 +1,6 @@
 [![Release to DockerHub](https://github.com/factorhouse/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/factorhouse/kpow/actions/workflows/release.yml)
 
-Dockerfile for the enterprise edition of [Kpow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
+Dockerfile for the community edition of [Kpow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
 
 **Note**: This repository is for the free [Community Edition](https://kpow.io/pricing) of Kpow. 
 
