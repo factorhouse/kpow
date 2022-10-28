@@ -1,12 +1,15 @@
 # Kpow for Apache Kafka Changelog 
 
-[Kpow](https://kpow.io) is an Enterprise-grade toolkit for engineers working with Apache Kafka.
+[Kpow](https://kpow.io) is the market-leading Enterprise-grade toolkit for engineers who work with Apache Kafka.
+
+Get started with our [Community Edition](https://hub.docker.com/r/factorhouse/kpow-ce) today, no license or sign-up required.
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v89.4](https://kpow.io/category/releases/89-4).
+The latest release of Kpow is [v90.1](https://kpow.io/category/releases/90.1).
 
-* [Dockerhub Repository](https://hub.docker.com/r/operatr/kpow)
+* [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
+* [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
 * [Java Jar](https://releases.operatr.io/operatr-2022-08-26-17-35.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=u56ey35K9LbZTcJU05iUPfYD8Ks%3D&Expires=1677051412)
 * [Java 8 JAR](https://releases.operatr.io/operatr-2022-08-26-17-37.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=HJmHvWKgZYuIkevRm9fTwkDxIBU%3D&Expires=1677051673)
 * [Release Blog Post](https://kpow.io/category/releases/89-4)
@@ -17,16 +20,38 @@ See [https://kpow.io/category/releases/](https://kpow.io/category/releases/) for
 
 Docker containers for each release can be found here:
 
- * Dockerhub as [operatr/kpow](https://hub.docker.com/r/operatr/kpow)
- * The [AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0)
+ * Dockerhub Standard Edition (SE) [factorhouse/kpow-se](https://hub.docker.com/r/factorhouse/kpow-se)
+ * Dockerhub Enterprise Edition (SE) [factorhouse/kpow-ee](https://hub.docker.com/r/factorhouse/kpow-ee)
+ * Dockerhub Community Edition (CE) [factorhouse/kpow-ce](https://hub.docker.com/r/factorhouse/kpow-ce)
+ * Standard Edition (SE) on [AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0)
 
 Deploy Kpow to Kubernetes with our [Helm Charts](https://github.com/operatr-io/kpow-helm-charts), also available at [artifacthub.io](https://artifacthub.io/packages/helm/kpow/kpow).
 
-Links to JAR artefacts are provided on each release blog post: [https://kpow.io/category/releases/](https://kpow.io/category/releases/).
+Links to JAR artefacts are provided on each release blog post: [https://kpow.io/releases/](https://kpow.io/releases/).
 
-Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [start a free 30-day trial](https://kpow.io/try) today.
+Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started).
 
 ## Kpow Releases
+
+### [90.1] 2022-10-27
+
+See: [Kpow v90.1 Full Release Notes & Artifacts](https://kpow.io/releases/90-1/)
+
+* [Kpow Community Edition (CE)](https://kpow.io/get-started/) is now GA. Free to use, no sign-up or license required
+* Complete overhaul of existing UI/UX with a brand-new Tailwind UI user interface
+* Introduce new Topic Truncate feature for record deletion
+* Improve support for OpenID Auth with Generic OpenID Provider configuration
+* Improve Data Inspect/Produce UI/UX with multiple bugfixes
+* Improve Data Inspect export with option for un-escaped JSON export
+* Introduce NullSerde to allow production of null key/value (record deletion/tombstones)
+* Introduce new UUID Serdes in Data Inspect
+* Improve Connect topic inference (for debezium and other connectors) 
+* Introduce new columns to Source Connector tables (bytes total, last activity)
+* Introduce new Connect table of unreachable/erroring connectors + prometheus metrics of the same
+* Improve cluster configuration options with inclusion of all OATHBEARER token parameters
+* Improve table export with CSV export option
+* Improve filtering options, favour prefixes before plain alphabetical match/order
+* Fix regression of allow-permissive-ssl? Connect configuration
 
 ### [89.4] 2022-08-26
 
