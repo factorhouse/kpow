@@ -7,7 +7,7 @@ Dockerfile for the enterprise edition of [Kpow](https://kpow.io) - The Ultimate 
 For paying customers:
 
 *  The Standard Edition DockerHub repository can be found at [factorhouse/kpow-se](https://hub.docker.com/r/kpow-se) 
-*  The Community Edition DockerHub repository can be found at [factorhouse/kpow-ee](https://hub.docker.com/r/kpow-se) 
+*  The Enterprise Edition DockerHub repository can be found at [factorhouse/kpow-ee](https://hub.docker.com/r/kpow-se) 
 
 View [Features](https://kpow.io/features) to compare editions or buy a license.
 
