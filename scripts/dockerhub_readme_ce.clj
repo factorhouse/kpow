@@ -7,7 +7,7 @@
 (def tags
   ["<!--- StartReleaseLinks --->"
    ""
-   (format "* [%s, latest](%s)" release-number "https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow/Dockerfile")
+   (format "* [%s, latest](%s)" release-number "https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow-ce/Dockerfile")
 
    ""])
 
