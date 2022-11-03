@@ -53,7 +53,7 @@ jobs:
       - name: Update releases-ce.edn
         run: ./scripts/release.clj ${{github.event.inputs.version}} releases-ce.edn
       - name: Update dockerhub/kpow-ce/README.md
-        run: echo ${{github.event.inputs.num}} | ./scripts/dockerhub_readme_ce.clj
+        run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_ce.clj
       - name: Commit
         run: |
           git config --global user.email "support@operatr.io"
