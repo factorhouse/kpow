@@ -6,13 +6,13 @@ Get started with our [Community Edition](https://kpow.io/get-started) today, no 
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v90.1](https://kpow.io/category/releases/90.1).
+The latest release of Kpow is [v90.2](https://kpow.io/category/releases/90-2).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
-* [Java Jar](https://releases.operatr.io/operatr-2022-08-26-17-35.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=u56ey35K9LbZTcJU05iUPfYD8Ks%3D&Expires=1677051412)
-* [Java 8 JAR](https://releases.operatr.io/operatr-2022-08-26-17-37.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=HJmHvWKgZYuIkevRm9fTwkDxIBU%3D&Expires=1677051673)
-* [Release Blog Post](https://kpow.io/category/releases/89-4)
+* [Java Jar](https://releases.operatr.io/kpow-2022-11-03-23-10.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=7zw77KFjSXL7zZJQGZu%2FZDgHD6Q%3D&Expires=1683029496)
+* [Java 8 JAR](https://releases.operatr.io/kpow-2022-11-03-23-12.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=u%2FuZ8NHwDOymWAbunkADQiBXVKw%3D&Expires=1683029621)
+* [Release Blog Post](https://kpow.io/category/releases/90-2)
 
 ## Project Information
 
@@ -32,6 +32,14 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started).
 
 ## Kpow Releases
+
+### [90.2] 2022-11-03
+
+See: [Kpow v90.2 Full Release Notes & Artifacts](https://kpow.io/releases/90-2/)
+
+* Introduce new OPENID_ISSUER environment variable for genereric openid sso integration
+* Fix scheduled mutation UI/UX bugs
+
 
 ### [90.1] 2022-10-27
 
