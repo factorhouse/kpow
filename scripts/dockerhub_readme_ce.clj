@@ -2,7 +2,7 @@
 
 (def readme (slurp "dockerhub/kpow-ce/README.md"))
 (def readme-lines (str/split-lines readme))
-(def release-number *input*)
+(def release-number (str/trim (slurp *in*)))
 
 (def tags
   ["<!--- StartReleaseLinks --->"
