@@ -4,8 +4,8 @@ Dockerfile for the standard edition of [Kpow](https://kpow.io) - The Ultimate En
 
 **Note**: This repository is for the [Standard Edition](https://kpow.io/pricing) of Kpow. 
 
-*  The Community Edition DockerHub repository can be found at [factorhouse/kpow-ce](https://hub.docker.com/r/kpow-ce) 
-*  The Enterprise Edition DockerHub repository can be found at [factorhouse/kpow-ee](https://hub.docker.com/r/kpow-ee) 
+*  The Community Edition DockerHub repository can be found at [factorhouse/kpow-ce](https://hub.docker.com/r/factorhouse/kpow-ce) 
+*  The Enterprise Edition DockerHub repository can be found at [factorhouse/kpow-ee](https://hub.docker.com/r/factorhouse/kpow-ee) 
 
 View [Features](https://kpow.io/features) to compare editions.
 
