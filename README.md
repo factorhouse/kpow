@@ -37,7 +37,7 @@ docker pull factorhouse/kpow-ce:90.2.1
 Paying customers using the Standard or Enterprise Edition can use the following Docker image:
 
 ```
-docker pull factorhouse/kpow-ee:90.2
+docker pull factorhouse/kpow-ee:90.3
 ```
 
 Instructions on how to start a 30-day free trial of Kpow Standard Edition can be found [here](https://kpow.io/get-started/#standard).
