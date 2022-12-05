@@ -6,13 +6,13 @@ Get started with our [Community Edition](https://kpow.io/get-started) today, no 
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v90.2](https://kpow.io/category/releases/90-2).
+The latest release of Kpow is [v90.3](https://kpow.io/category/releases/90-3).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
-* [Java Jar](https://releases.operatr.io/kpow-2022-11-03-23-10.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=7zw77KFjSXL7zZJQGZu%2FZDgHD6Q%3D&Expires=1683029496)
-* [Java 8 JAR](https://releases.operatr.io/kpow-2022-11-03-23-12.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=u%2FuZ8NHwDOymWAbunkADQiBXVKw%3D&Expires=1683029621)
-* [Release Blog Post](https://kpow.io/category/releases/90-2)
+* [Java Jar](https://releases.operatr.io/kpow-2022-12-05-11-07.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=QR4X%2B3x2NIthtWzKZEwBOHIDZs4%3D&Expires=1685750931)
+* [Java 8 JAR](https://releases.operatr.io/kpow-2022-12-05-11-12.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=ASgozSnT%2FSWWzwxLHQuLILlUPsI%3D&Expires=1685751246)
+* [Release Blog Post](https://kpow.io/category/releases/90-3)
 
 ## Project Information
 
@@ -20,9 +20,9 @@ See [https://kpow.io/category/releases/](https://kpow.io/category/releases/) for
 
 Docker containers for each release can be found here:
 
+ * Dockerhub Community Edition (CE) [factorhouse/kpow-ce](https://hub.docker.com/r/factorhouse/kpow-ce)
  * Dockerhub Standard Edition (SE) [factorhouse/kpow-se](https://hub.docker.com/r/factorhouse/kpow-se)
  * Dockerhub Enterprise Edition (SE) [factorhouse/kpow-ee](https://hub.docker.com/r/factorhouse/kpow-ee)
- * Dockerhub Community Edition (CE) [factorhouse/kpow-ce](https://hub.docker.com/r/factorhouse/kpow-ce)
  * Standard Edition (SE) on [AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0)
 
 Deploy Kpow to Kubernetes with our [Helm Charts](https://github.com/operatr-io/kpow-helm-charts), also available at [artifacthub.io](https://artifacthub.io/packages/helm/kpow/kpow).
@@ -32,6 +32,15 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started).
 
 ## Kpow Releases
+
+### [90.3] 2022-12-02
+
+See: [Kpow v90.3 Full Release Notes & Artifacts](https://kpow.io/releases/90-3/)
+
+* Improve OpenID SSO configuration with OPENID_USER_FIELD and roles_from fields
+* Fix custom serdes in the kREPL
+* Improve scheduled mutations UI/UX
+* Improve performance of snapshot materialization
 
 ### [90.2] 2022-11-03
 
