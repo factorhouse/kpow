@@ -44,15 +44,15 @@ See: [Kpow v90.4 Full Release Notes & Artifacts](https://kpow.io/releases/90-4/)
 * Improve UI with new Heroicons v2.0
 * Improve audit log UI with pagination
 * Improve community edition wizard
-* Improve community edition with in-ui callouts to upgrade path
-* Fix scheduled contention / performance issue
+* Improve community edition with in-UI callouts to upgrade path
+* Fix scheduler task contention issue
 * Fix jetty authentication expired session re-login bug
 * Fix connect bug where connectors with no tasks would not show in tables
 * Support Kpow-Secure encryption of 'javax.net.ssl.trustStorePassword'
 * Update Helm charts to 2CPU / 8GB heap as default
-* Add robots.txt with "User-agent: * Disallow: /"
 * Open-source [Slipway](https://github.com/factorhouse/slipway) and publish to Clojars
 * Open-source [Kpow Secure](https://github.com/factorhouse/kpow-secure) and publish to Clojars
+* Add robots.txt with "User-agent: * Disallow: /"
 
 ### [90.3] 2022-12-02
 
