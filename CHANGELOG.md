@@ -10,9 +10,9 @@ The latest release of Kpow is [v90.4](https://kpow.io/category/releases/90-4).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
-* [Java Jar](https://releases.operatr.io/kpow-2022-12-05-11-07.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=QR4X%2B3x2NIthtWzKZEwBOHIDZs4%3D&Expires=1685750931)
-* [Java 8 JAR](https://releases.operatr.io/kpow-2022-12-05-11-12.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=ASgozSnT%2FSWWzwxLHQuLILlUPsI%3D&Expires=1685751246)
-* [Release Blog Post](https://kpow.io/category/releases/90-3)
+* [Java Jar](https://releases.operatr.io/kpow-2022-12-16-15-21.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=1FL2ueXrlHqMDXL78tZ1ABpqwlg%3D&Expires=1686716543)
+* [Java 8 JAR](https://releases.operatr.io/kpow-2022-12-16-15-23.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=ksZgY4AQBRk7XEQz5aeAnV54W3I%3D&Expires=1686716663)
+* [Release Blog Post](https://kpow.io/category/releases/90-4)
 
 ## Project Information
 
