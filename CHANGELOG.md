@@ -6,13 +6,13 @@ Get started with our [Community Edition](https://kpow.io/get-started) today, no 
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v90.4](https://kpow.io/category/releases/90-4).
+The latest release of Kpow is [v90.5](https://kpow.io/category/releases/90-5).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
-* [Java Jar](https://releases.operatr.io/kpow-2022-12-16-15-21.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=1FL2ueXrlHqMDXL78tZ1ABpqwlg%3D&Expires=1686716543)
-* [Java 8 JAR](https://releases.operatr.io/kpow-2022-12-16-15-23.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=ksZgY4AQBRk7XEQz5aeAnV54W3I%3D&Expires=1686716663)
-* [Release Blog Post](https://kpow.io/category/releases/90-4)
+* [Java Jar](https://releases.operatr.io/kpow-2022-12-20-16-33.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=8tq3WkZeN0IulfgHrFiX%2FZGqQCk%3D&Expires=1687066502)
+* [Java 8 JAR](https://releases.operatr.io/kpow-2022-12-20-16-35.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=RyRmjR17wakQU6BjgI8kh79I4tU%3D&Expires=1687066605)
+* [Release Blog Post](https://kpow.io/category/releases/90-5)
 
 ## Project Information
 
@@ -32,6 +32,12 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started).
 
 ## Kpow Releases
+
+### [90.5] 2022-12-20
+
+See: [Kpow v90.5 Full Release Notes & Artifacts](https://kpow.io/releases/90-5/)
+
+* Fix Java 8 JAR Regression
 
 ### [90.4] 2022-12-16
 
