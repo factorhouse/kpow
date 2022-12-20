@@ -22,7 +22,7 @@ Kpow support both `linux/amd64` and `linux/arm64` architectures.
 
 <!--- StartReleaseLinks --->
 
-* [90.4.1, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow-ce/Dockerfile)
+* [90.5.1, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow-ce/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
