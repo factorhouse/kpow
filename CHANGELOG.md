@@ -29,7 +29,7 @@ Deploy Kpow to Kubernetes with our [Helm Charts](https://github.com/operatr-io/k
 
 Links to JAR artefacts are provided on each release blog post: [https://kpow.io/releases/](https://kpow.io/releases/).
 
-Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started).
+Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started)
 
 ## Kpow Releases
 
