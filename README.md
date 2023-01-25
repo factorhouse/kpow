@@ -1,5 +1,5 @@
 [![Release to DockerHub](https://github.com/operatr-io/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow/actions/workflows/release.yml)
-![Docker Pulls](https://img.shields.io/docker/pulls/operatr/operatr)
+![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
 ![Docker Stars](https://img.shields.io/docker/stars/operatr/kpow)
 [![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/kpow)](https://artifacthub.io/packages/search?repo=kpow)
 
