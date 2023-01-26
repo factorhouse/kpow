@@ -29,7 +29,7 @@ Visit our [Get Started](https://kpow.io/get-started) page to learn more about Kp
 The free version of Kpow can be found here:
 
 ```
-docker pull factorhouse/kpow-ce:90.5.1
+docker pull factorhouse/kpow-ce:90.6.1
 ```
 
 ## Standard and Enterprise Edition
@@ -37,7 +37,7 @@ docker pull factorhouse/kpow-ce:90.5.1
 Paying customers using the Standard or Enterprise Edition can use the following Docker image:
 
 ```
-docker pull factorhouse/kpow-ee:90.5
+docker pull factorhouse/kpow-ee:90.6
 ```
 
 Instructions on how to start a 30-day free trial of Kpow Standard Edition can be found [here](https://kpow.io/get-started/#standard).
