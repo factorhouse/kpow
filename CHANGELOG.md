@@ -22,7 +22,7 @@ Docker containers for each release can be found here:
 
  * Dockerhub Community Edition (CE) [factorhouse/kpow-ce](https://hub.docker.com/r/factorhouse/kpow-ce)
  * Dockerhub Standard Edition (SE) [factorhouse/kpow-se](https://hub.docker.com/r/factorhouse/kpow-se)
- * Dockerhub Enterprise Edition (SE) [factorhouse/kpow-ee](https://hub.docker.com/r/factorhouse/kpow-ee)
+ * Dockerhub Enterprise Edition (EE) [factorhouse/kpow-ee](https://hub.docker.com/r/factorhouse/kpow-ee)
  * Standard Edition (SE) on [AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0)
 
 Deploy Kpow to Kubernetes with our [Helm Charts](https://github.com/operatr-io/kpow-helm-charts), also available at [artifacthub.io](https://artifacthub.io/packages/helm/kpow/kpow).
