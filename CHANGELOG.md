@@ -6,7 +6,7 @@ Get started with our [Community Edition](https://kpow.io/get-started) today, no 
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v90.6](https://kpow.io/category/releases/90-6).
+The latest release of Kpow is [v91.1](https://kpow.io/category/releases/91-1).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
@@ -33,13 +33,29 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https
 
 ## Kpow Releases
 
+### [91.1] 2023-03-06
+
+* Introduce new ksqlDB integration
+* Introduce new disk usage telemetry
+* Introduce support for Confluent Schema Registry Oauth2 authentication
+* Improve top-level filtering with wildcard support
+* Improve topic and broker configuration UI with fast filters and table preferences
+* Improve schema registry observation with configurable OBSERVATION_VERSION
+* Improve bulk actions with bulk group delete support
+* Improve custom serdes with headers support
+* Fix ACL bug related to comma-separated principals
+* Fix intellisense bug in key entry field when producing messages
+* Fix minor dark mode UI bugs
+* Bump to Kafka 3.4.0 dependencies
+* Bump to Confluent 7.3.1 dependencies
+
 ### [90.6] 2023-01-26
 
 See: [Kpow v90.6 Full Release Notes & Artifacts](https://kpow.io/releases/90-6/)
 
-* New Dark Mode UI
-* Improved Editor Intellisense
-* Configurable Persistence Mode
+* Introduce new Dark Mode UI
+* Introduce new configurable persistence mode
+* Improve editor intellisense
 
 ### [90.5] 2022-12-20
 
