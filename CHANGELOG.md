@@ -35,6 +35,8 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https
 
 ### [91.1] 2023-03-06
 
+See: [Kpow v91.1 Full Release Notes & Artifacts](https://kpow.io/releases/91-1/)
+
 * Introduce new ksqlDB integration
 * Introduce new disk usage telemetry
 * Introduce support for Confluent Schema Registry Oauth2 authentication
