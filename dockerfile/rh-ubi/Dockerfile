@@ -3,13 +3,13 @@ FROM registry.access.redhat.com/ubi8/openjdk-11:1.14-12.1675788288
 ARG VERSION 
 ARG RELEASE
 
-LABEL name="kPow for Apache Kafka" \
-      maintainer="support@operatr.io" \
-      vendor="Operatr IO, Inc." \
+LABEL name="Kpow for Apache Kafka" \
+      maintainer="support@factorhouse.io" \
+      vendor="Factor House" \
       version=$VERSION \
       release=$RELEASE \
-      summary="kPow is a toolkit for engineers who build, manage, and maintain systems powered by Apache Kafka." \
-      description="kPow features a rich data-oriented UI, specialized dashboards that deliver instant visibility into Kafka Clusters, Schema Registries, and Connect Installations, and developer tools that allow engineers to get to the heart of their systems quickly."
+      summary="Kpow is a toolkit for engineers who build, manage, and maintain systems powered by Apache Kafka." \
+      description="Kpow features a rich data-oriented UI, specialized dashboards that deliver instant visibility into Kafka Clusters, Schema Registries, and Connect Installations, and developer tools that allow engineers to get to the heart of their systems quickly."
 
 USER 0
 
