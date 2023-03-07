@@ -31,7 +31,7 @@ Kpow support both `linux/amd64` and `linux/arm64` architectures.
 * **Where to file issues:** https://github.com/factorhouse/kpow/issues
 * **Published image artifact details:** [GitHub actions CI](https://github.com/factorhouse/kpow/actions/workflows/build.yml)
 * **Image updates**: https://github.com/factorhouse/kpow/tags
-* **Source of this description**: [dockerhub/README.md](https://github.com/factorhouse/kpow/blob/main/dockerhub/README.md)
+* **Source of this description**: [dockerhub/kpow-ce/README.md](https://github.com/factorhouse/kpow/blob/main/dockerhub/kpow-ce/README.md)
 
 # What is Kpow?
 
