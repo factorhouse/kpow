@@ -39,12 +39,12 @@ See: [Kpow v91.1 Full Release Notes & Artifacts](https://kpow.io/releases/91-1/)
 
 * Introduce new ksqlDB integration
 * Introduce new disk usage telemetry
-* Introduce support for Confluent Schema Registry Oauth2 authentication
+* Introduce support for Confluent Cloud Schema Registry Oauth2 authentication
+* Improve custom serdes with headers support
 * Improve top-level filtering with wildcard support
 * Improve topic and broker configuration UI with fast filters and table preferences
 * Improve schema registry observation with configurable OBSERVATION_VERSION
 * Improve bulk actions with bulk group delete support
-* Improve custom serdes with headers support
 * Fix ACL bug related to comma-separated principals
 * Fix intellisense bug in key entry field when producing messages
 * Fix minor dark mode UI bugs
