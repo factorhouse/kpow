@@ -6,13 +6,13 @@ Get started with our [Community Edition](https://kpow.io/get-started) today, no 
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v91.1](https://kpow.io/category/releases/91-1).
+The latest release of Kpow is [v91.2](https://kpow.io/category/releases/91-2).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
-* [Java JAR](https://releases.operatr.io/kpow-2023-03-06-21-12.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=5lpJiZvCcl8JQkfiU78i7DWR6IM%3D&Expires=1693649667)
-* [Java 8 JAR](https://releases.operatr.io/kpow-2023-03-06-21-14.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=IZsyPX9XR26udtAjyU6MI0CyGeg%3D&Expires=1693649786)
-* [Release Blog Post](https://kpow.io/category/releases/91-1)
+* [Java JAR](https://releases.operatr.io/kpow-2023-03-14-20-28.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=jYABG0b70kx5aYIjXjCG5YPxA7Q%3D&Expires=1694338207)
+* [Java 8 JAR](https://releases.operatr.io/kpow-2023-03-14-20-30.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=jVjYeFhKNIHR9%2FYJw1YibqJ8gY4%3D&Expires=1694338312)
+* [Release Blog Post](https://kpow.io/category/releases/91-2)
 
 ## Project Information
 
@@ -32,6 +32,16 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started)
 
 ## Kpow Releases
+
+### [91.2] 2023-03-14
+
+See: [Kpow v91.2 Full Release Notes & Artifacts](https://kpow.io/releases/91-2/)
+
+* Introduce "Resume Connector" bulk action 
+* Fix ksqlDB basic authentication configuration
+* Fix schema registry OAuth configuration
+* Fix kREPL continue search schema registry issue
+* Bump to Confluent 7.3.2 dependencies
 
 ### [91.1] 2023-03-06
 
