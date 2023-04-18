@@ -6,13 +6,13 @@ Get started with our [Community Edition](https://kpow.io/get-started) today, no 
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v91.2](https://kpow.io/category/releases/91-2).
+The latest release of Kpow is [v91.3](https://kpow.io/category/releases/91-3).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
-* [Java JAR](https://releases.operatr.io/kpow-2023-03-14-20-28.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=jYABG0b70kx5aYIjXjCG5YPxA7Q%3D&Expires=1694338207)
-* [Java 8 JAR](https://releases.operatr.io/kpow-2023-03-14-20-30.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=jVjYeFhKNIHR9%2FYJw1YibqJ8gY4%3D&Expires=1694338312)
-* [Release Blog Post](https://kpow.io/category/releases/91-2)
+* [Java JAR](https://releases.operatr.io/kpow-2023-04-18-19-59.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=L%2BMtPiNiWSvw1PtSbakQL5h8vk8%3D&Expires=1697364068)
+* [Java 8 JAR](https://releases.operatr.io/kpow-2023-04-18-20-03.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=Yev7DrNGLjpSiiH4SXX9S6ODXEk%3D&Expires=1697364287)
+* [Release Blog Post](https://kpow.io/category/releases/91-3)
 
 ## Project Information
 
@@ -32,6 +32,23 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started)
 
 ## Kpow Releases
+
+### [91.3] 2023-04-18
+
+See: [Kpow v91.3 Full Release Notes & Artifacts](https://kpow.io/releases/91-3/)
+
+* Introduce Kafka Connect JSON import dialog and form integration
+* Introduce Prometheus group.member.count and group.host.count metrics
+* Introduce Prometheus /group-offsets/v1 endpoint for group assignment offset metrics
+* Improve schema registry AWS configurability with static and STS credentials
+* Improve schema registry Oauth2 configurability with new parameters
+* Improve Kafka Connect validation with CONNECT_STARTUP_VALIDATION (default: true)
+* Fix auth regression bug, admin_roles considered authorized_roles
+* Fix stages scheduled mutations misfire bug
+* Fix PERSISTENCE_MODE=none when running in a multi-cluster environment
+* Fix several minor UI bugs
+* Bump to Slipway 1.1.6, latest Jetty dependencies
+
 
 ### [91.2] 2023-03-14
 
