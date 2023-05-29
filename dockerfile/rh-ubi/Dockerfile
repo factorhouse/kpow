@@ -1,6 +1,6 @@
-FROM registry.access.redhat.com/ubi8/openjdk-11:1.15-1.1679485219
+FROM registry.access.redhat.com/ubi8/openjdk-11:1.15-1.1682059493
 
-ARG VERSION 
+ARG VERSION
 ARG RELEASE
 
 LABEL name="Kpow for Apache Kafka" \

@@ -1,6 +1,6 @@
-FROM amazoncorretto:17.0.6
+FROM amazoncorretto:17.0.7
 
-ARG VERSION 
+ARG VERSION
 ARG RELEASE
 
 LABEL name="Kpow for Apache Kafka" \

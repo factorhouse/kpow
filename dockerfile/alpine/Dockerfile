@@ -1,6 +1,6 @@
-FROM amazoncorretto:11.0.18-alpine
+FROM amazoncorretto:11.0.19-alpine
 
-ARG VERSION 
+ARG VERSION
 ARG RELEASE
 
 LABEL name="Kpow for Apache Kafka" \
