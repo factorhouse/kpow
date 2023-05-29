@@ -1,4 +1,4 @@
-name: Build and push to GitHub packages
+name: Release Kpow
 
 on:
   workflow_dispatch:
