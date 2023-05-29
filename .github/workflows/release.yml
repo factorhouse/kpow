@@ -49,63 +49,63 @@ jobs:
       - name: Build kPow Alpine
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_ID=${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-alpine
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/alpine/Dockerfile
 
       - name: Build kPow Red Hat UBI
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_ID=${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-rh-ubi
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
 
       - name: Build kPow AWS Marketplace LM
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_ID=${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-aws-mkt-lm
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
 
       - name: Build kPow AWS Marketplace Corp
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_ID=${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-aws-mkt-corp
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
 
       - name: Build kPow AWS Marketplace Pro
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_ID=${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-aws-mkt-pro
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
 
       - name: Build kPow AWS Marketplace Team
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_ID=${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-aws-mkt-team
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
 
       - name: Build kPow (JDK17)
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_ID=${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION-jdk17
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/jdk17/Dockerfile
 
       - name: Build kPow
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_ID=${{ github.repository }}/kpow
           IMAGE_TAG=$VERSION
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
       - name: Build kPow (latest)
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/${{ github.repository }}/kpow
+          IMAGE_ID=${{ github.repository }}/kpow
           IMAGE_TAG=latest
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
