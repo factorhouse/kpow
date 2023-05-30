@@ -180,20 +180,20 @@ jobs:
       - name: Install babashka
         run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
       - name: Update releases-ee.edn
-        run: ./scripts/release.clj ${{github.event.inputs.num}} releases-ee.edn
+        run: ./scripts/release.clj ${{github.event.inputs.version}} releases-ee.edn
       - name: Update releases-v2.edn
-        run: ./scripts/release.clj ${{github.event.inputs.num}} releases-v2.edn
+        run: ./scripts/release.clj ${{github.event.inputs.version}} releases-v2.edn
       - name: Update dockerhub/kpow-ee/README.md
-        run: echo ${{github.event.inputs.num}} | ./scripts/dockerhub_readme_ee.clj
+        run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_ee.clj
       - name: Update dockerhub/kpow-se/README.md
-        run: echo ${{github.event.inputs.num}} | ./scripts/dockerhub_readme_se.clj
+        run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_se.clj
       - name: Commit
         run: |
           git config --global user.email "support@operatr.io"
           git config --global user.name "kPow CI"
-          git commit -am "Release Enterprise ${{github.event.inputs.num}}"
+          git commit -am "Release Enterprise ${{github.event.inputs.version}}"
       - name: Tag
-        run: git tag -a ee/${{github.event.inputs.num}} -m "Release Enterprise ${{github.event.inputs.num}}"
+        run: git tag -a ee/${{github.event.inputs.version}} -m "Release Enterprise ${{github.event.inputs.version}}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
