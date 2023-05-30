@@ -53,6 +53,36 @@ jobs:
           IMAGE_TAG=$VERSION-alpine
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/alpine/Dockerfile
 
+### deprecated operatr repo
+
+      - name: Build kPow (operatr/kpow:$VERSION)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=operatr/kpow
+          IMAGE_TAG=$VERSION
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+
+      - name: Build kPow (latest) (operatr/kpow:latest)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=operatr/kpow
+          IMAGE_TAG=latest
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+
+      - name: Build kPow (operatr/operatr:$VERSION)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=operatr/operatr
+          IMAGE_TAG=$VERSION
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+
+      - name: Build kPow (latest) (operatr/operatr:latest)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=operatr/operatr
+          IMAGE_TAG=latest
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+
 ### EE builds
 
       - name: Build kPow Red Hat UBI (EE)
