@@ -11,12 +11,12 @@ LABEL name="Kpow for Apache Kafka" \
       summary="Kpow is a toolkit for engineers who build, manage, and maintain systems powered by Apache Kafka." \
       description="Kpow features a rich data-oriented UI, specialized dashboards that deliver instant visibility into Kafka Clusters, Schema Registries, and Connect Installations, and developer tools that allow engineers to get to the heart of their systems quickly."
 
-RUN yum install shadow-utils.x86_64 -y
+RUN yum install shadow-utils -y
 
 RUN groupadd -g 999 kpow && \
     useradd -r -u 999 -g kpow kpow
 
-RUN yum remove shadow-utils.x86_64 -y
+RUN yum remove shadow-utils -y
 
 USER kpow
 
