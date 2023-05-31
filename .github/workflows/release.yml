@@ -37,6 +37,9 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
+      - name: Log into GitHub packages
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
       -
         # Add support for more platforms with QEMU (optional)
         # https://github.com/docker/setup-qemu-action
@@ -95,28 +98,28 @@ jobs:
       - name: Build kPow AWS Marketplace LM (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-ee
+          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-lm
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
 
       - name: Build kPow AWS Marketplace Corp (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-ee
+          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-corp
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
 
       - name: Build kPow AWS Marketplace Pro (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-ee
+          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-pro
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
 
       - name: Build kPow AWS Marketplace Team (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-ee
+          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-team
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
 
