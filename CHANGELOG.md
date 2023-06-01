@@ -6,13 +6,13 @@ Get started with the [Community Edition](https://kpow.io/get-started) of Kpow to
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v91.3](https://kpow.io/category/releases/91-3).
+The latest release of Kpow is [v91.4](https://kpow.io/category/releases/91-4).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
-* [Java JAR](https://releases.operatr.io/kpow-2023-04-18-19-59.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=L%2BMtPiNiWSvw1PtSbakQL5h8vk8%3D&Expires=1697364068)
-* [Java 8 JAR](https://releases.operatr.io/kpow-2023-04-18-20-03.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=Yev7DrNGLjpSiiH4SXX9S6ODXEk%3D&Expires=1697364287)
-* [Release Blog Post](https://kpow.io/category/releases/91-3)
+* [Java JAR](https://releases.operatr.io/kpow-2023-06-01-13-43.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=BaYZWjT5Iv%2B7VSyficFzznF0iW8%3D&Expires=1701143120)
+* [Java 8 JAR](https://releases.operatr.io/kpow-2023-06-01-13-45.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=MX0hxnI1FpVkq7PzlgWO2AC2Bu8%3D&Expires=1701143286)
+* [Release Blog Post](https://kpow.io/category/releases/91-4)
 
 ## Project Information
 
@@ -32,6 +32,23 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started)
 
 ## Kpow Releases
+
+### [91.4] 2023-05-30
+
+See: [Kpow v91.4 Full Release Notes & Artifacts](https://kpow.io/releases/91-4/)
+
+* Introduce new ARM64 docker builds to support Graviton deployments
+* Improve scheduled mutations, add new MUTATION_SCHEDULER_EXPIRES_MS (default 15 mins) env var
+* Improve temporary policies, add new TEMPORARY_POLICY_MAX_MS (default 1hr) env var and extend UI to support the same
+* Improve multi-tenancy, add support for tenancy inclusions/exclusions by Kafka Connector, Schema Subject and ACL principal
+* Improve Kafka Connect, introduce fallback UI when connector validation endpoint returns 500 status code
+* Improve Kafka Connect, introduce CONNECT_OBSERVATION_VERSION=2 for more efficient snapshotting of Connect resources
+* Improve RBAC, introduce GROUP_DELETE RBAC permission (previously GROUP_EDIT was used for group delete actions)
+* Improve RBAC, support plural resources
+* Improve Audit-log UI, visually group mutations by their correlation id for bulk actions and staged mutations
+* Improve Overview UI, add Connect/Schema/ksqlDB overview items
+* Fix STS provider for AWS Glue authentication
+* Bump protobuf-java to 3.22.3 to better support custom serdes
 
 ### [91.3] 2023-04-18
 
