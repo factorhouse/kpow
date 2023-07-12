@@ -42,6 +42,7 @@ See: [Kpow v91.5 Full Release Notes & Artifacts](https://kpow.io/releases/91-5/)
 * Introduce and document importing messages with headers in Data Produce
 * Improve Data Produce UX when creating new messages
 * Improve Streams and Consumer topology view with expand/contract UI
+* Fix redundant OpenID 'Not Authorized' screen prior to login 
 * Fix OpenID authentication redirect when Kpow is path-proxied
 * Fix topic edit when Kpow is path-proxied
 * Fix Connect observation-v2 for confluent cloud bug
