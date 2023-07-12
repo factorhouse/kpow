@@ -6,13 +6,13 @@ Get started with the [Community Edition](https://kpow.io/get-started) of Kpow to
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v91.4](https://kpow.io/category/releases/91-4).
+The latest release of Kpow is [v91.5](https://kpow.io/category/releases/91-5).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
-* [Java JAR](https://releases.operatr.io/kpow-2023-06-01-13-43.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=BaYZWjT5Iv%2B7VSyficFzznF0iW8%3D&Expires=1701143120)
-* [Java 8 JAR](https://releases.operatr.io/kpow-2023-06-01-13-45.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=MX0hxnI1FpVkq7PzlgWO2AC2Bu8%3D&Expires=1701143286)
-* [Release Blog Post](https://kpow.io/category/releases/91-4)
+* [Java JAR](https://releases.operatr.io/kpow-2023-07-12-21-50.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=SbiBFycWngtdyynipZSuIZ5tAcw%3D&Expires=1704714976)
+* [Java 8 JAR](https://releases.operatr.io/kpow-2023-07-12-21-56.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=f6TqVEbcVrZ8ACypvTbf3EmbhVI%3D&Expires=1704715053)
+* [Release Blog Post](https://kpow.io/category/releases/91-5)
 
 ## Project Information
 
@@ -32,6 +32,23 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started)
 
 ## Kpow Releases
+
+### [91.5] 2023-05-30
+
+See: [Kpow v91.5 Full Release Notes & Artifacts](https://kpow.io/releases/91-5/)
+
+* Introduce new 'Expand/Explore Table' UX for all tabular data
+* Introduce prometheus metrics in system performance UI
+* Introduce and document importing messages with headers in Data Produce
+* Improve Data Produce UX when creating new messages
+* Fix OpenID authentication redirect when Kpow is path-proxied
+* Fix topic edit when Kpow is path-proxied
+* Fix Connect observation-v2 for confluent cloud bug
+* Fix RBAC system settings UI when plural resources configured
+* Fix RBAC rules for individual connectors bug
+* Fix ghost filters in topic and group UI
+* Fix /metrics/v1/streams endpoint not available bug
+* Fix broker edit RBAC UI bug
 
 ### [91.4] 2023-05-30
 
