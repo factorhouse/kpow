@@ -33,7 +33,7 @@ Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https
 
 ## Kpow Releases
 
-### [91.5] 2023-05-30
+### [91.5] 2023-07-12
 
 See: [Kpow v91.5 Full Release Notes & Artifacts](https://kpow.io/releases/91-5/)
 
