@@ -1,4 +1,4 @@
-[![Release to DockerHub](https://github.com/operatr-io/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow/actions/workflows/release.yml)
+[![Release to DockerHub](https://github.com/factorhouse/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/factorhouse/kpow/actions/workflows/release.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
 ![Docker Stars](https://img.shields.io/docker/stars/operatr/kpow)
 [![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/kpow)](https://artifacthub.io/packages/search?repo=kpow)
@@ -18,7 +18,7 @@ Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that
 * Has a simple, transparent pricing structure
 * Is built and supported by an engineering-lead team deeply experienced in Kafka delivery
 
-The Kpow image is available directly from [Docker Hub](https://hub.docker.com/r/operatr/kpow). Images are built using [GitHub Actions](https://github.com/operatr-io/kpow/actions/workflows/build.yml).
+The Kpow image is available directly from [Docker Hub](https://hub.docker.com/r/factorhouse/kpow-ee). Images are built using [GitHub Actions](https://github.com/factorhouse/kpow/actions/workflows/build.yml).
 
 # Usage
 
@@ -48,16 +48,16 @@ Kpow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io
 
 # Local Development
 
-To use Kpow Community Edition locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/operatr-io/kpow-local) GitHub repository to get started.
+To use Kpow Community Edition locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/factorhouse/kpow-local) GitHub repository to get started.
 
 # Quick Starts
 
-Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm](https://github.com/operatr-io/kpow-helm-charts) and [CloudFormation](https://github.com/operatr-io/kpow-cloudformation) quicks start guides.
+Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm](https://github.com/factorhouse/kpow-helm-charts) and [CloudFormation](https://github.com/factorhouse/kpow-cloudformation) quicks start guides.
 
 # License
 
 Kpow is proprietary software. 
 
-Kpow's EULA can be found in the [GitHub repository](https://github.com/operatr-io/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+Kpow's EULA can be found in the [GitHub repository](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
 
 This repository is licensed under the Eclipse Public License 1.0 (EPL-1.0)
