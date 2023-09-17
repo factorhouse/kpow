@@ -6,12 +6,12 @@ Get started with the [Community Edition](https://kpow.io/get-started) of Kpow to
 
 ## Latest Release Artifacts
 
-The latest release of Kpow is [v91.5](https://kpow.io/category/releases/91-5).
+The latest release of Kpow is [v92.1](https://kpow.io/category/releases/92-1).
 
 * [Dockerhub Repository](https://hub.docker.com/r/factorhouse/kpow-ee)
 * [Dockerhub Repository (Community Edition)](https://hub.docker.com/r/factorhouse/kpow-ce)
-* [Java JAR](https://releases.operatr.io/kpow-2023-07-12-21-50.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=SbiBFycWngtdyynipZSuIZ5tAcw%3D&Expires=1704714976)
-* [Java 8 JAR](https://releases.operatr.io/kpow-2023-07-12-21-56.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=f6TqVEbcVrZ8ACypvTbf3EmbhVI%3D&Expires=1704715053)
+* [Java JAR](https://releases.operatr.io/kpow-2023-09-15-16-32.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=2vveFWfre3w5G8lE5FWoNdutKtw%3D&Expires=1710311740)
+* [Java 8 JAR](https://releases.operatr.io/kpow-2023-09-15-16-36.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Signature=P8UKXaXZNUBKxXqOTh374mwiHGc%3D&Expires=1710311854)
 * [Release Blog Post](https://kpow.io/category/releases/91-5)
 
 ## Project Information
@@ -32,6 +32,30 @@ Links to JAR artefacts are provided on each release blog post: [https://kpow.io/
 Learn more about [Kpow for Apache Kafka](https://kpow.io), read our [docs](https://docs.kpow.io), or [get started today, free!](https://kpow.io/get-started)
 
 ## Kpow Releases
+
+### [92.1] 2023-09-15
+
+See: [Kpow v92.1 Full Release Notes & Artifacts](https://kpow.io/releases/92-1/)
+
+* Change default to observation_version=2 for Schema and Connect resources
+* Introduce "time since URP" metric to under replicated partitions table
+* Improve topic create UX, allow multiple topics to be created at once
+* Improve Prometheus egress performance by up to 300%
+* Improve Kafka documentation/help for topic+broker configuration
+* Improve truncate/delete UX by separating action items
+* Improve authorization UX by better differentiaton between Kpow RBAC and Kafka errors.
+* Improve staged mutations modals, show ID in confirmation modal
+* Improve consumer offset management, introduce tabular actions
+* Improve audit log detail for kREPL queries
+* Improve default serdes and schema registry detection UX
+* Improve topic configuration support with custom fields
+* Improve charts: better denominations in chart details, KB MB, etc.
+* Improve topic UX with topic identifiers shown in topic tables
+* Fix stale offset consumer lag calculation bug
+* Fix data produce "show schema" bug
+* Fix top-level wildcards not showing bug
+* Fix relative-url assets (css, images) page rengering bug
+* Fix WARN on missing cluster context bug
 
 ### [91.5] 2023-07-12
 
