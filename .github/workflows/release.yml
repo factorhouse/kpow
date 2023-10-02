@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version of kPow'
+        description: 'Version of Kpow'
         required: true
       manifest:
         description: 'URL of Manifest'
@@ -49,7 +49,7 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Build kPow Alpine (EE)
+      - name: Build Kpow Alpine (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-ee
@@ -58,28 +58,28 @@ jobs:
 
 ### deprecated operatr repo
 
-      - name: Build kPow (operatr/kpow:$VERSION)
+      - name: Build Kpow (operatr/kpow:$VERSION)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=operatr/kpow
           IMAGE_TAG=$VERSION
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
-      - name: Build kPow (latest) (operatr/kpow:latest)
+      - name: Build Kpow (latest) (operatr/kpow:latest)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=operatr/kpow
           IMAGE_TAG=latest
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
-      - name: Build kPow (operatr/operatr:$VERSION)
+      - name: Build Kpow (operatr/operatr:$VERSION)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=operatr/operatr
           IMAGE_TAG=$VERSION
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
-      - name: Build kPow (latest) (operatr/operatr:latest)
+      - name: Build Kpow (latest) (operatr/operatr:latest)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=operatr/operatr
@@ -88,56 +88,56 @@ jobs:
 
 ### EE builds
 
-      - name: Build kPow Red Hat UBI (EE)
+      - name: Build Kpow Red Hat UBI (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-ee
           IMAGE_TAG=$VERSION-rh-ubi
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
 
-      - name: Build kPow AWS Marketplace LM (EE)
+      - name: Build Kpow AWS Marketplace LM (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-lm
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
 
-      - name: Build kPow AWS Marketplace Corp (EE)
+      - name: Build Kpow AWS Marketplace Corp (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-corp
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
 
-      - name: Build kPow AWS Marketplace Pro (EE)
+      - name: Build Kpow AWS Marketplace Pro (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-pro
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
 
-      - name: Build kPow AWS Marketplace Team (EE)
+      - name: Build Kpow AWS Marketplace Team (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-team
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
 
-      - name: Build kPow (JDK17) (EE)
+      - name: Build Kpow (JDK17) (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-ee
           IMAGE_TAG=$VERSION-jdk17
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/jdk17/Dockerfile
 
-      - name: Build kPow (EE)
+      - name: Build Kpow (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-ee
           IMAGE_TAG=$VERSION
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
-      - name: Build kPow (latest) (EE)
+      - name: Build Kpow (latest) (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-ee
@@ -146,69 +146,68 @@ jobs:
 
 ### SE builds
 
-      - name: Build kPow Alpine (SE)
+      - name: Build Kpow Alpine (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION-alpine
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/alpine/Dockerfile
 
-      - name: Build kPow Red Hat UBI (SE)
+      - name: Build Kpow Red Hat UBI (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION-rh-ubi
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
 
-      - name: Build kPow AWS Marketplace LM (SE)
+      - name: Build Kpow AWS Marketplace LM (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION-aws-mkt-lm
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
 
-      - name: Build kPow AWS Marketplace Corp (SE)
+      - name: Build Kpow AWS Marketplace Corp (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION-aws-mkt-corp
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
 
-      - name: Build kPow AWS Marketplace Pro (SE)
+      - name: Build Kpow AWS Marketplace Pro (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION-aws-mkt-pro
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
 
-      - name: Build kPow AWS Marketplace Team (SE)
+      - name: Build Kpow AWS Marketplace Team (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION-aws-mkt-team
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
 
-      - name: Build kPow (JDK17) (SE)
+      - name: Build Kpow (JDK17) (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION-jdk17
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/jdk17/Dockerfile
 
-      - name: Build kPow (SE)
+      - name: Build Kpow (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
-      - name: Build kPow (latest) (SE)
+      - name: Build Kpow (latest) (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=latest
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
-
 
       - name: Install babashka
         run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
@@ -223,7 +222,7 @@ jobs:
       - name: Commit
         run: |
           git config --global user.email "support@operatr.io"
-          git config --global user.name "kPow CI"
+          git config --global user.name "Kpow CI"
           git commit -am "Release Enterprise ${{github.event.inputs.version}}"
       - name: Tag
         run: git tag -a ee/${{github.event.inputs.version}} -m "Release Enterprise ${{github.event.inputs.version}}"
