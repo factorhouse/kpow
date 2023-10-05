@@ -5,9 +5,9 @@
 
 # Kpow for Apache Kafka
 
-[Kpow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
+[Kpow](https://factorhouse.io/kpow) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
 
-See the [Changelog](CHANGELOG.md) for release information or [our blog](https://kpow.io/category/releases/) for full notes on each release and JAR artefacts.
+See the [Changelog](https://factorhouse.io/kpow/changelog) for release information or [our blog](https://factorhouse.io/blog/releases/) for full notes on each release and JAR artefacts.
 
 Kpow is an Enterprise-grade toolkit for engineers working with Apache Kafka that:
 
@@ -22,7 +22,7 @@ The Kpow image is available directly from [Docker Hub](https://hub.docker.com/r/
 
 # Usage
 
-Visit our [Get Started](https://kpow.io/get-started) page to learn more about Kpow.
+Visit our [Get Started](https://factorhouse.io/kpow/get-started) page to learn more about Kpow.
 
 ## Community Edition
 
@@ -40,7 +40,7 @@ Paying customers using the Standard or Enterprise Edition can use the following 
 docker pull factorhouse/kpow-ee:92.1
 ```
 
-Instructions on how to start a 30-day free trial of Kpow Standard Edition can be found [here](https://kpow.io/get-started/#standard).
+Instructions on how to start a 30-day free trial of Kpow can be found [here](https://factorhouse.io/kpow/get-started).
 
 # Documentation
 
@@ -52,12 +52,12 @@ To use Kpow Community Edition locally with Docker Compose and a 3-node Kafka clu
 
 # Quick Starts
 
-Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm](https://github.com/factorhouse/kpow-helm-charts) and [CloudFormation](https://github.com/factorhouse/kpow-cloudformation) quicks start guides.
+Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm Charts](https://github.com/factorhouse/kpow-helm-charts).
 
 # License
 
 Kpow is proprietary software. 
 
-Kpow's EULA can be found in the [GitHub repository](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+Kpow's EULA can be found in the [GitHub repository](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at [https://factorhouse.io/kpow/eula/](https://factorhouse.io/kpow/eula/)
 
 This repository is licensed under the Eclipse Public License 1.0 (EPL-1.0)
