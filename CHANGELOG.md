@@ -4,6 +4,19 @@
 
 Get started with the [Community Edition](https://kpow.io/get-started) of Kpow today.
 
+## Changelog Location Update
+
+**Please Note!** This Changelog has moved to [https://factorhouse.io/kpow/changelog](https://factorhouse.io/kpow/changelog)
+
+You may also be interested in the Flex for Apache Flink Changelog and Factor House Product Roadmap:
+
+* Flex for Apache Flink Changelog: [https://factorhouse.io/flex/changelog](https://factorhouse.io/flex/changelog)
+* Factor House Product Roadmap:[https://factorhouse.io/roadmap](https://factorhouse.io/roadmap)
+
+# Remainder Left In Place for Archive Purposes Only
+
+**This changelog will no longer be updated, see the links above for the new Kpow changelog location.**
+
 ## Latest Release Artifacts
 
 The latest release of Kpow is [v92.1](https://kpow.io/category/releases/92-1).
