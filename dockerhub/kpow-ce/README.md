@@ -47,7 +47,7 @@ Gain instant visibility of your brokers, topics, groups, partitions, offsets, an
 
 Kpow offers full support for controlling and monitoring Kafka Connect clusters and Schema Registries.
 
-![Kpow provides x-ray vision of Kafka resources](https://docs.kpow.io/img/assets/overview-xray.png)
+![Kpow provides x-ray vision of Kafka resources](https://docs.factorhouse.io/img/assets/overview-xray.png)
 
 ### Deep Data Inspect with kJQ
 
@@ -55,7 +55,7 @@ Search **tens of thousands of messages a second** with Kpow’s unique, custom i
 
 **kJQ** works with JSON or JSON-like data including Apache Avro®, Transit, EDN, and even Protobuf messages where you have configured custom serdes to output JSON formatted text.
 
-![Search tens of thousands of messages a second with kJQ](https://docs.kpow.io/img/assets/data-inspect-with-data.png)
+![Search tens of thousands of messages a second with kJQ](https://docs.factorhouse.io/img/assets/data-inspect-with-data.png)
 
 ### Compute Console to Control and Monitor Streams
 
@@ -63,7 +63,7 @@ Brokers, topics, and the data on them tell only one part of the Kafka story.
 
 Kpow Compute provides access to your consumer \(and soon, _Kafka Streams_\) topologies allowing **visualization of message throughput and lag** at point of consumption and the ability to **reset consumption** at a group, host, member, topic, or assignment level.
 
-![Kpow Compute provides visualization and control of consumption](https://docs.kpow.io/img/assets/streams-topology-usage.png)
+![Kpow Compute provides visualization and control of consumption](https://docs.factorhouse.io/img/assets/streams-topology-usage.png)
 
 ### Built for the Enterprise
 
@@ -79,7 +79,7 @@ Kpow comes from a practical application of Kafka to real-world requirements and 
 * **Multi-Cluster Monitoring** from a single installation for cost efficiency and simplicity.
 * **All data in local topics** makes Kpow perfect for air-gapped environments.
 
-![Kpow is easily configured with LDAP for User Authentication](https://docs.kpow.io/img/assets/login-jetty.png)
+![Kpow is easily configured with LDAP for User Authentication](https://docs.factorhouse.io/img/assets/login-jetty.png)
 
 ### And Much More..
 
