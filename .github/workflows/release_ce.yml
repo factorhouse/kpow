@@ -28,11 +28,23 @@ jobs:
         run: |
           ./scripts/jar.sh "${{github.event.inputs.manifest}}"
 
+      - name: Configure AWS Credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: us-east-1
+
       - name: Login to DockerHub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Release Kpow JDK8 Community JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws cp target/kpow-ce-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-ce-$VERSION-java8.jar
 
       -
         # Add support for more platforms with QEMU (optional)
@@ -59,6 +71,8 @@ jobs:
           git config --global user.email "support@operatr.io"
           git config --global user.name "kPow CI"
           git commit -am "Release Community ${{github.event.inputs.version}}"
+      - name: Deploy Manifest to s3
+        run: aws cp docs/releases-ce.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ce.edn
       - name: Tag
         run: git tag -a ce/${{github.event.inputs.version}} -m "Release Community ${{github.event.inputs.version}}"
       - name: Push changes

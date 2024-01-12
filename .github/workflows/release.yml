@@ -24,7 +24,13 @@ jobs:
         run: |
           ./scripts/release_number_check.sh ${{github.event.inputs.release_number_bump}}
 
-      - name: Log into registry
+      - name: Configure AWS Credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: us-east-1
+
+      - name: Log into DockerHub registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Download and verify JAR(s)
@@ -39,6 +45,27 @@ jobs:
 
       - name: Log into GitHub packages
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Release Kpow JDK11 JAR
+        run: | 
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws cp target/kpow-java11-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java11.jar
+
+      - name: Release Kpow JDK8 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws cp target/kpow-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java8.jar
+
+      - name: Release Dependency Check Report
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          tar xzf kpow-enterprise-nvd-report.tar.gz
+          cd kpow-enterprise-nvd-report
+          mv *.html index.html
+          aws cp index.html ${{ secrets.RELEASES_BUCKET }}/kpow-dependency-check-report-$VERSION.html
 
       -
         # Add support for more platforms with QEMU (optional)
@@ -219,6 +246,8 @@ jobs:
         run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_ee.clj
       - name: Update dockerhub/kpow-se/README.md
         run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_se.clj
+      - name: Deploy Manifest to s3
+        run: aws cp docs/releases-ce.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ee.edn
       - name: Commit
         run: |
           git config --global user.email "support@operatr.io"
