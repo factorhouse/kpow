@@ -47,17 +47,25 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Release Kpow JDK11 JAR
-        run: aws cp target/kpow-java11-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-${{github.event.inputs.version}}-java11.jar
+        run: | 
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws cp target/kpow-java11-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java11.jar
 
       - name: Release Kpow JDK8 JAR
-        run: aws cp target/kpow-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-${{github.event.inputs.version}}-java8.jar
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws cp target/kpow-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java8.jar
 
       - name: Release Dependency Check Report
         run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
           tar xzf kpow-enterprise-nvd-report.tar.gz
           cd kpow-enterprise-nvd-report
           mv *.html index.html
-          aws cp index.html ${{ secrets.RELEASES_BUCKET }}/kpow-dependency-check-report-${{github.event.inputs.version}}.html
+          aws cp index.html ${{ secrets.RELEASES_BUCKET }}/kpow-dependency-check-report-$VERSION.html
 
       -
         # Add support for more platforms with QEMU (optional)
@@ -239,9 +247,7 @@ jobs:
       - name: Update dockerhub/kpow-se/README.md
         run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_se.clj
       - name: Deploy Manifest to s3
-        run: |
-          aws cp docs/releases-ee.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ee.edn
-          aws cp docs/releases-ce.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ce.edn
+        run: aws cp docs/releases-ce.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ce.edn
       - name: Commit
         run: |
           git config --global user.email "support@operatr.io"
