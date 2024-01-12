@@ -70,7 +70,7 @@ jobs:
           tar xzf kpow-enterprise-nvd-report.tar.gz
           cd kpow-enterprise-nvd-report
           mv *.html index.html
-          aws s3 cp index.html ${{ secrets.RELEASES_BUCKET }}/kpow-dependency-check-report-$VERSION.html
+          aws s3 cp index.html s3://${{ secrets.RELEASES_BUCKET }}/kpow-dependency-check-report-$VERSION.html
 
       -
         # Add support for more platforms with QEMU (optional)
