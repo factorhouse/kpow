@@ -253,7 +253,7 @@ jobs:
       - name: Update dockerhub/kpow-se/README.md
         run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_se.clj
       - name: Deploy Manifest to s3
-        run: aws s3 cp docs/releases-ce.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ee.edn
+        run: aws s3 cp docs/releases-ee.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ee.edn
       - name: Commit
         run: |
           git config --global user.email "support@operatr.io"
