@@ -48,7 +48,7 @@ Kpow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io
 
 # Local Development
 
-To use Kpow Community Edition locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/factorhouse/kpow-local) GitHub repository to get started.
+To use Kpow locally with Docker Compose and a 3-node Kafka cluster visit the [kpow-local](https://github.com/factorhouse/kpow-local) GitHub repository to get started.
 
 # Quick Starts
 
