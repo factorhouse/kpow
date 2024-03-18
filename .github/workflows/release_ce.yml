@@ -77,7 +77,9 @@ jobs:
           git config --global user.name "kPow CI"
           git commit -am "Release Community ${{github.event.inputs.version}}"
       - name: Deploy Manifest to s3
-        run: aws s3 cp docs/releases-ce.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ce.edn
+        run: |
+          aws s3 cp docs/releases-ce.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ce.edn \
+          --cache-control no-cache --content-type application/edn
       - name: Tag
         run: git tag -a ce/${{github.event.inputs.version}} -m "Release Community ${{github.event.inputs.version}}"
       - name: Push changes
