@@ -246,7 +246,7 @@ jobs:
         run: |
           VERSION=${{github.event.inputs.version}}
           VERSION="${VERSION//./-}"
-          aws cp target/kpow-enterprise-openapi.json s3://${{ secrets.RELEASES_BUCKET }}/kpow-enterprise-openapi-$VERSION.json \
+          aws s3 cp target/kpow-enterprise-openapi.json s3://${{ secrets.RELEASES_BUCKET }}/kpow-enterprise-openapi-$VERSION.json \
           --cache-control no-cache --content-type application/json
       - name: Install babashka
         run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
