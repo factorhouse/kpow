@@ -243,8 +243,10 @@ jobs:
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
       - name: Deploy OpenAPI spec
-        run: | 
-          aws cp target/kpow-enterprise-openapi.json s3://${ secrets.RELEASES_BUCKET }}/kpow-enterprise-openapi-${{github.event.inputs.version}}.json \
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws cp target/kpow-enterprise-openapi.json s3://${{ secrets.RELEASES_BUCKET }}/kpow-enterprise-openapi-$VERSION.json \
           --cache-control no-cache --content-type application/json
       - name: Install babashka
         run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
