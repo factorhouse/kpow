@@ -36,6 +36,10 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: us-east-1
 
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
       - name: Log into DockerHub registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
@@ -193,34 +197,6 @@ jobs:
           IMAGE_TAG=$VERSION-rh-ubi
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
 
-      - name: Build Kpow AWS Marketplace LM (SE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-se
-          IMAGE_TAG=$VERSION-aws-mkt-lm
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
-
-      - name: Build Kpow AWS Marketplace Corp (SE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-se
-          IMAGE_TAG=$VERSION-aws-mkt-corp
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
-
-      - name: Build Kpow AWS Marketplace Pro (SE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-se
-          IMAGE_TAG=$VERSION-aws-mkt-pro
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
-
-      - name: Build Kpow AWS Marketplace Team (SE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-se
-          IMAGE_TAG=$VERSION-aws-mkt-team
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
-
       - name: Build Kpow (JDK17) (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
@@ -241,6 +217,36 @@ jobs:
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=latest
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+
+## AWS MKT builds
+
+      - name: Build Kpow AWS Marketplace LM (SE)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=${{ secrets.ECR_NAMESPACE }}/operator-io/kpow-lm
+          IMAGE_TAG=$VERSION
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
+
+      - name: Build Kpow AWS Marketplace Corp (SE)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=${{ secrets.ECR_NAMESPACE }}/operator-io/kpow
+          IMAGE_TAG=$VERSION
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
+
+      - name: Build Kpow AWS Marketplace Pro (SE)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=${{ secrets.ECR_NAMESPACE }}/operator-io/kpow-pro
+          IMAGE_TAG=$VERSION
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
+
+      - name: Build Kpow AWS Marketplace Team (SE)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=${{ secrets.ECR_NAMESPACE }}/operator-io/kpow-team
+          IMAGE_TAG=$VERSION
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
 
       - name: Deploy OpenAPI spec
         run: |
