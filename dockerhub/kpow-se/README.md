@@ -18,10 +18,10 @@ View [Features](https://kpow.io/features) to compare editions.
 
 <!--- StartReleaseLinks --->
 
-* [93.1, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow/Dockerfile)
-* [93.1-alpine](https://github.com/factorhouse/kpow/blob/main/dockerfile/alpine/Dockerfile)
-* [93.1-jdk17](https://github.com/factorhouse/kpow/blob/main/dockerfile/jdk17/Dockerfile)
-* [93.1-rh-ubi](https://github.com/factorhouse/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
+* [93.2, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow/Dockerfile)
+* [93.2-alpine](https://github.com/factorhouse/kpow/blob/main/dockerfile/alpine/Dockerfile)
+* [93.2-jdk17](https://github.com/factorhouse/kpow/blob/main/dockerfile/jdk17/Dockerfile)
+* [93.2-rh-ubi](https://github.com/factorhouse/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
