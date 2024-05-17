@@ -264,7 +264,7 @@ jobs:
           --cache-control no-cache --content-type application/edn
       - name: Commit
         run: |
-          git config --global user.email "support@operatr.io"
+          git config --global user.email "support@factorhouse.io"
           git config --global user.name "Kpow CI"
           git commit -am "Release Enterprise ${{github.event.inputs.version}}"
       - name: Tag

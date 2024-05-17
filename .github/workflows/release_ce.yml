@@ -73,7 +73,7 @@ jobs:
         run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_ce.clj
       - name: Commit
         run: |
-          git config --global user.email "support@operatr.io"
+          git config --global user.email "support@factorhouse.io"
           git config --global user.name "kPow CI"
           git commit -am "Release Community ${{github.event.inputs.version}}"
       - name: Deploy Manifest to s3
