@@ -200,26 +200,12 @@ jobs:
           IMAGE_TAG=$VERSION-aws-mkt-lm
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
 
-      - name: Build Kpow AWS Marketplace Corp (SE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-se
-          IMAGE_TAG=$VERSION-aws-mkt-corp
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
-
       - name: Build Kpow AWS Marketplace Pro (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION-aws-mkt-pro
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
-
-      - name: Build Kpow AWS Marketplace Team (SE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-se
-          IMAGE_TAG=$VERSION-aws-mkt-team
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
 
       - name: Build Kpow (JDK17) (SE)
         run: |
