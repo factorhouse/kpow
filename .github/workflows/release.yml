@@ -135,26 +135,12 @@ jobs:
           IMAGE_TAG=$VERSION-aws-mkt-lm
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
 
-      - name: Build Kpow AWS Marketplace Corp (EE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
-          IMAGE_TAG=$VERSION-aws-mkt-corp
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-corp/Dockerfile
-
       - name: Build Kpow AWS Marketplace Pro (EE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-pro
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
-
-      - name: Build Kpow AWS Marketplace Team (EE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
-          IMAGE_TAG=$VERSION-aws-mkt-team
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-team/Dockerfile
 
       - name: Build Kpow (JDK17) (EE)
         run: |
@@ -192,20 +178,6 @@ jobs:
           IMAGE_ID=factorhouse/kpow-se
           IMAGE_TAG=$VERSION-rh-ubi
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
-
-      - name: Build Kpow AWS Marketplace LM (SE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-se
-          IMAGE_TAG=$VERSION-aws-mkt-lm
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
-
-      - name: Build Kpow AWS Marketplace Pro (SE)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-se
-          IMAGE_TAG=$VERSION-aws-mkt-pro
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
 
       - name: Build Kpow (JDK17) (SE)
         run: |
