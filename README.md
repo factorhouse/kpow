@@ -44,11 +44,11 @@ Instructions on how to start a 30-day free trial of Kpow can be found [here](htt
 
 # Documentation
 
-Kpow's documentation is available at [https://docs.kpow.io](https://docs.kpow.io)
+Kpow's documentation is available at [https://docs.factorhouse.io/](https://docs.factorhouse.io/).
 
-# Local Development
+# Local Development with Docker Compose
 
-To use Kpow locally with Docker Compose and a 3-node Kafka cluster visit the [kpow-local](https://github.com/factorhouse/kpow-local) GitHub repository to get started.
+See [kpow-local](https://github.com/factorhouse/kpow-local) to get started with local Kpow and a 3-node Kafka cluster in Docker Compose.
 
 # Quick Starts
 
