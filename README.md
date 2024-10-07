@@ -56,8 +56,8 @@ Running in ECS / EKS / Fargate / EC2 / Kubernetes? See our [Helm Charts](https:/
 
 # License
 
-Kpow is proprietary software. 
+Kpow is proprietary software. Kpow's EULA can be found [here](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at [https://factorhouse.io/kpow/eula/](https://factorhouse.io/kpow/eula/)
 
-Kpow's EULA can be found in the [GitHub repository](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at [https://factorhouse.io/kpow/eula/](https://factorhouse.io/kpow/eula/)
+This repository is distributed under the Apache 2.0 License.
 
-This repository is licensed under the Eclipse Public License 1.0 (EPL-1.0)
+Copyright (c) [Factor House](https://factorhouse.io)
