@@ -44,7 +44,7 @@ Instructions on how to start a 30-day free trial of Kpow can be found [here](htt
 
 # Documentation
 
-Kpow's documentation is available at [https://docs.factorhouse.io/](https://docs.factorhouse.io/).
+Kpow's documentation is available at [https://docs.factorhouse.io/kpow-ee/](https://docs.factorhouse.io/kpow-ee/).
 
 # Local Development with Docker Compose
 
