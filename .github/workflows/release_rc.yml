@@ -8,10 +8,17 @@ on:
       manifest:
         description: 'URL of Manifest'
         required: true
+
+# These permissions are needed to interact with GitHub's OIDC Token endpoint.
+permissions:
+  id-token: write
+  contents: write
+  packages: write
+
 jobs:
   DeployRC:
     runs-on: ubuntu-latest
-    name: Tag and update releases.edn
+    name: Release RC
     steps:
       - uses: actions/checkout@v3
       - name: Verify RC version input
