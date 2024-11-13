@@ -25,6 +25,16 @@ jobs:
       - name: Download and verify JAR(s)
         run: |
           ./scripts/jar.sh "${{github.event.inputs.manifest}}"
+      - name: Release Kpow JDK11 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java11-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java11.jar
+      - name: Release Kpow JDK8 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java8.jar
       -
         # Add support for more platforms with QEMU (optional)
         # https://github.com/docker/setup-qemu-action
