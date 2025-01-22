@@ -1,20 +1,30 @@
+End User License Agreement (EULA)
+Last Updated: September 14, 2022
 In this Agreement, 'us' 'we' or 'our' means Factor House Pty Ltd ACN 635 807 251 and our related bodies corporate.
-
 1. DEFINITIONS
 Documentation means the user guides and manuals for Software provided by us to you to assist your use of our Products.
-Order Form means an online shopping cart or any subsequent order form for additional Products or services that have been accepted by us.
+
+Order Form means an online shopping cart or any subsequent order form, or purchase order for additional Products or services that have been accepted by us.
+
 License Certificate means the evidence provided to you by us of your license to use our Products.
-Cluster Credits means the total number of Apache Kafka clusters permitted for concurrent use with our Products by your Licence Certificate.
+
+Cluster Credits means the total number of Apache Kafka clusters permitted for concurrent use with our Products by your License Certificate.
+
 Products mean the Software and other services provided by us under this Agreement.
-Software means Operatr, the tool that helps your team deliver and monitor applications built with Apache Kafka.
-You means the individual or organisation identified as the Licensee by a License Certificate.
+
+Software means Kpow, the tool that helps your team deliver and monitor applications built with Apache Kafka.
+
+Marketplace means the AWS Marketplace or Red Hat Marketplace through which Kpow can be purchased.
+
+You mean the individual or organization, identified as the Licensee by a License Certificate.
+
 2. PRODUCTS AND LICENSE
 2.1 License Certificate
 A License Certificate allows you to use our Products with as many concurrent Apache Kafka clusters as described within the License Certificate as Cluster Credits for the License Term.
 
 Where we issue you a License Certificate, we grant you a revocable, non-exclusive, non-transferable, non-sublicensable license to install and use the Software for your internal business purposes, which includes the internal business purposes of any subsidiaries that you control either directly or indirectly.
 
-Your use of the Products is subject to the restrictions described in the License Certificate. If you use the Products in excess of the specified restrictions, you agree immediately to report such additional usage to us and pay all additional fees due for periods when you exceeded the scope of your license. We shall have the right, with reasonable notice to you, to audit your use of the software no more than once each calendar year to assure compliance with the terms of the license agreement.
+Your use of the Products is subject to the restrictions described in the License Certificate. If you use the Products in excess of the specified restrictions, you agree immediately to report such additional usage to us and pay all additional fees due for periods when you exceeded the scope of your license.
 
 If you have been granted access to the Products for evaluation purposes and no Order Form has been executed, this Agreement will apply from the date we first make the Products available to you.
 
@@ -30,44 +40,78 @@ Where your License Certificate Type specifies a Marketplace Subscription to our 
 2.3 Restrictions
 You shall not, and shall not allow others to:
 
-continue using our Products beyond the term of your license;
+-- Continue using our Products beyond the term of your license;
 
-cause or permit the reverse engineering, disassembly, or de-compilation of any portion of any Products;
+-- Cause or permit the reverse engineering, disassembly, or decompilation of any portion of any Products;
 
-remove any copyright notices or other proprietary notices or restrictions from any of the Products;
+-- Remove any copyright notices or other proprietary notices or restrictions from any of the Products;
 
-knowingly disclose results of any benchmark or other performance tests to any third party without our prior written consent; or
+-- Knowingly disclose results of any benchmark or other performance tests to any third party without our prior written consent; or
 
-distribute, sell, sublicense, rent, lease or use the Products (or any portion thereof) for time sharing, hosting, service provider or similar purposes.
+-- Distribute, sell, sublicense, rent, lease or use the Products (or any portion thereof) for time sharing, hosting, a service provider, or similar purposes.
 
 2.4 Ownership
-The Products constitute proprietary works of ours and our licensors, protected by copyright and other intellectual property laws. Except for the rights granted in this Agreement, we retain all our rights, title and interest, including all intellectual property rights, in the Products and the Documentation. The terms purchase and sale in reference to the Products notwithstanding, it is expressly agreed by the parties that title to the Products does not pass to you and your rights with respect to the Products will only be that of a licensee.
+The Products constitute proprietary works of ours and our licensors, protected by copyright and other intellectual property laws. Except for the rights granted in this Agreement, we retain all our rights, title, and interest, including all intellectual property rights, in the Products and the Documentation. The terms purchase and sale in reference to the Products notwithstanding, it is expressly agreed by the parties that title to the Products does not pass to you, and your rights with respect to the Products will only be that of a licensee.
 
 2.5 No Transfers
 The Products may not be transferred or redistributed to any third party. You may not permit access or use of the Products by any third party, except for your employees and contractors performing services for your benefit. You may transfer the Products to another location within your organization or that of a contractor performing services for your benefit.
 
-3. INVOICING, PAYMENT AND RECORDS
-3.1 Payment Terms
-Payment of all fees due under this Agreement or any Order Form are payable in advance. No License Certificates will be issued without advance payment. All fees are non-cancelable and non-refundable, except as expressly provided in this Agreement. You shall be responsible for any taxes, duties or withholdings.
+3. LICENSE FEES, PAYMENT AND COMPLIANCE
+3.1 Payment Terms for Direct Purchases
+You agree to pay the Fees chargeable for your relevant Kpow License(s) and, where applicable, your Support Plan.
 
-3.2 Compliance
+Except as where an invoice is issued or where an alternate written agreement has been made, payment of all Fees due under this Agreement or any Order Form is payable in advance. You shall provide payment via https://factorhouse.io/flex/credits. Payment can be made via Credit Card, Wire Transfer, PayPal and Apple Pay.
+
+No License Certificates will be issued without advance payment. Where an invoice is issued or where an alternate written agreement has been made, the License Certificate will be issued on receipt of a valid Purchase Order.
+
+Where an invoice is issued you shall pay all Fees due net 30 days from the invoice date.
+
+All Fees are non-cancellable and non-refundable, except as expressly provided in this Agreement. You shall be responsible for any taxes, duties, or withholdings.
+
+3.2 Payment Terms for Marketplace Purchases
+You agree to pay the Fees chargeable for your relevant Kpow License(s) and, where applicable, your Support Plan in accordance with the payment terms of the Marketplace.
+
+3.3 Merchant of Record
+Direct Purchases are conducted by our reseller Paddle.com, who act as the Merchant of Record for all direct license purchases.
+
+Paddle.com provides all customer service inquiries and handles returns on such purchases. We provide a 30-day, no questions asked, money-back guarantee on all direct license purchases conducted via Paddle.com.
+
+3.4 Fee Changes
+We reserve the right to introduce or change any Fees from time to time by giving you no less than 14 days written notice. Any new or changed Fees will be applied at your license renewal after you have been given such notice.
+
+3.5 Compliance
 We have the right, with reasonable notice to you, to audit your use of the Products no more than once each calendar year to assure compliance with the terms of this Agreement.
 
-3.3 Direct License Purchases
-Our order process for direct license purchases (any license purchase originating from https://operatr.io) is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all direct license purchases. Paddle provides all customer service inquiries and handles returns on such purchases. We provide a 30-day, no questions asked, money-back guarantee on all direct license purchases conducted via Paddle.
+The right to audit is subject to the following conditions:
+
+3.5.1 We shall give you at least 14 days written notice prior to any audit.
+
+3.5.2 Any audits will be carried out during normal business hours and shall not unreasonably disrupt your business.
+
+3.5.3 Where required, we (or those acting on our behalf) shall enter into a confidentiality agreement.
+
+3.5.4 No records or copies thereof shall be taken from the premises.
 
 4. CONFIDENTIAL INFORMATION
 4.1. Confidential Information means:
-any information disclosed by either party to the other party, either directly or indirectly, in writing, orally or by inspection of tangible objects, including, without limitation, algorithms, business plans, your data, your lists, your names, designs documents, drawings, engineering information, financial analysis, forecasts, formulas, hardware configuration information, knowhow, ideas, inventions, market information, marketing plans, processes, products, product plans, research, specifications, software, source code, trade secrets or any other information which is designated as confidential, proprietary or some similar designation; and
-any information otherwise obtained, directly or indirectly, by a receiving party through inspection, review or analysis of the materials described in clause (1). Information disclosed orally shall be considered Confidential Information only if such information is confirmed in writing as being Confidential Information within a reasonable time after the initial disclosure. Confidential Information may also include information of a third party that is in the possession of one of the parties and is disclosed to the other party under this Agreement. Confidential Information includes, without limitation, any Products, related documentation, specifications, pricing, disclosures in connection with Services and the terms and conditions of this Agreement. Confidential Information shall remain the sole property of the disclosing party or its licensors.
+4.1.1 Any information disclosed by either party to the other party, either directly or indirectly, in writing, orally, or by inspection of tangible objects, including, without limitation, algorithms, business plans, your data, your lists, your names, design documents, drawings, engineering information, financial analysis, forecasts, formulas, hardware configuration information, know-how, ideas, inventions, market information, marketing plans, processes, products, product plans, research, specifications, software, source code, trade secrets or any other information which is designated as confidential, proprietary or some similar designation; and
+
+4.1.2 Any information otherwise obtained, directly or indirectly, by a receiving party through inspection, review, or analysis of the materials described in clause (1). Information disclosed orally shall be considered Confidential Information only if such information is confirmed in writing as being Confidential Information within a reasonable time after the initial disclosure. Confidential Information may also include information of a third party that is in the possession of one of the parties and is disclosed to the other party under this Agreement. Confidential Information includes, without limitation, any Products, related documentation, specifications, pricing, disclosures in connection with Services, and the terms and conditions of this Agreement. Confidential Information shall remain the sole property of the disclosing party or its licensors.
+
 4.2 Nondisclosure
 Information/items will not be considered as Confidential Information if the receiving party can establish by documentary evidence that the information is or was:
 
-lawfully available to the public through no act or omission of the receiving party;
-in the receiving party’s lawful possession prior to disclosure by the disclosing party and not obtained either directly or indirectly from the disclosing party;
-lawfully disclosed to the receiving party by a third party without restriction on disclosure; or
-independently developed by the receiving party.
-Confidential Information is not disclosed or distributed by its employees or agents in violation of this Agreement. A receiving party facing legal action to disclose Confidential Information of the disclosing party shall promptly notify and provide the disclosing party the opportunity to oppose such disclosure or obtain a protective order and shall continue to treat such information as Confidential Information. This clause 4.2 shall not be construed as granting or conferring any rights to either party by license or otherwise, expressly or implicitly, to any Confidential Information.
+4.2.1 Lawfully available to the public through no act or omission of the receiving party;
+
+4.2.2 In the receiving party's lawful possession prior to disclosure by the disclosing party and not obtained either directly or indirectly from the disclosing party;
+
+4.2.3 Lawfully disclosed to the receiving party by a third party without restriction on disclosure; or
+
+4.2.4 Independently developed by the receiving party.
+
+Confidential Information is not disclosed or distributed by its employees or agents in violation of this Agreement. A receiving party facing legal action to disclose Confidential Information of the disclosing party shall promptly notify and provide the disclosing party the opportunity to oppose such disclosure or obtain a protective order and shall continue to treat such information as Confidential Information.
+
+This clause 4.2 shall not be construed as granting or conferring any rights to either party by license or otherwise, expressly or implicitly, to any Confidential Information.
 
 5. LIMITATION OF LIABILITY
 5.1 No Warranties and Limitation of Liability
@@ -82,26 +126,29 @@ We make no warranties in relation to our Products, whether express or implied, i
 
 6. LIMITATION OF WARRANTIES AND LIABILITIES
 6.1 No Indirect Damages
-Except for your breach of the license restrictions in clause 2 and your confidentiality obligations in clause 4, in no event shall either party or its licensors (including their directors, officers, employees, representatives, agents and suppliers) be liable for any indirect, incidental, special or consequential damages, including without limitation procurement of substitute products or services or loss of profits, revenue, data or data use, even if we and/or our licensors have been advised of the possibility of such damages.
+Except for your breach of the license restrictions in clause 2 and your confidentiality obligations in clause 4, in no event shall either party or its licensors (including their directors, officers, employees, representatives, agents, and suppliers) be liable for any indirect, incidental, special or consequential damages, including without limitation procurement of substitute products or services or loss of profits, revenue, data or data use, even if we and/or our licensors have been advised of the possibility of such damages.
 
 6.2 Limit on Direct Damages
-Except for your breach of the license restrictions in clause 2 and its confidentiality obligations in clause 4, the aggregate, cumulative liability of each party (including its directors, officers, employees, representatives, agents and suppliers) under this agreement shall be limited to the fees paid or payable by you to us during the twelve month period prior to the event giving rise to any claim.
+Except for your breach of the license restrictions in clause 2 and its confidentiality obligations in clause 4, the aggregate, cumulative liability of each party (including its directors, officers, employees, representatives, agents, and suppliers) under this agreement shall be limited to the fees paid or payable by you to us during the twelve-month period prior to the event giving rise to any claim.
 
 6.3 Allocation of Risk
-The provisions of this Agreement fairly allocate the risks between the parties. You acknowledge and agree that the pricing reflects this allocation of risk and the limitation of liability specified in this agreement, and that we would not enter into this Agreement without such allocation and limitation.
+The provisions of this Agreement fairly allocate the risks between the parties. You acknowledge and agree that the pricing reflects this allocation of risk and the limitation of liability specified in this agreement and that we would not enter into this Agreement without such allocation and limitation.
 
 7. TERMINATION
 7.1 Termination for Breach
 Either party may terminate this Agreement (including all related Order Forms) if the other party:
 
-fails to cure any material breach of this Agreement within thirty (30) days after written notice of such breach;
-ceases operation without a successor; or
-seeks protection under any bankruptcy, receivership, trust deed, creditors arrangement, composition or comparable proceeding, or if any such proceeding is instituted against such party (and not dismissed within sixty (60) days)). Termination is not an exclusive remedy and the exercise by either party of any remedy under this Agreement will be without prejudice to any other remedies it may have under this Agreement, by law, or otherwise.
+7.1 Fails to cure any material breach of this Agreement within thirty (30) days after written notice of such breach;
+
+7.2 Ceases operation without a successor; or
+
+7.3 Seeks protection under any bankruptcy, receivership, trust deed, creditors arrangement, composition or comparable proceeding, or if any such proceeding is instituted against such party (and not dismissed within sixty (60) days)). Termination is not an exclusive remedy and the exercise by either party of any remedy under this Agreement will be without prejudice to any other remedies it may have under this Agreement, by law, or otherwise.
+
 7.2 Effect in Termination
 Immediately on termination of this Agreement, you shall cease all use of the Products. Within 10 business days following the termination date you shall return to us or destroy (and certify to us in writing as to such destruction) all copies of the Software and any other materials embodying the Products.
 
 7.3 Survival
-Clauses 4, 5, 6 and 8 of this Agreement shall survive any termination of this Agreement.
+Clauses 4, 5, 6, and 8 of this Agreement shall survive any termination of this Agreement.
 
 8. GENERAL
 8.1 Authorisation
@@ -110,31 +157,35 @@ Each party represents and warrants that the person executing this Agreement on b
 8.2 Integration
 This Agreement is the complete and exclusive statement of the mutual understanding of the parties and supersedes and cancels all previous written and oral agreements and communications relating to the subject matter hereof. If any provision of this Agreement is adjudicated invalid or unenforceable, the remaining provisions will remain in effect and the Agreement will be amended to the minimum extent necessary to achieve, to the maximum extent possible, the same legal and commercial effect originally intended by the parties. This Agreement shall supersede the terms of any purchase order or other business form. If accepted by us in lieu of or in addition to our Order Form, your purchase order shall be binding only as to the following terms:
 
-the Products and services ordered; and
-the appropriately calculated fees due. Other terms shall be void.
+8.2.1 The Products and services ordered; and
+
+8.2.2 The appropriately calculated fees due. Other terms shall be void.
+
 8.3 Assignment
-This Agreement is personal to you originally licensed and may not be assigned, whether by operation of law or otherwise, except that either party may assign this Agreement or any Software license to its successor in the event of a merger, acquisition or sale of all or substantially all of the assets of such party or an applicable business unit. Any other purported assignment shall be void.
+This Agreement is personal to you originally licensed and may not be assigned, whether by operation of law or otherwise, except that either party may assign this Agreement or any Software license to its successor in the event of a merger, acquisition, or sale of all or substantially all of the assets of such party or an applicable business unit. Any other purported assignment shall be void.
 
 8.4 Force Majeure
 Neither party shall be liable to the other for its failure to perform its obligations under this Agreement, except for payment obligations, during any period in which such performance is delayed or rendered impracticable or impossible due to unforeseen circumstances beyond its reasonable control.
 
 8.5 Amendments and Counterparts
-We reserve the right to change these terms from time to time. Notice of any such changes will be provided to the you in writing. Upon receiving a notice of changes from us under this clause, you will have the option to terminate the license(s) you hold under this Agreement within 30 days by providing notice in writing to us. You agree that we will not refund you for any fees paid if you wish to terminate license(s) under this clause. No supplement, modification, or amendment of this Agreement by you shall otherwise be binding, unless executed in writing by a duly authorized representative of each party. No waiver will be implied from conduct or failure to enforce or exercise rights under this Agreement, nor will any waiver be effective unless in a writing signed by a duly authorized representative on behalf of the party claimed to have waived. This Agreement may be executed by written signature or electronically and delivered in multiple counterparts, including facsimile, PDF, or other electronic counterparts, all of which will constitute one and the same instrument and agreement.
+We reserve the right to change these terms from time to time. Notice of any such changes will be provided to you in writing. Upon receiving a notice of changes from us under this clause, you will have the option to terminate the license(s) you hold under this Agreement within 30 days by providing notice in writing to us. You agree that we will not refund you for any fees paid if you wish to terminate the license(s) under this clause. No supplement, modification, or amendment of this Agreement by you shall otherwise be binding unless executed in writing by a duly authorized representative of each party.
+
+No waiver will be implied from conduct or failure to enforce or exercise rights under this Agreement, nor will any waiver be effective unless in a writing signed by a duly authorized representative on behalf of the party claimed to have waived. This Agreement may be executed by written signature or electronically and delivered in multiple counterparts, including facsimile, PDF, or other electronic counterparts, all of which will constitute one and the same instrument and agreement.
 
 8.6 Governing Law and Jurisdiction
-The law of the Victoria, Australia, governs this Agreement. The parties submit to the non-exclusive jurisdiction of the courts of the Victoria and of Australia.
+The law of Victoria, Australia, governs this Agreement. The parties submit to the non-exclusive jurisdiction of the courts of Victoria and of Australia.
 
 8.7 Notices
 A notice or other communication connected with this Agreement (Notice)has no legal effect unless it is in writing. In addition to any other method of service provided by law, the Notice may be sent by email to the email address of the addressee.
 
 8.8 No Agency Relationship
-Nothing in this Agreement shall be construed to create a partnership, joint venture or agency relationship between the parties.
+Nothing in this Agreement shall be construed to create a partnership, joint venture, or agency relationship between the parties.
 
 8.9 Open Source Notice
-We may distribute third party open source software programs with the Software either incorporated into the Software or provided separately. These third-party programs are subject to their own additional license terms, none of which require notice, attribution, payment, disclosure or license back of any of your information.
+We may distribute third party open source software programs with the Software either incorporated into the Software or provided separately. These third-party programs are subject to their own additional license terms, none of which require notice, attribution, payment, disclosure, or license back of any of your information.
 
 8.10 Data Collection and Privacy
-We may collect and process technical and related information about your use of the Software which may include non-personally identifiable analytics and usage information to facilitate the provision of updates, support, invoicing or to improve our products or services. Such information will be subject to our Privacy Policy, which policy is hereby incorporated by reference and made a part of this Agreement.
+We may collect and process technical and related information about your use of the Software which may include non-personally identifiable analytics and usage information to facilitate the provision of updates, support, invoicing, or to improve our products or services. Such information will be subject to our Privacy Policy, which policy is hereby incorporated by reference and made a part of this Agreement.
 
 8.11 Publicity
-You agree that we may use your name and logo in our customer list and may publish information identifying you as a user of our products in advertisements, news releases and releases to professional and trade publications. You will have the right to approve each such release prior to its placement but you agree not to unreasonably withhold its approval. This clause only applies if you are an organisation and does not apply if you are an individual.
+You agree that we may use your name and logo in our customer list and may publish information identifying you as a user of our products in advertisements, news releases, and releases to professional and trade publications. You will have the right to approve each such release prior to its placement but you agree not to unreasonably withhold its approval. This clause only applies if you are an organization and does not apply if you are an individual.
