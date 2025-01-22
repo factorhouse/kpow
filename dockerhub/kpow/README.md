@@ -2,10 +2,9 @@
 
 Dockerfile for [Kpow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
 
-**Note**: This repository is for the [Standard Edition](https://kpow.io/pricing) of Kpow. 
+**Note**: This repository is for the [Enterprise Edition](https://kpow.io/pricing) of Kpow. 
 
 *  The Community Edition DockerHub repository can be found at [factorhouse/kpow-ce](https://hub.docker.com/r/factorhouse/kpow-ce) 
-*  The Enterprise Edition DockerHub repository can be found at [factorhouse/kpow-ee](https://hub.docker.com/r/factorhouse/kpow-ee) 
 
 View [Features](https://kpow.io/features) to compare editions.
 
@@ -30,7 +29,7 @@ View [Features](https://kpow.io/features) to compare editions.
 * **Where to file issues:** https://github.com/factorhouse/kpow/issues
 * **Published image artifact details:** [GitHub actions CI](https://github.com/factorhouse/kpow/actions/workflows/build.yml)
 * **Image updates**: https://github.com/factorhouse/kpow/tags
-* **Source of this description**: [dockerhub/kpow-se/README.md](https://github.com/factorhouse/kpow/blob/main/dockerhub/kpow-se/README.md)
+* **Source of this description**: [dockerhub/kpow/README.md](https://github.com/factorhouse/kpow/blob/main/dockerhub/kpow/README.md)
 
 # What is Kpow?
 
@@ -80,7 +79,7 @@ Kpow comes from a practical application of Kafka to real-world requirements and 
 
 ![Kpow is easily configured with LDAP for User Authentication](https://docs.factorhouse.io/img/assets/login-jetty.png)
 
-### And Much More..
+### And Much More...
 
 **Live Mode** for real-time monitoring, **Multi-Dimensional Consumer Lag** insights from Kpow's custom derived telemetry, **No Requirement for JMX** access, discover all of our features in this [guide](https://docs.kpow.io).
 
