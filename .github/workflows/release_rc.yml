@@ -20,12 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Release RC
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Verify RC version input
         run: |
           ./scripts/rc_release_check.sh ${{github.event.inputs.version}}
       - name: Configure AWS Credentials (OIDC)
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: us-east-1
@@ -47,17 +47,22 @@ jobs:
           VERSION=${{github.event.inputs.version}}
           VERSION="${VERSION//./-}"
           aws s3 cp target/kpow-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java8.jar
+      - name: Release Kpow JDK17 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java17-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java17.jar
       -
         # Add support for more platforms with QEMU (optional)
         # https://github.com/docker/setup-qemu-action
         name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
       -
         name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      - name: Build Kpow (EE)
+        uses: docker/setup-buildx-action@v3
+      - name: Build Kpow
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow-ee
+          IMAGE_ID=factorhouse/kpow
           IMAGE_TAG=$VERSION
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile

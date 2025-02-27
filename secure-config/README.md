@@ -6,7 +6,7 @@ This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate
 
 Encrypted configuration is **not a replacement for secret managers**, but may help in environments with limited secret management options.
 
-AES and PBKDF2 support is provided by [kpow-secure](https://github.com/operatr-io/kpow-secure), an open-source library that can be utilized to secure any Apache Kafka client config.
+AES and PBKDF2 support is provided by [kpow-secure](https://github.com/factorhouse/kpow-secure), an open-source library that can be utilized to secure any Apache Kafka client config.
 
 ## Contents
 
@@ -116,9 +116,9 @@ kpow {
 
 ## AES Encrypted Variables
 
-Kpow provides support for strong encryption of variables by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
+Kpow provides support for strong encryption of variables by integrating the open-source [Kpow-Secure](https://github.com/factorhouse/kpow-secure) library.
 
-See the [library documentation](https://github.com/operatr-io/kpow-secure) for full details on secure config with standard Java AES encryption and PBKDF2 key generation.
+See the [library documentation](https://github.com/factorhouse/kpow-secure) for full details on secure config with standard Java AES encryption and PBKDF2 key generation.
 
 ### AES Encryption Steps
 
@@ -133,7 +133,7 @@ Follow these simple steps to secure Kpow variables with AES encryption
 
 #### Download the latest Kpow JAR file
 
-The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://github.com/operatr-io/kpow/blob/main/CHANGELOG.md#latest-release-artifacts) file.
+The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://github.com/factorhouse/kpow/blob/main/CHANGELOG.md#latest-release-artifacts) file.
 
 #### Generate a master encryption key
 
@@ -244,7 +244,7 @@ Follow these simple steps to obfuscate Kpow variables with the Jetty Password ut
 
 #### Download the latest Kpow JAR
 
-The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://github.com/operatr-io/kpow/blob/main/CHANGELOG.md#latest-release-artifacts) file.
+The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://github.com/factorhouse/kpow/blob/main/CHANGELOG.md#latest-release-artifacts) file.
 
 #### Obfuscate sensitive variables
 
@@ -278,7 +278,7 @@ Kpow will now deobfuscate any OBF encoded variables with the Jetty Password util
 
 ## Using Kpow Secure Configuration in your Kafka Client Application
 
-Kpow provides support for strong encryption of variables by integrating the open-source [Kpow-Secure](https://github.com/operatr-io/kpow-secure) library.
+Kpow provides support for strong encryption of variables by integrating the open-source [Kpow-Secure](https://github.com/factorhouse/kpow-secure) library.
 
 You can use the Kpow-Secure library to encrypt sensitive Kafka client configuration for your own client applications, then use the convenience of the Decoder API to convert encrypted payloads into `java.util.Properties` files.
 
