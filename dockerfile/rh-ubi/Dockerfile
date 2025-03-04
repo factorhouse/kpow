@@ -15,6 +15,7 @@ USER 0
 
 ADD --chmod=044 resources/eula.txt /licenses/eula.txt
 ADD --chmod=044 target/kpow-java17-standalone.jar /opt/factorhouse/lib/kpow.jar
+ADD --chmod=044 /entrypoint.sh /entrypoint.sh
 
 EXPOSE 3000
 USER 1001
@@ -22,4 +23,4 @@ USER 1001
 ENV CORE_ASYNC_POOL_SIZE=8
 ENV JVM_OPTS="-server -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
 
-CMD java $JVM_OPTS -jar /opt/factorhouse/lib/kpow.jar
+ENTRYPOINT ["/entrypoint.sh"]
