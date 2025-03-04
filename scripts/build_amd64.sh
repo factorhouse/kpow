@@ -12,6 +12,8 @@ docker buildx build --pull \
   --build-arg RELEASE=$RELEASE \
   --build-arg VERSION=$VERSION \
   --platform=linux/amd64 \
+  --sbom=true \
+  --provenance=true \
   -f $DOCKERFILE \
   -t $IMAGE_ID:$IMAGE_TAG \
   --push .
