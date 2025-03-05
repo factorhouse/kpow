@@ -53,11 +53,11 @@ jobs:
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow
           IMAGE_TAG=$VERSION-aws-mkt-lm
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
 
       - name: Build Kpow AWS Marketplace Hourly (SE)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow
           IMAGE_TAG=$VERSION-aws-mkt-pro
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
