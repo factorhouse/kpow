@@ -70,6 +70,12 @@ jobs:
           VERSION="${VERSION//./-}"
           aws s3 cp target/kpow-java17-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java17.jar
 
+      - name: Release Kpow JDK8 Community JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-ce-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-ce-$VERSION-java8.jar
+
       - name: Release Dependency Check Report
         run: |
           VERSION=${{github.event.inputs.version}}
@@ -123,6 +129,12 @@ jobs:
           IMAGE_TAG=$VERSION-rh-ubi
           ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
 
+      - name: Build Kpow Community
+        run: |
+          NEXT_RELEASE=${{github.event.inputs.version}}
+          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 -t factorhouse/kpow-ce:latest --push .
+          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
+
       - name: Deploy OpenAPI spec
         run: |
           VERSION=${{github.event.inputs.version}}
@@ -142,15 +154,25 @@ jobs:
         run: |
           aws s3 cp docs/releases-ee.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ee.edn \
           --cache-control no-cache --content-type application/edn
-      - name: Commit
+      - name: Update releases-ce.edn
+        run: ./scripts/release.clj ${{github.event.inputs.version}} releases-ce.edn
+      - name: Update dockerhub/kpow-ce/README.md
+        run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_kpow_ce.clj
+      - name: Deploy Manifest to s3 (community)
         run: |
-          git config --global user.email "support@factorhouse.io"
-          git config --global user.name "Kpow CI"
-          git commit -am "Release Enterprise ${{github.event.inputs.version}}"
-      - name: Tag
-        run: git tag -a ee/${{github.event.inputs.version}} -m "Release Enterprise ${{github.event.inputs.version}}"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+          aws s3 cp docs/releases-ce.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ce.edn \
+          --cache-control no-cache --content-type application/edn
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Release ${{github.event.inputs.version}}"
+          git push origin main
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          tag_name: ${{github.event.inputs.version}}
+          name: ${{github.event.inputs.version}}
+          body: "Visit https://factorhouse.io/kpow/releases for release details"
+          draft: false
+          prerelease: false
