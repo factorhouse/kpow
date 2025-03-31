@@ -7,6 +7,7 @@ IMAGE_ID=$2
 IMAGE_TAG=$3
 DOCKERFILE=$4
 RELEASE=`date +%s`
+BUILD_DIR=$5
 
 docker buildx build --pull \
   --build-arg RELEASE=$RELEASE \
@@ -16,4 +17,4 @@ docker buildx build --pull \
   --provenance=true \
   -f $DOCKERFILE \
   -t $IMAGE_ID:$IMAGE_TAG \
-  --push .
+  --push $BUILD_DIR

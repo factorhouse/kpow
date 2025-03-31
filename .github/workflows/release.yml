@@ -99,35 +99,35 @@ jobs:
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-lm
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile dockerfile/aws-mkt-lm/.
 
       - name: Build Kpow AWS Marketplace Hourly
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
           IMAGE_TAG=$VERSION-aws-mkt-pro
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile dockerfile/aws-mkt-pro/.
 
       - name: Build Kpow
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow
           IMAGE_TAG=$VERSION
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile dockerfile/kpow/.
 
       - name: Build Kpow (latest)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow
           IMAGE_TAG=latest
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile dockerfile/kpow/.
 
       - name: Build Kpow Red Hat UBI
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow
           IMAGE_TAG=$VERSION-rh-ubi
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
+          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile dockerfile/rh-ubi/.
 
       - name: Build Kpow Community
         run: |
