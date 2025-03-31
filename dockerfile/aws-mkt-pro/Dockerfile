@@ -15,7 +15,7 @@ COPY resources/eula.txt /licenses/eula.txt
 COPY target/kpow-aws-mkt-pro-standalone.jar /opt/factorhouse/lib/kpow.jar
 COPY entrypoint.sh /usr/local/bin/kpow.sh
 
-RUN chown -R 1001:10001 /opt/factorhouse
+RUN chown -R 1001:1001 /opt/factorhouse
 
 EXPOSE 3000
 
