@@ -15,7 +15,7 @@ USER 0
 
 ADD --chmod=044 resources/eula.txt /licenses/eula.txt
 ADD --chmod=044 target/kpow-java17-standalone.jar /opt/factorhouse/lib/kpow.jar
-ADD --chmod=044 entrypoint.sh /usr/local/bin/kpow.sh
+ADD --chmod=044 resources/entrypoint.sh /usr/local/bin/kpow.sh
 
 RUN chown -R 1001:1001 /opt/factorhouse
 

@@ -65,4 +65,4 @@ jobs:
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow
           IMAGE_TAG=$VERSION
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile dockerfile/kpow/.
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile

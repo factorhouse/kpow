@@ -13,7 +13,7 @@ LABEL name="Kpow for Apache Kafka" \
 
 COPY resources/eula.txt /licenses/eula.txt
 COPY target/kpow-java17-standalone.jar /opt/factorhouse/lib/kpow.jar
-COPY entrypoint.sh /usr/local/bin/kpow.sh
+COPY resources/entrypoint.sh /usr/local/bin/kpow.sh
 
 RUN chown -R 1001:1001 /opt/factorhouse
 
