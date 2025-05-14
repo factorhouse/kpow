@@ -17,10 +17,13 @@ ADD --chmod=044 resources/eula.txt /licenses/eula.txt
 ADD --chmod=044 target/kpow-java17-standalone.jar /opt/factorhouse/lib/kpow.jar
 ADD --chmod=044 resources/entrypoint.sh /usr/local/bin/kpow.sh
 
-RUN chown -R 1001:1001 /opt/factorhouse
+RUN groupadd -g 1001 kpow && \
+    useradd -r -u 1001 -g kpow kpow
+
+RUN chown -R kpow:kpow /opt/factorhouse
 
 EXPOSE 3000
-USER 1001
+USER kpow
 
 ENV CORE_ASYNC_POOL_SIZE=8
 ENV JVM_OPTS="-server -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
