@@ -15,7 +15,6 @@ COPY resources/eula.txt /licenses/eula.txt
 COPY target/kpow-aws-mkt-pro-standalone.jar /opt/factorhouse/lib/kpow.jar
 COPY resources/entrypoint.sh /usr/local/bin/kpow.sh
 
-
 EXPOSE 3000
 
 RUN yum install shadow-utils -y
@@ -23,6 +22,8 @@ RUN yum install shadow-utils -y
 RUN groupadd -g 1001 kpow && \
     useradd -r -u 1001 -g kpow kpow
 
+RUN mkdir -p /opt/snappy-tmp
+RUN chown -R kpow:kpow /opt/snappy-tmp
 RUN chown -R kpow:kpow /opt/factorhouse
 
 RUN yum remove shadow-utils -y
@@ -30,6 +31,6 @@ RUN yum remove shadow-utils -y
 USER kpow
 
 ENV CORE_ASYNC_POOL_SIZE=8
-ENV JVM_OPTS="-server -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
+ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/snappy-tmp -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
 
 CMD ["/usr/local/bin/kpow.sh"]
