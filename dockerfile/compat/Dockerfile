@@ -18,10 +18,12 @@ RUN groupadd -g 999 kpow && \
 
 RUN yum remove shadow-utils -y
 
-USER kpow
-
 ADD --chmod=044 resources/eula.txt /licenses/eula.txt
 ADD --chmod=044 target/kpow-java17-standalone.jar /opt/operatr/lib/kpow.jar
+
+RUN chown -R kow:kpow /opt/operatr
+
+USER kpow
 
 ENV CORE_ASYNC_POOL_SIZE=8
 ENV JVM_OPTS="-server -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70 --add-opens=java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED --add-opens=java.xml/com.sun.org.apache.xerces.internal.jaxp=ALL-UNNAMED --add-opens=java.xml/com.sun.org.apache.xerces.internal.util=ALL-UNNAMED"
