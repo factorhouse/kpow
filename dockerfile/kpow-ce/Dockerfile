@@ -16,7 +16,7 @@ COPY target/kpow-ce-standalone.jar /opt/factorhouse/lib/kpow.jar
 COPY resources/entrypoint.sh /usr/local/bin/kpow.sh
 
 RUN mkdir -p /opt/factorhouse/config/kpow
-RUN mkdir -p /opt/snappy-tmp
+RUN mkdir -p /opt/factorhouse/tmp
 
 EXPOSE 3000
 
@@ -25,7 +25,6 @@ RUN yum install shadow-utils -y
 RUN groupadd -g 1001 kpow && \
     useradd -r -u 1001 -g kpow kpow
 
-RUN chown -R kpow:kpow /opt/snappy-tmp
 RUN chown -R kpow:kpow /opt/factorhouse
 
 RUN yum remove shadow-utils -y
@@ -34,6 +33,6 @@ USER kpow
 
 ENV CORE_ASYNC_POOL_SIZE=8
 ENV CONFIG_DIR=/opt/factorhouse/config/kpow
-ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/snappy-tmp -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
+ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
 
 CMD ["/usr/local/bin/kpow.sh"]
