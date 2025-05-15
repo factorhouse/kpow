@@ -18,10 +18,8 @@ RUN groupadd -g 999 kpow && \
 
 RUN yum remove shadow-utils -y
 
-ADD --chmod=044 resources/eula.txt /licenses/eula.txt
-ADD --chmod=044 target/kpow-java17-standalone.jar /opt/operatr/lib/kpow.jar
-
-RUN chown -R kow:kpow /opt/operatr
+COPY resources/eula.txt /licenses/eula.txt
+COPY target/kpow-java17-standalone.jar /opt/operatr/lib/kpow.jar
 
 USER kpow
 
