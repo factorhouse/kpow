@@ -136,6 +136,14 @@ jobs:
           IMAGE_TAG=$VERSION-temurin-ubi
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/temurin-ubi/Dockerfile
 
+
+      - name: Build Kpow (Compat)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=factorhouse/kpow
+          IMAGE_TAG=$VERSION-compat
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/compat/Dockerfile
+
       - name: Build Kpow Community
         run: |
           NEXT_RELEASE=${{github.event.inputs.version}}
