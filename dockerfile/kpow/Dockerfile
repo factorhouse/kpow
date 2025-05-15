@@ -19,15 +19,15 @@ EXPOSE 3000
 
 RUN yum install shadow-utils -y
 
-RUN groupadd -g 1001 kpow && \
-    useradd -r -u 1001 -g kpow kpow
+RUN groupadd -g 1001 factorhouse && \
+    useradd -r -u 1001 -g factorhouse factorhouse
 
 RUN mkdir -p /opt/factorhouse/tmp
-RUN chown -R kpow:kpow /opt/factorhouse
+RUN chown -R factorhouse:factorhouse /opt/factorhouse
 
 RUN yum remove shadow-utils -y
 
-USER kpow
+USER factorhouse
 
 ENV CORE_ASYNC_POOL_SIZE=8
 ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
