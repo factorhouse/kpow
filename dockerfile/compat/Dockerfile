@@ -1,4 +1,4 @@
-FROM amazoncorretto:17.0.15
+FROM amazoncorretto:17.0.16
 
 ARG VERSION
 ARG RELEASE
