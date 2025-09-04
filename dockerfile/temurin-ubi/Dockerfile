@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-ubi9-minimal
+FROM eclipse-temurin:17.0.16_8-jre-ubi9-minimal
 
 ARG VERSION
 ARG RELEASE
