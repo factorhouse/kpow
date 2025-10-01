@@ -24,6 +24,5 @@ RUN chown -R factorhouse:factorhouse /opt/factorhouse
 EXPOSE 3000
 USER factorhouse
 
-ENV CORE_ASYNC_POOL_SIZE=8
-ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -Dclojure.core.async.pool-size=$CORE_ASYNC_POOL_SIZE -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
+ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
 CMD ["/usr/local/bin/kpow.sh"]
