@@ -1,6 +1,13 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directory: "/dockerfile"
+    directories:
+      - "/dockerfile/aws-mkt-lm"
+      - "/dockerfile/aws-mkt-pro"
+      - "/dockerfile/compat"
+      - "/dockerfile/kpow-ce"
+      - "/dockerfile/kpow"
+      - "/dockerfile/rh-ubi"
+      - "/dockerfile/temurin-ubi"
     schedule:
       interval: "weekly"
