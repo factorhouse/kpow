@@ -29,7 +29,8 @@ RUN yum remove shadow-utils -y
 
 USER factorhouse
 
-ENV JVM_OPTS="-server -Djdk.trackAllThreads=false -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp-XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
+# sun-misc-unsafe: https://github.com/protocolbuffers/protobuf/issues/20760#issuecomment-3546144385
+ENV JVM_OPTS="-server -Djdk.trackAllThreads=false --sun-misc-unsafe-memory-access=allow -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp-XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
 ENV SNAPSHOT_ENGINE_VERSION="V2"
 
 CMD ["/usr/local/bin/kpow.sh"]
