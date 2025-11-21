@@ -1,0 +1,35 @@
+[env]
+AWS_PROFILE = 'fh-admin'
+
+[tasks.task-def-arn]
+hide = true
+usage = """
+arg "<service>" help="ECS service"
+"""
+run = """
+aws ecs describe-services \
+  --cluster default \
+  --services "${usage_service}" \
+  --query 'services[0].taskDefinition' \
+  --output text
+"""
+
+[tasks.container-image]
+hide = true
+usage = """
+arg "<service>" help="ECS service"
+arg "<container>" help="Docker container name"
+"""
+run = """
+task="$(mise run --quiet task-def-arn "${usage_service}")"
+
+aws ecs describe-task-definition \
+  --task-definition "${task}" \
+  --query "taskDefinition.containerDefinitions[?name=='${usage_container}'].image" \
+  --output text
+"""
+
+[tasks.kpow-dev-image]
+run = { task = 'container-image kpow operatr-io'}
+[tasks.kpow-demo-image]
+run = { task = 'container-image kpow-demo operatr-io'}
