@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/openjdk-17:1.23-3.1761163783
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.23-3.1763590451
 
 ARG VERSION
 ARG RELEASE
