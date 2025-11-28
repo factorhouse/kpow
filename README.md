@@ -1,3 +1,5 @@
+<img width="64" height="64" alt="kpow" src="https://github.com/user-attachments/assets/998b54db-fe96-4ba4-82d5-62652e9b90ad" /><br />
+
 [![Release to DockerHub](https://github.com/factorhouse/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/factorhouse/kpow/actions/workflows/release.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
 ![Docker Stars](https://img.shields.io/docker/stars/operatr/kpow)
@@ -6,6 +8,8 @@
 # Kpow for Apache Kafka
 
 [Kpow](https://factorhouse.io/kpow) - The Ultimate Engineering Toolkit for [Apache Kafka®](http://kafka.apache.org/)
+
+![kpow-screen](https://github.com/user-attachments/assets/3c8d4f4e-2dd5-4f1e-ae79-2e1d4074761e)
 
 See the [Changelog](https://factorhouse.io/kpow/changelog) for release information or [our blog](https://factorhouse.io/blog/releases/) for full notes on each release and JAR artefacts.
 
