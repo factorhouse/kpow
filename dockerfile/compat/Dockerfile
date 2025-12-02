@@ -11,20 +11,24 @@ LABEL name="Kpow for Apache Kafka" \
       summary="Kpow is a toolkit for engineers who build, manage, and maintain systems powered by Apache Kafka." \
       description="Kpow features a rich data-oriented UI, specialized dashboards that deliver instant visibility into Kafka Clusters, Schema Registries, and Connect Installations, and developer tools that allow engineers to get to the heart of their systems quickly."
 
-RUN yum install shadow-utils -y
-
-RUN groupadd -g 999 kpow && \
-    useradd -r -u 999 -g kpow kpow
-
-RUN yum remove shadow-utils -y
-
 COPY resources/eula.txt /licenses/eula.txt
-COPY target/kpow-java17-standalone.jar /opt/operatr/lib/kpow.jar
-
-USER kpow
-
-ENV JVM_OPTS="-server -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70 --add-opens=java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED --add-opens=java.xml/com.sun.org.apache.xerces.internal.jaxp=ALL-UNNAMED --add-opens=java.xml/com.sun.org.apache.xerces.internal.util=ALL-UNNAMED"
+COPY target/kpow-java17-compat.jar /opt/factorhouse/lib/kpow.jar
+COPY resources/entrypoint.sh /usr/local/bin/kpow.sh
 
 EXPOSE 3000
 
-CMD java $JVM_OPTS -jar /opt/operatr/lib/kpow.jar
+RUN yum install shadow-utils -y
+
+RUN groupadd -g 1001 factorhouse && \
+    useradd -r -u 1001 -g factorhouse factorhouse
+
+RUN mkdir -p /opt/factorhouse/tmp
+RUN chown -R factorhouse:factorhouse /opt/factorhouse
+
+RUN yum remove shadow-utils -y
+
+USER factorhouse
+
+ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp-XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
+
+CMD ["/usr/local/bin/kpow.sh"]
