@@ -70,12 +70,6 @@ jobs:
           VERSION="${VERSION//./-}"
           aws s3 cp target/kpow-java17-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java17.jar
 
-      - name: Release Kpow JDK8 Community JAR
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          VERSION="${VERSION//./-}"
-          aws s3 cp target/kpow-ce-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-ce-$VERSION-java8.jar
-
       - name: Release Dependency Check Report
         run: |
           VERSION=${{github.event.inputs.version}}
