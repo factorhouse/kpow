@@ -30,6 +30,10 @@ jobs:
         run: |
           ./scripts/release_number_check.sh ${{github.event.inputs.release_number_bump}}
 
+      - name: Check version does not contain -rc
+        run: |
+          ./scripts/release_version_check.sh ${{github.event.inputs.version}}
+
       - name: Configure AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
