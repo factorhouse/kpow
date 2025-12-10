@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version of Kpow'
+        description: "Version of Kpow"
         required: true
       manifest:
-        description: 'URL of Manifest'
+        description: "URL of Manifest"
         required: true
       release_number_bump:
-        description: 'I have updated system.clj release number!'
+        description: "I have updated system.clj release number!"
         required: true
-        default: 'false'
+        default: "false"
 
 # These permissions are needed to interact with GitHub's OIDC Token endpoint.
 permissions:
@@ -21,7 +21,7 @@ permissions:
   packages: write
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,21 +40,47 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: us-east-1
 
-      - name: Log into DockerHub registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
       - name: Download and verify JAR(s)
         run: |
           ./scripts/jar.sh "${{github.event.inputs.manifest}}"
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v3
+      - name: Upload target directory
+        uses: actions/upload-artifact@v4
         with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_TOKEN }}
+          name: kpow-jars
+          path: target/
+          retention-days: 1
 
-      - name: Log into GitHub packages
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Upload nvd report
+        uses: actions/upload-artifact@v4
+        with:
+          name: nvd-report
+          path: kpow-enterprise-nvd-report.tar.gz
+          retention-days: 1
+
+  release-jars-and-artifacts:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: us-east-1
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "*"
+          path: .
+
+      - name: Restore target directory
+        run: mv kpow-jars target
+
+      - name: Restore nvd report
+        run: mv nvd-report/kpow-enterprise-nvd-report.tar.gz .
 
       - name: Release Kpow JDK11 JAR
         run: |
@@ -83,78 +109,6 @@ jobs:
           mv *.html index.html
           aws s3 cp index.html s3://${{ secrets.RELEASES_BUCKET }}/kpow-dependency-check-report-$VERSION.html
 
-      -
-        # Add support for more platforms with QEMU (optional)
-        # https://github.com/docker/setup-qemu-action
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build Kpow AWS Marketplace Annual
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
-          IMAGE_TAG=$VERSION-aws-mkt-lm
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
-
-      - name: Build Kpow AWS Marketplace Hourly
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
-          IMAGE_TAG=$VERSION-aws-mkt-pro
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
-
-      - name: Build Kpow
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow
-          IMAGE_TAG=$VERSION
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
-
-      - name: Build Kpow (Java25)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow
-          IMAGE_TAG=$VERSION-corretto25
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow-amazoncorretto25/Dockerfile
-
-      - name: Build Kpow (latest)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow
-          IMAGE_TAG=latest
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
-
-      - name: Build Kpow Red Hat UBI
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow
-          IMAGE_TAG=$VERSION-rh-ubi
-          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
-
-      - name: Build Kpow Temurin UBI
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow
-          IMAGE_TAG=$VERSION-temurin-ubi
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/temurin-ubi/Dockerfile
-
-
-      - name: Build Kpow (Compat)
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow
-          IMAGE_TAG=$VERSION-compat
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/compat/Dockerfile
-
-      - name: Build Kpow Community
-        run: |
-          NEXT_RELEASE=${{github.event.inputs.version}}
-          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 --sbom=true --provenance=true -t factorhouse/kpow-ce:latest --push .
-          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 --sbom=true --provenance=true -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
-
       - name: Deploy OpenAPI spec
         run: |
           VERSION=${{github.event.inputs.version}}
@@ -162,32 +116,130 @@ jobs:
           aws s3 cp target/kpow-enterprise-openapi.json s3://${{ secrets.RELEASES_BUCKET }}/kpow-enterprise-openapi-$VERSION.json \
           --cache-control no-cache --content-type application/json
 
+  build-docker:
+    needs: setup
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - image_id: ghcr.io/factorhouse/kpow/kpow
+            image_tag: ${{github.event.inputs.version}}-aws-mkt-lm
+            dockerfile: dockerfile/aws-mkt-lm/Dockerfile
+            script: build_all.sh
+          - image_id: ghcr.io/factorhouse/kpow/kpow
+            image_tag: ${{github.event.inputs.version}}-aws-mkt-pro
+            dockerfile: dockerfile/aws-mkt-pro/Dockerfile
+            script: build_all.sh
+          - image_id: factorhouse/kpow
+            image_tag: ${{github.event.inputs.version}}
+            dockerfile: dockerfile/kpow/Dockerfile
+            script: build_all.sh
+          - image_id: factorhouse/kpow
+            image_tag: ${{github.event.inputs.version}}-corretto25
+            dockerfile: dockerfile/kpow-amazoncorretto25/Dockerfile
+            script: build_all.sh
+          - image_id: factorhouse/kpow
+            image_tag: latest
+            dockerfile: dockerfile/kpow/Dockerfile
+            script: build_all.sh
+          - image_id: factorhouse/kpow
+            image_tag: ${{github.event.inputs.version}}-rh-ubi
+            dockerfile: dockerfile/rh-ubi/Dockerfile
+            script: build_amd64.sh
+          - image_id: factorhouse/kpow
+            image_tag: ${{github.event.inputs.version}}-temurin-ubi
+            dockerfile: dockerfile/temurin-ubi/Dockerfile
+            script: build_all.sh
+          - image_id: factorhouse/kpow
+            image_tag: ${{github.event.inputs.version}}-compat
+            dockerfile: dockerfile/compat/Dockerfile
+            script: build_all.sh
+          - image_id: factorhouse/kpow-ce
+            image_tag: ${{github.event.inputs.version}}
+            dockerfile: dockerfile/kpow-ce/Dockerfile
+            script: build_all.sh
+          - image_id: factorhouse/kpow-ce
+            image_tag: latest
+            dockerfile: dockerfile/kpow-ce/Dockerfile
+            script: build_all.sh
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download JARs
+        uses: actions/download-artifact@v4
+        with:
+          name: kpow-jars
+          path: target/
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Log into GitHub packages
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=${{ matrix.image_id }}
+          IMAGE_TAG=${{ matrix.image_tag }}
+          ./scripts/${{ matrix.script }} $VERSION $IMAGE_ID $IMAGE_TAG ${{ matrix.dockerfile }}
+
+  finalize:
+    needs: [release-jars-and-artifacts, build-docker]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: us-east-1
+
       - name: Install babashka
         run: sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
+
       - name: Update releases-ee.edn
         run: ./scripts/release.clj ${{github.event.inputs.version}} releases-ee.edn
+
       - name: Update releases-v2.edn
         run: ./scripts/release.clj ${{github.event.inputs.version}} releases-v2.edn
+
       - name: Update dockerhub/kpow/README.md
         run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_kpow.clj
+
       - name: Deploy Manifest to s3
         run: |
           aws s3 cp docs/releases-ee.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ee.edn \
           --cache-control no-cache --content-type application/edn
+
       - name: Update releases-ce.edn
         run: ./scripts/release.clj ${{github.event.inputs.version}} releases-ce.edn
+
       - name: Update dockerhub/kpow-ce/README.md
         run: echo ${{github.event.inputs.version}} | ./scripts/dockerhub_readme_kpow_ce.clj
+
       - name: Deploy Manifest to s3 (community)
         run: |
           aws s3 cp docs/releases-ce.edn s3://${{ secrets.RELEASES_BUCKET }}/releases-kpow-ce.edn \
           --cache-control no-cache --content-type application/edn
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -am "Release ${{github.event.inputs.version}}"
           git push origin main
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
