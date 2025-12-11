@@ -42,7 +42,7 @@ jobs:
         run: |
           ./scripts/jar.sh "${{github.event.inputs.manifest}}"
 
-      - name: Log into ECR
+      - name: Log into AWS Marketplace ECR
         run: |
           aws ecr get-login-password --region us-east-1 | docker login \
             --username AWS \
@@ -58,14 +58,14 @@ jobs:
 
       - name: Build and Push Kpow AWS Marketplace Annual (EE) to ECR
         run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=${{ secrets.AWS_MARKETPLACE_ECR_URI }}/kpow-annual
-          IMAGE_TAG=$VERSION
-          ./scripts/build_aws_marketplace.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
+          VERSION="${{ github.event.inputs.version }}"
+          IMAGE_ID="709825985650.dkr.ecr.us-east-1.amazonaws.com/factor-house/kpow-annual"
+          IMAGE_TAG="${VERSION}"
+          ./scripts/build_aws_marketplace.sh "${VERSION}" "${IMAGE_ID}" "${IMAGE_TAG}" dockerfile/aws-mkt-lm/Dockerfile
 
       - name: Build and Push Kpow AWS Marketplace Hourly (SE) to ECR
         run: |
-          VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=${{ secrets.AWS_MARKETPLACE_ECR_URI }}/kpow-hourly
-          IMAGE_TAG=$VERSION
-          ./scripts/build_aws_marketplace.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
+          VERSION="${{ github.event.inputs.version }}"
+          IMAGE_ID="709825985650.dkr.ecr.us-east-1.amazonaws.com/factor-house/kpow-hourly"
+          IMAGE_TAG="${VERSION}"
+          ./scripts/build_aws_marketplace.sh "${VERSION}" "${IMAGE_ID}" "${IMAGE_TAG}" dockerfile/aws-mkt-pro/Dockerfile
