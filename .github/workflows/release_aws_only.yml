@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version of Kpow'
+        description: "Version of Kpow"
         required: true
       manifest:
-        description: 'URL of Manifest'
+        description: "URL of Manifest"
         required: true
       release_number_bump:
-        description: 'I have updated system.clj release number!'
+        description: "I have updated system.clj release number!"
         required: true
-        default: 'false'
+        default: "false"
 
 jobs:
   build:
@@ -24,21 +24,21 @@ jobs:
         run: |
           ./scripts/release_number_check.sh ${{github.event.inputs.release_number_bump}}
 
-      - name: Log into registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Configure AWS Credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: us-east-1
 
       - name: Download and verify JAR(s)
         run: |
           ./scripts/jar.sh "${{github.event.inputs.manifest}}"
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_TOKEN }}
-
-      - name: Log into GitHub packages
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Log into ECR
+        run: |
+          aws ecr get-login-password --region us-east-1 | docker login \
+            --username AWS \
+            --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
 
         # Add support for more platforms with QEMU (optional)
         # https://github.com/docker/setup-qemu-action
@@ -48,16 +48,16 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build Kpow AWS Marketplace Annual (EE)
+      - name: Build and Push Kpow AWS Marketplace Annual (EE) to ECR
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow
-          IMAGE_TAG=$VERSION-aws-mkt-lm
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
+          IMAGE_ID=${{ secrets.AWS_MARKETPLACE_ECR_URI }}/kpow-annual
+          IMAGE_TAG=$VERSION
+          ./scripts/build_aws_marketplace.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
 
-      - name: Build Kpow AWS Marketplace Hourly (SE)
+      - name: Build and Push Kpow AWS Marketplace Hourly (SE) to ECR
         run: |
           VERSION=${{github.event.inputs.version}}
-          IMAGE_ID=factorhouse/kpow
-          IMAGE_TAG=$VERSION-aws-mkt-pro
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
+          IMAGE_ID=${{ secrets.AWS_MARKETPLACE_ECR_URI }}/kpow-hourly
+          IMAGE_TAG=$VERSION
+          ./scripts/build_aws_marketplace.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
