@@ -25,7 +25,9 @@ docker buildx build --pull \
   --build-arg RELEASE=$RELEASE \
   --build-arg VERSION=$VERSION \
   --platform=linux/amd64,linux/arm64 \
-  --output type=image,oci-mediatypes=false \
+  --provenance=false \
+  --sbom=false \
+  --output type=registry,oci-mediatypes=false \
   -f $DOCKERFILE \
   -t $IMAGE_ID:$IMAGE_TAG \
-  --push .
+  .
