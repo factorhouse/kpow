@@ -17,8 +17,8 @@ View [Features](https://kpow.io/features) to compare editions.
 
 <!--- StartReleaseLinks --->
 
-* [95.2, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow/Dockerfile)
-* [95.2-rh-ubi](https://github.com/factorhouse/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
+* [95.3, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow/Dockerfile)
+* [95.3-rh-ubi](https://github.com/factorhouse/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
