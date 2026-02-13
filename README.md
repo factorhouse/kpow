@@ -21,7 +21,7 @@ See the [Changelog](https://factorhouse.io/changelog?tab=kpow) for release infor
 
 ## What is Kpow?
 
-Kpow is an enterprise-grade web UI for Apache Kafka that helps engineers inspect, manage, and operate Kafka clusters in production environments. It is designed for teams running Kafka at scale who need visibility, control, and safety across environments, including secured and air-gapped deployments.
+Kpow is an enterprise-grade Kafka UI for Apache Kafka that helps engineers inspect, manage, and operate Kafka clusters in production environments. It is designed for teams running Kafka at scale who need visibility, control, and safety across environments, including secured and air-gapped deployments.
 
 ## About this repository
 
