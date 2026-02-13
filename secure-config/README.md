@@ -1,8 +1,8 @@
 # Kpow Secure Configuration
 
-Available from [Kpow v88.2](https://kpow.io/releases/88-2/).
+Available from [Kpow v88.2](https://factorhouse.io/releases/88-2).
 
-This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate](#obf-encoded-variables) Kpow configuration to avoid sensitive variables in plaintext. 
+This guide demonstrates how to [encrypt](#aes-encrypted-variables) or [obfuscate](#obf-encoded-variables) Kpow configuration to avoid sensitive variables in plaintext.
 
 Encrypted configuration is **not a replacement for secret managers**, but may help in environments with limited secret management options.
 
@@ -10,31 +10,30 @@ AES and PBKDF2 support is provided by [kpow-secure](https://github.com/factorhou
 
 ## Contents
 
-* [Kpow Deployment Notes](#kpow-deployment-notes)
-* [Kpow Configuration](#kpow-configuration)
-* [Secure Variables Quick Start](#secure-variables-quick-start)
-  * [AES Encrypted Environment Variables Example](#example-shell-script-with-aes-encrypted-environment-variables)
-  * [AES Encrypted LDAP JAAS 'bindPassword' Example](#example-ldap-jaas-configuration-with-aes-encrypted-bindpassword)
-* [AES Encrypted Variables](#aes-encrypted-variables)
-  * [AES Encryption Steps](#aes-encryption-steps)
-    * [Download](#download-the-latest-kpow-jar-file) the latest Kpow JAR file
-    * [Generate](#generate-a-master-encryption-key) a master encryption key
-    * [Encrypt](#encrypt-sensitive-variables) sensitive variables
-    * [Check](#check-cipher-text-optional) cipher text (optional)
-    * [Configure](#configure-encrypted-variables) encrypted variables
-    * [Provide](#provide-the-master-key-to-kpow) the master key to Kpow
-* [OBF Obfuscated Variables](#obf-obfuscated-variables)
-  * [OBF Obfuscation Steps](#obf-obfuscation-steps)
-    * [Download](#download-the-latest-kpow-jar) the latest Kpow JAR file
-    * [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
-    * [Configure](#configure-obfuscated-variables) obfuscated variables
-* [Encrypting Text Containing Special Characters](#encrypting-text-containing-special-characters)
-  * [Quote](#quote-input-on-the-command-line) input on the command line 
-  * [Read](#read-input-from-file) input from file
-* [Using Kpow Secure Configuration in your Kafka Client Application](#using-kpow-secure-configuration-in-your-kafka-client-application)
-  * [AES Encrypted Client Configuration](#aes-encrypted-client-configuration)
-  * [Kpow Secure Java API for Decryption](#kpow-secure-java-api-for-decryption)
-
+- [Kpow Deployment Notes](#kpow-deployment-notes)
+- [Kpow Configuration](#kpow-configuration)
+- [Secure Variables Quick Start](#secure-variables-quick-start)
+  - [AES Encrypted Environment Variables Example](#example-shell-script-with-aes-encrypted-environment-variables)
+  - [AES Encrypted LDAP JAAS 'bindPassword' Example](#example-ldap-jaas-configuration-with-aes-encrypted-bindpassword)
+- [AES Encrypted Variables](#aes-encrypted-variables)
+  - [AES Encryption Steps](#aes-encryption-steps)
+    - [Download](#download-the-latest-kpow-jar-file) the latest Kpow JAR file
+    - [Generate](#generate-a-master-encryption-key) a master encryption key
+    - [Encrypt](#encrypt-sensitive-variables) sensitive variables
+    - [Check](#check-cipher-text-optional) cipher text (optional)
+    - [Configure](#configure-encrypted-variables) encrypted variables
+    - [Provide](#provide-the-master-key-to-kpow) the master key to Kpow
+- [OBF Obfuscated Variables](#obf-obfuscated-variables)
+  - [OBF Obfuscation Steps](#obf-obfuscation-steps)
+    - [Download](#download-the-latest-kpow-jar) the latest Kpow JAR file
+    - [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
+    - [Configure](#configure-obfuscated-variables) obfuscated variables
+- [Encrypting Text Containing Special Characters](#encrypting-text-containing-special-characters)
+  - [Quote](#quote-input-on-the-command-line) input on the command line
+  - [Read](#read-input-from-file) input from file
+- [Using Kpow Secure Configuration in your Kafka Client Application](#using-kpow-secure-configuration-in-your-kafka-client-application)
+  - [AES Encrypted Client Configuration](#aes-encrypted-client-configuration)
+  - [Kpow Secure Java API for Decryption](#kpow-secure-java-api-for-decryption)
 
 ## Kpow Deployment Notes
 
@@ -48,20 +47,20 @@ Kpow is conveniently secured the same way as any other Enterprise web-applicatio
 
 Kpow is mostly configured via environment variables, with some further configuration being file-based.
 
-Full documentation for all configuration can be found at [docs.kpow.io](https://docs.kpow.io):
+Full documentation for all configuration can be found at [docs.factorhouse.io/kpow](https://docs.factorhouse.io/kpow):
 
-* [Kpow Environment Variable Guide](https://docs.kpow.io/config/environment-variables)
-* [Role Based Access Control Configuration](https://docs.kpow.io/authorization/role-based-access-control)
-* [Multi-Tenancy Configuration](https://docs.kpow.io/authorization/tenants)
-* [Data/PII Masking Configuration](https://docs.kpow.io/features/data-policies)
-* [LDAP/Jaas Authentication Configuration](https://docs.kpow.io/authentication/ldap#jaas-configuration)
-* [File Based Authentication Configuration](https://docs.kpow.io/authentication/file)
+- [Kpow Environment Variable Guide](https://docs.factorhouse.io/kpow/config/environment-variables)
+- [Role Based Access Control Configuration](https://docs.factorhouse.io/kpow/authorization/role-based-access-control)
+- [Multi-Tenancy Configuration](https://docs.factorhouse.io/kpow/authorization/tenants)
+- [Data/PII Masking Configuration](https://docs.factorhouse.io/kpow/features/data-policies)
+- [LDAP/Jaas Authentication Configuration](https://docs.factorhouse.io/kpow/authentication/ldap#jaas-configuration)
+- [File Based Authentication Configuration](https://docs.factorhouse.io/kpow/authentication/file)
 
 ## Secure Variables Quick Start
 
 Kpow accepts all environment variables and some file-based variables as AES encrypted or OBF (Jetty) obfuscated text.
 
-#### Example Shell Script with AES Encrypted Environment Variables  
+#### Example Shell Script with AES Encrypted Environment Variables
 
 This script defines a `KPOW_SECURE_KEY` and a mixture of encrypted and plain variables.
 
@@ -124,12 +123,12 @@ See the [library documentation](https://github.com/factorhouse/kpow-secure) for 
 
 Follow these simple steps to secure Kpow variables with AES encryption
 
-* [Download](#download-the-latest-kpow-jar-file) the latest Kpow JAR file
-* [Generate](#generate-a-master-encryption-key) a master encryption key
-* [Encrypt](#encrypt-sensitive-variables) sensitive variables
-* [Check](#check-cipher-text-optional) cipher text (optional)
-* [Configure](#configure-encrypted-variables) encrypted variables
-* [Provide](#provide-the-master-key-to-kpow) the master key to Kpow
+- [Download](#download-the-latest-kpow-jar-file) the latest Kpow JAR file
+- [Generate](#generate-a-master-encryption-key) a master encryption key
+- [Encrypt](#encrypt-sensitive-variables) sensitive variables
+- [Check](#check-cipher-text-optional) cipher text (optional)
+- [Configure](#configure-encrypted-variables) encrypted variables
+- [Provide](#provide-the-master-key-to-kpow) the master key to Kpow
 
 #### Download the latest Kpow JAR file
 
@@ -168,7 +167,7 @@ When generating a key, specify a `--salt` if you require the ability to regenera
 
 #### Encrypt sensitive variables
 
-Keystore and key passwords are common variables that you may want to secure. 
+Keystore and key passwords are common variables that you may want to secure.
 
 ```
 SSL_KEYSTORE_PASSWORD=mykeystorepassword
@@ -176,7 +175,7 @@ SSL_KEYSTORE_PASSWORD=mykeystorepassword
 
 Encrypt the text 'mykeystorepassword' with Kpow and your master key
 
- ```bash
+```bash
 java -cp ./kpow-2022-02-17.jar kpow.secure --key-file passphrase.key --encrypt mykeystorepassword
 ```
 
@@ -238,9 +237,9 @@ Kpow provides support for weak obfuscatation of variables by integrating the ope
 
 Follow these simple steps to obfuscate Kpow variables with the Jetty Password utility.
 
-* [Download](#download-the-latest-kpow-jar) the latest Kpow JAR file
-* [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
-* [Configure](#configure-obfuscated-variables) obfuscated variables
+- [Download](#download-the-latest-kpow-jar) the latest Kpow JAR file
+- [Obfuscate](#obfuscate-sensitive-variables) sensitive variables
+- [Configure](#configure-obfuscated-variables) obfuscated variables
 
 #### Download the latest Kpow JAR
 
@@ -321,6 +320,7 @@ When encrypting text containing special characters you must either:
 In the examples below we will encrypt text consisting of 'Abc' followed by [every special character defined by OWASP](https://owasp.org/www-community/password-special-characters).
 
 E.g.
+
 ```
 Abc !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
@@ -417,4 +417,3 @@ Then merge those secure properties with your plaintext Kafka client properties.
 Properties clientProps = <...>
 clientProps.putAll(mySecureProps)
 ```
-

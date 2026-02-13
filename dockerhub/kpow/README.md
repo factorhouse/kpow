@@ -93,12 +93,12 @@ Kpow has been tested and is compatible with [Apache Kafka](https://kafka.apache.
 
 To evaluate Kpow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/factorhouse/kpow-local) GitHub repository.
 
-Instructions on how to start a [30-day free trial](https://kpow.io/#trial) of Kpow can be found in the [kpow-local](https://github.com/factorhouse/kpow-local) README.
+Instructions on how to start a [30-day free trial](https://account.factorhouse.io/cta_action/provision_license_type?code=KPOW_TRIAL) of Kpow can be found in the [kpow-local](https://github.com/factorhouse/kpow-local) README.
 
-Visit https://docs.kpow.io/ for more documentation on getting started with Kpow
+Visit https://docs.factorhouse.io/kpow for more documentation on getting started with Kpow
 
 # License
 
-Kpow is proprietary software. Kpow's EULA can be found in the [GitHub repository](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+Kpow is proprietary software. Kpow's EULA can be found in the [GitHub repository](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at https://factorhouse.io/kpow-eula
 
 The Dockerfile's and [kpow](https://github.com/factorhouse/kpow) repository are licensed under the Eclipse Public License 1.0 (EPL-1.0)

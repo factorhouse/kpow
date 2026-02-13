@@ -1,14 +1,14 @@
 [![Release to DockerHub](https://github.com/factorhouse/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/factorhouse/kpow/actions/workflows/release.yml)
 
-Dockerfile for [Kpow](https://kpow.io) - Enterprise-grade Kafka UI and Toolkit for [Apache Kafka®](https://kafka.apache.org/)
+Dockerfile for [Kpow](https://factorhouse.io/products/kpow) - Enterprise-grade Kafka UI and Toolkit for [Apache Kafka®](https://kafka.apache.org/)
 
-**Note**: This repository is for the free [Community Edition](https://kpow.io/pricing) of Kpow.
+**Note**: This repository is for the free [Community Edition](https://factorhouse.io/products/kpow) of Kpow.
 
 For paying customers:
 
 - The Enterprise Edition DockerHub repository can be found at [factorhouse/kpow](https://hub.docker.com/r/factorhouse/kpow)
 
-Visit the [Kpow product page](https://factorhouse.io/kpow) to compare editions or buy a license.
+Visit the [Kpow product page](https://factorhouse.io/products/kpow) to compare editions or buy a license.
 
 # Quick reference
 
@@ -82,7 +82,7 @@ Kpow comes from a practical application of Kafka to real-world requirements and 
 
 ### And Much More...
 
-**Live Mode** for real-time monitoring, **Multi-Dimensional Consumer Lag** insights from Kpow's custom derived telemetry, **No Requirement for JMX** access, discover all of our features in this [guide](https://docs.kpow.io).
+**Live Mode** for real-time monitoring, **Multi-Dimensional Consumer Lag** insights from Kpow's custom derived telemetry, **No Requirement for JMX** access, discover all of our features in this [guide](https://docs.factorhouse.io/kpow).
 
 # Compatibility
 
@@ -96,12 +96,12 @@ Kpow has been tested and is compatible with [Apache Kafka](https://kafka.apache.
 
 To evaluate Kpow locally with Docker Compose and a 3-node Kafka cluster, visit the [kpow-local](https://github.com/factorhouse/kpow-local) GitHub repository.
 
-Instructions on how to start a [30-day free trial](https://kpow.io/#trial) of Kpow can be found in the [kpow-local](https://github.com/factorhouse/kpow-local) README.
+Instructions on how to start a [30-day free trial](https://account.factorhouse.io/cta_action/provision_license_type?code=KPOW_TRIAL) of Kpow can be found in the [kpow-local](https://github.com/factorhouse/kpow-local) README.
 
-Visit https://docs.kpow.io/ for more documentation on getting started with Kpow
+Visit https://docs.factorhouse.io/kpow for more documentation on getting started with Kpow
 
 # License
 
-Kpow is proprietary software. Kpow's EULA can be found in the [GitHub repository](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at https://kpow.io/eula/
+Kpow is proprietary software. Kpow's EULA can be found in the [GitHub repository](https://github.com/factorhouse/kpow/blob/main/resources/eula.txt) or at https://factorhouse.io/kpow-eula
 
 The Dockerfile's and [kpow](https://github.com/factorhouse/kpow) repository are licensed under the Eclipse Public License 1.0 (EPL-1.0)
