@@ -1,39 +1,39 @@
 [![Release to DockerHub](https://github.com/factorhouse/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/factorhouse/kpow/actions/workflows/release.yml)
 
-Dockerfile for [Kpow](https://kpow.io) - The Ultimate Engineering Toolkit for [Apache Kafka®](https://kafka.apache.org/)
+Dockerfile for [Kpow](https://factorhouse.io/products/kpow) - Enterprise-grade Kafka UI and Toolkit for [Apache Kafka®](https://kafka.apache.org/)
 
-**Note**: This repository is for the [Enterprise Edition](https://kpow.io/pricing) of Kpow. 
+**Note**: This repository is for the [Enterprise Edition](https://factorhouse.io/products/kpow) of Kpow.
 
-*  The Community Edition DockerHub repository can be found at [factorhouse/kpow-ce](https://hub.docker.com/r/factorhouse/kpow-ce) 
+- The Community Edition DockerHub repository can be found at [factorhouse/kpow-ce](https://hub.docker.com/r/factorhouse/kpow-ce)
 
-View [Features](https://kpow.io/features) to compare editions.
+Visit the [Kpow product page](https://factorhouse.io/kpow) to compare editions or buy a license.
 
 # Quick reference
 
-* **Maintained by**: [the Factor House team](https://github.com/factorhouse/kpow)
-* **Where to get help**: [GitHub](https://github.com/factorhouse/kpow), [Kpow documentation](http://docs.kpow.io/), [Support Hub](https://kpow.io/support)
+- **Maintained by**: [the Factor House team](https://github.com/factorhouse/kpow)
+- **Where to get help**: [Kpow documentation](http://docs.factorhouse.io/kpow), [Support Hub](https://factorhouse.io/help-center), [GitHub](https://github.com/factorhouse/kpow)
 
 # Supported tags respective `Dockerfile` links
 
 <!--- StartReleaseLinks --->
 
-* [95.3, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow/Dockerfile)
-* [95.3-rh-ubi](https://github.com/factorhouse/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
+- [95.3, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow/Dockerfile)
+- [95.3-rh-ubi](https://github.com/factorhouse/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
 # Quick reference (cont.)
 
-* **Where to file issues:** https://github.com/factorhouse/kpow/issues
-* **Published image artifact details:** [GitHub actions CI](https://github.com/factorhouse/kpow/actions/workflows/build.yml)
-* **Image updates**: https://github.com/factorhouse/kpow/tags
-* **Source of this description**: [dockerhub/kpow/README.md](https://github.com/factorhouse/kpow/blob/main/dockerhub/kpow/README.md)
+- **Where to file issues:** https://github.com/factorhouse/kpow/issues
+- **Published image artifact details:** [GitHub actions CI](https://github.com/factorhouse/kpow/actions/workflows/build.yml)
+- **Image updates**: https://github.com/factorhouse/kpow/tags
+- **Source of this description**: [dockerhub/kpow/README.md](https://github.com/factorhouse/kpow/blob/main/dockerhub/kpow/README.md)
 
 # What is Kpow?
 
-### An Engineering Toolkit for Apache Kafka®
+### A Kafka UI and Engineering Toolkit for Apache Kafka®
 
-Kpow is the toolkit that empowers your team to deliver with Kafka.
+Kpow is the Kafka UI and toolkit that empowers your team to deliver with Kafka.
 
 Once installed, Kpow gathers information about your Kafka resources every minute, stores the results locally in internal topics, then provides custom telemetry and insights to you in a rich data-oriented UI.
 
@@ -47,7 +47,7 @@ Kpow offers full support for controlling and monitoring Kafka Connect clusters a
 
 ### Deep Data Inspect with kJQ
 
-Search **tens of thousands of messages a second** with Kpow’s unique, custom implementation of JQ-like queries for Kafka topics. 
+Search **tens of thousands of messages a second** with Kpow’s unique, custom implementation of JQ-like queries for Kafka topics.
 
 **kJQ** works with JSON or JSON-like data including Apache Avro®, Transit, EDN, and even Protobuf messages where you have configured custom serdes to output JSON formatted text.
 
@@ -65,22 +65,21 @@ Kpow Compute provides access to your consumer \(and soon, _Kafka Streams_\) topo
 
 Kpow comes from a practical application of Kafka to real-world requirements and provides:
 
-* **User Authentication** via DB, File, LDAP, SAML, or OpenID configuration.
-* **User Authorization** with Simple or Role Based Access Controls \(RBAC\).
-* **Data Policies** for masking and redaction of sensitive data like Credit Card or PII.
-* **Data Governance** with all user actions captured in the Kpow audit log.
-* **Slack Integration** to have user actions sent to an operations channel as they happen.
-* **HTTPS** easily configured with your own certificates, or integrated with a reverse-proxy.
-* **Prometheus** endpoints to integrate with your preferred metrics and alerting systems.
-* **Multi-Cluster Monitoring** from a single installation for cost efficiency and simplicity.
-* **All data in local topics** makes Kpow perfect for air-gapped environments.
+- **User Authentication** via DB, File, LDAP, SAML, or OpenID configuration.
+- **User Authorization** with Simple or Role Based Access Controls \(RBAC\).
+- **Data Policies** for masking and redaction of sensitive data like Credit Card or PII.
+- **Data Governance** with all user actions captured in the Kpow audit log.
+- **Slack Integration** to have user actions sent to an operations channel as they happen.
+- **HTTPS** easily configured with your own certificates, or integrated with a reverse-proxy.
+- **Prometheus** endpoints to integrate with your preferred metrics and alerting systems.
+- **Multi-Cluster Monitoring** from a single installation for cost efficiency and simplicity.
+- **All data in local topics** makes Kpow perfect for air-gapped environments.
 
 ![Kpow is easily configured with LDAP for User Authentication](https://docs.factorhouse.io/img/assets/login-jetty.png)
 
 ### And Much More...
 
-**Live Mode** for real-time monitoring, **Multi-Dimensional Consumer Lag** insights from Kpow's custom derived telemetry, **No Requirement for JMX** access, discover all of our features in this [guide](https://docs.kpow.io).
-
+**Live Mode** for real-time monitoring, **Multi-Dimensional Consumer Lag** insights from Kpow's custom derived telemetry, **No Requirement for JMX** access, discover all of our features in this [guide](https://docs.factorhouse.io/kpow).
 
 # Compatibility
 
