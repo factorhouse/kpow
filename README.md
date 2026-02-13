@@ -85,8 +85,7 @@ No credit card is required to start a 30-day free trial.
 
 We generally recommend starting with the free trial to evaluate Kpow in a realistic production-like setup.
 
-Start a free trial at:
-https://account.factorhouse.io/auth/getting_started
+[Start your free trial of Kpow](https://account.factorhouse.io/cta_action/provision_license_type?code=KPOW_TRIAL)
 
 ### Enterprise license
 
@@ -105,11 +104,11 @@ The Factor House Community License allows you to run the Community Edition of Kp
 
 The Community Edition is distributed via the Community Edition Docker images and does not require a commercial agreement.
 
-Sign up for a community license at https://account.factorhouse.io/cta_action/provision_license_type?code=COMMUNITY
+[Get started with a community license](https://account.factorhouse.io/cta_action/provision_license_type?code=COMMUNITY)
 
 # Documentation
 
-Kpow's documentation is available at [https://docs.factorhouse.io/kpow-ee/](https://docs.factorhouse.io/kpow-ee/).
+Kpow's documentation is available at [https://docs.factorhouse.io/kpow](https://docs.factorhouse.io/kpow).
 
 # License
 
