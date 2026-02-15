@@ -9,6 +9,7 @@ updates:
       - "/dockerfile/kpow"
       - "/dockerfile/rh-ubi"
       - "/dockerfile/temurin-ubi"
+      - "/dockerfile/strimzi"
       - "/dockerfile/kpow-amazoncorretto25"
     ignore:
       - dependency-name: "amazoncorretto"
