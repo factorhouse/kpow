@@ -5,15 +5,17 @@ updates:
       - "/dockerfile/aws-mkt-lm"
       - "/dockerfile/aws-mkt-pro"
       - "/dockerfile/compat"
-      - "/dockerfile/kpow-ce"
       - "/dockerfile/kpow"
+      - "/dockerfile/kpow-amazoncorretto25"
+      - "/dockerfile/kpow-ce"
       - "/dockerfile/rh-ubi"
       - "/dockerfile/temurin-ubi"
-      - "/dockerfile/kpow-amazoncorretto25"
     ignore:
       - dependency-name: "amazoncorretto"
         update-types: ["version-update:semver-major"]
       - dependency-name: "eclipse-temurin"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "registry.access.redhat.com/ubi8/openjdk-17"
         update-types: ["version-update:semver-major"]
     schedule:
       interval: "weekly"
