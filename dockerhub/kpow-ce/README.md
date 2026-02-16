@@ -13,7 +13,7 @@ Visit the [Kpow product page](https://factorhouse.io/products/kpow) to compare e
 # Quick reference
 
 - **Maintained by**: [the Factor House team](https://github.com/factorhouse/kpow)
-- **Where to get help**: [Kpow documentation](http://docs.factorhouse.io/kpow), [Community Slack](https://factorhousecommunity.slack.com), [GitHub](https://github.com/factorhouse/kpow)
+- **Where to get help**: [Kpow documentation](https://docs.factorhouse.io/kpow), [Community Slack](https://factorhousecommunity.slack.com), [GitHub](https://github.com/factorhouse/kpow)
 
 # Supported tags respective `Dockerfile` links
 
