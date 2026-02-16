@@ -49,10 +49,10 @@ Kpow is mostly configured via environment variables, with some further configura
 
 Full documentation for all configuration can be found at [docs.factorhouse.io/kpow](https://docs.factorhouse.io/kpow):
 
-- [Kpow Environment Variable Guide](https://docs.factorhouse.io/kpow/config/environment-variables)
+- [Kpow Environment Variable Guide](https://docs.factorhouse.io/kpow/configuration/config-kpow/environment-variables)
 - [Role Based Access Control Configuration](https://docs.factorhouse.io/kpow/authorization/role-based-access-control)
 - [Multi-Tenancy Configuration](https://docs.factorhouse.io/kpow/authorization/tenants)
-- [Data/PII Masking Configuration](https://docs.factorhouse.io/kpow/features/data-policies)
+- [Data/PII Masking Configuration](https://docs.factorhouse.io/kpow/data/data-policies)
 - [LDAP/Jaas Authentication Configuration](https://docs.factorhouse.io/kpow/authentication/ldap#jaas-configuration)
 - [File Based Authentication Configuration](https://docs.factorhouse.io/kpow/authentication/file)
 
@@ -132,7 +132,7 @@ Follow these simple steps to secure Kpow variables with AES encryption
 
 #### Download the latest Kpow JAR file
 
-The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://github.com/factorhouse/kpow/blob/main/CHANGELOG.md#latest-release-artifacts) file.
+The latest Kpow JAR artifact is always listed in our [release notes](https://factorhouse.io/releases).
 
 #### Generate a master encryption key
 
@@ -243,7 +243,7 @@ Follow these simple steps to obfuscate Kpow variables with the Jetty Password ut
 
 #### Download the latest Kpow JAR
 
-The latest Kpow JAR artifact is always listed in our [CHANGELOG.md](https://github.com/factorhouse/kpow/blob/main/CHANGELOG.md#latest-release-artifacts) file.
+The latest Kpow JAR artifact is always listed in our [release notes](https://factorhouse.io/releases).
 
 #### Obfuscate sensitive variables
 
