@@ -36,7 +36,7 @@ Kpow support both `linux/amd64` and `linux/arm64` architectures.
 
 ### An Engineering Toolkit for Apache Kafka®
 
-Kpow is the Kafka UI and toolkit that empowers your team to deliver with Kafka.
+Kpow is the toolkit that empowers your team to deliver with Kafka.
 
 Once installed, Kpow gathers information about your Kafka resources every minute, stores the results locally in internal topics, then provides custom telemetry and insights to you in a rich data-oriented UI.
 
