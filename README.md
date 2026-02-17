@@ -1,6 +1,6 @@
 <img width="64" height="64" alt="kpow" src="https://github.com/user-attachments/assets/998b54db-fe96-4ba4-82d5-62652e9b90ad" />
 
-# Kpow — Enterprise-grade Kafka UI for Apache Kafka®
+# Kpow — Enterprise-grade UI for Apache Kafka®
 
 [![Release to DockerHub](https://github.com/factorhouse/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/factorhouse/kpow/actions/workflows/release.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
