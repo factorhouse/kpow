@@ -19,4 +19,8 @@ updates:
       - dependency-name: "registry.access.redhat.com/ubi8/openjdk-17"
         update-types: ["version-update:semver-major"]
     schedule:
-      interval: "weekly"
+      interval: "daily"
+    reviewers:
+      - "ceels"
+      - "nvenegas"
+      - "ShanelleFactorHouse"
