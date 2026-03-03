@@ -66,9 +66,9 @@ jobs:
           IMAGE_ID=factorhouse/kpow
           IMAGE_TAG=$VERSION
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
-      - name: Build Kpow (Java25)
+      - name: Build Kpow (Strimzi)
         run: |
           VERSION=${{github.event.inputs.version}}
           IMAGE_ID=factorhouse/kpow
-          IMAGE_TAG=$VERSION-corretto25
-          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow-amazoncorretto25/Dockerfile
+          IMAGE_TAG=$VERSION-strimzi
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/strimzi/Dockerfile
