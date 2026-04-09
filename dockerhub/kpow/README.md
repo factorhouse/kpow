@@ -17,8 +17,8 @@ Visit the [Kpow product page](https://factorhouse.io/kpow) to compare editions o
 
 <!--- StartReleaseLinks --->
 
-* [95.4, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow/Dockerfile)
-* [95.4-rh-ubi](https://github.com/factorhouse/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
+* [95.5, latest](https://github.com/factorhouse/kpow/blob/main/dockerfile/kpow/Dockerfile)
+* [95.5-rh-ubi](https://github.com/factorhouse/kpow/blob/main/dockerfile/rh-ubi/Dockerfile)
 
 <!--- EndReleaseLinks --->
 
