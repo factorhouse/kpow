@@ -39,11 +39,11 @@ Kpow can be run directly using Docker for local development, testing, or product
 
 #### Community Edition image:
 
-`docker pull factorhouse/kpow-ce:95.4`
+`docker pull factorhouse/kpow-ce:95.5`
 
 #### Enterprise Edition image:
 
-`docker pull factorhouse/kpow:95.4`
+`docker pull factorhouse/kpow:95.5`
 
 ### Kubernetes (Helm)
 
