@@ -1,4 +1,4 @@
-FROM eclipse-temurin:25.0.1_8-jre-ubi10-minimal
+FROM eclipse-temurin:25.0.3_9-jre-ubi10-minimal
 
 ARG VERSION
 ARG RELEASE
