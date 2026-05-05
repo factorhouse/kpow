@@ -37,28 +37,31 @@ jobs:
       - name: Download and verify JAR(s)
         run: |
           ./scripts/jar.sh "${{github.event.inputs.manifest}}"
-      - name: Release Kpow JDK11 JAR
-        run: |
-          VERSION=${{github.event.inputs.version}}
-          VERSION="${VERSION//./-}"
-          aws s3 cp target/kpow-java11-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java11.jar
       - name: Release Kpow JDK8 JAR
         run: |
           VERSION=${{github.event.inputs.version}}
           VERSION="${VERSION//./-}"
           aws s3 cp target/kpow-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java8.jar
+      - name: Release Kpow JDK11 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java11-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java11.jar
       - name: Release Kpow JDK17 JAR
         run: |
           VERSION=${{github.event.inputs.version}}
           VERSION="${VERSION//./-}"
           aws s3 cp target/kpow-java17-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java17.jar
-      -
-        # Add support for more platforms with QEMU (optional)
-        # https://github.com/docker/setup-qemu-action
-        name: Set up QEMU
+      - name: Release Kpow JDK21 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java21-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java21.jar
+      # Add support for more platforms with QEMU (optional)
+      # https://github.com/docker/setup-qemu-action
+      - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-      -
-        name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Build Kpow
         run: |
