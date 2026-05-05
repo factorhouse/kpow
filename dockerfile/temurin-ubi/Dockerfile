@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17.0.18_8-jre-ubi9-minimal
+FROM eclipse-temurin:25.0.3_9-jre-ubi10-minimal
 
 ARG VERSION
 ARG RELEASE
@@ -12,7 +12,7 @@ LABEL name="Kpow for Apache Kafka" \
       description="Kpow features a rich data-oriented UI, specialized dashboards that deliver instant visibility into Kafka Clusters, Schema Registries, and Connect Installations, and developer tools that allow engineers to get to the heart of their systems quickly."
 
 COPY resources/eula.txt /licenses/eula.txt
-COPY target/kpow-java17-gcp-standalone.jar /opt/factorhouse/lib/kpow.jar
+COPY target/kpow-java25-gcp-standalone.jar /opt/factorhouse/lib/kpow.jar
 COPY resources/entrypoint.sh /usr/local/bin/kpow.sh
 
 RUN groupadd -g 1001 factorhouse && \

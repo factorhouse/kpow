@@ -74,6 +74,12 @@ jobs:
           VERSION="${VERSION//./-}"
           aws s3 cp target/kpow-java17-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java17.jar
 
+      - name: Release Kpow JDK25 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java25-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java25.jar
+
       - name: Release Dependency Check Report
         run: |
           VERSION=${{github.event.inputs.version}}
@@ -83,13 +89,12 @@ jobs:
           mv *.html index.html
           aws s3 cp index.html s3://${{ secrets.RELEASES_BUCKET }}/kpow-dependency-check-report-$VERSION.html
 
-      -
-        # Add support for more platforms with QEMU (optional)
-        # https://github.com/docker/setup-qemu-action
-        name: Set up QEMU
+      # Add support for more platforms with QEMU (optional)
+      # https://github.com/docker/setup-qemu-action
+      - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-      -
-        name: Set up Docker Buildx
+
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       - name: Build Kpow AWS Marketplace Annual

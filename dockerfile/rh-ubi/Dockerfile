@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/openjdk-17:1.23-4.1776364331
+FROM registry.access.redhat.com/ubi9/openjdk-25:1.24
 
 ARG VERSION
 ARG RELEASE
@@ -14,7 +14,7 @@ LABEL name="Kpow for Apache Kafka" \
 USER 0
 
 ADD --chmod=044 resources/eula.txt /licenses/eula.txt
-ADD --chmod=044 target/kpow-java17-standalone.jar /opt/factorhouse/lib/kpow.jar
+ADD --chmod=044 target/kpow-java25-standalone.jar /opt/factorhouse/lib/kpow.jar
 ADD --chmod=044 resources/entrypoint.sh /usr/local/bin/kpow.sh
 
 RUN groupadd -g 1001 factorhouse && \
