@@ -56,114 +56,114 @@ jobs:
       - name: Log into GitHub packages
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      # - name: Release Kpow JDK11 JAR
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     VERSION="${VERSION//./-}"
-      #     aws s3 cp target/kpow-java11-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java11.jar
+      - name: Release Kpow JDK11 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java11-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java11.jar
 
-      # - name: Release Kpow JDK8 JAR
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     VERSION="${VERSION//./-}"
-      #     aws s3 cp target/kpow-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java8.jar
+      - name: Release Kpow JDK8 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java8-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java8.jar
 
-      # - name: Release Kpow JDK17 JAR
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     VERSION="${VERSION//./-}"
-      #     aws s3 cp target/kpow-java17-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java17.jar
+      - name: Release Kpow JDK17 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java17-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java17.jar
 
-      # - name: Release Kpow JDK21 JAR
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     VERSION="${VERSION//./-}"
-      #     aws s3 cp target/kpow-java21-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java21.jar
+      - name: Release Kpow JDK21 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java21-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java21.jar
 
-      # - name: Release Kpow JDK25 JAR
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     VERSION="${VERSION//./-}"
-      #     aws s3 cp target/kpow-java25-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java25.jar
+      - name: Release Kpow JDK25 JAR
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          aws s3 cp target/kpow-java25-standalone.jar s3://${{ secrets.RELEASES_BUCKET }}/kpow-$VERSION-java25.jar
 
-      # - name: Release Dependency Check Report
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     VERSION="${VERSION//./-}"
-      #     tar xzf kpow-enterprise-nvd-report.tar.gz
-      #     cd kpow-enterprise-nvd-report
-      #     mv *.html index.html
-      #     aws s3 cp index.html s3://${{ secrets.RELEASES_BUCKET }}/kpow-dependency-check-report-$VERSION.html
+      - name: Release Dependency Check Report
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          VERSION="${VERSION//./-}"
+          tar xzf kpow-enterprise-nvd-report.tar.gz
+          cd kpow-enterprise-nvd-report
+          mv *.html index.html
+          aws s3 cp index.html s3://${{ secrets.RELEASES_BUCKET }}/kpow-dependency-check-report-$VERSION.html
 
-      # # Add support for more platforms with QEMU (optional)
-      # # https://github.com/docker/setup-qemu-action
-      # - name: Set up QEMU
-      #   uses: docker/setup-qemu-action@v3
+      # Add support for more platforms with QEMU (optional)
+      # https://github.com/docker/setup-qemu-action
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
 
-      # - name: Set up Docker Buildx
-      #   uses: docker/setup-buildx-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-      # - name: Build Kpow AWS Marketplace Annual
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
-      #     IMAGE_TAG=$VERSION-aws-mkt-lm
-      #     ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
+      - name: Build Kpow AWS Marketplace Annual
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
+          IMAGE_TAG=$VERSION-aws-mkt-lm
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-lm/Dockerfile
 
-      # - name: Build Kpow AWS Marketplace Hourly
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
-      #     IMAGE_TAG=$VERSION-aws-mkt-pro
-      #     ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
+      - name: Build Kpow AWS Marketplace Hourly
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=ghcr.io/factorhouse/kpow/kpow
+          IMAGE_TAG=$VERSION-aws-mkt-pro
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/aws-mkt-pro/Dockerfile
 
-      # - name: Build Kpow
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     IMAGE_ID=factorhouse/kpow
-      #     IMAGE_TAG=$VERSION
-      #     ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+      - name: Build Kpow
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=factorhouse/kpow
+          IMAGE_TAG=$VERSION
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
-      # - name: Build Kpow (latest)
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     IMAGE_ID=factorhouse/kpow
-      #     IMAGE_TAG=latest
-      #     ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
+      - name: Build Kpow (latest)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=factorhouse/kpow
+          IMAGE_TAG=latest
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/kpow/Dockerfile
 
-      # - name: Build Kpow Red Hat UBI
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     IMAGE_ID=factorhouse/kpow
-      #     IMAGE_TAG=$VERSION-rh-ubi
-      #     ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
+      - name: Build Kpow Red Hat UBI
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=factorhouse/kpow
+          IMAGE_TAG=$VERSION-rh-ubi
+          ./scripts/build_amd64.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/rh-ubi/Dockerfile
 
-      # - name: Build Kpow Temurin UBI
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     IMAGE_ID=factorhouse/kpow
-      #     IMAGE_TAG=$VERSION-temurin-ubi
-      #     ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/temurin-ubi/Dockerfile
+      - name: Build Kpow Temurin UBI
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=factorhouse/kpow
+          IMAGE_TAG=$VERSION-temurin-ubi
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/temurin-ubi/Dockerfile
 
-      # - name: Build Kpow (Strimzi)
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     IMAGE_ID=factorhouse/kpow
-      #     IMAGE_TAG=$VERSION-strimzi
-      #     ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/strimzi/Dockerfile
+      - name: Build Kpow (Strimzi)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=factorhouse/kpow
+          IMAGE_TAG=$VERSION-strimzi
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/strimzi/Dockerfile
 
-      # - name: Build Kpow (Compat)
-      #   run: |
-      #     VERSION=${{github.event.inputs.version}}
-      #     IMAGE_ID=factorhouse/kpow
-      #     IMAGE_TAG=$VERSION-compat
-      #     ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/compat/Dockerfile
+      - name: Build Kpow (Compat)
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=factorhouse/kpow
+          IMAGE_TAG=$VERSION-compat
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/compat/Dockerfile
 
-      # - name: Build Kpow Community
-      #   run: |
-      #     NEXT_RELEASE=${{github.event.inputs.version}}
-      #     docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 --sbom=true --provenance=true -t factorhouse/kpow-ce:latest --push .
-      #     docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 --sbom=true --provenance=true -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
+      - name: Build Kpow Community
+        run: |
+          NEXT_RELEASE=${{github.event.inputs.version}}
+          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 --sbom=true --provenance=true -t factorhouse/kpow-ce:latest --push .
+          docker buildx build -f ./dockerfile/kpow-ce/Dockerfile --platform=linux/amd64,linux/arm64 --sbom=true --provenance=true -t factorhouse/kpow-ce:$NEXT_RELEASE --push .
 
       - name: Deploy OpenAPI spec
         run: |
