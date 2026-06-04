@@ -26,5 +26,5 @@ RUN chown -R factorhouse:factorhouse /opt/factorhouse
 EXPOSE 3000
 USER factorhouse
 
-ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70"
+ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70 --sun-misc-unsafe-memory-access=allow -XX:+UseCompactObjectHeaders -XX:+UseStringDeduplication"
 CMD ["/usr/local/bin/kpow.sh"]
