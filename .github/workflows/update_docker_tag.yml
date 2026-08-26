@@ -32,7 +32,6 @@ jobs:
 
   update-dockerhub-readme:
     needs: update-readme
-    if: false # temporarily disabled
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
