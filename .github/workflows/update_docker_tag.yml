@@ -27,6 +27,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "Update Docker image tag to version ${{ github.event.inputs.version }}"
           git push origin main
 
