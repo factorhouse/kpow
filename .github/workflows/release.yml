@@ -206,3 +206,26 @@ jobs:
           body: "Visit https://factorhouse.io/blog/releases for release details"
           draft: false
           prerelease: false
+
+  update-readme-tags:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Update Docker image tags in README.md
+        run: |
+          NEW_VERSION="${{github.event.inputs.version}}"
+          sed -i -E "s#(docker pull factorhouse/kpow:)[^\`]*#\1${NEW_VERSION}#" README.md
+          sed -i -E "s#(docker pull factorhouse/kpow-ce:)[^\`]*#\1${NEW_VERSION}#" README.md
+
+      - name: Commit and push README.md
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Update Docker image tag to version ${{github.event.inputs.version}}"
+          git push origin main
