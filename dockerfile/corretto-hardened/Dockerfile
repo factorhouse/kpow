@@ -17,18 +17,8 @@ COPY resources/entrypoint.sh /usr/local/bin/kpow.sh
 
 EXPOSE 3000
 
-RUN yum install shadow-utils -y
-
-RUN groupadd -g 1001 factorhouse && \
-    useradd -r -u 1001 -g factorhouse factorhouse
-
 RUN mkdir -p /opt/factorhouse/tmp
 RUN chown -R factorhouse:factorhouse /opt/factorhouse
-
-RUN yum remove shadow-utils -y
-RUN yum clean all -y
-
-USER factorhouse
 
 ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70 --sun-misc-unsafe-memory-access=allow -XX:+UseCompactObjectHeaders -XX:+UseStringDeduplication"
 
