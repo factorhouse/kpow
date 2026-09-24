@@ -19,8 +19,6 @@ ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -XX:MaxIn
 
 EXPOSE 3000
 
-USER factorhouse
-
 ENTRYPOINT ["java"]
 
 CMD ["-server", \
