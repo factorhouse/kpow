@@ -1,4 +1,4 @@
-FROM dhi.io/amazoncorretto:25-alpine3.23-dev
+FROM dhi.io/amazoncorretto:25-alpine3.23
 
 ARG VERSION
 ARG RELEASE
