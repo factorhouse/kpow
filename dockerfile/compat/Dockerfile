@@ -1,4 +1,4 @@
-FROM amazoncorretto:17.0.20
+FROM amazoncorretto:25.0.4
 
 ARG VERSION
 ARG RELEASE
@@ -12,7 +12,7 @@ LABEL name="Kpow for Apache Kafka" \
       description="Kpow features a rich data-oriented UI, specialized dashboards that deliver instant visibility into Kafka Clusters, Schema Registries, and Connect Installations, and developer tools that allow engineers to get to the heart of their systems quickly."
 
 COPY resources/eula.txt /licenses/eula.txt
-COPY target/kpow-java17-compat-standalone.jar /opt/factorhouse/lib/kpow.jar
+COPY target/kpow-java25-compat-standalone.jar /opt/factorhouse/lib/kpow.jar
 COPY resources/entrypoint.sh /usr/local/bin/kpow.sh
 
 EXPOSE 3000
@@ -29,6 +29,6 @@ RUN yum remove shadow-utils -y
 
 USER factorhouse
 
-ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70 -XX:+UseStringDeduplication"
+ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70 --sun-misc-unsafe-memory-access=allow -XX:+UseCompactObjectHeaders -XX:+UseStringDeduplication"
 
 CMD ["/usr/local/bin/kpow.sh"]
