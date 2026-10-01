@@ -25,6 +25,7 @@ CMD ["-server", \
      "-XX:InitialRAMPercentage=70", \
      "-XX:MaxRAMPercentage=70", \
      "--sun-misc-unsafe-memory-access=allow", \
+     "--enable-native-access=ALL-UNNAMED", \
      "-XX:+UseCompactObjectHeaders", \
      "-XX:+UseStringDeduplication", \
      "-jar", \
