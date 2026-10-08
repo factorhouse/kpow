@@ -1,4 +1,4 @@
-FROM amazoncorretto:25.0.4
+FROM dhi.io/amazoncorretto:25-alpine3.23
 
 ARG VERSION
 ARG RELEASE
@@ -13,22 +13,20 @@ LABEL name="Kpow for Apache Kafka" \
 
 COPY resources/eula.txt /licenses/eula.txt
 COPY target/kpow-java25-aws-mkt-annual-standalone.jar /opt/factorhouse/lib/kpow.jar
-COPY resources/entrypoint.sh /usr/local/bin/kpow.sh
 
 EXPOSE 3000
 
-RUN yum install shadow-utils -y
+ENTRYPOINT ["java"]
 
-RUN groupadd -g 1001 factorhouse && \
-    useradd -r -u 1001 -g factorhouse factorhouse
-
-RUN mkdir -p /opt/factorhouse/tmp
-RUN chown -R factorhouse:factorhouse /opt/factorhouse
-
-RUN yum remove shadow-utils -y
-
-USER factorhouse
-
-ENV JVM_OPTS="-server -Dorg.xerial.snappy.tempdir=/opt/factorhouse/tmp -XX:MaxInlineLevel=15 -Djava.awt.headless=true -XX:InitialRAMPercentage=70 -XX:MaxRAMPercentage=70 --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED -XX:+UseCompactObjectHeaders -XX:+UseStringDeduplication"
-
-CMD ["/usr/local/bin/kpow.sh"]
+CMD ["-server", \
+     "-Dorg.xerial.snappy.tempdir=/tmp", \
+     "-XX:MaxInlineLevel=15", \
+     "-Djava.awt.headless=true", \
+     "-XX:InitialRAMPercentage=70", \
+     "-XX:MaxRAMPercentage=70", \
+     "--sun-misc-unsafe-memory-access=allow", \
+     "--enable-native-access=ALL-UNNAMED", \
+     "-XX:+UseCompactObjectHeaders", \
+     "-XX:+UseStringDeduplication", \
+     "-jar", \
+     "/opt/factorhouse/lib/kpow.jar"]
