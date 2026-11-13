@@ -80,3 +80,9 @@ jobs:
           IMAGE_ID=factorhouse/kpow
           IMAGE_TAG=$VERSION-strimzi
           ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/strimzi/Dockerfile
+      - name: Build Kpow Corretto Hardened
+        run: |
+          VERSION=${{github.event.inputs.version}}
+          IMAGE_ID=factorhouse/kpow
+          IMAGE_TAG=$VERSION-corretto-hardened
+          ./scripts/build_all.sh $VERSION $IMAGE_ID $IMAGE_TAG dockerfile/corretto-hardened/Dockerfile
