@@ -204,7 +204,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -am "Release ${{github.event.inputs.version}}"
-          git push origin main
+          git push origin HEAD
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
